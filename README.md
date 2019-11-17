@@ -11,10 +11,8 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 本库内容会同步更新到`Python小例子`公众号，方便手机端用户使用
 
 <center>
-    <img src="./img/python小例子公众号二维码.jpg" width = "160" height = "160"/>
+    <img src="./img/python小例子公众号二维码.png" />
 </center>
-
-
 
 #### 欢迎贡献
 
