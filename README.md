@@ -5,7 +5,9 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 
 本库内容会同步更新到`Python小例子`公众号，方便手机端用户使用
 
-<img src="./img/python小例子公众号二维码.jpg" width = "160" height = "160"/>
+<center>
+    <img src="./img/python小例子公众号二维码.jpg" width = "160" height = "160"/>
+</center>
 
 
 
@@ -13,7 +15,9 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 
 欢迎提交基于Python 写的任何小例子，由衷感谢!
 
-例子列表：
+
+
+#### 小例子列表
 
 1. [批量修改后缀名](./批量修改后缀名.md)
 2. [判断密码是否合法](判断密码是否合法.md)
