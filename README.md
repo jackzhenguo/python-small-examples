@@ -10,7 +10,7 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 
 本库内容会同步更新到`Python小例子`公众号，方便手机端用户使用
 
-<img src="./img/python小例子公众号二维码.jpg" align=center style="zoom:Infinity%; width:258px" />
+<img src="./img/python小例子公众号二维码.jpg" style="zoom:Infinity%; width:258px" />
 
 #### 欢迎贡献
 
