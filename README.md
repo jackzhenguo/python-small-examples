@@ -1,4 +1,4 @@
-![](./img/logo-python-small-examples.png)
+![](./img/logo-python-small-examples.png
 
 
 
@@ -10,7 +10,7 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 
 本库内容会同步更新到`Python小例子`公众号，方便手机端用户使用
 
-<img src="./img/python小例子公众号二维码.jpg" div align=center style="zoom:Infinity%; align:center; width:258px" />
+<div align=center>![Python小例子](https://github.com/jackzhenguo/python-small-examples/blob/master/img/python%E5%B0%8F%E4%BE%8B%E5%AD%90%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)
 
 #### 欢迎贡献
 
