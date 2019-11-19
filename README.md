@@ -12,7 +12,7 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 
 ```
 <div style="align: center">
-<img src="https://jackzhenguo.github.io/python-small-examples/img/python%E5%B0%8F%E4%BE%8B%E5%AD%90%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg"/>
+<img src="https://jackzhenguo.github.io/python-small-examples/img/python%E5%B0%8F%E4%BE%8B%E5%AD%90%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" width="" />
 </div>
 ```
 
