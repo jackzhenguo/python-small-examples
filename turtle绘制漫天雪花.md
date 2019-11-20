@@ -9,8 +9,6 @@ import random
 
 ### 绘制雪花
 
-绘制`snow_count`个雪花
-
 ```python
 def snow(snow_count):
     p.hideturtle()
@@ -70,7 +68,7 @@ main()
 
 
 
-结果：
+动态图结果展示：
 
-![](./img/turtle2.png)
+![](./img/turtlesnow.gif)
 
