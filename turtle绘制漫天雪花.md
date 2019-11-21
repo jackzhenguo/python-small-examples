@@ -1,3 +1,12 @@
+---
+​---
+title: 例子卡片7 turtle绘制漫天雪花
+tags: turtle,draw
+​---
+---
+
+
+
 ### 导入模块
 
 导入 `turtle`库和 python的 `random`
