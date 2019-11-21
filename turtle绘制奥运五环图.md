@@ -1,5 +1,5 @@
 ---
-title: 例子卡片8 turtle绘制奥运五环图
+title: 例子卡片8 turtle绘制奥运五环图.
 tags: turtle,draw
 ---
 
