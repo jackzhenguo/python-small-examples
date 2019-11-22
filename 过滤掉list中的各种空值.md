@@ -1,5 +1,6 @@
 ---
-过滤掉false值
+title: 过滤掉空值
+tags: list,filter,bool
 ---
 
 ```python

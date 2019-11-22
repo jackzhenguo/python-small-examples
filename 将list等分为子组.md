@@ -1,6 +1,8 @@
 ---
-# 将lst等分为size组，如果size不大于0，直接按一组返回。
+title: 将lst等分为size组，如果size不大于0，直接按一组返回。
+tags: list
 ---
+
 
 ```python
 from math import ceil

@@ -39,12 +39,12 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 9. [turtle绘制奥运五环图](turtle绘制奥运五环图.md)
 10. [turtle绘制漫天雪花](turtle绘制漫天雪花.md)
 11. [批量转化驼峰格式](数据库字段名批量转化驼峰格式.md)
-12. [将list等分为子组](./divide_list.md)
-13. [对象转换为可迭代类型](./cast_iterable.md)
-14. [fibonacci序列前n项](fibonacci.md)
-15. [过滤掉Python中的空值](filter_false.md)
-16. [返回字典的值最大的键值对的列表](max_pairs.md)
-17. [返回字典的值最小的键值对的列表](min_pairs.md)
+12. [将list等分为子组](./将list等分为子组.md)
+13. [对象转换为可迭代类型](./对象转换为可迭代类型.md)
+14. [生成fibonacci序列前n项](生成fibonacci序列前n项.md)
+15. [过滤掉list中的各种空值](过滤掉list中的各种空值.md)
+16. [返回字典值最大的键值对列表](返回字典值最大的键值对列表.md)
+17. [返回字典值最小的键值对列表](min_pairs.md)
 18. 
 
 更多例子，正在每天更新...
