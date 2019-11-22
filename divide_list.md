@@ -1,7 +1,9 @@
-from math import ceil
-
+---
 # 将lst等分为size组，如果size不大于0，直接按一组返回。
+---
 
+```python
+from math import ceil
 
 def divide(lst, size):
     if size <= 0:

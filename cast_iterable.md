@@ -1,11 +1,15 @@
-# 映射非可迭代对象为可迭代对象
+---
+映射非可迭代对象为可迭代对象
+---
+
+```python
 from collections.abc import Iterable
 
-
+```python
 def cast_iterable(val):
     return val if isinstance(val, Iterable) else [val]
 
-
+```python
 print(cast_iterable('foo'))
 print(cast_iterable(12))
 print(cast_iterable({'foo': 12}))
