@@ -1,9 +1,3 @@
----
-title: 查找指定后缀名的文件
-tags: os
----
-
-```python
 import os
 
 def find_file(work_dir,extension='jpg'):
@@ -18,5 +12,3 @@ def find_file(work_dir,extension='jpg'):
 
 r = find_file('.','md') 
 print(r) # 返回所有目录下的md文件
-```
-

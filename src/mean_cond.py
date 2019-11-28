@@ -1,9 +1,4 @@
----
-title: 去掉最高分、最低分求平均
-tags: list
----
-
-```python
+# 去掉最高分、最低分求平均
 
 #方法1：
 def score_mean(lst):
@@ -19,4 +14,3 @@ lst.remove(min(lst))
 lst.remove(max(lst))
 print(lst)
 print(round(sum(lst)/len(lst),1))
-```
