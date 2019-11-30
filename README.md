@@ -41,8 +41,16 @@ def max_length(*lst):
 max_length([1, 2, 3], [4, 5, 6, 7], [8]) # [4, 5, 6, 7]
 
 ```
+4. 返回更短列表
+```python
+def min_length(*lst):
+    return min(*lst, key=lambda v: len(v))
 
-4. 合并两个字典
+min_length([1, 2, 3], [4, 5, 6, 7], [8]) # [8]
+
+```
+
+5. 合并两个字典
 ```python
 def merge_dict(dic1, dic2):
     return {**dic1, **dic2} 
@@ -50,7 +58,7 @@ def merge_dict(dic1, dic2):
 merge_dict({'a': 1, 'b': 2}, {'c': 3})  # {'a': 1, 'b': 2, 'c': 3}
 ```
 
-5. 列表反转
+6. 列表反转
 ```python
 def reverse(lst):
     return lst[::-1]
@@ -58,7 +66,7 @@ def reverse(lst):
 r = reverse([1, -2, 3, 4, 1, 2]) # [2, 1, 4, 3, -2, 1]
 ```
 
-6. 等分list
+7. 等分list
 ```python
 from math import ceil
 
@@ -74,7 +82,8 @@ def divide_iter(lst, n):
 list(divide_iter([1, 2, 3, 4, 5], 0))  # [[1, 2, 3, 4, 5]]
 list(divide_iter([1, 2, 3, 4, 5], 2))  # [[1, 2, 3], [4, 5]]
 ```
-7. 查找指定后缀的文件
+
+8. 查找指定后缀的文件
 ```python
 import os
 
@@ -91,7 +100,7 @@ def find_file(work_dir,extension='jpg'):
 r = find_file('.','md')  # 返回所有目录下的md文件
 ```
 
-8. 多列表最大值
+9. 多列表最大值
 ```python 
 def max_lists(*lst):
     return max(max(*lst, key=lambda v: max(v)))
@@ -99,7 +108,7 @@ def max_lists(*lst):
 max_lists([1, 2, 3], [6, 7, 8], [4, 5])# 8
 ```
 
-9. 多列表最小值
+10. 多列表最小值
 ```python
 def min_lists(*lst):
     return min(min(*lst, key=lambda v: max(v)))
@@ -107,7 +116,7 @@ def min_lists(*lst):
 min_lists([1, 2, 3], [6, 7, 8], [4, 5])# 1 
 ```
 
-10. 出现最多元素
+11. 出现最多元素
 ```python
 def max_frequency(lst):
     return max(lst, default='列表为空', key=lambda v: lst.count(v))
@@ -117,7 +126,7 @@ lst = [1, 3, 3, 2, 1, 1, 2]
 r = max_frequency(lst)
 print(f'{lst}中出现次数最多的元素为:{r}')  # [1, 3, 3, 2, 1, 1, 2]中出现次数最多的元素为:1
 ```
-11. 打印99乘法表
+12. 打印99乘法表
 ```python
 for i in range(1,10):
     for j in range(1,i+1):
@@ -136,7 +145,7 @@ for i in range(1,10):
 1*8=8   2*8=16  3*8=24  4*8=32  5*8=40  6*8=48  7*8=56  8*8=64
 1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81
 ```
-12. 字符串的字节长
+13. 字符串的字节长
 ```python
 def str_byte_len(mystr):
     return (len(mystr.encode('utf-8')))
