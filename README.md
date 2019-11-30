@@ -16,7 +16,7 @@
 
 #### 小例子列表
 
-1. 交换两个元素
+1.交换两个元素
 
 ```python
 def swap(a, b):
@@ -24,56 +24,56 @@ def swap(a, b):
     
 swap(1, 0)  # (0,1)
 ```
-2. 反转list
+2.反转list
 ```python
 def reverse(lst):
     return lst[::-1]
     
 reverse([1,2,3]) # [3,2,1]
 ```
-3. 重复判断
+3.重复判断
 ```python
 def duplicated(lst):
     return len(set(lst))!=len(lst)
     
 duplicated([1,2,2,3]) # True:有重复
 ```
-4. 次数最多
+4.次数最多
 ```python
 def top1(lst):
     return max(lst, default='列表为空', key=lambda v: lst.count(v))
     
 top1([1,2,3,3]) # 3
 ```
-5. 更长列表
+5.更长列表
 ```python
 def longer(*lst):
     return max(*lst, key=lambda v: len(v))
     
 longer([1],[1,2],[1,2,3],[4,5]) #[1,2,3]
 ```
-6. 表头
+6.表头
 ```python
 def head(lst):
     return lst[0] if len(lst) > 0 else None
     
 head([3,2,4,1,5]) # 3
 ```
-7. 表尾
+7.表尾
 ```python
 def tail(lst):
     return lst[-1] if len(lst) > 0 else None
 
 tail([3,2,4,1,5]) # 5
 ```
-8. 元素对
+8.元素对
 ```python
 def pair(t):
     return list(zip(t[:-1],t[1:]))
 
 pair([1,2,3]) # [(1, 2), (2, 3)]
 ```
-9. 等分list
+9.等分list
 
 ```python
 from math import ceil
@@ -90,7 +90,7 @@ def divide_iter(lst, n):
 list(divide_iter([1, 2, 3, 4, 5], 0))  # [[1, 2, 3, 4, 5]]
 list(divide_iter([1, 2, 3, 4, 5], 2))  # [[1, 2, 3], [4, 5]]
 ```
-10. 多列表最大值
+10.多列表最大值
 
 ```python
 def max_lists(*lst):
@@ -99,7 +99,7 @@ def max_lists(*lst):
 max_lists([1, 2, 3], [6, 7, 8], [4, 5])# 8
 ```
 
-11. 多列表最小值
+11.多列表最小值
 
 ```python
 def min_lists(*lst):
@@ -107,7 +107,7 @@ def min_lists(*lst):
 
 min_lists([1, 2, 3], [6, 7, 8], [4, 5])# 1 
 ```
-12. 字典合并
+12.字典合并
 
 ```python
 def merge(d1,d2):
@@ -115,7 +115,7 @@ def merge(d1,d2):
 
 merge({'a':1,'b':2},{'c':3}) # {'a': 1, 'b': 2, 'c': 3}
 ```
-13. 合并差集
+13.合并差集
 
 ```python
 def difference(d1,d2):
@@ -123,7 +123,7 @@ def difference(d1,d2):
 
 differece({'a':1,'b':2,'c':3},{'b':2}) # {'a': 1, 'c': 3}
 ```
-14. 字典排序
+14.字典排序
 
 ```python
 def sort_by_key(d):
@@ -132,7 +132,7 @@ def sort_by_key(d):
 sort_by_key({'a':3,'b':1,'c':2}) # [('a', 3), ('b', 1), ('c', 2)]
 ```
 
-15. 字符串的字节长
+15.字符串的字节长
 
 ```python
 def str_byte_len(mystr):
@@ -141,7 +141,7 @@ def str_byte_len(mystr):
 str_byte_len('i love python')  # 13(个字节)
 ```
 
-16. 求斐波那契数列前n项
+16.求斐波那契数列前n项
 
 ```python
 def fibonacci(n):
@@ -152,7 +152,7 @@ def fibonacci(n):
 list(fibonacci(5))  # [1, 1, 2, 3, 5]
 ```
 
-17. 查找指定后缀的文件
+17.查找指定后缀的文件
 
 ```python
 import os
@@ -170,7 +170,7 @@ def find_file(work_dir,extension='jpg'):
 r = find_file('.','md')  # 返回所有目录下的md文件
 ```
 
-18. 打印99乘法表
+18.打印99乘法表
 
 ```python
 for i in range(1,10):
@@ -193,7 +193,7 @@ for i in range(1,10):
 1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81
 ```
 
-20. 绘制雪花
+19. 绘制雪花
 
 ```python
 import turtle as p
