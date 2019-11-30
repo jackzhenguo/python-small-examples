@@ -96,10 +96,18 @@ r = find_file('.','md')  # 返回所有目录下的md文件
 def max_lists(*lst):
     return max(max(*lst, key=lambda v: max(v)))
 
-
 max_lists([1, 2, 3], [6, 7, 8], [4, 5])# 8
 ```
-9. 出现最多元素
+
+9. 多列表最小值
+```python
+def min_lists(*lst):
+    return min(min(*lst, key=lambda v: max(v)))
+
+min_lists([1, 2, 3], [6, 7, 8], [4, 5])# 1 
+```
+
+10. 出现最多元素
 ```python
 def max_frequency(lst):
     return max(lst, default='列表为空', key=lambda v: lst.count(v))
@@ -109,7 +117,7 @@ lst = [1, 3, 3, 2, 1, 1, 2]
 r = max_frequency(lst)
 print(f'{lst}中出现次数最多的元素为:{r}')  # [1, 3, 3, 2, 1, 1, 2]中出现次数最多的元素为:1
 ```
-10. 打印99乘法表
+11. 打印99乘法表
 ```python
 for i in range(1,10):
     for j in range(1,i+1):
@@ -128,7 +136,7 @@ for i in range(1,10):
 1*8=8   2*8=16  3*8=24  4*8=32  5*8=40  6*8=48  7*8=56  8*8=64
 1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81
 ```
-11. 字符串的字节长
+12. 字符串的字节长
 ```python
 def str_byte_len(mystr):
     return (len(mystr.encode('utf-8')))
