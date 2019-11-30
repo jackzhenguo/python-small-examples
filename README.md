@@ -1,12 +1,11 @@
 ### Python 小例子
 
-#### 关于此库
-
-Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学、机器学习、TensorFlow、Pytorch，你能想到的基于Python的小Demo都在这里。
+告别枯燥，60秒学会一个Python小例子。Python基础、Web开发、数据科学、机器学习的精简小例子都在这里。
 
 #### 欢迎贡献
 
 比如github账号为`lhxon`的小伙伴，fork此库后，按照如下步骤贡献：
+
 ```markdown
 1. git clone https://github.com/lhxon/python-small-examples
 2. git add . 
@@ -16,57 +15,66 @@ Python小例子、小Demo一网打尽。Python基础、Web开发、数据科学�
 ```
 
 #### 小例子列表
+
 1. 交换两个元素
+
 ```python
 def swap(a, b):
     return b, a
-print(swap(1, 0))  # (0,1)
-```
-
-2. 求斐波那契数列前n项
-```python
-def fibonacci(n):
-    a, b = 1, 1
-    for _ in range(n):
-        yield a
-        a, b = b, a + b
-list(fibonacci(5))  # [1, 1, 2, 3, 5]
-```
-
-3. 返回更长列表
-```python
-def max_length(*lst):
-    return max(*lst, key=lambda v: len(v))
-
-max_length([1, 2, 3], [4, 5, 6, 7], [8]) # [4, 5, 6, 7]
-
-```
-4. 返回更短列表
-```python
-def min_length(*lst):
-    return min(*lst, key=lambda v: len(v))
-
-min_length([1, 2, 3], [4, 5, 6, 7], [8]) # [8]
-
-```
-
-5. 合并两个字典
-```python
-def merge_dict(dic1, dic2):
-    return {**dic1, **dic2} 
     
-merge_dict({'a': 1, 'b': 2}, {'c': 3})  # {'a': 1, 'b': 2, 'c': 3}
+swap(1, 0)  # (0,1)
 ```
-
-6. 列表反转
+2. 反转list
 ```python
 def reverse(lst):
     return lst[::-1]
     
-r = reverse([1, -2, 3, 4, 1, 2]) # [2, 1, 4, 3, -2, 1]
+reverse([1,2,3]) # [3,2,1]
 ```
+3. 重复判断
+```python
+def duplicated(lst):
+    return len(set(lst))!=len(lst)
+    
+duplicated([1,2,2,3]) # True:有重复
+```
+4. 次数最多
+```python
+def top1(lst):
+    return max(lst, default='列表为空', key=lambda v: lst.count(v))
+    
+top1([1,2,3,3]) # 3
+```
+5. 更长列表
+```python
+def longer(*lst):
+    return max(*lst, key=lambda v: len(v))
+    
+longer([1],[1,2],[1,2,3],[4,5]) #[1,2,3]
+```
+6. 表头
+```python
+def head(lst):
+    return lst[0] if len(lst) > 0 else None
+    
+head([3,2,4,1,5]) # 3
+```
+7. 表尾
+```python
+def tail(lst):
+    return lst[-1] if len(lst) > 0 else None
 
-7. 等分list
+tail([3,2,4,1,5]) # 5
+```
+8. 元素对
+```python
+def pair(t):
+    return list(zip(t[:-1],t[1:]))
+
+pair([1,2,3]) # [(1, 2), (2, 3)]
+```
+9. 等分list
+
 ```python
 from math import ceil
 
@@ -82,8 +90,70 @@ def divide_iter(lst, n):
 list(divide_iter([1, 2, 3, 4, 5], 0))  # [[1, 2, 3, 4, 5]]
 list(divide_iter([1, 2, 3, 4, 5], 2))  # [[1, 2, 3], [4, 5]]
 ```
+10. 多列表最大值
 
-8. 查找指定后缀的文件
+```python
+def max_lists(*lst):
+    return max(max(*lst, key=lambda v: max(v)))
+
+max_lists([1, 2, 3], [6, 7, 8], [4, 5])# 8
+```
+
+11. 多列表最小值
+
+```python
+def min_lists(*lst):
+    return min(min(*lst, key=lambda v: max(v)))
+
+min_lists([1, 2, 3], [6, 7, 8], [4, 5])# 1 
+```
+12. 字典合并
+
+```python
+def merge(d1,d2):
+    return {**d1,**d2}
+
+merge({'a':1,'b':2},{'c':3}) # {'a': 1, 'b': 2, 'c': 3}
+```
+13. 合并差集
+
+```python
+def difference(d1,d2):
+    return dict([(k,v) for k,v in d1.items() if k not in d2])
+
+differece({'a':1,'b':2,'c':3},{'b':2}) # {'a': 1, 'c': 3}
+```
+14. 字典排序
+
+```python
+def sort_by_key(d):
+    return sorted(d.items(),key=lambda x: x[0])
+
+sort_by_key({'a':3,'b':1,'c':2}) # [('a', 3), ('b', 1), ('c', 2)]
+```
+
+15. 字符串的字节长
+
+```python
+def str_byte_len(mystr):
+    return (len(mystr.encode('utf-8')))
+
+str_byte_len('i love python')  # 13(个字节)
+```
+
+16. 求斐波那契数列前n项
+
+```python
+def fibonacci(n):
+    a, b = 1, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+list(fibonacci(5))  # [1, 1, 2, 3, 5]
+```
+
+17. 查找指定后缀的文件
+
 ```python
 import os
 
@@ -100,40 +170,17 @@ def find_file(work_dir,extension='jpg'):
 r = find_file('.','md')  # 返回所有目录下的md文件
 ```
 
-9. 多列表最大值
-```python 
-def max_lists(*lst):
-    return max(max(*lst, key=lambda v: max(v)))
+18. 打印99乘法表
 
-max_lists([1, 2, 3], [6, 7, 8], [4, 5])# 8
-```
-
-10. 多列表最小值
-```python
-def min_lists(*lst):
-    return min(min(*lst, key=lambda v: max(v)))
-
-min_lists([1, 2, 3], [6, 7, 8], [4, 5])# 1 
-```
-
-11. 出现最多元素
-```python
-def max_frequency(lst):
-    return max(lst, default='列表为空', key=lambda v: lst.count(v))
-
-
-lst = [1, 3, 3, 2, 1, 1, 2]
-r = max_frequency(lst)
-print(f'{lst}中出现次数最多的元素为:{r}')  # [1, 3, 3, 2, 1, 1, 2]中出现次数最多的元素为:1
-```
-12. 打印99乘法表
 ```python
 for i in range(1,10):
     for j in range(1,i+1):
         print('{0}*{1}={2}'.format(j,i,j*i),end="\t")
     print()
 ```
+
 结果：
+
 ```markdown
 1*1=1
 1*2=2   2*2=4
@@ -145,14 +192,9 @@ for i in range(1,10):
 1*8=8   2*8=16  3*8=24  4*8=32  5*8=40  6*8=48  7*8=56  8*8=64
 1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81
 ```
-13. 字符串的字节长
-```python
-def str_byte_len(mystr):
-    return (len(mystr.encode('utf-8')))
 
-str_byte_len('i love python')  # 13(个字节)
-```
-14. 绘制雪花
+20. 绘制雪花
+
 ```python
 import turtle as p
 import random
@@ -174,9 +216,7 @@ def snow(snow_count):
         for _ in range(dens):
             p.forward(snowsize)  # 向当前画笔方向移动snowsize像素长度
             p.backward(snowsize)  # 向当前画笔相反方向移动snowsize像素长度
-            p.right(360 / dens)  # 顺时针移动360 / dens度
-
-        
+            p.right(360 / dens)  # 顺时针移动360 / dens度   
 def main():
     p.setup(800, 600, 0, 0)
     p.bgcolor("black")
@@ -186,8 +226,8 @@ def main():
 main()
 
 ```
-
-<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="宽度" height="高度" alt="图片名称" align=center>
+<!-- ![漫天雪花](./img/turtlesnow.gif) -->
+<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="300" alt="图片名称" align=center>
 
 [更多小例子](./md/README.md)
 
