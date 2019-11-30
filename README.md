@@ -4,7 +4,7 @@
 
 #### 欢迎贡献
 
-比如github账号为`lhxon`的小伙伴，fork此库后，按照如下步骤贡献：
+比如github账号为`lhxon`的小伙伴，fork此库后，按照如下步骤提交到此库：
 
 ```markdown
 1. git clone https://github.com/lhxon/python-small-examples
@@ -227,7 +227,7 @@ main()
 
 ```
 <!-- ![漫天雪花](./img/turtlesnow.gif) -->
-<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="300" alt="图片名称" align=center>
+<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
 
 [更多小例子](./md/README.md)
 
