@@ -186,9 +186,8 @@ def main():
 main()
 
 ```
-<!-- ![漫天雪花](./img/turtlesnow.gif) -->
-<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="400" height="260" >
 
+<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="宽度" height="高度" alt="图片名称" align=center>
 
 [更多小例子](./md/README.md)
 
