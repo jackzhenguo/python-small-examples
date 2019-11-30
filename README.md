@@ -186,7 +186,7 @@ def main():
 main()
 
 ```
-![漫天雪花](./img/turtlesnow2.gif)
+![漫天雪花](./img/turtlesnow.gif)
 
 
 
