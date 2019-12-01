@@ -226,6 +226,33 @@ def main():
 main()
 
 ```
+
+20.词频云图
+```python
+---
+title: 词频云图
+tags: hashlib,pandas,wordcloud
+---
+
+```python
+import hashlib
+import pandas as pd
+from wordcloud import WordCloud
+geo_data=pd.read_excel(r"../data/geo_data.xlsx")
+words = ','.join(x for x in geo_data['city'] if x != []) #筛选出非空列表值
+wc = WordCloud(
+    background_color="green", #背景颜色"green"绿色
+    max_words=100, #显示最大词数
+    font_path='./fonts/simhei.ttf', #显示中文
+    min_font_size=5,
+    max_font_size=100,
+    width=500  #图幅宽度
+    )
+x = wc.generate(words)
+x.to_file('../data/geo_data.png')
+```
+![词频云图](../data/geo_data.png)
+
 <!-- ![漫天雪花](./img/turtlesnow.gif) -->
 <img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
 
