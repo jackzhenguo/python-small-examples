@@ -98,6 +98,7 @@ swap(1, 0)  # (0,1)
 #### 二、基础算法
 
 1  [二分搜索](二分搜索.md)
+
 ```python
 def binarySearch(arr, left, right, x):
     while left <= right:
@@ -420,7 +421,7 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 
 
 
-<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
+<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="400" height="300" alt="图片名称" align=center>
 
 
 
