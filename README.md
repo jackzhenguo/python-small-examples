@@ -15,17 +15,18 @@
 ```
 #### 基本操作
 
-1. 环境搭建基本概念
-pycharm，python解释器，conda安装，pip安装，详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
+1  环境搭建基本概念
+pycharm，python解释器，conda安装，pip安装。
+详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
 2. 修改为国内镜像 
 [conda国内镜像修改(最新版)](conda国内镜像修改(最新版).md)
-3. 链式比较
+3  链式比较
 ```python
 i = 3
 print(1 < i < 3)  # False
 print(1 < i <= 3)  # True
 ```
-4. 不用else和if实现计算器
+4  不用else和if实现计算器
 ```python
 from operator import *
 
@@ -41,7 +42,7 @@ def calculator(a, b, k):
 calculator(1, 2, '+')  # 3
 calculator(3, 4, '**')  # 81
 ```
-5. 函数链
+5  函数链
 ```python
 from operator import (add, sub)
 
@@ -50,7 +51,7 @@ def add_or_sub(a, b, oper):
 
 add_or_sub(1, 2, '-')  # -1
 ```
-6. 求字符串的字节长度
+6  求字符串的字节长度
 ```python
 def str_byte_len(mystr):
     return (len(mystr.encode('utf-8')))
@@ -58,7 +59,7 @@ def str_byte_len(mystr):
 str_byte_len('i love python')  # 13(个字节)
 str_byte_len('字符')  # 6(个字节)
 ```
-7. 寻找第n次出现位置
+7  寻找第n次出现位置
 ```python
 def search_n(s, c, n):
     size = 0
@@ -72,7 +73,7 @@ def search_n(s, c, n):
 print(search_n("fdasadfadf", "a", 3))# 结果为7，正确
 print(search_n("fdasadfadf", "a", 30))# 结果为-1，正确
 ```
-8. 去掉最高最低求平均
+8  去掉最高最低求平均
 ```python
 def score_mean(lst):
     lst.sort()
@@ -81,7 +82,7 @@ def score_mean(lst):
 
 score_mean([9.1, 9.0,8.1, 9.7, 19,8.2, 8.6,9.8]) # 9.07
 ```
-9.  交换元素
+9  交换元素
 ```python
 def swap(a, b):
     return b, a
@@ -91,7 +92,7 @@ swap(1, 0)  # (0,1)
 
 #### 基础算法
 
-1. 二分搜索
+1  二分搜索
 ```python
 def binarySearch(arr, left, right, x):
     while left <= right:
@@ -115,7 +116,7 @@ def binarySearch(arr, left, right, x):
 ```
 更多细节查看：[二分搜索](二分搜索.md)
 
-2. [距离矩阵](距离矩阵.md)
+2   [距离矩阵](距离矩阵.md)
 ```python
 x,y = mgrid[0:5,0:5]
 list(map(lambda xe,ye: [(ex,ey) for ex, ey in zip(xe, ye)], x,y))
@@ -128,7 +129,7 @@ list(map(lambda xe,ye: [(ex,ey) for ex, ey in zip(xe, ye)], x,y))
 
 #### 列表
 
-1. [打印乘法表](打印乘法表.md)
+1 [打印乘法表](打印乘法表.md)
 ```python
 for i in range(1,10):
     for j in range(1,i+1):
@@ -147,7 +148,7 @@ for i in range(1,10):
 1*8=8   2*8=16  3*8=24  4*8=32  5*8=40  6*8=48  7*8=56  8*8=64
 1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81
 ```
-2. [嵌套数组完全展开](嵌套数组完全展开.md)
+2 [嵌套数组完全展开](嵌套数组完全展开.md)
 ```python
 from collections.abc import *
 
@@ -163,7 +164,7 @@ def flatten(input_arr, output_arr=None):
 
 flatten([[1,2,3],[4,5]], [6,7]) # [6, 7, 1, 2, 3, 4, 5]
 ```
-3. [将list等分为子组](./将list等分为子组.md)
+3  [将list等分为子组](./将list等分为子组.md)
 ```python
 from math import ceil
 
@@ -174,7 +175,7 @@ def divide(lst, size):
 
 r = divide([1, 3, 5, 7, 9], 2) # [[1, 3], [5, 7], [9]]
 ```
-4. [生成fibonacci序列前n项](生成fibonacci序列前n项.md)
+4  [生成fibonacci序列前n项](生成fibonacci序列前n项.md)
 ```python
 def fibonacci(n):
     if n <= 1:
@@ -186,14 +187,14 @@ def fibonacci(n):
 
 fibonacci(5)  # [1, 1, 2, 3, 5]
 ```
-5. [过滤掉各种空值](过滤掉list中的各种空值.md)
+5   [过滤掉各种空值](过滤掉list中的各种空值.md)
 ```python
 def filter_false(lst):
     return list(filter(bool, lst))
 
 filter_false([None, 0, False, '', [], 'ok', [1, 2]])# ['ok', [1, 2]]
 ```
-6. [返回列表头元素](返回列表头元素.md)
+6   [返回列表头元素](返回列表头元素.md)
 ```python
 def head(lst):
     return lst[0] if len(lst) > 0 else None
@@ -201,7 +202,7 @@ def head(lst):
 head([])  # None
 head([3, 4, 1])  # 3
 ```
-7. [返回列表尾元素](返回列表尾元素.md)
+7   [返回列表尾元素](返回列表尾元素.md)
 ```python
 def tail(lst):
     return lst[-1] if len(lst) > 0 else None
@@ -209,7 +210,7 @@ def tail(lst):
 print(tail([]))  # None
 print(tail([3, 4, 1]))  # 1
 ```
-8. [对象转换为可迭代类型](./对象转换为可迭代类型.md)
+8   [对象转换为可迭代类型](./对象转换为可迭代类型.md)
 ```python
 from collections.abc import Iterable
 
@@ -220,14 +221,14 @@ cast_iterable('foo')# foo
 cast_iterable(12)# [12]
 cast_iterable({'foo': 12})# {'foo': 12}
 ```
-9. [求更长列表](求更长列表.md)
+9  [求更长列表](求更长列表.md)
 ```python
 def max_length(*lst):
     return max(*lst, key=lambda v: len(v))
 
 r = max_length([1, 2, 3], [4, 5, 6, 7], [8])# [4, 5, 6, 7]
 ```
-10. [出现最多元素](统计出现次数最多的元素.md)
+10  [出现最多元素](统计出现次数最多的元素.md)
 ```python
 def max_frequency(lst):
     return max(lst, default='列表为空', key=lambda v: lst.count(v))
@@ -235,21 +236,21 @@ def max_frequency(lst):
 lst = [1, 3, 3, 2, 1, 1, 2]
 max_frequency(lst) # 1 
 ```
-11. [求多个列表的最大值](求多个列表的最大值.md)
+11  [求多个列表的最大值](求多个列表的最大值.md)
 ```python
 def max_lists(*lst):
     return max(max(*lst, key=lambda v: max(v)))
 
 max_lists([1, 2, 3], [6, 7, 8], [4, 5]) # 8
 ```
-12. [求多个列表的最小值](求多个列表的最小值.md)
+12  [求多个列表的最小值](求多个列表的最小值.md)
 ```python
 def min_lists(*lst):
     return min(min(*lst, key=lambda v: max(v)))
 
 min_lists([1, 2, 3], [6, 7, 8], [4, 5]) # 1
 ```
-13. [检查list是否有重复元素](检查list是否有重复元素.md)
+13  [检查list是否有重复元素](检查list是否有重复元素.md)
 ```python
 def has_duplicates(lst):
     return len(lst) == len(set(lst))
@@ -259,7 +260,7 @@ y = [1, 2, 3, 4, 5]
 has_duplicates(x)  # False
 has_duplicates(y)  # True
 ```
-14. [求列表中所有重复元素](求列表中所有重复元素.md)
+14  [求列表中所有重复元素](求列表中所有重复元素.md)
 ```python
 from collections import Counter
 
@@ -269,14 +270,14 @@ def find_all_duplicates(lst):
 
 find_all_duplicates([1, 2, 2, 3, 3, 3])  # [2,3]
 ```
-16. [列表反转](列表反转.md)
+15   [列表反转](列表反转.md)
 ```python
 def reverse(lst):
     return lst[::-1]
 
 reverse([1, -2, 3, 4, 1, 2])# [2, 1, 4, 3, -2, 1]
 ```
-18. [浮点数等差数列](浮点数等差数列.md)
+16   [浮点数等差数列](浮点数等差数列.md)
 ```python
 def rang(start, stop, n):
     start,stop,n = float('%.2f' % start), float('%.2f' % stop),int('%.d' % n)
@@ -292,7 +293,7 @@ rang(1, 8, 10) # [1.0, 1.7, 2.4, 3.1, 3.8, 4.5, 5.2, 5.9, 6.6, 7.3, 8.0]
 
 #### 字典
 
-1. [字典值最大的键值对列表](返回字典值最大的键值对列表.md)
+1  [字典值最大的键值对列表](返回字典值最大的键值对列表.md)
 ```python
 def max_pairs(dic):
     if len(dic) == 0:
@@ -302,7 +303,7 @@ def max_pairs(dic):
 
 max_pairs({'a': -10, 'b': 5, 'c': 3, 'd': 5})# [('b', 5), ('d', 5)]
 ```
-2. [字典值最小的键值对列表](返回字典值最小的键值对列表.md)
+2  [字典值最小的键值对列表](返回字典值最小的键值对列表.md)
 ```python
 def min_pairs(dic):
     if len(dic) == 0:
@@ -316,14 +317,14 @@ min_pairs({}) # []
 r = min_pairs({'a': -10, 'b': 5, 'c': 3, 'd': 5})
 print(r)  # [('b', 5), ('d', 5)]
 ```
-3. [合并两个字典](合并两个字典.md)
+3 [合并两个字典](合并两个字典.md)
 ```python
 def merge_dict2(dic1, dic2):
     return {**dic1, **dic2}  # python3.5后支持的一行代码实现合并字典
 
 merge_dict({'a': 1, 'b': 2}, {'c': 3})  # {'a': 1, 'b': 2, 'c': 3}
 ```
-4. [求字典前n个最大值](求字典前n个最大值.md)
+4 [求字典前n个最大值](求字典前n个最大值.md)
 ```python
 from heapq import nlargest
 
@@ -333,7 +334,7 @@ def topn_dict(d, n):
 
 topn_dict({'a': 10, 'b': 8, 'c': 9, 'd': 10}, 3)  # ['a', 'd', 'c']
 ```
-5. [求最小键值对](求最小键值对.md)
+5  [求最小键值对](求最小键值对.md)
 ```python
 d={'a':-10,'b':5, 'c':3,'d':5}
 min(d.items(),key=lambda x:x[1]) #('a', -10)
@@ -341,7 +342,7 @@ min(d.items(),key=lambda x:x[1]) #('a', -10)
 
 #### 集合
 
-1. [互为变位词](是否相同字母但顺序不同.md)
+1 [互为变位词](是否相同字母但顺序不同.md)
 ```python
 from collections import Counter
 # 检查两个字符串是否 相同字母异序词，简称：互为变位词
@@ -354,9 +355,9 @@ anagram('eleven', 'twelve')  # False
 
 #### 文件操作
 
-1. [批量修改后缀名](./批量修改后缀名.md)
-2. [返回两个文件的不同行的编号](返回两个文件的不同行的编号.md)
-3. [查找指定文件格式文件](查找指定文件格式文件.md)
+1 [批量修改后缀名](./批量修改后缀名.md)
+2 [返回两个文件的不同行的编号](返回两个文件的不同行的编号.md)
+3 [查找指定文件格式文件](查找指定文件格式文件.md)
 ```python
 import os
 
@@ -375,9 +376,9 @@ find_file('.','md') # 返回所有目录下的md文件
 
 #### 正则和爬虫
 
-1. [判断密码是否合法](判断密码是否合法.md)
-2. [爬取天气数据并解析温度值](爬取天气数据并解析温度值.md)
-3. [批量转化驼峰格式](批量转化为驼峰格式.md)
+1 [判断密码是否合法](判断密码是否合法.md)
+2 [爬取天气数据并解析温度值](爬取天气数据并解析温度值.md)
+3 [批量转化驼峰格式](批量转化为驼峰格式.md)
 ```python
 import re
 def camel(s):
@@ -393,13 +394,14 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 ```
 #### 绘图
 
-1. [turtle绘制奥运五环图](turtle绘制奥运五环图.md)
+1 [turtle绘制奥运五环图](turtle绘制奥运五环图.md)
+结果：
 ![五环图](./img/turtle1.png)
-2. [turtle绘制漫天雪花](turtle绘制漫天雪花.md)
+2 [turtle绘制漫天雪花](turtle绘制漫天雪花.md)
 结果：
 <img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
-3. [4种不同颜色的色块，它们的颜色真的不同吗？](4种不同颜色的色块，它们的颜色真的不同吗？.md)
-4. [词频云图](词频云图.md)
+3 [4种不同颜色的色块，它们的颜色真的不同吗？](4种不同颜色的色块，它们的颜色真的不同吗？.md)
+4 [词频云图](词频云图.md)
 ```python
 import hashlib
 import pandas as pd
@@ -421,7 +423,7 @@ x.to_file('../data/geo_data.png')
 
 #### 生成器
 
-1. [求斐波那契数列前n项(生成器版)](求斐波那契数列前n项(生成器版).md)
+1 [求斐波那契数列前n项(生成器版)](求斐波那契数列前n项(生成器版).md)
 ```python
 def fibonacci(n):
     a, b = 1, 1
@@ -431,7 +433,7 @@ def fibonacci(n):
 
 list(fibonacci(5))  # [1, 1, 2, 3, 5]
 ```
-2. [将list等分为子组(生成器版)](将list等分为子组(生成器版).md)
+2 [将list等分为子组(生成器版)](将list等分为子组(生成器版).md)
 ```python
 from math import ceil
 
@@ -450,7 +452,7 @@ list(divide_iter([1, 2, 3, 4, 5], 2))  # [[1, 2, 3], [4, 5]]
 
 #### keras
 
-1. [Keras入门例子](
+1 [Keras入门例子](
 ```python
 import numpy as np
 from keras.models import Sequential
