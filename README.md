@@ -97,7 +97,7 @@ swap(1, 0)  # (0,1)
 
 #### 二、基础算法
 
-1  二分搜索
+1  [二分搜索](二分搜索.md)
 ```python
 def binarySearch(arr, left, right, x):
     while left <= right:
@@ -119,7 +119,7 @@ def binarySearch(arr, left, right, x):
 
     return -1
 ```
-更多细节查看：[二分搜索](二分搜索.md)
+
 
 2   [距离矩阵](距离矩阵.md)
 ```python
@@ -362,8 +362,11 @@ anagram('eleven', 'twelve')  # False
 #### 六、文件操作
 
 1 [批量修改后缀名](./批量修改后缀名.md)
+
 2 [返回两个文件的不同行的编号](返回两个文件的不同行的编号.md)
+
 3 [查找指定文件格式文件](查找指定文件格式文件.md)
+
 ```python
 import os
 
@@ -383,8 +386,11 @@ find_file('.','md') # 返回所有目录下的md文件
 #### 七、正则和爬虫
 
 1 [判断密码是否合法](判断密码是否合法.md)
+
 2 [爬取天气数据并解析温度值](爬取天气数据并解析温度值.md)
+
 3 [批量转化驼峰格式](批量转化为驼峰格式.md)
+
 ```python
 import re
 def camel(s):
