@@ -17,6 +17,7 @@
 
 1  环境搭建基本概念
 pycharm，python解释器，conda安装，pip安装。
+
 详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
 
 2 修改为国内镜像 
@@ -400,12 +401,20 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 #### 八、绘图
 
 1 [turtle绘制奥运五环图](turtle绘制奥运五环图.md)
-结果：![五环图](./img/turtle1.png) 
+结果：
+
+
+
+![五环图](./img/turtle1.png) 
 
 
 
 2 [turtle绘制漫天雪花](turtle绘制漫天雪花.md)
-结果：<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
+结果：
+
+
+
+<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
 
 
 
