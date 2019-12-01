@@ -13,20 +13,24 @@
 4. git push
 5. 界面点击：pull requests，根据操作即可。如遇问题，欢迎联系我。
 ```
-#### 基本操作
+#### 一、基本操作
 
 1  环境搭建基本概念
 pycharm，python解释器，conda安装，pip安装。
 详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
+
 2 修改为国内镜像 
 [conda国内镜像修改(最新版)](conda国内镜像修改(最新版).md)
+
 3  链式比较
+
 ```python
 i = 3
 print(1 < i < 3)  # False
 print(1 < i <= 3)  # True
 ```
 4  不用else和if实现计算器
+
 ```python
 from operator import *
 
@@ -90,7 +94,7 @@ def swap(a, b):
 swap(1, 0)  # (0,1)
 ```
 
-#### 基础算法
+#### 二、基础算法
 
 1  二分搜索
 ```python
@@ -127,7 +131,7 @@ list(map(lambda xe,ye: [(ex,ey) for ex, ey in zip(xe, ye)], x,y))
  [(4, 0), (4, 1), (4, 2), (4, 3), (4, 4)]]
 ```
 
-#### 列表
+#### 三、列表
 
 1 [打印乘法表](打印乘法表.md)
 ```python
@@ -291,7 +295,7 @@ def rang(start, stop, n):
 rang(1, 8, 10) # [1.0, 1.7, 2.4, 3.1, 3.8, 4.5, 5.2, 5.9, 6.6, 7.3, 8.0]
 ```
 
-#### 字典
+#### 四、字典
 
 1  [字典值最大的键值对列表](返回字典值最大的键值对列表.md)
 ```python
@@ -340,9 +344,10 @@ d={'a':-10,'b':5, 'c':3,'d':5}
 min(d.items(),key=lambda x:x[1]) #('a', -10)
 ```
 
-#### 集合
+#### 五、集合
 
 1 [互为变位词](是否相同字母但顺序不同.md)
+
 ```python
 from collections import Counter
 # 检查两个字符串是否 相同字母异序词，简称：互为变位词
@@ -353,7 +358,7 @@ anagram('eleven+two', 'twelve+one')  # True 这是一对神器的变位词
 anagram('eleven', 'twelve')  # False
 ```
 
-#### 文件操作
+#### 六、文件操作
 
 1 [批量修改后缀名](./批量修改后缀名.md)
 2 [返回两个文件的不同行的编号](返回两个文件的不同行的编号.md)
@@ -374,7 +379,7 @@ def find_file(work_dir,extension='jpg'):
 find_file('.','md') # 返回所有目录下的md文件
 ```
 
-#### 正则和爬虫
+#### 七、正则和爬虫
 
 1 [判断密码是否合法](判断密码是否合法.md)
 2 [爬取天气数据并解析温度值](爬取天气数据并解析温度值.md)
@@ -392,17 +397,24 @@ def batch_camel(slist):
 batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'studentName', 'studentAdd']
 
 ```
-#### 绘图
+#### 八、绘图
 
 1 [turtle绘制奥运五环图](turtle绘制奥运五环图.md)
-结果：![五环图](./img/turtle1.png)
+结果：![五环图](./img/turtle1.png) 
+
+
 
 2 [turtle绘制漫天雪花](turtle绘制漫天雪花.md)
 结果：<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
 
+
+
 3 [4种不同颜色的色块，它们的颜色真的不同吗？](4种不同颜色的色块，它们的颜色真的不同吗？.md)
 
+
+
 4 [词频云图](词频云图.md)
+
 ```python
 import hashlib
 import pandas as pd
@@ -422,7 +434,7 @@ x.to_file('../data/geo_data.png')
 ```
 ![词频云图](./data/geo_data.png)
 
-#### 生成器
+#### 八、生成器
 
 1 [求斐波那契数列前n项(生成器版)](求斐波那契数列前n项(生成器版).md)
 ```python
@@ -451,9 +463,10 @@ list(divide_iter([1, 2, 3, 4, 5], 0))  # [[1, 2, 3, 4, 5]]
 list(divide_iter([1, 2, 3, 4, 5], 2))  # [[1, 2, 3], [4, 5]]
 ```
 
-#### keras
+#### 九、keras
 
 1 [Keras入门例子](
+
 ```python
 import numpy as np
 from keras.models import Sequential
