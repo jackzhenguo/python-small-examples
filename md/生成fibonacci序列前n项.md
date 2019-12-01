@@ -5,8 +5,6 @@ tags: list
 
 
 ```python
-
-
 def fibonacci(n):
     if n <= 1:
         return [1]
@@ -21,3 +19,4 @@ print(r)
 
 r = fibonacci(5)  # [1, 1, 2, 3, 5]
 print(r)
+```
