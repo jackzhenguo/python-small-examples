@@ -226,13 +226,11 @@ def main():
 main()
 
 ```
+<!-- ![漫天雪花](./img/turtlesnow.gif) -->
+<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
+
 
 20.词频云图
-```python
----
-title: 词频云图
-tags: hashlib,pandas,wordcloud
----
 
 ```python
 import hashlib
@@ -253,8 +251,6 @@ x.to_file('../data/geo_data.png')
 ```
 ![词频云图](../data/geo_data.png)
 
-<!-- ![漫天雪花](./img/turtlesnow.gif) -->
-<img src="https://github.com/jackzhenguo/python-small-examples/blob/master/img/turtlesnow.gif" width="300" height="200" alt="图片名称" align=center>
 
 [更多小例子，请点击此处](./md/README.md)
 
