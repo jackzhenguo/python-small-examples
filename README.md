@@ -249,7 +249,7 @@ wc = WordCloud(
 x = wc.generate(words)
 x.to_file('../data/geo_data.png')
 ```
-![词频云图](../data/geo_data.png)
+![词频云图](./data/geo_data.png)
 
 
 [更多小例子，请点击此处](./md/README.md)
