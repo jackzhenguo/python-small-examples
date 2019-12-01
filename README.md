@@ -356,7 +356,7 @@ from collections import Counter
 def anagram(str1, str2):
     return Counter(str1) == Counter(str2)
 
-anagram('eleven+two', 'twelve+one')  # True 这是一对神器的变位词
+anagram('eleven+two', 'twelve+one')  # True 这是一对神奇的变位词
 anagram('eleven', 'twelve')  # False
 ```
 
@@ -481,7 +481,7 @@ list(divide_iter([1, 2, 3, 4, 5], 2))  # [[1, 2, 3], [4, 5]]
 
 #### 九、keras
 
-1 [Keras入门例子](
+1 [Keras入门例子](Keras入门例子.md)
 
 ```python
 import numpy as np
