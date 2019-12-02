@@ -14,13 +14,5 @@
 # print(store_count)
 
 
-def find_duplicated(lst):
-    ret = []
-    for x in lst:
-        if lst.count(x) > 1 and x not in ret:
-            ret.append(x)
-    return ret
-
-
-r = find_duplicated([1, 2, 3, 4, 3, 2])
-print(r)  # [2, 3]
+k = int(input())
+print(f"I just input: {k}")
