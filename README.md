@@ -566,7 +566,7 @@ sender_mail()
 
 <img src="./img/自动接收到的邮件.png" width="450" height="200" alt="图片名称" align=center>
 
-如果邮件带有附件，请参考这个带附件邮件群发小例子：[20行代码实现Python自动群发邮件](./md/自动群发邮件.md)
+邮件带有附件，请见另一个小例子：[Python群发带附件的邮件](./md/自动群发邮件.md)
 
 
 
