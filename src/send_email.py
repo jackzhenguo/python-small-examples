@@ -1,33 +1,29 @@
 import smtplib
-import time
-import xlrd
-from email import encoders
-from email.header import Header
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.utils import parseaddr, formataddr
-from email.mime.application import MIMEApplication
+from email import (header)
+from email.mime import (text, application, multipart)
 from datetime import date, datetime
+import time
 
 
 def sender_mail():
     smt_p = smtplib.SMTP()  # 创建对象
     smt_p.connect(host='smtp.qq.com', port=25)  # 设置smtp服务器
     sender = '113097485@qq.com'
-    password = "*****************"  # 在qq邮箱设置开启SMTP服务并复制授权码到password
+    password = "rmedemkcefbkbhjc"  # 在qq邮箱设置开启SMTP服务并复制授权码到password
     smt_p.login(sender, password)  # 进行邮箱登录一次，填写你本人的邮箱
-    receiver_addresses, count_num = ['guozhennianhua@163.com'], 1
+    receiver_addresses, count_num = [
+        'guozhennianhua@163.com', 'xiaoxiazi99@163.com'], 1
     for email_address in receiver_addresses:
         # 表格中邮箱格式不正确，如有空字符，在发邮件的时候会出现异常报错，捕获到这些异常就跳过
         try:
-            msg = MIMEMultipart()
+            msg = multipart.MIMEMultipart()
             msg['From'] = "zhenguo"  # 设置发邮件人
             msg['To'] = email_address  # 收件人
             # msg['Cc'] = 'guozhennianhua@163.com'
-            msg['subject'] = Header('通知', 'utf-8')  # 主题名称
-            msg.attach(
-                MIMEText('您好！\n这是一封测试邮件，使用Python实现自动发邮件，请勿回复本邮件功能~\n\n  祝您工作愉快！', 'plain', 'utf-8'))
-            xlsxpart = MIMEApplication(
+            msg['subject'] = header.Header('通知', 'utf-8')  # 主题名称
+            msg.attach(text.MIMEText(
+                '您好！\n这是一封测试邮件，使用Python实现自动发邮件，请勿回复本邮件功能~\n\n  祝您工作愉快！', 'plain', 'utf-8'))
+            xlsxpart = application.MIMEApplication(
                 open(r'./data/email_test.xlsx', 'rb').read())
             xlsxpart.add_header('Content-Disposition',
                                 'attachment', filename='1.xlsx')
