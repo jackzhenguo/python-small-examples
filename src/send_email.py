@@ -9,7 +9,7 @@ def sender_mail():
     smt_p = smtplib.SMTP()  # 创建对象
     smt_p.connect(host='smtp.qq.com', port=25)  # 设置smtp服务器
     sender = '113097485@qq.com'
-    password = "rmedemkcefbkbhjc"  # 在qq邮箱设置开启SMTP服务并复制授权码到password
+    password = "**********"  # 在qq邮箱设置开启SMTP服务并复制授权码到password
     smt_p.login(sender, password)  # 进行邮箱登录一次，填写你本人的邮箱
     receiver_addresses, count_num = [
         'guozhennianhua@163.com', 'xiaoxiazi99@163.com'], 1

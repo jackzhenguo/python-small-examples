@@ -525,57 +525,46 @@ predictions = model.predict(data)
 
 #### 十、邮件
 
-1 [使用Python实现群发邮件功能](./md/自动群发邮件.md)
+1 [20行代码实现Python自动群发邮件](./md/自动群发邮件.md)
 
 ```python
 import smtplib
 from email import (header)
 from email.mime import (text, application, multipart)
-from datetime import date, datetime
 import time
 
-
 def sender_mail():
-    smt_p = smtplib.SMTP()  # 创建对象
-    smt_p.connect(host='smtp.qq.com', port=25)  # 设置smtp服务器
-    sender = '113097485@qq.com' #更换为自己的邮箱
-    password = "****************"  # 在qq邮箱设置开启SMTP服务并复制授权码到password
-    smt_p.login(sender, password)  # 进行邮箱登录一次，填写你本人的邮箱
+    smt_p = smtplib.SMTP()
+    smt_p.connect(host='smtp.qq.com', port=25)
+    sender, password = '113097485@qq.com', "**************"
+    smt_p.login(sender, password)
     receiver_addresses, count_num = [
         'guozhennianhua@163.com', 'xiaoxiazi99@163.com'], 1
     for email_address in receiver_addresses:
         try:
             msg = multipart.MIMEMultipart()
-            msg['From'] = "zhenguo"  # 设置发邮件人
-            msg['To'] = email_address  # 收件人
-            # msg['Cc'] = 'guozhennianhua@163.com'
-            msg['subject'] = header.Header('通知', 'utf-8')  # 主题名称
+            msg['From'] = "zhenguo"
+            msg['To'] = email_address
+            msg['subject'] = header.Header('这是邮件主题通知', 'utf-8')
             msg.attach(text.MIMEText(
-                '您好！\n这是一封测试邮件，使用Python实现自动发邮件，请勿回复本邮件功能~\n\n  祝您工作愉快！', 'plain', 'utf-8'))
-            xlsxpart = application.MIMEApplication(
-                open(r'./data/email_test.xlsx', 'rb').read())
-            xlsxpart.add_header('Content-Disposition',
-                                'attachment', filename='1.xlsx')
-            msg.attach(xlsxpart)  # 添加邮件的附件
-            smt_p.sendmail(sender, email_address, msg.as_string())  # 发送邮件
-            time.sleep(10)  # sleep10秒避免发送频率过快，可能被判定垃圾邮件。
+                '这是一封测试邮件，请勿回复本邮件~', 'plain', 'utf-8'))
+            smt_p.sendmail(sender, email_address, msg.as_string())
+            time.sleep(10)
             print('第%d次发送给%s' % (count_num, email_address))
             count_num = count_num + 1
         except Exception as e:
             print('第%d次给%s发送邮件异常' % (count_num, email_address))
             continue
     smt_p.quit()
-
-
+    
 sender_mail()
-
 ```
 
 
 
 发送到`guozhennianhua@163.com`邮件截图：
 
-<img src="./img/自动接收到的邮件.png" width="400" height="300" alt="图片名称" align=center>
+<img src="./img/自动接收到的邮件.png" width="450" height="200" alt="图片名称" align=center>
 
 
 [更多小例子，请点击此处](./md/README.md)
