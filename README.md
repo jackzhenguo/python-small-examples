@@ -525,7 +525,7 @@ predictions = model.predict(data)
 
 #### 十、邮件
 
-1 [20行代码实现Python自动群发邮件](./md/自动群发邮件.md)
+1 20行代码实现Python自动群发邮件
 
 ```python
 import smtplib
@@ -565,6 +565,9 @@ sender_mail()
 发送到`guozhennianhua@163.com`邮件截图：
 
 <img src="./img/自动接收到的邮件.png" width="450" height="200" alt="图片名称" align=center>
+
+如果邮件带有附件，请参考这个带附件邮件群发小例子：[20行代码实现Python自动群发邮件](./md/自动群发邮件.md)
+
 
 
 [更多小例子，请点击此处](./md/README.md)
