@@ -8,74 +8,36 @@ from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
 from email.mime.application import MIMEApplication
 from datetime import date, datetime
-sender = '113097485@qq.com'
-receiver = '113097485@qq.com'
-
-
-def read_excel():
-    # 打开Excel表格
-    # 读取群发邮箱，将需要群发的邮箱复制到test的excel列表清单中
-    ExceFileUrl = xlrd.open_workbook(r'../data/email_list.xlsx')
-    # print(ExceFileUrl.sheet_names())
-    # 获取第一个sheet页面
-    sheet_date = ExceFileUrl.sheet_by_index(0)
-    # print(sheet_date.name,sheet_date.nrows,sheet_date.ncols)
-    # 获取第2列的邮箱列表
-    email_data = sheet_date.col_values(1)
-    # print(email_data)
-    return email_data
 
 
 def sender_mail():
-    # 创建对象
-    smt_p = smtplib.SMTP()
-    # 设置smtp服务器
-    smt_p.connect(host='smtp.qq.com', port=25)
-    # 在qq邮箱设置开启SMTP服务并复制授权码
-    password = "8ey0nd88$$"
-    # 进行邮箱登录一次，填写你本人的邮箱
-    smt_p.login(sender, password)
-    count_num = 1
-    # 使用for循环来进行发邮件
-    for i in read_excel():
+    smt_p = smtplib.SMTP()  # 创建对象
+    smt_p.connect(host='smtp.qq.com', port=25)  # 设置smtp服务器
+    sender = '113097485@qq.com'
+    password = "*****************"  # 在qq邮箱设置开启SMTP服务并复制授权码到password
+    smt_p.login(sender, password)  # 进行邮箱登录一次，填写你本人的邮箱
+    receiver_addresses, count_num = ['guozhennianhua@163.com'], 1
+    for email_address in receiver_addresses:
         # 表格中邮箱格式不正确，如有空字符，在发邮件的时候会出现异常报错，捕获到这些异常就跳过
         try:
-
-            # 邮件设置
             msg = MIMEMultipart()
-            msg['From'] = "brook"
-        # 收件人
-            msg['To'] = i
-            msg['Cc'] = 'guozhennianhua@163.com'
-        # 主题名称
-            msg['subject'] = Header('通知', 'utf-8')
-        # 附件 —附加发送excel、word、图片格式，新建文件夹，将以下路径及文件名称替换即可。
+            msg['From'] = "zhenguo"  # 设置发邮件人
+            msg['To'] = email_address  # 收件人
+            # msg['Cc'] = 'guozhennianhua@163.com'
+            msg['subject'] = Header('通知', 'utf-8')  # 主题名称
             msg.attach(
-                MIMEText('您好,' 'XXX2.0全新升级，XXX1.0版本到2018年10月31号停止所有服务。', 'plain', 'utf-8'))
+                MIMEText('您好！\n这是一封测试邮件，使用Python实现自动发邮件，请勿回复本邮件功能~\n\n  祝您工作愉快！', 'plain', 'utf-8'))
             xlsxpart = MIMEApplication(
-                open(r'../data/email_test.xlsx', 'rb').read())
+                open(r'./data/email_test.xlsx', 'rb').read())
             xlsxpart.add_header('Content-Disposition',
                                 'attachment', filename='1.xlsx')
-            msg.attach(xlsxpart)
-            message_docx1 = MIMEText(
-                open(r'../data/email_test.docx', 'rb').read(), 'base64', 'utf8')
-            message_docx1.add_header(
-                'crontent-disposition', 'attachment', filename='测试.docx')
-            msg.attach(message_docx1)
-            message_image = MIMEText(
-                open(r'../data/email_test.jpg', 'rb').read(), 'base64', 'utf8')
-            message_image.add_header(
-                'content-disposition', 'attachment', filename='plot2.jpg')
-            msg.attach(message_image)
-        # 发送邮件
-            smt_p.sendmail(sender, i, msg.as_string())
-        # sleep10秒避免发送频率过快，可能被判定垃圾邮件。
-            time.sleep(10)
-            print('第%d次发送给%s' % (count_num, i))
+            msg.attach(xlsxpart)  # 添加邮件的附件
+            smt_p.sendmail(sender, email_address, msg.as_string())  # 发送邮件
+            time.sleep(10)  # sleep10秒避免发送频率过快，可能被判定垃圾邮件。
+            print('第%d次发送给%s' % (count_num, email_address))
             count_num = count_num + 1
-        except (UnicodeEncodeError, smtplib.SMTPRecipientsRefused, smtplib.SMTPSenderRefused, AttributeError) as e:
-                # 打印出来发送第几次的时候，邮箱出问题，一个邮箱最多不超过300个发送对象
-            print('第%d次给%s发送邮件异常' % (count_num, i))
+        except Exception as e:
+            print('第%d次给%s发送邮件异常' % (count_num, email_address))
             continue
     smt_p.quit()
 
