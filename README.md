@@ -575,8 +575,7 @@ sender_mail()
 
 发送到`guozhennianhua@163.com`邮件截图：
 
-![](./img/自动接收到的邮件.png)
-
+<img src="./img/自动接收到的邮件.png" width="400" height="300" alt="图片名称" align=center>
 
 
 [更多小例子，请点击此处](./md/README.md)
