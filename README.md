@@ -372,9 +372,9 @@ anagram('eleven', 'twelve')  # False
 
 #### 六、文件操作
 
-1 批量修改后缀名
+1 [批量修改后缀名](./md/批量修改后缀名.md)
 
-2 返回两个文件的不同行的编号
+2 [返回两个文件的不同行的编号](./md/返回两个文件的不同行的编号.md)
 
 3 查找指定文件格式文件
 
@@ -396,9 +396,9 @@ find_file('.','md') # 返回所有目录下的md文件
 
 #### 七、正则和爬虫
 
-1 判断密码是否合法
+1 [判断密码是否合法](./md/判断密码是否合法.md)
 
-2 爬取天气数据并解析温度值
+2 [爬取天气数据并解析温度值](./md/爬取天气数据并解析温度值.md)
 
 3 批量转化驼峰格式
 
@@ -417,7 +417,7 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 ```
 #### 八、绘图
 
-1 turtle绘制奥运五环图
+1 [turtle绘制奥运五环图](./md/turtle绘制奥运五环图.md)
 结果：
 
 
@@ -426,7 +426,7 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 
 
 
-2 turtle绘制漫天雪花
+2 [turtle绘制漫天雪花](./md/turtle绘制漫天雪花.md)
 结果：
 
 
@@ -435,11 +435,11 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 
 
 
-3 4种不同颜色的色块，它们的颜色真的不同吗？
+3 [4种不同颜色的色块，它们的颜色真的不同吗？](./md/4种不同颜色的色块，它们的颜色真的不同吗？.md)
 
 
 
-4 词频云图
+4 [词频云图](./md/词频云图.md)
 
 ```python
 import hashlib
