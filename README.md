@@ -20,9 +20,7 @@
 #### 一、基本操作
 
 1  环境搭建基本概念
-pycharm，python解释器，conda安装，pip安装。
-
-详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
+pycharm，python解释器，conda安装，pip安装。详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
 
 2 修改为国内镜像 
 [conda国内镜像修改(最新版)](conda国内镜像修改(最新版).md)
@@ -615,7 +613,7 @@ data_result.to_excel('C:/Users/CQ375/Desktop/ex/test.xlsx',index=0)
 
 ### 欢迎贡献
 
-比如github账号为`lhxon`的小伙伴，fork此库后，按照如下步骤提交到此库：
+比如github账号为`lhxon`的小伙伴，star 和 fork此库后，按照如下步骤提交到此库：
 
 ```markdown
 1. git clone https://github.com/lhxon/python-small-examples
