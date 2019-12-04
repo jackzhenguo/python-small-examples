@@ -5,7 +5,9 @@
 import win32com.client as win32
 import os.path
 import os
-def xlsToxlsx():    
+
+
+def xls2xlsx():    
     rootdir = r"C:\Users\CQ375\Desktop\temp1" #需要转换的xls文件存放处    
     rootdir1 = r"C:\Users\CQ375\Desktop\ex" #转换好的xlsx文件存放处    
     files = os.listdir(rootdir) #列出xls文件夹下的所有文件    
@@ -20,26 +22,8 @@ def xlsToxlsx():
             wb.SaveAs(fname1+"x", FileFormat=51) #文件另存为xlsx扩展名的文件           
             wb.Close()          
             excel.Application.Quit()
+            
+            
 if __name__ == '__main__':   
-    xlsToxlsx()
-#将以上转化的文件夹中xlsx文件合并到一个excel文件中
-import xlrd
-import os
-import pandas as pd
-import glob 
-from numpy import *
-import  pandas as pd
-location = 'C:/Users/CQ375/Desktop/ex'
-fileList = []
-n=0
-for fileName in os.walk(location):
-    for table in fileName[2]:
-        path = fileName[0] + '/' + table 
-        Li=pd.read_excel(path,header=0)
-        n = n+1 
-        fileList.append(Li)
-        print('第' + str(n) + '个表格已合并')
-print("在该目录下有%d个xlsx文件"%len(fileList))
-data_result = pd.concat(fileList,ignore_index=True)
-data_result.to_excel('C:/Users/CQ375/Desktop/ex/test.xlsx',index=0)
+    xls2xlsx()
 ```
