@@ -4,6 +4,11 @@
 
 > 此库会一直每天更新一个小例子，欢迎您的 star.
 
+#### 今日更新例子
+
+1 [列分割](split_csv.py)
+2 [xlsx批量合并到一个xlsx文件中](xlsx批量合并到一个xlsx文件中.md)
+
 #### 欢迎贡献
 
 比如github账号为`lhxon`的小伙伴，fork此库后，按照如下步骤提交到此库：
@@ -15,6 +20,10 @@
 4. git push
 5. 界面点击：pull requests，根据操作即可。如遇问题，欢迎联系我。
 ```
+#### 100个例子列表
+
+[查看请点击此处](./md/README.md)
+
 #### 一、基本操作
 
 1  环境搭建基本概念
@@ -561,6 +570,13 @@ def sender_mail():
     
 sender_mail()
 ```
+发送到`guozhennianhua@163.com`邮件截图：
+
+<img src="./img/自动接收到的邮件.png" width="450" height="200" alt="图片名称" align=center>
+
+邮件带有附件，请见另一个小例子：[Python群发带附件的邮件](./md/自动群发邮件.md)
+
+
 #### 十一、Pandas
 
 1 列分割
@@ -602,31 +618,4 @@ data_result = pd.concat(fileList,ignore_index=True)
 data_result.to_excel('C:/Users/CQ375/Desktop/ex/test.xlsx',index=0)
 ```
 
-
-
-
-发送到`guozhennianhua@163.com`邮件截图：
-
-<img src="./img/自动接收到的邮件.png" width="450" height="200" alt="图片名称" align=center>
-
-邮件带有附件，请见另一个小例子：[Python群发带附件的邮件](./md/自动群发邮件.md)
-
-
-
 [更多小例子，请点击此处](./md/README.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
