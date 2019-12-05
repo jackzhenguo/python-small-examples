@@ -608,8 +608,10 @@ print("在该目录下有%d个xlsx文件"%len(fileList))
 data_result = pd.concat(fileList,ignore_index=True)
 data_result.to_excel('C:/Users/CQ375/Desktop/ex/test.xlsx',index=0)
 ```
-十二、Matplotlib图
+#### 十二、Matplotlib图
+
 1 热力图
+
 ```python
 # 导入库
 import seaborn as sns
