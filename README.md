@@ -8,6 +8,8 @@
 
 1 [计算器](./src/calculator2.py)
 
+![计算器](./img/calculator.png)
+
 
 ### 例子完整列表
 
