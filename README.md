@@ -6,9 +6,7 @@
 
 ### 今日更新例子
 
-1 [列分割](./md/split_csv.py)
-
-2 [xlsx批量合并到一个xlsx文件中](./md/xlsx批量合并到一个xlsx文件中.md)
+1 [计算器](./src/calculator2.py)
 
 
 ### 例子完整列表
@@ -646,3 +644,5 @@ plt.show()
 4. git push
 5. 界面点击：pull requests，根据操作即可。如遇问题，欢迎联系我。
 ```
+
+[./src/calculator2.py]: 
