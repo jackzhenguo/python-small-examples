@@ -608,6 +608,28 @@ print("在该目录下有%d个xlsx文件"%len(fileList))
 data_result = pd.concat(fileList,ignore_index=True)
 data_result.to_excel('C:/Users/CQ375/Desktop/ex/test.xlsx',index=0)
 ```
+十二、Matplotlib图
+1 热力图
+```python
+# 导入库
+import seaborn as sns
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 生成数据集
+data = np.random.random((6,6))
+np.fill_diagonal(data,np.ones(6))
+features = ["prop1","prop2","prop3","prop4","prop5", "prop6"]
+data = pd.DataFrame(data, index = features, columns=features)
+print(data)
+# 绘制热力图
+heatmap_plot = sns.heatmap(data, center=0, cmap='gist_rainbow')
+plt.show()
+```
+![热力图](./img/heatmap.png)
+
+
 
 [更多小例子，请点击此处](./md/README.md)
 
