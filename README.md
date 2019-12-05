@@ -10,6 +10,18 @@
 
 ![计算器](./img/calculator.png)
 
+### 欢迎贡献
+
+比如github账号为`lhxon`的小伙伴，star 和 fork此库后，按照如下步骤提交到此库的 **md** 文件夹：
+
+```markdown
+1. git clone https://github.com/lhxon/python-small-examples
+2. git add . 
+3. git commit -m "xiugai"
+4. git push
+5. 界面点击：pull requests，根据操作即可。如遇问题，欢迎联系我。
+```
+
 
 ### 例子完整列表
 
@@ -634,16 +646,4 @@ plt.show()
 
 
 [更多小例子，请点击此处](./md/README.md)
-
-### 欢迎贡献
-
-比如github账号为`lhxon`的小伙伴，star 和 fork此库后，按照如下步骤提交到此库：
-
-```markdown
-1. git clone https://github.com/lhxon/python-small-examples
-2. git add . 
-3. git commit -m "xiugai"
-4. git push
-5. 界面点击：pull requests，根据操作即可。如遇问题，欢迎联系我。
-```
 
