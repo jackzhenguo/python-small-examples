@@ -644,9 +644,7 @@ plt.show()
 ```
 ![热力图](./img/heatmap.png)
 
-
-
-十三、PyQt
+#### 十三、PyQt
 
 1 [使用PyQt打造一款自己的计算器，仅有100行代码](./src/calculator2.py)
 
