@@ -6,9 +6,10 @@
 
 ### 今日更新例子
 
-1 [计算器](./src/calculator2.py)
+1. [多序列运算函数](./md/多序列运算函数.md)
+2. [列表加字段标签](./md/列表加字段标签.md)
 
-![计算器](./img/calculator.png)
+
 
 ### 欢迎贡献
 
@@ -642,6 +643,14 @@ heatmap_plot = sns.heatmap(data, center=0, cmap='gist_rainbow')
 plt.show()
 ```
 ![热力图](./img/heatmap.png)
+
+
+
+十三、PyQt
+
+1 [使用PyQt打造一款自己的计算器，仅有100行代码](./src/calculator2.py)
+
+![计算器](./img/calculator.png)
 
 
 
