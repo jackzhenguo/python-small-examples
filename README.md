@@ -63,6 +63,7 @@ calculator(1, 2, '+')  # 3
 calculator(3, 4, '**')  # 81
 ```
 5  函数链
+
 ```python
 from operator import (add, sub)
 
@@ -72,6 +73,7 @@ def add_or_sub(a, b, oper):
 add_or_sub(1, 2, '-')  # -1
 ```
 6  求字符串的字节长度
+
 ```python
 def str_byte_len(mystr):
     return (len(mystr.encode('utf-8')))
@@ -80,6 +82,7 @@ str_byte_len('i love python')  # 13(个字节)
 str_byte_len('字符')  # 6(个字节)
 ```
 7  寻找第n次出现位置
+
 ```python
 def search_n(s, c, n):
     size = 0
@@ -94,6 +97,7 @@ print(search_n("fdasadfadf", "a", 3))# 结果为7，正确
 print(search_n("fdasadfadf", "a", 30))# 结果为-1，正确
 ```
 8  去掉最高最低求平均
+
 ```python
 def score_mean(lst):
     lst.sort()
@@ -103,6 +107,7 @@ def score_mean(lst):
 score_mean([9.1, 9.0,8.1, 9.7, 19,8.2, 8.6,9.8]) # 9.07
 ```
 9  交换元素
+
 ```python
 def swap(a, b):
     return b, a
@@ -136,8 +141,8 @@ def binarySearch(arr, left, right, x):
     return -1
 ```
 
-
 2   距离矩阵
+
 ```python
 x,y = mgrid[0:5,0:5]
 list(map(lambda xe,ye: [(ex,ey) for ex, ey in zip(xe, ye)], x,y))
@@ -151,6 +156,7 @@ list(map(lambda xe,ye: [(ex,ey) for ex, ey in zip(xe, ye)], x,y))
 #### 三、列表
 
 1 打印乘法表
+
 ```python
 for i in range(1,10):
     for j in range(1,i+1):
