@@ -12,5 +12,9 @@ class Descend(Iterator):
     
 descend_iter=Descend(10)
 
-for i in descend_iter:
-    print(i)
+try:
+    for i in descend_iter:
+        print(i)
+except StopIteration as e:
+    print('迭代结束')
+    

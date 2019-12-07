@@ -33,10 +33,10 @@
 #### 一、基本操作
 
 1  环境搭建基本概念
-pycharm，python解释器，conda安装，pip安装。详情点击：[Python新手环境搭建时容易混淆的概念](Python新手环境搭建时容易混淆的概念.md)
+pycharm，python解释器，conda安装，pip安装。详情点击：[Python新手环境搭建时容易混淆的概念](./md/Python新手环境搭建时容易混淆的概念.md)
 
 2 修改为国内镜像 
-[conda国内镜像修改(最新版)](conda国内镜像修改(最新版).md)
+[conda国内镜像修改(最新版)](./md/conda国内镜像修改(最新版).md)
 
 3  链式比较
 
