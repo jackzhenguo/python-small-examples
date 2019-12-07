@@ -17,3 +17,5 @@ def flatten(input_arr, output_arr=None):
     return output_arr
 
 flatten([[1,2,3],[4,5]], [6,7]) # [6, 7, 1, 2, 3, 4, 5]
+
+完成
