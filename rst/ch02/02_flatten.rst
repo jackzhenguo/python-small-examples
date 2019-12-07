@@ -2,6 +2,8 @@
 2.2 嵌套数组完全展开
 =================
 
+嵌套数组完全展开
+
 .. codeblock:: python
 
 	from collections.abc import *
