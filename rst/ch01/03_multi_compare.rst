@@ -6,6 +6,7 @@ Python支持下面的连续不等式比较，相比于其他语言如`C++`,`Java
 
 .. code-block:: python
 
-i = 3
-print(1 < i < 3)  # False
-print(1 < i <= 3)  # True
+	i = 3
+	print(1 < i < 3)  # False
+	print(1 < i <= 3)  # True
+
