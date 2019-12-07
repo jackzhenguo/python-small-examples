@@ -2,7 +2,7 @@
 1.3 链式比较
 =====================
 
-Python支持下面的连续不等式比较，相比于其他语言如`C++`,`Java`,`JS`等，可读性更好。
+Python支持下面的连续不等式比较，相比于其他语言如``C++``,``Java``,``JS``等，可读性更好。
 
 .. code-block:: python
 
@@ -10,9 +10,5 @@ Python支持下面的连续不等式比较，相比于其他语言如`C++`,`Java
 	print(1 < i < 3)  # False
 	print(1 < i <= 3)  # True
 	
+完成
 
-.. code-block:: python
-
-    def drop_first_last(grades):
-        first, *middle, last = grades
-        return avg(middle)
