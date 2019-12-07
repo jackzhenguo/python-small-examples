@@ -652,5 +652,38 @@ plt.show()
 
 
 
+#### 十四、迭代器
+
+1 实现一个递减迭代器
+
+```python
+#编写一个迭代器，通过循环语句，实现对某个正整数的依次递减1，直到0.
+class Descend(Iterator):
+    def __init__(self,N):
+        self.N=N
+        self.a=0
+    def __iter__(self):
+        return self 
+    def __next__(self):
+        while self.a<self.N:
+            self.N-=1
+            return self.N
+        raise StopIteration
+    
+descend_iter=Descend(10)
+print(list(descend_iter))
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+```
+
+核心要点：
+
+1 `__nex__ `名字不能变，实现定制的迭代逻辑
+
+2 `raise StopIteration`：通过 raise 中断程序，必须这样写
+
+
+
+
+
 [更多小例子，请点击此处](./md/README.md)
 
