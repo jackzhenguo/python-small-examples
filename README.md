@@ -677,9 +677,9 @@ print(list(descend_iter))
 
 核心要点：
 
-1 `__nex__ `名字不能变，实现定制的迭代逻辑
+1)  `__nex__ `名字不能变，实现定制的迭代逻辑
 
-2 `raise StopIteration`：通过 raise 中断程序，必须这样写
+2)  `raise StopIteration`：通过 raise 中断程序，必须这样写
 
 
 
