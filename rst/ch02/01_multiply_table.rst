@@ -4,7 +4,7 @@
 
 使用列表打印99乘法表
 
-.. codeblock:: python
+::
 
 	for i in range(1,10):
 		for j in range(1,i+1):
@@ -14,7 +14,7 @@
 
 结果:
 
-.. codeblock:: python
+:: python
 
 	1*1=1
 	1*2=2   2*2=4
