@@ -7,12 +7,6 @@
 .. code-block:: python
     :linenos:
 
-    def foo():
-        print "Love Python, Love FreeDome"
-        print "E文标点,.0123456789,中文标点,. "
-
-codeblock:: python
-
 for i in range(1,10):
 	for j in range(1,i+1):
 		print('{0}*{1}={2}'.format(j,i,j*i),end="\t")
@@ -21,7 +15,8 @@ for i in range(1,10):
 
 结果:
 
-::
+.. code-block:: python
+    :linenos:
 
 1*1=1
 1*2=2   2*2=4
