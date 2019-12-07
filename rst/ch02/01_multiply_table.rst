@@ -4,6 +4,13 @@
 
 使用列表打印99乘法表
 
+.. code-block:: python
+    :linenos:
+
+    def foo():
+        print "Love Python, Love FreeDome"
+        print "E文标点,.0123456789,中文标点,. "
+
 codeblock:: python
 
 for i in range(1,10):
