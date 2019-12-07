@@ -409,7 +409,7 @@ def find_file(work_dir,extension='jpg'):
 find_file('.','md') # 返回所有目录下的md文件
 ```
 
-#### 七、正则和爬虫
+#### 七、字符串、正则和爬虫
 
 1 [判断密码是否合法](./md/判断密码是否合法.md)
 
