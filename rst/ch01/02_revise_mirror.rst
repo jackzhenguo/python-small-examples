@@ -12,6 +12,7 @@ conda config --show
 查看配置项`channels`，如果显示带有`tsinghua`，则说明已安装过清华镜像。
 
 channels:
+
 - https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
 - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
 - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
