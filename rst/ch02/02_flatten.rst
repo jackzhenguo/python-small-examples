@@ -4,7 +4,7 @@
 
 嵌套数组完全展开
 
-.. codeblock:: python
+.. code-block:: python
 
 	from collections.abc import *
 
