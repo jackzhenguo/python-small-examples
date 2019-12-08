@@ -3,7 +3,7 @@ greenlet==0.4.5
 gunicorn==19.5.0
 oauthlib==0.7.2
 paho-mqtt==1.0
-paramiko==1.15.1
+paramiko==2.0.9
 psycopg2==2.5.4
 pycrypto==2.6.1
 pytz==2014.9
