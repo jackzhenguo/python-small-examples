@@ -1,11 +1,3 @@
-=================
-2.2 嵌套数组完全展开
-=================
-
-嵌套数组完全展开
-
-.. code-block:: python
-
 from collections.abc import *
 
 def flatten(input_arr, output_arr=None):
@@ -19,5 +11,3 @@ def flatten(input_arr, output_arr=None):
     return output_arr
 
 flatten([[1,2,3],[4,5]], [6,7]) # [6, 7, 1, 2, 3, 4, 5]
-
-完成
