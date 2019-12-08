@@ -7,6 +7,7 @@
 .. code-block:: python
 
     from collections.abc import *
+	
 	def flatten(input_arr, output_arr=None):
 		if output_arr is None:
 			output_arr = []
