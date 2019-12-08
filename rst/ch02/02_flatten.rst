@@ -16,7 +16,7 @@
 			   flatten(ele, output_arr)  # 尾数递归
 			else:
 			   output_arr.append(ele)    # 产生结果
-	  return output_arr
+	   return output_arr
 
 
    flatten([[1,2,3],[4,5]], [6,7]) # [6, 7, 1, 2, 3, 4, 5]
