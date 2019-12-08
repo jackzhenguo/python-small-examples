@@ -673,7 +673,7 @@ plt.show()
 
 #### 十三、PyQt
 
-1 [使用PyQt打造一款自己的计算器，仅有100行代码](./src/calculator2.py)
+1 [使用PyQt打造一款自己的计算器，仅有100行代码](./src/calculator)
 
 ![计算器](./img/calculator.png)
 

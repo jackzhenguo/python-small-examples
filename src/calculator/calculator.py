@@ -71,10 +71,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.display()
 
     def operation(self, op):
-        if self.current_op:  # Complete the current operation
+        if self.current_op:  # 完成当前操作(+,-*,/,)
             self.equals()
 
-        self.stack.append(0)
+        if op == operator.add or op == operator.sub:
+            self.stack.append(0)
+        elif op == operator.mul or op == operator.truediv:
+            self.stack.append(1)    
         self.state = INPUT
         self.current_op = op
 
@@ -106,7 +109,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
     app = QApplication([])
-    app.setApplicationName("Calculon")
+    app.setApplicationName("XiaoDing")
 
     window = MainWindow()
     app.exec_()
