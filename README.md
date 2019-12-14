@@ -749,6 +749,45 @@ plt.show()
 ```
 ![散点图](./img/scatter-plt.png)
 
+#### Plotly绘图
+
+1 绘制柱状图+折线图
+
+```python
+import plotly.graph_objects as go
+fig = go.Figure()
+fig.add_trace(
+    go.Scatter(
+        x=[0, 1, 2, 3, 4, 5],
+        y=[1.5, 1, 1.3, 0.7, 0.8, 0.9]
+    ))
+fig.add_trace(
+    go.Bar(
+        x=[0, 1, 2, 3, 4, 5],
+        y=[2, 0.5, 0.7, -1.2, 0.3, 0.4]
+    ))
+fig.show()
+```
+
+![1576311673983](./img/plotly1.png)
+
+2 饼图
+
+```python
+import plotly.graph_objects as go
+
+labels = ['照明与插座用电', '空调用电', '动力用电', '特殊用电']
+values = [4500, 2500, 1053, 500]
+fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
+fig.show()
+```
+
+
+
+![1576311817234](./img/plotly2.png)
+
+
+
 #### 十三、PyQt
 
 1 [使用PyQt打造一款自己的计算器，仅有100行代码](./src/calculator)
@@ -786,7 +825,36 @@ print(list(descend_iter))
 
 2)  `raise StopIteration`：通过 raise 中断程序，必须这样写
 
+#### 十五 装饰器
+[测试函数执行时间的函数装饰器](./md/测试函数执行时间的函数装饰器.md)
+```python
+import time
+def timing_func(fn):
+    def wrapper():
+        start=time.time()
+        fn()   #执行传入的fn参数
+        stop=time.time()
+        return (stop-start)
+    return wrapper
+@timing_func
+def test_list_append():
+    lst=[]
+    for i in range(0,100000):
+        lst.append(i)  
+@timing_func
+def test_list_compre():
+    [i for i in range(0,100000)]  #列表生成式
+a=test_list_append()
+c=test_list_compre()
+print("test list append time:",a)
+print("test list comprehension time:",c)
+print("append/compre:",round(a/c,3))
 
+test list append time: 0.0219423770904541
+test list comprehension time: 0.007980823516845703
+append/compre: 2.749
+
+```
 
 
 

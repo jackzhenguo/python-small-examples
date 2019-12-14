@@ -1,7 +1,3 @@
-
-
-```python
-#柱状图+折线图
 import plotly.graph_objects as go
 fig = go.Figure()
 fig.add_trace(
@@ -15,6 +11,3 @@ fig.add_trace(
         y=[2, 0.5, 0.7, -1.2, 0.3, 0.4]
     ))
 fig.show()
-```
-
-![1576311610044](D:\source\python-small-examples\md\1576311610044.png)
