@@ -2,6 +2,9 @@
 1.5 交换2个元素
 ===============================
 
-\`\`\`python def swap(a, b): return b, a
+.. code:: python
 
-print(swap(1, 0)) # (0,1)
+    def swap(a, b): 
+	    return b, a
+
+    print(swap(1, 0)) # (0,1)
