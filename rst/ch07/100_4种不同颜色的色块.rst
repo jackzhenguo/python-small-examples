@@ -23,33 +23,7 @@
     import random
     import time
 
-API说明
-~~~~~~~
 
-定义自己的画图类\ ``MyTurtle``\ ，常用方法介绍如下：
-
-    get\_color() 随机取rgb模式下的颜色的三个参数 set\_pen\_color()
-    设置画笔使用颜色 move(x, y)
-    控制海龟移动到指定x,y坐标(移动轨迹不着色) draw\_shape(sides,
-    length)画 sides 条边，length 长度的图形 draw\_square(length) 调用
-    draw\_shape() 函数画边长为 length 正方形 draw\_triangle(length)调用
-    draw\_shape() 函数画边长为 length 等边三角形draw\_circle(length)调用
-    draw\_shape() 函数画半径为 length 圆形 fill\_color\_shape(shape,
-    length, fill\_color)用 fill\_color 颜色, 填充 length 边长, shape
-    （draw\_square, draw\_triangle, draw\_circle）设定的图形
-
-此例子使用的 turtle 内置函数介绍 >left(x)/right(x) 使海龟 逆时针/顺时针
-旋转 >circle(x)以x为半径，以当前方向开始画圆 >forward(x)\|fd(x)
-前进x，单位为像素 >backward(x)\|bk(x)\|back(x) 后退x，单位为像素
->goto(x,y)\|setpos(x,y)\|setposition(x,y)使海龟沿直线移动到(x,y)坐标处
->setx(x)/sety(y)设置 x/y 坐标，使海龟水平移动
->dot(size,color)在当前位置以直径为size画点，颜色为color >speed(n)
-设置海龟的移动速度 >pendown()\|pd()\|down()
-使海龟“落地”，移动轨迹在屏幕上显示 >penup()\|up()
-使海龟“起飞”,移动轨迹在屏幕上不显示 >pensize(x)
-设置画笔宽度为x，单位为像素 >pencolor(color) 设置画笔颜色 >fillcolor()
-设置填充颜色，当轨迹形成闭合图形时填充的颜色 >begin\_fill()/end\_fill()
-控制颜色填充的时间段，只有在begin\_fill()与end\_fill()中间的闭合图形才会填充颜色
 
 自定义绘图类 MyTurtle
 ~~~~~~~~~~~~~~~~~~~~~
@@ -216,4 +190,4 @@ y1], …]）
               '\n', 'small_len:', small_len, type(small_len))
         draw_main(big_value, small_len)
 
-.. |image0| image:: ./img/turtle3.png
+.. |image0| image:: ../../img/turtle3.png

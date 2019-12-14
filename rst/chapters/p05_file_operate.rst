@@ -11,4 +11,4 @@ Python文件操作，涉及IO操作，常用的open,read,print等
    :maxdepth: 1
    :glob:
 
-   ../ch02/*
+   ../ch05/*

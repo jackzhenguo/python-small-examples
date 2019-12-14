@@ -76,7 +76,7 @@
 
 动态图结果展示：
 
-.. figure:: ./img/turtlesnow.gif
+.. figure:: ../../img/turtlesnow.gif
    :alt: 
 
 
