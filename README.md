@@ -497,7 +497,7 @@ batch_camel(['student_id', 'student\tname', 'student-add']) #['studentId', 'stud
 
 
 
-#### 八、绘图
+#### 八、turtle 绘图
 
 1 [turtle绘制奥运五环图](./md/turtle绘制奥运五环图.md)
 结果：
@@ -749,7 +749,7 @@ plt.show()
 ```
 ![散点图](./img/scatter-plt.png)
 
-#### Plotly绘图
+#### 十三 Plotly绘图
 
 1 绘制柱状图+折线图
 
@@ -788,7 +788,7 @@ fig.show()
 
 
 
-#### 十三、PyQt
+#### 十四、PyQt
 
 1 [使用PyQt打造一款自己的计算器，仅有100行代码](./src/calculator)
 
@@ -796,7 +796,7 @@ fig.show()
 
 
 
-#### 十四、迭代器
+#### 十五、迭代器
 
 1 实现一个递减迭代器
 
@@ -825,7 +825,7 @@ print(list(descend_iter))
 
 2)  `raise StopIteration`：通过 raise 中断程序，必须这样写
 
-#### 十五 装饰器
+#### 十六 装饰器
 [测试函数执行时间的函数装饰器](./md/测试函数执行时间的函数装饰器.md)
 ```python
 import time
