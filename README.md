@@ -1,8 +1,24 @@
-[TOC]
+### 前言
+
+告别枯燥，60秒学会一个小例子！
+
+感谢群友Brook等人的贡献，欢迎关注github库：Python小例子
+
+https://github.com/jackzhenguo/python-small-examples
+
+
+
+目前已发布Python小例子1.0 pdf版本，包括：Python之基，Python之正，Python之例，Python之能四个大章节，共计138个例子。
+
+
+
+此PDF是开源文档，欢迎传播，希望真正帮助到大家，但不能用于商业目的。
+
+
 
 ### 一、Python之基
 
-总结Python常用内置函数及用法
+`Python之基`主要总结Python常用内置函数及用法，它们在Python中被最高频的使用，所以务必掌握，一共包括`58个`。
 
 #### 1 求绝对值
 
@@ -887,7 +903,7 @@ Out[194]: ['a0', 'b1', 'c2', 'd3', 'e4']
 
 ### 二、Python之正
 
-通过20个例子，入门Python正则表达式
+`Python之正`主要总结通过20个例子，入门Python正则表达式。之所以将正则列为一章，是因为字符串处理无所不在，正则毫无疑问是最简洁和高效的处理方法。后面的`Python之例`，`Python之能`章节也会多次使用`正则表达式`做一些字符串处理相关的工作。
 
 ```python
 import re
@@ -1093,7 +1109,7 @@ result.group() # 百度一下，你就知道
 
 ### 三、Python之例
 
-十几行代码块，实现的有意思的小例子。
+`Python之例`章中每个例子大都10行左右，1.0版本一共包括`32个小例子`，都是很有意思的小例子。
 
 
 
@@ -1614,11 +1630,175 @@ st[::-1]
 
 
 
+#### 33 groupby分组
+
+天气记录：
+
+```python
+
+a = [{'date': '2019-12-15', 'weather': 'cloud'},
+
+ {'date': '2019-12-13', 'weather': 'sunny'},
+
+ {'date': '2019-12-14', 'weather': 'cloud'}]
+
+```
+
+按照天气字段`weather`分组汇总：
+
+```python
+
+from itertools import groupby
+
+
+
+for k, items in  groupby(a,key=lambda x:x['weather']):
+
+​    print(k)
+
+```
+
+输出结果看出，分组失败！原因：分组前必须按照分组字段`排序`，这个很坑~
+
+```python
+
+cloud
+
+sunny
+
+cloud
+
+```
+
+修改代码：
+
+```python
+
+a.sort(key=lambda x: x['weather'])
+
+for k, items in  groupby(a,key=lambda x:x['weather']):
+
+​    print(k)
+
+​    for i in items:
+
+​        print(i)
+
+```
+
+输出结果：
+
+```python
+
+cloud
+
+{'date': '2019-12-15', 'weather': 'cloud'}
+
+{'date': '2019-12-14', 'weather': 'cloud'}
+
+sunny
+
+{'date': '2019-12-13', 'weather': 'sunny'}
+
+```
+
+
+
+注意到`sort`和`groupby`所用的`key`函数，除了`lambda`写法外，还有一种简写，就是使用`itemgetter`：
+
+
+
+```python
+
+a = [{'date': '2019-12-15', 'weather': 'cloud'},
+
+ {'date': '2019-12-13', 'weather': 'sunny'},
+
+ {'date': '2019-12-14', 'weather': 'cloud'}]
+
+ 
+
+from operator import itemgetter
+
+from itertools import groupby
+
+a.sort(key=itemgetter('weather'))
+
+for k, items in groupby(a, key=itemgetter('weather')):
+
+​    print(k)
+
+​    for i in items:
+
+​        print(i)
+
+```
+
+结果：
+
+```python
+
+cloud
+
+{'date': '2019-12-15', 'weather': 'cloud'}
+
+{'date': '2019-12-14', 'weather': 'cloud'}
+
+sunny
+
+{'date': '2019-12-13', 'weather': 'sunny'}
+
+```
+
+
+
+`itemgetter`是一个类，`itemgetter('weather')`返回一个可调用的对象，它的参数可有多个：
+
+```python
+
+from operator import itemgetter
+
+from itertools import groupby
+
+a.sort(key=itemgetter('weather', 'date'))
+
+for k, items in groupby(a, key=itemgetter('weather')):
+
+​    print(k)
+
+​    for i in items:
+
+​        print(i)
+
+```
+
+结果如下，使用`weather`和`date`两个字段排序`a`，
+
+```python
+
+cloud
+
+{'date': '2019-12-14', 'weather': 'cloud'}
+
+{'date': '2019-12-15', 'weather': 'cloud'}
+
+sunny
+
+{'date': '2019-12-13', 'weather': 'sunny'}
+
+```
+
+注意这个结果与上面结果有些微妙不同，这个更多是我们想看到和使用更多的。
+
+
+
+
+
 
 
 ### 四、Python之能
 
-搭建好Python环境后，一起实现一些有意思的功能。
+`Python之能`更多是实战中的`28个小功能`，它比`Python之例`中的例子代码行数多一些。在教会你搭建好Python环境后，一起实现这些有意思的小功能。
 
 
 
