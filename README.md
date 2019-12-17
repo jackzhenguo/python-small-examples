@@ -8,7 +8,7 @@
 
 **ChainMap逻辑上合并多个字典**
 
-1) 两种合并字典方法
+(1) 两种合并字典方法
 这是一般的字典合并写法
 
 ```python
@@ -27,7 +27,7 @@ merged2 = ChainMap(dic1,dic2)
 print(merged2) # ChainMap({'x': 1, 'y': 2}, {'y': 3, 'z': 4})
 ```
 
-2) ChainMap节省内存
+(2) ChainMap节省内存
 
 `ChainMap`这种只在逻辑上合并字典的方法，可以大大节省内存的使用。普通的合并字典会重新创建一个字典，其占用内存会很大，演示如下：
 ```python
