@@ -45,7 +45,7 @@ sys.getsizeof(merged2) #56
 
 ### 一、Python之基
 
-`Python之基`主要总结Python常用内置函数及用法，它们在Python中被最高频的使用，所以务必掌握，一共包括`58个`。
+`Python之基`主要总结Python常用内置函数及用法，它们在Python中被最高频的使用，所以务必掌握。`V1.0` 一共包括`58个`。
 
 #### 1 求绝对值
 
@@ -58,7 +58,7 @@ Out[1]: 6
 
 #### 2 元素都为真
 
-接受一个迭代器，如果迭代器的所有元素都为真，那么返回True，否则返回False
+接受一个迭代器，如果迭代器的`所有元素`都为真，那么返回`True`，否则返回`False`
 
 ```python
 In [2]: all([1,0,3,6])
@@ -70,7 +70,7 @@ Out[3]: True
 
 #### 3 元素至少一个为真　
 
-接受一个迭代器，如果迭代器里有一个元素为真，那么返回True，否则返回False
+接受一个迭代器，如果迭代器里`至少有一个`元素为真，那么返回`True`，否则返回`False`
 
 ```python
 In [4]: any([0,0,0,[]])
@@ -85,45 +85,45 @@ Out[5]: True
 调用对象的__repr__() 方法，获得该方法的返回值
 
 ```python
-In [30]: class Student():
+In [1]: class Student():
     ...:     def __init__(self,id,name):
     ...:         self.id = id
     ...:         self.name = name
     ...:     def __repr__(self):
     ...:         return 'id = '+self.id +', name = '+self.name
     
-In [33]: print(xiaoming)
+In [2]: print(xiaoming)
 id = 001, name = xiaoming
 
-In [34]: ascii(xiaoming)
-Out[34]: 'id = 001, name = xiaoming'
+In [3]: ascii(xiaoming)
+Out[3]: 'id = 001, name = xiaoming'
 ```
 
 #### 5  十转二
 
-将十进制转换为二进制
+将`十进制`转换为`二进制`
 
 ```python
-In [35]: bin(10)
-Out[35]: '0b1010'
+In [1]: bin(10)
+Out[1]: '0b1010'
 ```
 
 #### 6 十转八
 
-将十进制转换为八进制
+将`十进制`转换为`八进制`
 
 ```python
-In [36]: oct(9)
-Out[36]: '0o11'
+In [1]: oct(9)
+Out[1]: '0o11'
 ```
 
 #### 7 十转十六
 
-将十进制转换为十六进制
+将`十进制`转换为`十六进制`
 
 ```python
-In [37]: hex(15)
-Out[37]: '0xf'
+In [1]: hex(15)
+Out[1]: '0xf'
 ```
 
 #### 8 判断是真是假　　
@@ -131,80 +131,80 @@ Out[37]: '0xf'
 测试一个对象是True, 还是False.
 
 ```python
-In [38]: bool([0,0,0])
-Out[38]: True
+In [1]: bool([0,0,0])
+Out[1]: True
 
-In [39]: bool([])
-Out[39]: False
+In [2]: bool([])
+Out[2]: False
 
-In [40]: bool([1,0,1])
-Out[40]: True
+In [3]: bool([1,0,1])
+Out[3]: True
 ```
 
 #### 9  字符串转字节　　
 
-将一个字符串转换成字节类型
+将一个`字符串`转换成`字节`类型
 
 ```python
-In [44]: s = "apple"
+In [1]: s = "apple"
 
-In [45]: bytes(s,encoding='utf-8')
-Out[45]: b'apple'
+In [2]: bytes(s,encoding='utf-8')
+Out[2]: b'apple'
 ```
 
 #### 10 转为字符串　　
 
-将`字符类型`、`数值类型`等转换为字符串类型
+将`字符类型`、`数值类型`等转换为`字符串`类型
 
 ```python
-In [46]: integ = 100
+In [1]: i = 100
 
-In [47]: str(integ)
-Out[47]: '100'
+In [2]: str(i)
+Out[2]: '100'
 ```
 
 #### 11 是否可调用　　
 
-判断对象是否可以被调用，能被调用的对象就是一个callable 对象，比如函数 str, int 等都是可被调用的，但是例子4 中xiaoming这个实例是不可被调用的：
+判断对象是否可被调用，能被调用的对象就是一个`callable` 对象，比如函数 `str`, `int` 等都是可被调用的，但是例子**4** 中`xiaoming`实例是不可被调用的：
 
 ```python
-In [48]: callable(str)
-Out[48]: True
+In [1]: callable(str)
+Out[1]: True
 
-In [49]: callable(int)
-Out[49]: True
+In [2]: callable(int)
+Out[2]: True
 
-In [50]: xiaoming
-Out[50]: id = 001, name = xiaoming
+In [3]: xiaoming
+Out[3]: id = 001, name = xiaoming
 
-In [51]: callable(xiaoming)
-Out[51]: False
+In [4]: callable(xiaoming)
+Out[4]: False
 ```
 
 #### 12 十转ASCII
 
-查看十进制整数对应的ASCII字符
+查看十进制整数对应的`ASCII字符`
 
 ```python
-In [54]: chr(65)
-Out[54]: 'A'
+In [1]: chr(65)
+Out[1]: 'A'
 ```
 
 #### 13 ASCII转十
 
-查看某个ascii对应的十进制数
+查看某个`ASCII字符`对应的十进制数
 
 ```python
-In [60]: ord('A')
-Out[60]: 65
+In [1]: ord('A')
+Out[1]: 65
 ```
 
 #### 14 静态方法　
 
-**classmethod** 修饰符对应的函数不需要实例化，不需要 self 参数，但第一个参数需要是表示自身类的 cls 参数，可以来调用类的属性，类的方法，实例化对象等。
+`classmethod` 装饰器对应的函数不需要实例化，不需要 `self `参数，但第一个参数需要是表示自身类的 cls 参数，可以来调用类的属性，类的方法，实例化对象等。
 
 ```python
-In [66]: class Student():
+In [1]: class Student():
     ...:     def __init__(self,id,name):
     ...:         self.id = id
     ...:         self.name = name
@@ -217,17 +217,17 @@ In [66]: class Student():
 
 #### 15 执行字符串表示的代码
 
-将字符串编译成python 能识别或可以执行的代码，也可以将文字读成字符串再编译。
+将字符串编译成python能识别或可执行的代码，也可以将文字读成字符串再编译。
 
 ```python
-In [74]: s  = "print('helloworld')"
-
-In [75]: r = compile(s,"<string>", "exec")
-
-In [76]: r
-Out[76]: <code object <module> at 0x0000000005DE75D0, file "<string>", line 1>
-
-In [77]: exec(r)
+In [1]: s  = "print('helloworld')"
+    
+In [2]: r = compile(s,"<string>", "exec")
+    
+In [3]: r
+Out[3]: <code object <module> at 0x0000000005DE75D0, file "<string>", line 1>
+    
+In [4]: exec(r)
 helloworld
 ```
 
@@ -236,8 +236,8 @@ helloworld
 创建一个复数
 
 ```python
-In [81]: complex(1,2)
-Out[81]: (1+2j)
+In [1]: complex(1,2)
+Out[1]: (1+2j)
 ```
 
 #### 17 动态删除属性　　
@@ -245,10 +245,10 @@ Out[81]: (1+2j)
 删除对象的属性
 
 ```python
-In [87]: delattr(xiaoming,'id')
+In [1]: delattr(xiaoming,'id')
 
-In [88]: hasattr(xiaoming,'id')
-Out[88]: False
+In [2]: hasattr(xiaoming,'id')
+Out[2]: False
 ```
 
 #### 18 转为字典　　
@@ -256,22 +256,22 @@ Out[88]: False
 创建数据字典
 
 ```python
-In [92]: dict()
-Out[92]: {}
+In [1]: dict()
+Out[1]: {}
 
-In [93]: dict(a='a',b='b')
-Out[93]: {'a': 'a', 'b': 'b'}
+In [2]: dict(a='a',b='b')
+Out[2]: {'a': 'a', 'b': 'b'}
 
-In [94]: dict(zip(['a','b'],[1,2]))
-Out[94]: {'a': 1, 'b': 2}
+In [3]: dict(zip(['a','b'],[1,2]))
+Out[3]: {'a': 1, 'b': 2}
 
-In [95]: dict([('a',1),('b',2)])
-Out[95]: {'a': 1, 'b': 2}
+In [4]: dict([('a',1),('b',2)])
+Out[4]: {'a': 1, 'b': 2}
 ```
 
 #### 19 一键查看对象所有方法　
 
-不带参数时返回当前范围内的变量，方法和定义的类型列表；带参数时返回参数的属性，方法列表。
+不带参数时返回`当前范围`内的变量、方法和定义的类型列表；带参数时返回`参数`的属性，方法列表。
 
 ```python
 In [96]: dir(xiaoming)
@@ -311,8 +311,8 @@ Out[96]:
 分别取商和余数
 
 ```python
-In [97]: divmod(10,3)
-Out[97]: (3, 1)
+In [1]: divmod(10,3)
+Out[1]: (3, 1)
 ```
 
 #### 21 枚举对象　　
@@ -927,6 +927,19 @@ Out[193]: ['a', 'b', 'c', 'd', 'e']
 In [194]: [str(y) + str(x) for x,y in zip(a,b)]
 Out[194]: ['a0', 'b1', 'c2', 'd3', 'e4']
 ```
+
+#### 59 查看变量所占字节数
+
+```python
+In [1]: import sys
+
+In [2]: a = {'a':1,'b':2.0}
+
+In [3]: sys.getsizeof(a) # 占用240个字节
+Out[3]: 240
+```
+
+
 
 ### 二、Python之正
 
