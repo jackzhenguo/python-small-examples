@@ -2,7 +2,7 @@
 
 告别枯燥，60秒学会一个小例子！
 
-目前已发布Python小例子1.0 pdf版本，包括：Python之基，Python之正，Python之例，Python之能四个大章节，共计138个例子。
+目前已发布[Python之路.pdf V1.0](https://github.com/jackzhenguo/python-small-examples/releases)，包括：`Python之基`，`Python之正`，`Python之例`，`Python之能`章节，共计`138个`小例子。
 
 ### 今日更新
 
