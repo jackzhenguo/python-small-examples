@@ -2,17 +2,34 @@
 
 告别枯燥，60秒学会一个小例子！
 
-感谢群友Brook等人的贡献，欢迎关注github库：Python小例子
-
-https://github.com/jackzhenguo/python-small-examples
-
-
-
 目前已发布Python小例子1.0 pdf版本，包括：Python之基，Python之正，Python之例，Python之能四个大章节，共计138个例子。
 
+### 今日更新
 
+Python中的聚合类函数`sum`,`min`,`max`第一个参数是`iterable`类型，一般使用方法如下：
 
-此PDF是开源文档，欢迎传播，希望真正帮助到大家，但不能用于商业目的。
+```python
+a = [4,2,5,1]
+sum([i+1 for i in a]) # 16
+```
+
+使用列表生成式`[i+1 for i in a]`创建一个长度与`a`一行的临时列表，这步完成后，再做`sum`聚合。
+
+试想如果你的数组`a`长度十百万级，再创建一个这样的临时列表就很不划算，最好是一边算一边聚合，稍改动为如下：
+
+```python
+a = [4,2,5,1]
+sum(i+1 for i in a) # 16
+```
+
+此时`i+1 for i in a`是`(i+1 for i in a)`的简写，得到一个生成器(`generator`)对象，如下所示：
+
+```python
+In [8]:(i+1 for i in a)
+OUT [8]:<generator object <genexpr> at 0x000002AC7FFA8CF0>
+```
+
+生成器每迭代一步吐出(`yield`)一个元素并计算和聚合后，进入下一次迭代，直到终点。
 
 
 
