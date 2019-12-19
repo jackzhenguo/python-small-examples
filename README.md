@@ -61,21 +61,25 @@ Out[5]: True
 
 #### 4 ascii展示对象　　
 
-调用对象的__repr__() 方法，获得该方法的返回值
+调用对象的__repr__() 方法，获得该方法的返回值，如下例子返回值为字符串
 
 ```python
 In [1]: class Student():
-    ...:     def __init__(self,id,name):
-    ...:         self.id = id
-    ...:         self.name = name
-    ...:     def __repr__(self):
-    ...:         return 'id = '+self.id +', name = '+self.name
-    
-In [2]: print(xiaoming)
+   ...:     def __init__(self,id,name):
+   ...:         self.id = id
+   ...:         self.name = name
+   ...:     def __repr__(self):
+   ...:         return 'id = '+self.id +', name = '+self.name
+   ...: 
+   ...: 
+
+In [2]: xiaoming = Student(id='001',name='xiaoming')
+
+In [3]: print(xiaoming)
 id = 001, name = xiaoming
 
-In [3]: ascii(xiaoming)
-Out[3]: 'id = 001, name = xiaoming'
+In [4]: ascii(xiaoming)
+Out[4]: 'id = 001, name = xiaoming'
 ```
 
 #### 5  十转二
@@ -318,21 +322,16 @@ In [99]: s = "1 + 3 +5"
     ...:
 Out[99]: 9
 ```
-
-#### 23 执行compile　
-
-执行字符串或complie方法编译过的字符串，没有返回值
+ 
+#### 23 查看变量所占字节数
 
 ```python
-In [74]: s  = "print('helloworld')"
+In [1]: import sys
 
-In [75]: r = compile(s,"<string>", "exec")
+In [2]: a = {'a':1,'b':2.0}
 
-In [76]: r
-Out[76]: <code object <module> at 0x0000000005DE75D0, file "<string>", line 1>
-
-In [77]: exec(r)
-helloworld
+In [3]: sys.getsizeof(a) # 占用240个字节
+Out[3]: 240
 ```
 
 #### 24 过滤器　　
@@ -905,17 +904,6 @@ In [193]: b
 Out[193]: ['a', 'b', 'c', 'd', 'e']
 In [194]: [str(y) + str(x) for x,y in zip(a,b)]
 Out[194]: ['a0', 'b1', 'c2', 'd3', 'e4']
-```
-
-#### 59 查看变量所占字节数
-
-```python
-In [1]: import sys
-
-In [2]: a = {'a':1,'b':2.0}
-
-In [3]: sys.getsizeof(a) # 占用240个字节
-Out[3]: 240
 ```
 
 
