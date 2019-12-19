@@ -303,7 +303,7 @@ Out[1]: (3, 1)
 返回一个可以枚举的对象，该对象的next()方法将返回一个元组。
 
 ```python
-In [98]: s = ["a","b","c"]
+In [1]: s = ["a","b","c"]
     ...: for i ,v in enumerate(s,1):
     ...:     print(i,v)
     ...:
@@ -317,10 +317,10 @@ In [98]: s = ["a","b","c"]
 将字符串str 当成有效的表达式来求值并返回计算结果取出字符串中内容
 
 ```python
-In [99]: s = "1 + 3 +5"
+In [1]: s = "1 + 3 +5"
     ...: eval(s)
     ...:
-Out[99]: 9
+Out[1]: 9
 ```
  
 #### 23 查看变量所占字节数
@@ -336,28 +336,33 @@ Out[3]: 240
 
 #### 24 过滤器　　
 
-过滤器，构造一个序列，等价于
-
-```
-[ item for item in iterables if function(item)]
-```
-
-在函数中设定过滤条件，逐一循环迭代器中的元素，将返回值为True时的元素留下，形成一个filter类型数据。
+在函数中设定过滤条件，迭代元素，保留返回值为`True`的元素：
 
 ```python
-In [101]: fil = filter(lambda x: x>10,[1,11,2,45,7,6,13])
+In [1]: fil = filter(lambda x: x>10,[1,11,2,45,7,6,13])
 
-In [102]: list(fil)
-Out[102]: [11, 45, 13]
+In [2]: list(fil)
+Out[2]: [11, 45, 13]
 ```
 
 #### 25 转为浮点类型　
 
-将一个字符串或整数转换为浮点数
+将一个整数或数值型字符串转换为浮点数
 
 ```python
-In [103]: float(3)
-Out[103]: 3.0
+In [1]: float(3)
+Out[1]: 3.0
+```
+如果不能转化为浮点数，则会报`ValueError`:
+```python
+In [2]: float('a')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-11-99859da4e72c> in <module>()
+----> 1 float('a')
+
+ValueError: could not convert string to float: 'a'
+
 ```
 
 #### 26 字符串格式化　
@@ -389,44 +394,71 @@ i am tom,age18
 创建一个不可修改的集合。
 
 ```python
-In [105]: frozenset([1,1,3,2,3])
-Out[105]: frozenset({1, 2, 3})
+In [1]: frozenset([1,1,3,2,3])
+Out[1]: frozenset({1, 2, 3})
 ```
+因为不可修改，所以没有像`set`那样的`add`和`pop`方法
 
 #### 28 动态获取对象属性　
 
 获取对象的属性
 
 ```python
-In [106]: getattr(xiaoming,'name')
-Out[106]: 'xiaoming'
+In [1]: class Student():
+   ...:     def __init__(self,id,name):
+   ...:         self.id = id
+   ...:         self.name = name
+   ...:     def __repr__(self):
+   ...:         return 'id = '+self.id +', name = '+self.name
+
+In [2]: xiaoming = Student(id='001',name='xiaoming')
+In [3]: getattr(xiaoming,'name') # 获取xiaoming这个实例的name属性值
+Out[3]: 'xiaoming'
 ```
 
 #### 29 对象是否有这个属性
 
 ```python
-In [110]: hasattr(xiaoming,'name')
-Out[110]: True
+In [1]: class Student():
+   ...:     def __init__(self,id,name):
+   ...:         self.id = id
+   ...:         self.name = name
+   ...:     def __repr__(self):
+   ...:         return 'id = '+self.id +', name = '+self.name
 
-In [111]: hasattr(xiaoming,'id')
-Out[111]: False
+In [2]: xiaoming = Student(id='001',name='xiaoming')
+In [3]: hasattr(xiaoming,'name')
+Out[3]: True
+
+In [4]: hasattr(xiaoming,'address')
+Out[4]: False
 ```
 
 #### 30 返回对象的哈希值　　
 
-返回对象的哈希值
+返回对象的哈希值，值得注意的是自定义的实例都是可哈希的，`list`, `dict`, `set`等可变对象都是不可哈希的(unhashable)
 
   ```python
-In [112]: hash(xiaoming)
-Out[112]: 6139638
+In [1]: hash(xiaoming)
+Out[1]: 6139638
+
+In [2]: hash([1,2,3])
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-32-fb5b1b1d9906> in <module>()
+----> 1 hash([1,2,3])
+
+TypeError: unhashable type: 'list'
   ```
+
+
 
 #### 31  一键帮助　
 
 返回对象的帮助文档
 
 ```python
-In [113]: help(xiaoming)
+In [1]: help(xiaoming)
 Help on Student in module __main__ object:
 
 class Student(builtins.object)
@@ -451,8 +483,8 @@ class Student(builtins.object)
 返回对象的内存地址
 
 ```python
-In [115]: id(xiaoming)
-Out[115]: 98234208
+In [1]: id(xiaoming)
+Out[1]: 98234208
 ```
 
 #### 33 获取用户输入　
@@ -460,9 +492,9 @@ Out[115]: 98234208
 获取用户输入内容
 
 ```python
-In [116]: input()
+In [1]: input()
 aa
-Out[116]: 'aa'
+Out[1]: 'aa'
 ```
 
 #### 34  转为整型　　
@@ -470,56 +502,52 @@ Out[116]: 'aa'
 int(x, base =10) , x可能为字符串或数值，将x 转换为一个普通整数。如果参数是字符串，那么它可能包含符号和小数点。如果超出了普通整数的表示范围，一个长整数被返回。  
 
 ```python
-In [120]: int('12',16)
-Out[120]: 18
+In [1]: int('12',16)
+Out[1]: 18
 ```
 
-#### 35 实例对应类型
+#### 35 isinstance
 
 判断*object*是否为类*classinfo*的实例，是返回true
 
 ```python
-In [20]: class Student():
-    ...:     ...:     def __init__(self,id,name):
-    ...:     ...:         self.id = id
-    ...:     ...:         self.name = name
-    ...:     ...:     def __repr__(self):
-    ...:     ...:         return 'id = '+self.id +', name = '+self.name
-    ...:
+In [1]: class Student():
+   ...:     def __init__(self,id,name):
+   ...:         self.id = id
+   ...:         self.name = name
+   ...:     def __repr__(self):
+   ...:         return 'id = '+self.id +', name = '+self.name
 
-In [21]: xiaoming = Student('001','xiaoming')
+In [2]: xiaoming = Student(id='001',name='xiaoming')
 
-In [22]: isinstance(xiaoming,Student)
-Out[22]: True
+In [3]: isinstance(xiaoming,Student)
+Out[3]: True
 ```
 
 #### 36 父子关系鉴定
 
-如果class是classinfo类的子类，返回True：
-
 ```python
-In [27]: class undergraduate(Student):
+In [1]: class undergraduate(Student):
     ...:     def studyClass(self):
     ...:         pass
     ...:     def attendActivity(self):
     ...:         pass
-    ...:
 
-In [28]: issubclass(undergraduate,Student)
-Out[28]: True
+In [2]: issubclass(undergraduate,Student)
+Out[2]: True
 
-In [29]: issubclass(object,Student)
-Out[29]: False
+In [3]: issubclass(object,Student)
+Out[3]: False
 
-In [30]: issubclass(Student,object)
-Out[30]: True
+In [4]: issubclass(Student,object)
+Out[4]: True
 ```
 
 如果class是classinfo元组中某个元素的子类，也会返回True
 
 ```python
-In [26]: issubclass(int,(int,float))
-Out[26]: True
+In [1]: issubclass(int,(int,float))
+Out[1]: True
 ```
 
 #### 37 创建迭代器类型
@@ -527,9 +555,9 @@ Out[26]: True
 返回一个可迭代对象, sentinel可省略
 
 ```python
-In [72]: lst = [1,3,5]
+In [1]: lst = [1,3,5]
 
-In [73]: for i in iter(lst):
+In [2]: for i in iter(lst):
     ...:     print(i)
     ...:
 1
@@ -540,7 +568,7 @@ In [73]: for i in iter(lst):
 sentinel 理解为迭代对象的哨兵，一旦迭代到此元素，立即终止：
 
 ```python
-In [81]: class TestIter(object):
+In [1]: class TestIter(object):
     ...:         def __init__(self):
     ...:             self.l=[1,3,2,3,4,5]
     ...:             self.i=iter(self.l)
@@ -553,7 +581,7 @@ In [81]: class TestIter(object):
     ...:             return iter(self.l)
     ...:
 
-In [82]:     t = TestIter()
+In [2]:     t = TestIter()
     ...:     t1 = iter(t, 3)
     ...:     for i in t1:
     ...:         print(i)
