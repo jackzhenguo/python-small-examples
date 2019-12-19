@@ -569,26 +569,25 @@ sentinel 理解为迭代对象的哨兵，一旦迭代到此元素，立即终�
 
 ```python
 In [1]: class TestIter(object):
-    ...:         def __init__(self):
-    ...:             self.l=[1,3,2,3,4,5]
-    ...:             self.i=iter(self.l)
-    ...:         def __call__(self):  #定义了__call__方法的类的实例是可调用的
-    ...:             item = next(self.i)
-    ...:             print ("__call__ is called,which would return",item)
-    ...:             return item
-    ...:         def __iter__(self): #支持迭代协议(即定义有__iter__()函数)
-    ...:             print ("__iter__ is called!!")
-    ...:             return iter(self.l)
-    ...:
+    ...:     def __init__(self):
+    ...:         self.l=[1,3,2,3,4,5]
+    ...:         self.i=iter(self.l)
+    ...:     def __call__(self):  #定义了__call__方法的类的实例是可调用的
+    ...:         item = next(self.i)
+    ...:         print ("__call__ is called,which would return",item)
+    ...:         return item
+    ...:     def __iter__(self): #支持迭代协议(即定义有__iter__()函数)
+    ...:         print ("__iter__ is called!!")
+    ...:         return iter(self.l)
 
-In [2]:     t = TestIter()
-    ...:     t1 = iter(t, 3)
-    ...:     for i in t1:
-    ...:         print(i)
-    ...:
+In [2]: t()
 __call__ is called,which would return 1
-1
+Out[2]: 1
+
+In [3]: t()
 __call__ is called,which would return 3
+Out[3]: 3
+
 ```
 
 #### 38 求序列元素长度
