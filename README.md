@@ -579,14 +579,14 @@ In [1]: class TestIter(object):
     ...:     def __iter__(self): #支持迭代协议(即定义有__iter__()函数)
     ...:         print ("__iter__ is called!!")
     ...:         return iter(self.l)
-
-In [2]: t()
-__call__ is called,which would return 1
-Out[2]: 1
-
+In [2]: t = TestIter()
 In [3]: t()
+__call__ is called,which would return 1
+Out[3]: 1
+
+In [4]: t()
 __call__ is called,which would return 3
-Out[3]: 3
+Out[4]: 3
 
 ```
 
