@@ -163,6 +163,30 @@ Out[3]: id = 001, name = xiaoming
 In [4]: callable(xiaoming)
 Out[4]: False
 ```
+如果想让`xiaoming`能被调用 xiaoming(), 需要重写`Student`类的`__call__`方法：
+
+```python
+In [1]: class Student():
+    ...:     def __init__(self,id,name):
+    ...:         self.id = id
+    ...:         self.name = name
+    ...:     def __repr__(self):
+    ...:         return 'id = '+self.id +', name = '+self.name
+    ...:     def __call__(self):
+    ...:         print('I can be called')
+    ...:         print(f'my name is {self.name}')
+    ...: 
+    ...: 
+
+In [2]: t = Student('001','xiaoming')
+
+In [3]: t()
+I can be called
+my name is xiaoming
+
+```
+
+
 
 #### 12 十转ASCII
 
@@ -552,7 +576,7 @@ Out[1]: True
 
 #### 37 创建迭代器类型
 
-返回一个可迭代对象, sentinel可省略
+使用`iter(obj, sentinel)`, 返回一个可迭代对象, sentinel可省略(一旦迭代到此元素，立即终止)
 
 ```python
 In [1]: lst = [1,3,5]
@@ -565,8 +589,6 @@ In [2]: for i in iter(lst):
 5
 ```
 
-sentinel 理解为迭代对象的哨兵，一旦迭代到此元素，立即终止：
-
 ```python
 In [1]: class TestIter(object):
     ...:     def __init__(self):
@@ -574,113 +596,26 @@ In [1]: class TestIter(object):
     ...:         self.i=iter(self.l)
     ...:     def __call__(self):  #定义了__call__方法的类的实例是可调用的
     ...:         item = next(self.i)
-    ...:         print ("__call__ is called,which would return",item)
+    ...:         print ("__call__ is called,fowhich would return",item)
     ...:         return item
     ...:     def __iter__(self): #支持迭代协议(即定义有__iter__()函数)
     ...:         print ("__iter__ is called!!")
     ...:         return iter(self.l)
 In [2]: t = TestIter()
-In [3]: t()
+In [3]: t() # 因为实现了__call__，所以t实例能被调用
 __call__ is called,which would return 1
 Out[3]: 1
 
-In [4]: t()
-__call__ is called,which would return 3
-Out[4]: 3
-
-```
-
-#### 38 求序列元素长度
-
-返回对象的长度（元素个数）
-
-```python
-In [83]: dic = {'a':1,'b':3}
-
-In [84]: len(dic)
-Out[84]: 2
-```
-
-#### 39 转列表类型
-
-返回可变序列类型
-
-```python
-In [85]: list(map(lambda x: x%2==1, [1,3,2,4,1]))
-Out[85]: [True, True, False, False, True]
-```
-
-#### 40 f映射到元素上
-
-返回一个将 *function* 应用于 *iterable* 中每一项并输出其结果的迭代器：
-
-```python
-In [85]: list(map(lambda x: x%2==1, [1,3,2,4,1]))
-Out[85]: [True, True, False, False, True]
-```
-
-可以传入多个*iterable*对象，输出长度等于最短序列的长度：
-
-```
-In [88]: list(map(lambda x,y: x%2==1 and y%2==0, [1,3,2,4,1],[3,2,1,2]))
-Out[88]: [False, True, False, False]
-```
-
-#### 41 可迭代对象最大值
-
-返回最大值：
-
-```python
-In [99]: max(3,1,4,2,1)
-Out[99]: 4
-
-In [100]: max((),default=0)
-Out[100]: 0
-
-In [89]: di = {'a':3,'b1':1,'c':4}
-In [90]: max(di)
-Out[90]: 'c'
-
-In [102]: a = [{'name':'xiaoming','age':18,'gender':'male'},{'name':'
-     ...: xiaohong','age':20,'gender':'female'}]
-In [104]: max(a,key=lambda x: x['age'])
-Out[104]: {'name': 'xiaohong', 'age': 20, 'gender': 'female'}
-
-```
-
-#### 42 可迭代对象最小值
-
-返回最小值，参考求可迭代对象最大值函数`max`
-
-#### 43 下一个元素
-
-返回可迭代对象的下一个元素
-
-```python
-In [129]: it = iter([5,3,4,1])
-
-In [130]: next(it)
-Out[130]: 5
-
-In [131]: next(it)
-Out[131]: 3
-
-In [132]: next(it)
-Out[132]: 4
-
-In [133]: next(it)
-Out[133]: 1
-
-In [134]: next(it,0) #迭代到头，默认返回值为0
-Out[134]: 0
-
-In [135]: next(it)
-----------------------------------------------------------------------
-StopIteration                        Traceback (most recent call last)
-<ipython-input-135-bc1ab118995a> in <module>
-----> 1 next(it)
-
-StopIteration:
+In [4]: for e in TestIter(): # 因为实现了__iter__方法，所以t能被迭代
+    ...:     print(e)
+    ...: 
+__iter__ is called!!
+1
+3
+2
+3
+4
+5
 ```
 
 #### 44 所有对象之根
