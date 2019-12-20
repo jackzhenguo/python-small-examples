@@ -6,20 +6,47 @@
 
 ### 今日更新
 
-**【2019年12月19日】** 计算任意维坐标中两点之间距离
+**【2019年12月20日】** 让实例也能被调用
+
+Python自定义一个类Student，如下：
+```python
+class Student():
+    ...:     def __init__(self,id,name):
+    ...:         self.id = id
+    ...:         self.name = name
+    ...:     def __repr__(self):
+    ...:         return 'id = '+self.id +', name = '+self.name
+
+```
+创建实例：`xiaoming`:
 
 ```python
-import math
-def distance(p0,p1,digits=2):
-    a=map(lambda p: (p[0]-p[1])**2, zip(p0, p1))
-    return round(math.sqrt(sum(a)),digits)
+xiaoming = Student('001','xiaoming')
+xiaoming() # TypeError: 'Student' object is not callable
 ```
+此时调用实例`xiaomng()`会抛出TypeError实例不能被调用的异常。
 
+重写`__call__ `方法，实现`xiaomng()`可被调用:
 ```python
-distance((1,1),(2,2),digits=5) # 1.41421
-distance((1,2,3,4),(4,3,2,1)) # 4.47
-```
+class Student():
+    ...:     def __init__(self,id,name):
+    ...:         self.id = id
+    ...:         self.name = name
+    ...:     def __repr__(self):
+    ...:         return 'id = '+self.id +', name = '+self.name
+    ...:     def __call__(self):
+    ...:         print('Now, I can be called')
+    ...:         print(f'my name is {self.name}')
 
+```
+再次调用：
+```python
+In[1]: xiaoming = Student('001','xiaoming')
+
+In[2]: xiaoming()
+OUT[2]: Now, I can be called
+my name is xiaoming
+```
 
 
 ### 一、Python之基
