@@ -6,46 +6,88 @@
 
 ### 今日更新
 
-**【2019年12月20日】** 让实例也能被调用
+**【2019年12月21日】** 统计异常发生次数和时间的装饰器
 
-Python自定义一个类Student，如下：
+
+写一个装饰器，统计某个异常重复出现指定次数时，经历的时长。
 ```python
-class Student():
-    ...:     def __init__(self,id,name):
-    ...:         self.id = id
-    ...:         self.name = name
-    ...:     def __repr__(self):
-    ...:         return 'id = '+self.id +', name = '+self.name
+import time
+import math
+
+
+def excepter(f):
+    i = 0
+    t1 = time.time()
+    def wrapper(): 
+        try:
+            f()
+        except Exception as e:
+            nonlocal i
+            i += 1
+            print(f'{e.args[0]}: {i}')
+            t2 = time.time()
+            if i == n:
+                print(f'spending time:{round(t2-t1,2)}')
+    return wrapper
 
 ```
-创建实例：`xiaoming`:
+
+关键词`nonlocal`常用于函数嵌套中，声明变量i为非局部变量；
+
+如果不声明，`i+=1`表明`i`为函数`wrapper`内的局部变量，因为在`i+=1`引用(reference)时,`i`未被声明，所以会报`unreferenced variable`的错误。
+
+使用创建的装饰函数`excepter`, `n`是异常出现的次数。
+
+共测试了两类常见的异常：`被零除`和`数组越界`。
 
 ```python
-xiaoming = Student('001','xiaoming')
-xiaoming() # TypeError: 'Student' object is not callable
+n = 10 # except count
+
+@excepter
+def divide_zero_except():
+    time.sleep(0.1)
+    j = 1/(40-20*2)
+
+# test zero divived except
+for _ in range(n):
+    divide_zero_except()
+
+
+@excepter
+def outof_range_except():
+    a = [1,3,5]
+    time.sleep(0.1)
+    print(a[3])
+# test out of range except
+for _ in range(n):
+    outof_range_except()
+
 ```
-此时调用实例`xiaomng()`会抛出TypeError实例不能被调用的异常。
 
-重写`__call__ `方法，实现`xiaomng()`可被调用:
+打印出来的结果如下：
 ```python
-class Student():
-    ...:     def __init__(self,id,name):
-    ...:         self.id = id
-    ...:         self.name = name
-    ...:     def __repr__(self):
-    ...:         return 'id = '+self.id +', name = '+self.name
-    ...:     def __call__(self):
-    ...:         print('Now, I can be called')
-    ...:         print(f'my name is {self.name}')
-
-```
-再次调用：
-```python
-In[1]: xiaoming = Student('001','xiaoming')
-
-In[2]: xiaoming()
-OUT[2]: Now, I can be called
-my name is xiaoming
+division by zero: 1
+division by zero: 2
+division by zero: 3
+division by zero: 4
+division by zero: 5
+division by zero: 6
+division by zero: 7
+division by zero: 8
+division by zero: 9
+division by zero: 10
+spending time:1.01
+list index out of range: 1
+list index out of range: 2
+list index out of range: 3
+list index out of range: 4
+list index out of range: 5
+list index out of range: 6
+list index out of range: 7
+list index out of range: 8
+list index out of range: 9
+list index out of range: 10
+spending time:1.01
 ```
 
 
