@@ -1,99 +1,12 @@
-### 前言
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。
 
-告别枯燥，60秒学会一个小例子！
+目前已发布[Python之路.pdf V1.0](https://github.com/jackzhenguo/python-small-examples/releases)，包括：`Python基础`，`Python正则`，`Python之例`，`Python之能`章节，共计`138个`小例子。
 
-目前已发布[Python之路.pdf V1.0](https://github.com/jackzhenguo/python-small-examples/releases)，包括：`Python之基`，`Python之正`，`Python之例`，`Python之能`章节，共计`138个`小例子。
+### 一、Python基础
 
-### 今日更新
+`Python基础`主要总结Python常用内置函数及用法，Python独有的语法特性、关键词`nonlocal`,` global`等。
 
-**【2019年12月21日】** 统计异常发生次数和时间的装饰器
-
-
-写一个装饰器，统计某个异常重复出现指定次数时，经历的时长。
-```python
-import time
-import math
-
-
-def excepter(f):
-    i = 0
-    t1 = time.time()
-    def wrapper(): 
-        try:
-            f()
-        except Exception as e:
-            nonlocal i
-            i += 1
-            print(f'{e.args[0]}: {i}')
-            t2 = time.time()
-            if i == n:
-                print(f'spending time:{round(t2-t1,2)}')
-    return wrapper
-
-```
-
-关键词`nonlocal`常用于函数嵌套中，声明变量i为非局部变量；
-
-如果不声明，`i+=1`表明`i`为函数`wrapper`内的局部变量，因为在`i+=1`引用(reference)时,`i`未被声明，所以会报`unreferenced variable`的错误。
-
-使用创建的装饰函数`excepter`, `n`是异常出现的次数。
-
-共测试了两类常见的异常：`被零除`和`数组越界`。
-
-```python
-n = 10 # except count
-
-@excepter
-def divide_zero_except():
-    time.sleep(0.1)
-    j = 1/(40-20*2)
-
-# test zero divived except
-for _ in range(n):
-    divide_zero_except()
-
-
-@excepter
-def outof_range_except():
-    a = [1,3,5]
-    time.sleep(0.1)
-    print(a[3])
-# test out of range except
-for _ in range(n):
-    outof_range_except()
-
-```
-
-打印出来的结果如下：
-```python
-division by zero: 1
-division by zero: 2
-division by zero: 3
-division by zero: 4
-division by zero: 5
-division by zero: 6
-division by zero: 7
-division by zero: 8
-division by zero: 9
-division by zero: 10
-spending time:1.01
-list index out of range: 1
-list index out of range: 2
-list index out of range: 3
-list index out of range: 4
-list index out of range: 5
-list index out of range: 6
-list index out of range: 7
-list index out of range: 8
-list index out of range: 9
-list index out of range: 10
-spending time:1.01
-```
-
-
-### 一、Python之基
-
-`Python之基`主要总结Python常用内置函数及用法，它们在Python中被最高频的使用，所以务必掌握。`V1.0` 一共包括`58个`。
+`V1.0` 一共包括`60个`基础小例子。
 
 #### 1 求绝对值
 
@@ -415,7 +328,7 @@ In [1]: s = "1 + 3 +5"
     ...:
 Out[1]: 9
 ```
- 
+
 #### 23 查看变量所占字节数
 
 ```python
@@ -449,7 +362,6 @@ Out[1]: 3.0
 如果不能转化为浮点数，则会报`ValueError`:
 ```python
 In [2]: float('a')
----------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
 <ipython-input-11-99859da4e72c> in <module>()
 ----> 1 float('a')
@@ -536,15 +448,12 @@ In [1]: hash(xiaoming)
 Out[1]: 6139638
 
 In [2]: hash([1,2,3])
----------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-32-fb5b1b1d9906> in <module>()
 ----> 1 hash([1,2,3])
 
 TypeError: unhashable type: 'list'
   ```
-
-
 
 #### 31  一键帮助　
 
@@ -561,7 +470,6 @@ class Student(builtins.object)
  |
  |  __repr__(self)
  |
- |  ----------------------------------------------------------------------
  |  Data descriptors defined here:
  |
  |  __dict__
@@ -689,13 +597,13 @@ __iter__ is called!!
 
 #### 44 所有对象之根
 
-返回一个没有特征的新对象。object 是所有类的基类。
+object 是所有类的基类
 
 ```python
-In [137]: o = object()
+In [1]: o = object()
 
-In [138]: type(o)
-Out[138]: object
+In [2]: type(o)
+Out[2]: object
 ```
 
 #### 45 打开文件
@@ -703,10 +611,10 @@ Out[138]: object
 返回文件对象
 
 ```python
-In [146]: fo = open('D:/a.txt',mode='r', encoding='utf-8')
+In [1]: fo = open('D:/a.txt',mode='r', encoding='utf-8')
 
-In [147]: fo.read()
-Out[147]: '\ufefflife is not so long,\nI use Python to play.'
+In [2]: fo.read()
+Out[2]: '\ufefflife is not so long,\nI use Python to play.'
 ```
 
 mode取值表：
@@ -726,8 +634,8 @@ mode取值表：
 base为底的exp次幂，如果mod给出，取余
 
 ```python
-In [149]: pow(3, 2, 4)
-Out[149]: 1
+In [1]: pow(3, 2, 4)
+Out[1]: 1
 ```
 
 #### 47 打印
@@ -799,21 +707,19 @@ class C:
 生成一个不可变序列：
 
 ```python
-In [153]: range(11)
-Out[153]: range(0, 11)
+In [1]: range(11)
+Out[1]: range(0, 11)
 
-In [154]: range(0,11,1)
-Out[154]: range(0, 11)
+In [2]: range(0,11,1)
+Out[2]: range(0, 11)
 ```
 
 #### 50 反向迭代器
 
-返回一个反向的 iterator:
-
 ```python
-In [155]: rev = reversed([1,4,2,3,1])
+In [1]: rev = reversed([1,4,2,3,1])
 
-In [156]: for i in rev:
+In [2]: for i in rev:
      ...:     print(i)
      ...:
 1
@@ -825,7 +731,7 @@ In [156]: for i in rev:
 
 #### 51 四舍五入
 
-四舍五入，ndigits代表小数点后保留几位：
+四舍五入，`ndigits`代表小数点后保留几位：
 
 ```python
 In [11]: round(10.0222222, 3)
@@ -837,7 +743,7 @@ Out[12]: 10.1
 
 #### 52 转为集合类型
 
-返回一个set对象，可实现去重：
+返回一个set对象，集合内不允许有重复元素：
 
 ```python
 In [159]: a = [1,4,2,3,1]
@@ -850,15 +756,15 @@ Out[160]: {1, 2, 3, 4}
 
 *class* slice(*start*, *stop*[, *step*])
 
-返回一个表示由 range(start, stop, step) 所指定索引集的 slice对象，它让代码可读性、可维护性大大增强。
+返回一个表示由 range(start, stop, step) 所指定索引集的 slice对象，它让代码可读性、可维护性变好。
 
 ```python
-In [13]: a = [1,4,2,3,1]
+In [1]: a = [1,4,2,3,1]
 
-In [14]: my_slice_meaning = slice(0,5,2)
+In [2]: my_slice_meaning = slice(0,5,2)
 
-In [15]: a[my_slice_meaning]
-Out[15]: [1, 2, 1]
+In [3]: a[my_slice_meaning]
+Out[3]: [1, 2, 1]
 ```
 
 #### 54 拿来就用的排序函数
@@ -866,15 +772,15 @@ Out[15]: [1, 2, 1]
 排序：
 
 ```python
-In [174]: a = [1,4,2,3,1]
+In [1]: a = [1,4,2,3,1]
 
-In [175]: sorted(a,reverse=True)
-Out[175]: [4, 3, 2, 1, 1]
+In [2]: sorted(a,reverse=True)
+Out[2]: [4, 3, 2, 1, 1]
 
-In [178]: a = [{'name':'xiaoming','age':18,'gender':'male'},{'name':'
+In [3]: a = [{'name':'xiaoming','age':18,'gender':'male'},{'name':'
      ...: xiaohong','age':20,'gender':'female'}]
-In [180]: sorted(a,key=lambda x: x['age'],reverse=False)
-Out[180]:
+In [4]: sorted(a,key=lambda x: x['age'],reverse=False)
+Out[4]:
 [{'name': 'xiaoming', 'age': 18, 'gender': 'male'},
  {'name': 'xiaohong', 'age': 20, 'gender': 'female'}]
 ```
@@ -895,7 +801,7 @@ Out[185]: 21
 
 #### 56 转元组
 
- `tuple()` 将对象转为一个不可变的序列类型，元组。
+ `tuple()` 将对象转为一个不可变的序列类型
 
  ```python
  In [16]: i_am_list = [1,3,5]
@@ -911,11 +817,21 @@ Out[185]: 21
 传入一个参数时，返回 *object* 的类型：
 
 ```python
-In [186]: type(xiaoming)
-Out[186]: __main__.Student
+In [1]: class Student():
+   ...:     def __init__(self,id,name):
+   ...:         self.id = id
+   ...:         self.name = name
+   ...:     def __repr__(self):
+   ...:         return 'id = '+self.id +', name = '+self.name
+   ...: 
+   ...: 
 
-In [187]: type(tuple())
-Out[187]: tuple
+In [2]: xiaoming = Student(id='001',name='xiaoming')
+In [3]: type(xiaoming)
+Out[3]: __main__.Student
+
+In [4]: type(tuple())
+Out[4]: tuple
 ```
 
 #### 58 聚合迭代器
@@ -923,20 +839,76 @@ Out[187]: tuple
 创建一个聚合了来自每个可迭代对象中的元素的迭代器：
 
 ```python
-In [188]: x = [3,2,1]
-In [189]: y = [4,5,6]
-In [190]: list(zip(y,x))
-Out[190]: [(4, 3), (5, 2), (6, 1)]
+In [1]: x = [3,2,1]
+In [2]: y = [4,5,6]
+In [3]: list(zip(y,x))
+Out[3]: [(4, 3), (5, 2), (6, 1)]
 
-
-In [191]: a = range(5)
-In [192]: b = list('abcde')
-In [193]: b
-Out[193]: ['a', 'b', 'c', 'd', 'e']
-In [194]: [str(y) + str(x) for x,y in zip(a,b)]
-Out[194]: ['a0', 'b1', 'c2', 'd3', 'e4']
+In [4]: a = range(5)
+In [5]: b = list('abcde')
+In [6]: b
+Out[6]: ['a', 'b', 'c', 'd', 'e']
+In [7]: [str(y) + str(x) for x,y in zip(a,b)]
+Out[7]: ['a0', 'b1', 'c2', 'd3', 'e4']
 ```
 
+#### 59 nonlocal用于内嵌函数中
+
+关键词`nonlocal`常用于函数嵌套中，声明变量`i`为非局部变量；
+如果不声明，`i+=1`表明`i`为函数`wrapper`内的局部变量，因为在`i+=1`引用(reference)时,i未被声明，所以会报`unreferenced variable`的错误。
+```python
+def excepter(f):
+    i = 0
+    t1 = time.time()
+    def wrapper(): 
+        try:
+            f()
+        except Exception as e:
+            nonlocal i
+            i += 1
+            print(f'{e.args[0]}: {i}')
+            t2 = time.time()
+            if i == n:
+                print(f'spending time:{round(t2-t1,2)}')
+    return wrapper
+```
+
+#### 60 global
+先回答为什么要有`global`，一个变量被多个函数引用，想让全局变量被所有函数共享。有的伙伴可能会想这还不简单，这样写：
+```python
+i = 5
+def f():
+    print(i)
+
+def g():
+    print(i)
+    pass
+
+f()
+g()
+
+```
+f和g两个函数都能共享变量`i`，程序没有报错，所以他们依然不明白为什么要用`global`.
+
+但是，如果我想要有个函数对`i`递增，这样：
+```python
+def h():
+    i += 1
+
+h()
+```
+此时执行程序，bang, 出错了！ 抛出异常：`UnboundLocalError`，原来编译器在解释`i+=1`时会把`i`解析为函数`h()`内的局部变量，很显然在此函数内，编译器找不到对变量`i`的定义，所以会报错。
+
+`global`就是为解决此问题而被提出，在函数h内，显示地告诉编译器`i`为全局变量，然后编译器会在函数外面寻找`i`的定义，执行完`i+=1`后，`i`还为全局变量，值加1：
+```python
+i = 0
+def h():
+    global i
+    i += 1
+
+h()
+print(i)
+```
 
 
 ### 二、Python之正
@@ -3341,3 +3313,85 @@ def setup_axes():
 main()
 ```
 
+写一个装饰器，统计某个异常重复出现指定次数时，经历的时长。
+```python
+import time
+import math
+
+
+def excepter(f):
+    i = 0
+    t1 = time.time()
+    def wrapper(): 
+        try:
+            f()
+        except Exception as e:
+            nonlocal i
+            i += 1
+            print(f'{e.args[0]}: {i}')
+            t2 = time.time()
+            if i == n:
+                print(f'spending time:{round(t2-t1,2)}')
+    return wrapper
+
+```
+
+#### 装饰器
+
+关键词`nonlocal`常用于函数嵌套中，声明变量i为非局部变量；
+
+如果不声明，`i+=1`表明`i`为函数`wrapper`内的局部变量，因为在`i+=1`引用(reference)时,`i`未被声明，所以会报`unreferenced variable`的错误。
+
+使用创建的装饰函数`excepter`, `n`是异常出现的次数。
+
+共测试了两类常见的异常：`被零除`和`数组越界`。
+
+```python
+n = 10 # except count
+
+@excepter
+def divide_zero_except():
+    time.sleep(0.1)
+    j = 1/(40-20*2)
+
+# test zero divived except
+for _ in range(n):
+    divide_zero_except()
+
+
+@excepter
+def outof_range_except():
+    a = [1,3,5]
+    time.sleep(0.1)
+    print(a[3])
+# test out of range except
+for _ in range(n):
+    outof_range_except()
+
+```
+
+打印出来的结果如下：
+```python
+division by zero: 1
+division by zero: 2
+division by zero: 3
+division by zero: 4
+division by zero: 5
+division by zero: 6
+division by zero: 7
+division by zero: 8
+division by zero: 9
+division by zero: 10
+spending time:1.01
+list index out of range: 1
+list index out of range: 2
+list index out of range: 3
+list index out of range: 4
+list index out of range: 5
+list index out of range: 6
+list index out of range: 7
+list index out of range: 8
+list index out of range: 9
+list index out of range: 10
+spending time:1.01
+```
