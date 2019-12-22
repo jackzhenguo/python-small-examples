@@ -1,12 +1,12 @@
 告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。
 
-最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
+已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
 [toc]
 
 ### 一、Python基础
 
-`Python基础`主要总结Python常用内置函数；Python独有的语法特性、关键词`nonlocal`,` global`等；内置数据结构包括：列表(list),字典(dict),集合(set),元组(tuple)以及相关的高级模块`collections`中的`Counter`,`namedtuple`,`defaultdict`，`heapq`模块。目前共有`82`个小例子
+`Python基础`主要总结Python常用内置函数；Python独有的语法特性、关键词`nonlocal`, ` global`等；内置数据结构包括：列表(list),  字典(dict),  集合(set),  元组(tuple) 以及相关的高级模块`collections`中的`Counter`,  `namedtuple`, `defaultdict`，`heapq`模块。目前共有`82`个小例子
 
 此章节一共包括`82个`基础小例子。
 
