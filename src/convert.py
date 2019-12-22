@@ -13,18 +13,18 @@ def convert(input_file):
     print(f'begin to convert {filename}...')
     process = api.convert({
         'inputformat': 'md',
-        'outputformat': 'rst',
+        'outputformat': 'pdf',
         'input': 'upload',
-        'file': open('./md2/{}'.format(input_file), 'rb')
+        'file': open('./{}'.format(input_file), 'rb')
     })
     process.wait()  # wait until conversion finished
     # download output file
 
     process.download(
-        "./rst/tmp/{}.rst".format(filename))
+        "./tmp/{}.pdf".format(filename))
     print(f"convert {filename} success")
 
 
-for input_file in os.listdir('./md2'):
+for input_file in os.listdir('.'):
     convert(input_file)
-    time.sleep(1)
+    # time.sleep(1)
