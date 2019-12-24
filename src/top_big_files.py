@@ -1,3 +1,4 @@
+import os
 from collections import defaultdict
 d = defaultdict(list)
 for root, dirs, files in os.walk('E:\guozhen3\08LOL\JDLOL\fengbi\jdlol'):
