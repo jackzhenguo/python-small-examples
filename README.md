@@ -2,7 +2,7 @@
 
 已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
-> 目前正在每天更新新增加的第八章节：`python 机器学习`章节，包括`机器学习的基础概念`和`十大核心算法`以及`Sklearn和Kaggle实战`的小例子。
+> 目前正在每天更新新增加的第八章节：Python基础算法、第九章节：`python 机器学习`，包括`机器学习的基础概念`和`十大核心算法`以及`Sklearn和Kaggle实战`的小例子。
 
 ### 一、Python基础
 
@@ -3609,7 +3609,46 @@ if __name__ == '__main__':
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
-### 第八章 Python机器学习
+### 第八章 Python基础算法
+
+#### 1 领略算法魅力
+
+深刻研究排序算法是入门算法较为好的一种方法，现在还记得4年前手动实现常见8种排序算法，通过随机生成一些数据，逐个校验代码实现的排序过程是否与预期的一致，越做越有劲，越有劲越想去研究，公交车上，吃饭的路上。。。那些画面，现在依然记忆犹新。
+
+能力有限，当时并没有生成排序过程的动画，所以这些年想着抽时间一定把排序的过程都制作成动画，然后分享出来，让更多的小伙伴看到，通过排序算法的动态演示动画，找到学习算法的真正乐趣，从而迈向一个新的认知领域。
+
+当时我还是用C++写的，时过境迁，Python迅速崛起，得益于Python的简洁，接口易用，最近终于有人在github中开源了使用Python动画展示排序算法的项目，真是倍感幸运。
+
+动画还是用matplotlib做出来的，这就更完美了，一边学完美的算法，一边还能提升Python熟练度，一边还能学到使用matplotlib制作动画。
+
+#### 2  快速排序动画展示
+
+一个随机序列，使用快速排序算法，由小到大排序的过程：
+
+![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+
+#### 3  归并排序动画展示
+
+一个随机序列，使用归并排序算法，由小到大排序的过程：
+
+
+
+![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+
+#### 4 堆排序动画展示
+一个随机序列，使用堆排序算法，由小到大排序的过程：
+
+
+
+
+
+![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaH7HenTzoiaicwFrMTCiav18yLEhPmXombelTAlAMeBhzic4icnsuoQg1D7sw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+
+这些算法动画使用Matplotlib制作，接下来逐个补充。
+
+
+
+### 第九章 Python机器学习
 
 #### 1 引言
 
