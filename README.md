@@ -2,11 +2,15 @@
 
 已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
-> 目前每天正在更新的内容包括：
+> 目前正在更新或接下来更新的计划如下：
 >
 > 1) 不断丰富原有1~7章节；
-> 2) 第八章节：Python基础算法；
-> 3) 第九章节：python 机器学习，包括机器学习的基础概念和十大核心算法以及Sklearn和Kaggle实战的小例子。
+> 2) Python基础算法；
+> 3) python 机器学习，包括机器学习的基础概念和十大核心算法以及Sklearn和Kaggle实战的小例子。
+> 4) PyQt制作GUI
+> 5) Flask前端开发
+> 6) Python数据分析：NumPy, Pandas, Matplotlib, Plotly等
+
 
 ### 一、Python基础
 
