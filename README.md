@@ -52,15 +52,31 @@ max(max([ [1,2,3], [5,1], [4] ], key=lambda v: max(v))) # 5
 
 #### 2 Python绘图
 
-Python绘图方便、漂亮，如下为绘制的stack类型的柱状图
+Python绘图方便、漂亮，如下为绘制的stack类型的柱状图：
 
 ![image-20191225101046701](./img/image-20191225101046701.png)
+
+Python绘制散点图：
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzS3KTX8YzWzkPvDIiaIibsxHDz2C93qwpoFRqiaL6EVeSFibAT04ggxNbHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+Python绘制热力图：
+
+![](./img/heatmap.png)
+
+
+
+
 
 #### 3 Python动画
 
 仅适用Python的常用绘图库：Matplotlib，就能制作出动画，辅助算法新手入门基本的排序算法。如下为一个随机序列，使用`快速排序算法`，由小到大排序的过程动画展示：
 
 ![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+
+归并排序动态展示：
+
+![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
 
 
 
