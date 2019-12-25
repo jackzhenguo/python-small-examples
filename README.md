@@ -12,6 +12,94 @@
 > 6) Python数据分析：NumPy, Pandas, Matplotlib, Plotly等
 
 
+
+### 0 感受Python之美
+
+#### 1 一行代码
+
+通过一行代码，体会Python语言简洁之美
+
+1) 一行代码交换`a`,`b`：
+
+```python
+a, b = b, a
+```
+
+2) 一行代码反转列表
+
+```python
+[1,2,3][::-1] # [3,2,1]
+```
+
+3) 一行代码合并两个字典
+
+```python
+{**{'a':1,'b':2}, **{'c':3}} # {'a': 1, 'b': 2, 'c': 3}
+
+```
+4)  一行代码去重
+```python
+set([1,2,2,3,3,3]) # {1, 2, 3}
+```
+
+5) 一行代码找出多个列表中的最大值
+
+```python
+max(max([ [1,2,3], [5,0,1] ], key=lambda v: max(v))) # 5 
+```
+
+
+#### 2 Python绘图
+
+Python绘图方便、漂亮，如下为绘制的stack类型的柱状图
+
+![image-20191225101046701](E:\guozhen3\资料库\06self\python-small-examples\image-20191225101046701.png)
+
+#### 3 Python动画
+
+仅适用Python的常用绘图库：Matplotlib，就能制作出动画，辅助算法新手入门基本的排序算法。如下为一个随机序列，使用`快速排序算法`，由小到大排序的过程动画展示：
+
+![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+
+
+
+#### 4 Python数据分析
+
+Python非常适合做数值计算、数据分析，一行代码完成数据透视：
+
+
+
+```python
+pd.pivot_table(df, index=['Manager', 'Rep'], values=['Price'], aggfunc=np.sum)
+```
+
+
+
+#### 5 Python机器学习
+
+Python机器学习库`Sklearn`功能强大，接口易用，包括数据预处理模块、回归、分类、聚类、降维等。一行代码创建一个KMeans聚类模型：
+
+```python
+from sklearn.cluster import KMeans
+KMeans( n_clusters=3 )
+```
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/e4kxNicDVcCGpkBThJSo6hrL3NpV3iasxOXslKOpDkxqVApeZughwf6hRNCP8WBf7fGHfxUQiaFA4Z7HQexyHB2oA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+#### 6 Python-GUI
+
+PyQt设计器开发GUI，能够迅速通过拖动组建搭建出来，使用方便。如下为使用PyQt，定制的一个专属自己的小而美的计算器：
+
+![image-20191225102637989](E:\guozhen3\资料库\06self\python-small-examples\image-20191225102637989.png)
+
+除此之外，使用Python的Flask框架搭建Web框架，也非常方便。
+
+
+
+总之，在这个`Python小例子`，你都能学到关于使用Python干活的方方面面的有趣的小例子，欢迎关注。
+
+
+
 ### 一、Python基础
 
 `Python基础`主要总结Python常用内置函数；Python独有的语法特性、关键词`nonlocal`, ` global`等；内置数据结构包括：列表(list),  字典(dict),  集合(set),  元组(tuple) 以及相关的高级模块`collections`中的`Counter`,  `namedtuple`, `defaultdict`，`heapq`模块。目前共有`82`个小例子
