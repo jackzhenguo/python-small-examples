@@ -60,12 +60,6 @@ Python绘制散点图：
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzS3KTX8YzWzkPvDIiaIibsxHDz2C93qwpoFRqiaL6EVeSFibAT04ggxNbHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
-Python绘制热力图：
-
-![](./img/heatmap.png)
-
-
-
 
 
 #### 3 Python动画
@@ -74,7 +68,7 @@ Python绘制热力图：
 
 ![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
 
-归并排序动态展示：
+归并排序动画展示：
 
 ![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
 
