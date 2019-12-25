@@ -53,7 +53,7 @@ max(max([ [1,2,3], [5,1], [4] ], key=lambda v: max(v))) # 5
 
 Python绘图方便、漂亮，如下为绘制的stack类型的柱状图
 
-![image-20191225101046701](E:\guozhen3\资料库\06self\python-small-examples\image-20191225101046701.png)
+![image-20191225101046701](./img/image-20191225101046701.png)
 
 #### 3 Python动画
 
@@ -90,7 +90,7 @@ KMeans( n_clusters=3 )
 
 PyQt设计器开发GUI，能够迅速通过拖动组建搭建出来，使用方便。如下为使用PyQt，定制的一个专属自己的小而美的计算器：
 
-![image-20191225102637989](E:\guozhen3\资料库\06self\python-small-examples\image-20191225102637989.png)
+![image-20191225102637989](./img/image-20191225102637989.png)
 
 除此之外，使用Python的Flask框架搭建Web框架，也非常方便。
 
