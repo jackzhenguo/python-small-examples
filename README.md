@@ -3318,7 +3318,7 @@ print('ok')
 
 仪表盘中共展示三项，每项的比例为30%,70%,90%，如下图默认名称显示第一项：Python机器学习，完成比例为30%
 
-![img](https://mmbiz.qpic.cn/sz_mmbiz_png/tdJziaFLKKeSDekiambDPY9lwKibw8MaXMCWBqBTovMIcHEnLLVbF9p1ibEEsAORzp5IzTFLpXP50XpM43FZId3wkA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20191228194635902](./img/image-20191228194635902.png)
 
 
 ### 七、Python实战
