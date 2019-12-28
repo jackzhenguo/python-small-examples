@@ -976,7 +976,7 @@ def excepter(f):
     return wrapper
 ```
 
-#### 60 global
+#### 60 global 声明全局变量
 先回答为什么要有`global`，一个变量被多个函数引用，想让全局变量被所有函数共享。有的伙伴可能会想这还不简单，这样写：
 ```python
 i = 5
@@ -1317,10 +1317,8 @@ from heapq import nlargest
 
 # 返回字典d前n个最大值对应的键
 
-
 def topn_dict(d, n):
     return nlargest(n, d, key=lambda k: d[k])
-
 
 topn_dict({'a': 10, 'b': 8, 'c': 9, 'd': 10}, 3)  # ['a', 'd', 'c']
 ```
@@ -1339,8 +1337,6 @@ def anagram(str1, str2):
 anagram('eleven+two', 'twelve+one')  # True 这是一对神器的变位词
 anagram('eleven', 'twelve')  # False
 ```
-
-
 
 
 #### 82 逻辑上合并字典
@@ -1363,22 +1359,102 @@ merged2 = ChainMap(dic1,dic2)
 print(merged2) # ChainMap({'x': 1, 'y': 2}, {'y': 3, 'z': 4})
 ```
 
-(2) ChainMap节省内存
-
-`ChainMap`这种只在逻辑上合并字典的方法，可以大大节省内存的使用。普通的合并字典会重新创建一个字典，其占用内存会很大，演示如下：
+#### 83 命名元组提高可读性
 
 ```python
-import sys
-sys.getsizeof(merged1) # 240
+from collections import namedtuple
+Point = namedtuple('Point', ['x', 'y', 'z'])  # 定义名字为Point的元祖，字段属性有x,y,z
+lst = [Point(1.5, 2, 3.0), Point(-0.3, -1.0, 2.1), Point(1.3, 2.8, -2.5)]
+print(lst[0].y - lst[1].y)
 ```
 
-结果显示会占用`240`个字节，`ChainMap`合并后的字典由于只是创建列表，其元素只是指针变量（指向了原来的字典），占用字节自然会小很多：
+使用命名元组写出来的代码可读性更好，尤其处理上百上千个属性时作用更加凸显。
+
+#### 84 样本抽样
+
+使用`sample`抽样，如下例子从100个样本中随机抽样10个。
 
 ```python
-sys.getsizeof(merged2) #56
+from random import randint,sample
+lst = [randint(0,50) for _ in range(100)]
+print(lst[:5])# [38, 19, 11, 3, 6]
+lst_sample = sample(lst,10)
+print(lst_sample) # [33, 40, 35, 49, 24, 15, 48, 29, 37, 24]
 ```
 
-只占用`56`个字节，相比第一种合并方法节省内存4倍多。
+#### 85 重洗数据集
+
+使用`shuffle`用来重洗数据集，**值得注意`shuffle`是对lst就地(in place)洗牌，节省存储空间**
+
+```python
+from random import shuffle
+lst = [randint(0,50) for _ in range(100)]
+shuffle(lst)
+print(lst[:5]) # [50, 3, 48, 1, 26]
+```
+
+#### 86 10个均匀分布的坐标点
+
+random模块中的`uniform(a,b)`生成[a,b)内的一个随机数，如下生成10个均匀分布的二维坐标点
+
+```python
+from random import uniform
+In [1]: [(uniform(0,10),uniform(0,10)) for _ in range(10)]
+Out[1]: 
+[(9.244361194237328, 7.684326645514235),
+ (8.129267671737324, 9.988395854203773),
+ (9.505278771040661, 2.8650440524834107),
+ (3.84320100484284, 1.7687190176304601),
+ (6.095385729409376, 2.377133802224657),
+ (8.522913365698605, 3.2395995841267844),
+ (8.827829601859406, 3.9298809217233766),
+ (1.4749644859469302, 8.038753079253127),
+ (9.005430657826324, 7.58011186920019),
+ (8.700789540392917, 1.2217577293254112)]
+```
+
+#### 87 10个高斯分布的坐标点
+
+random模块中的`gauss(u,sigma)`生成均值为u, 标准差为sigma的满足高斯分布的值，如下生成10个二维坐标点，样本误差(y-2*x-1)满足均值为0，标准差为1的高斯分布：
+
+```python
+from random import gauss
+x = range(10)
+y = [2*xi+1+gauss(0,1) for xi in x]
+points = list(zip(x,y))
+### 10个二维点：
+[(0, -0.86789025305992),
+ (1, 4.738439437453464),
+ (2, 5.190278040856102),
+ (3, 8.05270893133576),
+ (4, 9.979481700775292),
+ (5, 11.960781766216384),
+ (6, 13.025427054303737),
+ (7, 14.02384035204836),
+ (8, 15.33755823101161),
+ (9, 17.565074449028497)]
+```
+
+#### 88 chain高效串联多个容器对象
+
+`chain`函数串联a和b，兼顾内存效率同时写法更加优雅。
+
+```python
+from itertools import chain
+a = [1,3,5,0]
+b = (2,4,6)
+
+for i in chain(a,b):
+  print(i)
+### 结果
+1
+3
+5
+0
+2
+4
+6
+```
 
 ### 二、Python字符串和正则
 
