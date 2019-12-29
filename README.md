@@ -3,15 +3,25 @@
 目录：
 
 第零章：感受Python之美
+
 第一章：Python基础
+
 第二章：Python之坑
+
 第三章：Python字符串和正则
+
 第四章：Python文件
+
 第五章：Python日期
+
 第六章：Python利器
+
 第七章：Python画图
+
 第八章：Python实战
+
 第九章：Python基础算法
+
 第十章：Python机器学习
 
 > 后续章节：
