@@ -52,13 +52,17 @@ max(max([ [1,2,3], [5,1], [4] ], key=lambda v: max(v))) # 5
 
 #### 2 Python绘图
 
-Python绘图方便、漂亮，如下为绘制的stack类型的柱状图：
+Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出热力图：
 
-![image-20191225101046701](./img/image-20191225101046701.png)
+![image-20191229101724665](./img/image-20191229101724665.png)
 
-Python绘制散点图：
+炫酷的水球图：
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzS3KTX8YzWzkPvDIiaIibsxHDz2C93qwpoFRqiaL6EVeSFibAT04ggxNbHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![](./img/liquid.gif)
+
+经常使用的词云图：
+
+![](https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png)
 
 
 
@@ -72,6 +76,9 @@ Python绘制散点图：
 
 ![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
 
+使用turtule绘制的漫天雪花：
+
+![](./img/turtlesnow.gif)
 
 
 #### 4 Python数据分析
