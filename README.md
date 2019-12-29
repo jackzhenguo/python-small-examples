@@ -58,7 +58,7 @@ Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出�
 
 炫酷的水球图：
 
-<img src="./img/liquid.gif" alt="Sample"  width="600" height="300">
+<img src="./img/liquid.gif" alt="Sample"  width="600" height="450">
 
 经常使用的词云图：
 
