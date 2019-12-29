@@ -2,25 +2,25 @@
 
 第零章：感受Python之美
 
-第一章：Python基础 (目前90个小例子)
+第一章：Python基础 
 
-第二章：Python之坑(目前7个小例子)
+第二章：Python之坑
 
-第三章：Python字符串和正则(目前16个小例子)
+第三章：Python字符串和正则
 
-第四章：Python文件(目前11个小例子)
+第四章：Python文件
 
-第五章：Python日期(目前9个小例子)
+第五章：Python日期
 
-第六章：Python利器(目前14个小例子)
+第六章：Python利器
 
-第七章：Python画图(目前20个小例子)
+第七章：Python画图
 
-第八章：Python实战(目前5个例子)
+第八章：Python实战
 
-第九章：Python基础算法(目前4个小例子)
+第九章：Python基础算法
 
-第十章：Python机器学习(目前7个小例子)
+第十章：Python机器学习
 
 > 后续章节：
 >
