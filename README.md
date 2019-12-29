@@ -2879,8 +2879,7 @@ p.done()
 
 结果：
 
-![](D:\source\python-small-examples/img/turtle1.png)
-
+![](./img/turtle1.png)
 
 #### 2 turtle绘制漫天雪花
 
@@ -2956,8 +2955,8 @@ main()
 
 动态图结果展示：
 
-![](./img/turtlesnow.gif)
 
+<img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
 
 #### 3 wordcloud词云图
 
