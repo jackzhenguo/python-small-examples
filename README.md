@@ -78,7 +78,7 @@ Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出�
 
 使用turtule绘制的漫天雪花：
 
-<img src="./img/turtlesnow.gif" alt="Sample"  width="500" height="300">
+<img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
 
 
 #### 4 Python数据分析
