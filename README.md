@@ -3016,8 +3016,7 @@ fig.add_trace(
 fig.show()
 ```
 
-![1576311610044](../img/plotly1.png)
-
+<img src="./img/plotly1.png" alt="Sample"  width="600" height="300">
 
 
 #### 5 seaborn热力图
@@ -3041,10 +3040,7 @@ plt.show()
 ```
 
 
-
-![](./img/heatmap.png)
-
-
+<img src="./img/heatmap.png" alt="Sample"  width="600" height="300">
 
 #### 6 matplotlib折线图
 
@@ -3073,7 +3069,7 @@ def label(ax, text, y=0):
                           ec='#8B7E66'))
 ```
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzH3RRjsHl5TELibR1AiaVc8VdTpe4SuKiagibdqqjNV8R5iclic44AZnTjPzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzH3RRjsHl5TELibR1AiaVc8VdTpe4SuKiagibdqqjNV8R5iclic44AZnTjPzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 ```python
 import numpy as np
@@ -3154,7 +3150,7 @@ plt.show()
 
 #### 8 matplotlib柱状图
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzzBv3R8fHsVV6mEcV1KALF5u927OjdAwyhS4NUVHAAhlsBeC24zCricg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzzBv3R8fHsVV6mEcV1KALF5u927OjdAwyhS4NUVHAAhlsBeC24zCricg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 对应代码：
 
@@ -3213,7 +3209,8 @@ main()
 
 #### 9 matplotlib等高线图
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzMGnSAHhCHG1bNEWHh1VJcmYN8E1ZBjPaL5iclH2HrvyYmCuDeibbfV3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzMGnSAHhCHG1bNEWHh1VJcmYN8E1ZBjPaL5iclH2HrvyYmCuDeibbfV3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 对应代码：
 
@@ -3248,7 +3245,7 @@ plt.show()
 
 #### 10 imshow图
 
-[![img](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)
+![](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)
 
 对应代码：
 
@@ -3318,9 +3315,7 @@ print('ok')
 
 仪表盘中共展示三项，每项的比例为30%,70%,90%，如下图默认名称显示第一项：Python机器学习，完成比例为30%
 
-![image-20191228194635902](./img/image-20191228194635902.png)
-
-
+<img src="./img/image-20191228194635902.png" alt="Sample"  width="600" height="450">
 
 #### 12 pyecharts漏斗图
 
@@ -3342,9 +3337,7 @@ funnel_base().render('./img/car_fnnel.html')
 
 以7种车型及某个属性值绘制的漏斗图，属性值大越靠近漏斗的大端。
 
-![](https://i.loli.net/2019/12/28/aCGfBp6YIvWqU84.png)
-
-
+<img src="https://i.loli.net/2019/12/28/aCGfBp6YIvWqU84.png" alt="Sample"  width="600" height="300">
 
 #### 13 pyecharts日历图
 
@@ -3439,7 +3432,7 @@ liquid().render('./img/liquid.html')
 
 水球图的取值`[0.67, 0.30, 0.15]`表示下图中的`三个波浪线`，一般代表三个百分比:
 
-![](./img/liquid.gif)
+<img src="./img/liquid.gif" alt="Sample"  width="600" height="450">
 
 #### 16 pyecharts饼图
 
@@ -3460,6 +3453,8 @@ def pie_base() -> Pie:
 
 pie_base().render('./img/pie_pyecharts.html')
 ```
+<img src="./img/20191229105841.png" alt="Sample"  width="600" height="350">
+
 
 #### 17 pyecharts极坐标图
 
@@ -3482,7 +3477,8 @@ polar_scatter0().render('./img/polar.html')
 ```
 
 极坐标表示为`(夹角,半径)`，如(6,94)表示夹角为6，半径94的点：
-![](https://i.loli.net/2019/12/28/QxVOFuDB5y6wgpJ.png)
+
+<img src="https://i.loli.net/2019/12/28/QxVOFuDB5y6wgpJ.png" alt="Sample"  width="600" height="500">
 
 #### 18 pyecharts词云图
 
@@ -3514,7 +3510,8 @@ wordcloud().render('./img/wordcloud.html')
 
 `("C",65)`表示在本次统计中C语言出现65次
 
-![](https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png)
+
+<img src="https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png" alt="Sample"  width="600" height="300">
 
 #### 19 pyecharts系列柱状图
 
@@ -3536,9 +3533,7 @@ def bar_series() -> Bar:
 bar_series().render('./img/bar_series.html')
 ```
 
-![](https://i.loli.net/2019/12/28/egamLZw2oMHA19T.png)
-
- 
+<img src="https://i.loli.net/2019/12/28/egamLZw2oMHA19T.png" alt="Sample"  width="600" height="300">
 
 #### 20 pyecharts热力图
 
@@ -3568,9 +3563,8 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 
 热力图描述的实际是三维关系，x轴表示车型，y轴表示国家，每个色块的颜色值代表销量，颜色刻度尺显示在左下角，颜色越红表示销量越大。
 
-![image-20191229101724665](./img/image-20191229101724665.png)
 
-
+<img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
 
 ### 七、Python实战
 
