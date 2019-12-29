@@ -1,8 +1,20 @@
 告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。
 
-已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
+目录：
 
-> 目前正在更新或接下来更新的计划如下：
+第零章：感受Python之美
+第一章：Python基础
+第二章：Python之坑
+第三章：Python字符串和正则
+第四章：Python文件
+第五章：Python日期
+第六章：Python利器
+第七章：Python画图
+第八章：Python实战
+第九章：Python基础算法
+第十章：Python机器学习
+
+> 后续章节：
 >
 > 1) 不断丰富原有1~7章节；
 > 2) Python基础算法；
@@ -12,6 +24,7 @@
 > 6) Python数据分析：NumPy, Pandas, Matplotlib, Plotly等
 
 
+已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
 ### 感受Python之美
 
@@ -1457,7 +1470,141 @@ for i in chain(a,b):
 6
 ```
 
-### 二、Python字符串和正则
+### 二 Python之坑
+
+#### 1 含单个元素的元组
+
+Python中有些函数的参数类型为元组，其内有1个元素，这样创建是错误的：
+
+```python
+c = (5) # NO!
+```
+
+它实际创建一个整型元素5，必须要在元素后加一个`逗号`:
+
+```python
+c = (5,) # YES!
+```
+
+#### 2 默认参数设为空
+
+含有默认参数的函数，如果类型为容器，且设置为空：
+
+```python
+def f(a,b=[]):  # NO!
+    print(b)
+    return b
+
+ret = f(1)
+ret.append(1)
+ret.append(2)
+# 当再调用f(1)时，预计打印为 []
+f(1)
+# 但是却为 [1,2]
+```
+
+这是可变类型的默认参数之坑，请务必设置此类默认参数为None：
+
+```python
+def f(a,b=None): # YES!
+    pass
+```
+
+#### 3 共享变量未绑定之坑
+
+有时想要多个函数共享一个全局变量，但却在某个函数内试图修改它为局部变量：
+
+```python
+i = 1
+def f():
+    i+=1 #NO!
+    
+def g():
+    print(i)
+```
+
+应该在f函数内显示声明`i`为global变量：
+
+```python
+i = 1
+def f():
+    global i # YES!
+    i+=1
+```
+
+#### 4 lambda自由参数之坑
+
+排序和分组的key函数常使用lambda，表达更加简洁，但是有个坑新手容易掉进去：
+
+```python
+a = [lambda x: x+i for i in range(3)] # NO!
+for f in a:
+    print(f(1))
+# 你可能期望输出：1,2,3
+```
+
+但是实际却输出: 3,3,3. 定义lambda使用的`i`被称为自由参数，它只在调用lambda函数时，值才被真正确定下来，这就犹如下面打印出2，你肯定确信无疑吧。
+
+```python
+a = 0
+a = 1
+a = 2
+def f(a):
+    print(a)
+```
+
+正确做法是转化`自由参数`为lambda函数的`默认参数`：
+
+```python
+a = [lambda x,i=i: x+i for i in range(3)] # YES!
+```
+
+#### 5 分不清是默认参数还是关键字参数
+
+定义函数f，在使用它时，width的以下三种写法都是OK的，如果未了解函数原型，容易分不清width到底是位置参数还是关键字参数。
+
+```python
+def f(a,width=10.0):
+    print(width)
+
+f(1,width=15.0) # 15.0  # 容易分不清width是位置参数还是关键字参数
+f(1,15.0) # 15.0
+f(1) # 10.0
+```
+
+width是带默认参数的位置参数，关键字参数必须使用两个星号声明。因此如果要区分它们，需要关注函数的定义。
+
+```python
+def f(a,**b):
+    print(b)
+f(1,width=15.0) # width是关键字参数，不是默认参数
+```
+
+#### 6 列表删除之坑
+
+删除一个列表中的元素，此元素可能在列表中重复多次：
+
+```python
+def del_item(lst,e):
+    return [lst.remove(i) for i in e if i==e] # NO!
+```
+
+考虑删除这个序列[1,3,3,3,5]中的元素3，结果发现只删除其中两个：
+
+```python
+del_item([1,3,3,3,5],3) # 结果：[1,3,5]
+```
+
+正确做法：
+
+```python
+def del_item(lst,e):
+    d = dict(zip(range(len(lst)),lst)) # YES! 构造字典
+    return [v for k,v in d.items() if v!=e]
+
+```
+
+### 三、Python字符串和正则
 
 字符串无所不在，字符串的处理也是最常见的操作。本章节将总结和字符串处理相关的一切操作。主要包括基本的字符串操作；高级字符串操作之正则。目前共有`16`个小例子
 
@@ -1819,7 +1966,7 @@ print(s)
 
 
 
-### 三、Python文件
+### 四、Python文件
 
 #### 1 获取后缀名
 
@@ -2222,7 +2369,7 @@ print(hash_cry32('hello'))  # 5d41402abc4b2a76b9719d911017c592
 
 
 
-### 四、Python日期
+### 五、Python日期
 
 Python日期章节，由表示大日期的`calendar`, `date`模块，逐渐过渡到表示时间刻度更小的模块：`datetime`, `time`模块，按照此逻辑展开，总结了最常用的`9`个关于时间处理模块的例子。
 
@@ -2413,7 +2560,7 @@ print(strftime("%m-%d-%Y %H:%M:%S", localtime()))  # 转化为定制的格式
 
 
 
-### 五、Python利器
+### 六、Python利器
 Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`14`例。
 
 
@@ -2831,7 +2978,7 @@ print("append/compre:",round(a/c,3))
 # append/compre: 2.749
 ```
 
-### 六、Python画图
+### 七、Python画图
 
 Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`10`个。
 
@@ -3566,7 +3713,7 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 
 <img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
 
-### 七、Python实战
+### 八、Python实战
 
 
 #### 1 环境搭建
@@ -4048,7 +4195,7 @@ if __name__ == '__main__':
 
 ![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
-### 第八章 Python基础算法
+### 第九章 Python基础算法
 
 #### 1 领略算法魅力
 
@@ -4087,7 +4234,7 @@ if __name__ == '__main__':
 
 
 
-### 第九章 Python机器学习
+### 第十章 Python机器学习
 
 #### 1 引言
 
@@ -4232,3 +4379,6 @@ if __name__ == '__main__':
 
 
 > 以上就是机器学习最常用的优化技巧：拉格朗日乘数法的图形讲解，相信大家已经找到一定感觉，接下来几天我们通过例子，详细阐述机器学习的具体概念，常用算法，使用Python实现主要的算法，使用Sklearn，Kaggle数据实战这些算法。
+
+
+
