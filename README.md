@@ -1,26 +1,26 @@
 告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。Python之路：
 
-第零章：感受Python之美
+感受Python之美
 
-第一章：Python基础
+第一章：Python基础 (目前89个小例子)
 
-第二章：Python之坑
+第二章：Python之坑(目前7个小例子)
 
-第三章：Python字符串和正则
+第三章：Python字符串和正则(目前16个小例子)
 
-第四章：Python文件
+第四章：Python文件(目前11个小例子)
 
-第五章：Python日期
+第五章：Python日期(目前9个小例子)
 
-第六章：Python利器
+第六章：Python利器(目前14个小例子)
 
-第七章：Python画图
+第七章：Python画图(目前20个小例子)
 
-第八章：Python实战
+第八章：Python实战(目前5个例子)
 
-第九章：Python基础算法
+第九章：Python基础算法(目前4个小例子)
 
-第十章：Python机器学习
+第十章：Python机器学习(目前7个小例子)
 
 > 后续章节：
 >
@@ -34,7 +34,7 @@
 
 已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
-### 零、感受Python之美
+### 感受Python之美
 
 #### 1 简洁之美
 
@@ -1477,6 +1477,27 @@ for i in chain(a,b):
 4
 6
 ```
+
+#### 89 操作函数对象
+
+```python
+In [31]: def f():
+    ...:     print('i\'m f')
+    ...:
+
+In [32]: def g():
+    ...:     print('i\'m g')
+    ...:
+
+In [33]: [f,g][1]()
+i'm g
+```
+
+创建函数对象的list，根据想要调用的index，方便统一调用。
+
+
+
+
 
 ### 二 Python之坑
 
