@@ -4071,33 +4071,25 @@ Name: temperature, dtype: object
 
 `designer.exe`文件，双击启动：
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia73PibMMgfnm3I5DrS5IeqAehYZDpAqJ4Euia40Wnaf9Kr4qDrBWgMemw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia73PibMMgfnm3I5DrS5IeqAehYZDpAqJ4Euia40Wnaf9Kr4qDrBWgMemw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 创建窗体，命名为`XiaoDing`，整个的界面如下所示：
 
 ![img](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaVdvX5Y9Zxh82jzm2YvT23wXTuaMTqKX4RzSic3zVULMPIUO5Fy5LMDw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaVdvX5Y9Zxh82jzm2YvT23wXTuaMTqKX4RzSic3zVULMPIUO5Fy5LMDw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 `qt 设计器`提供的常用控件基本都能满足开发需求，通过拖动左侧的控件，很便捷的就能搭建出如下的UI界面，比传统的手写控件代码要方便很多。
 
 最终设计的计算器`XiaoDing`界面如下，
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoicianCCIiaNlXy5ugv1blJ83KDUrvuTq9icB3hN6zXUy5rib1ITLibgeUxiaOCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoicianCCIiaNlXy5ugv1blJ83KDUrvuTq9icB3hN6zXUy5rib1ITLibgeUxiaOCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 比如，其中一个用于计算器显示的对象：`lcdNumber`，对象的类型为：`LCD Number`。右侧为计算器中用到的所有对象。
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia9syg40IVicTZ6PqYGVa21aRIhicuCFygibVSXRTdLApn00ticG6pIPibADQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia9syg40IVicTZ6PqYGVa21aRIhicuCFygibVSXRTdLApn00ticG6pIPibADQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciabNVLAb7Nicu2sb4YREYU5HbvII8K8CdVibXC5TNrN29Th6jWqEDRxLqA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciabNVLAb7Nicu2sb4YREYU5HbvII8K8CdVibXC5TNrN29Th6jWqEDRxLqA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  >
 
 2)  转py文件
 
@@ -4251,9 +4243,7 @@ if __name__ == '__main__':
     app.exec_()
 ```
 
-完整代码请参考点击阅读原文下载，代码只有100行。完整代码请点击文章最底部的【阅读原文】。启动后的界面如下：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 ### 第九章 Python基础算法
 
