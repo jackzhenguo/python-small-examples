@@ -54,27 +54,25 @@ max(max([ [1,2,3], [5,1], [4] ], key=lambda v: max(v))) # 5
 
 Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出热力图：
 
-![image-20191229101724665](./img/image-20191229101724665.png)
+<img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
 
 炫酷的水球图：
 
-![](./img/liquid.gif)
+<img src="./img/liquid.gif" alt="Sample"  width="600" height="300">
 
 经常使用的词云图：
 
-![](https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png)
-
-
+<img src="https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png" alt="Sample"  width="600" height="300">
 
 #### 3 Python动画
 
 仅适用Python的常用绘图库：Matplotlib，就能制作出动画，辅助算法新手入门基本的排序算法。如下为一个随机序列，使用`快速排序算法`，由小到大排序的过程动画展示：
 
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="Sample"  width="600" height="300">
 
 归并排序动画展示：
 
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="Sample"  width="600" height="300">
 
 使用turtule绘制的漫天雪花：
 
@@ -85,13 +83,9 @@ Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出�
 
 Python非常适合做数值计算、数据分析，一行代码完成数据透视：
 
-
-
 ```python
 pd.pivot_table(df, index=['Manager', 'Rep'], values=['Price'], aggfunc=np.sum)
 ```
-
-
 
 #### 5 Python机器学习
 
