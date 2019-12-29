@@ -1,6 +1,4 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。
-
-目录：
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。Python技术栈目录：
 
 第零章：感受Python之美
 
@@ -36,7 +34,7 @@
 
 已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
-### 感受Python之美
+### 零、感受Python之美
 
 #### 1 简洁之美
 
