@@ -1,4 +1,4 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。Python之路已有184个例子：
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有190个例子：
 
 第零章：感受Python之美
 
@@ -1671,6 +1671,129 @@ a[0][0] = 10 #
 
 ```python
 a = [[] for _ in range(3)]
+```
+
+#### 8 字符串驻留
+```python
+In [1]: a = 'something'
+    ...: b = 'some'+'thing'
+    ...: id(a)==id(b)
+Out[1]: True
+```
+如果上面例子返回`True`，但是下面例子为什么是`False`:
+```python
+In [1]: a = '@zglg.com'
+
+In [2]: b = '@zglg'+'.com'
+
+In [3]: id(a)==id(b)
+Out[3]: False
+```
+这与Cpython 编译优化相关，行为称为`字符串驻留`，但驻留的字符串中只包含字母，数字或下划线。
+
+#### 9 相同值的不可变对象
+```python
+In [5]: d = {}
+    ...: d[1] = 'java'
+    ...: d[1.0] = 'python'
+
+In [6]: d
+Out[6]: {1: 'python'}
+
+### key=1,value=java的键值对神器消失了
+In [7]: d[1]
+Out[7]: 'python'
+In [8]: d[1.0]
+Out[8]: 'python'
+```
+这是因为具有相同值的不可变对象在Python中始终具有`相同的哈希值`
+
+由于存在`哈希冲突`，不同值的对象也可能具有相同的哈希值。
+
+#### 10 对象销毁顺序
+创建一个类`SE`:
+```python
+class SE(object):
+  def __init__(self):
+    print('init')
+  def __del__(self):
+    print('del')
+```
+创建两个SE实例，使用`is`判断：
+```python
+In [63]: SE() is SE()
+init
+init
+del
+del
+Out[63]: False
+
+```
+创建两个SE实例，使用`id`判断：
+```python
+In [64]: id(SE()) == id(SE())
+init
+del
+init
+del
+Out[64]: True
+```
+
+调用`id`函数, Python 创建一个 SE 类的实例，并使用`id`函数获得内存地址后，销毁内存丢弃这个对象。
+
+当连续两次进行此操作, Python会将相同的内存地址分配给第二个对象，所以两个对象的id值是相同的.
+
+
+但是is行为却与之不同，通过打印顺序就可以看到。
+
+#### 11 充分认识for
+```python
+In [65]: for i in range(5):
+    ...:   print(i)
+    ...:   i = 10
+0
+1
+2
+3
+4
+```
+为什么不是执行一次就退出？
+
+按照for在Python中的工作方式, i = 10 并不会影响循环。range(5)生成的下一个元素就被解包，并赋值给目标列表的变量`i`.
+
+#### 12 认识执行时机
+
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+```
+`g`为生成器，list(g)后返回`[1,3,5]`，因为每个元素肯定至少都出现一次。所以这个结果这不足为奇。但是，请看下例：
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+array = [5, 7, 9]
+```
+请问,list(g)等于多少？这不是和上面那个例子结果一样吗，结果也是`[1,3,5]`，但是：
+```python
+In [74]: list(g)
+Out[74]: [5]
+```
+
+这有些不可思议~~ 原因在于：
+
+生成器表达式中, in 子句在声明时执行, 而条件子句则是在运行时执行。
+
+
+所以代码：
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+array = [5, 7, 9]
+```
+
+等价于：
+```python
+g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
 ```
 
 正在陆续汇总更多Python使用之坑 ... 
