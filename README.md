@@ -1599,26 +1599,129 @@ def f(a):
 a = [lambda x,i=i: x+i for i in range(3)] # YES!
 ```
 
-#### 5 分不清是默认参数还是关键字参数
+#### 5 各种参数使用之坑
 
-定义函数f，在使用它时，width的以下三种写法都是OK的，如果未了解函数原型，容易分不清width到底是位置参数还是关键字参数。
+Python强大多变，原因之一在于函数参数类型的多样化。方便的同时，也为使用者带来更多的约束规则。如果不了解这些规则，调用函数时，可能会出现如下一些语法异常：
+
+*(1) SyntaxError: positional argument follows keyword argument*
+
+
+*(2) TypeError: f() missing 1 required keyword-only argument: 'b'*
+
+
+*(3) SyntaxError: keyword argument repeated*
+
+*(4) TypeError: f() missing 1 required positional argument: 'b'*
+
+*(5) TypeError: f() got an unexpected keyword argument 'a'*
+
+*(6) TypeError: f() takes 0 positional arguments but 1 was given*
+
+
+总结主要的参数使用规则
+
+位置参数
+
+`位置参数`的定义：`函数调用`时根据函数定义的参数位（形参）置来传递参数，是最常见的参数类型。
 
 ```python
-def f(a,width=10.0):
-    print(width)
+def f(a):
+  return a
 
-f(1,width=15.0) # 15.0  # 容易分不清width是位置参数还是关键字参数
-f(1,15.0) # 15.0
-f(1) # 10.0
+f(1) # 位置参数 
+```
+位置参数不能缺少：
+```python
+def f(a,b):
+  pass
+
+f(1) # TypeError: f() missing 1 required positional argument: 'b'
 ```
 
-width是带默认参数的位置参数，关键字参数必须使用两个星号声明。因此如果要区分它们，需要关注函数的定义。
+**规则1：位置参数必须一一对应，缺一不可**
+
+关键字参数
+
+在函数调用时，通过‘键--值’方式为函数形参传值，不用按照位置为函数形参传值。
 
 ```python
-def f(a,**b):
-    print(b)
-f(1,width=15.0) # width是关键字参数，不是默认参数
+def f(a):
+  print(f'a:{a}')
 ```
+这么调用，`a`就是关键字参数：
+```python
+f(a=1)
+```
+但是下面调用就不OK:
+```python
+f(a=1,20.) # SyntaxError: positional argument follows keyword argument
+```
+
+**规则2：关键字参数必须在位置参数右边**
+
+
+下面调用也不OK:
+```python
+f(1,width=20.,width=30.) #SyntaxError: keyword argument repeated
+
+```
+
+**规则3：对同一个形参不能重复传值**
+
+
+默认参数
+
+在定义函数时，可以为形参提供默认值。对于有默认值的形参，调用函数时如果为该参数传值，则使用传入的值，否则使用默认值。如下`b`是默认参数：
+```python
+def f(a,b=1):
+  print(f'a:{a}, b:{b}')
+
+```
+
+
+**规则4：无论是函数的定义还是调用，默认参数的定义应该在位置形参右面**
+
+只在定义时赋值一次；默认参数通常应该定义成不可变类型
+
+
+可变位置参数
+
+如下定义的参数a为可变位置参数：
+```python
+def f(*a):
+  print(a)
+```
+调用方法：
+```python
+f(1) #打印结果为元组： (1,)
+f(1,2,3) #打印结果：(1, 2, 3)
+```
+
+但是，不能这么调用：
+```python
+f(a=1) # TypeError: f() got an unexpected keyword argument 'a'
+```
+
+
+可变关键字参数
+
+如下`a`是可变关键字参数：
+```python
+def f(**a):
+  print(a)
+```
+调用方法：
+```python
+f(a=1) #打印结果为字典：{'a': 1}
+f(a=1,b=2,width=3) #打印结果：{'a': 1, 'b': 2, 'width': 3}
+```
+
+但是，不能这么调用：
+```python
+f(1) TypeError: f() takes 0 positional arguments but 1 was given
+```
+
+接下来，单独推送分析一个小例子，综合以上各种参数类型的函数及调用方法，敬请关注。
 
 #### 6 列表删除之坑
 
