@@ -1334,7 +1334,7 @@ print(r)  # [('b', 5), ('d', 5)]
 #### 79 合并两个字典
 
 ```python
-def merge_dict2(dic1, dic2):
+def merge_dict(dic1, dic2):
     return {**dic1, **dic2}  # python3.5后支持的一行代码实现合并字典
 
 merge_dict({'a': 1, 'b': 2}, {'c': 3})  # {'a': 1, 'b': 2, 'c': 3}
