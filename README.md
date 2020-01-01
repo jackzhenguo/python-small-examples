@@ -104,6 +104,9 @@ Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出�
 
 <img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
 
+timeline时间轮播图：
+
+<img src="./img/timeline.gif" alt="Sample"  width="600" height="300">
 
 #### 4 Python数据分析
 
