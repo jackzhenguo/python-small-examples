@@ -1,8 +1,28 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有190个例子：
 
-已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
+第零章：感受Python之美
 
-> 目前正在更新或接下来更新的计划如下：
+第一章：Python基础 
+
+第二章：Python之坑
+
+第三章：Python字符串和正则
+
+第四章：Python文件
+
+第五章：Python日期
+
+第六章：Python利器
+
+第七章：Python画图
+
+第八章：Python实战
+
+第九章：Python基础算法
+
+第十章：Python机器学习
+
+> 后续章节：
 >
 > 1) 不断丰富原有1~7章节；
 > 2) Python基础算法；
@@ -12,6 +32,7 @@
 > 6) Python数据分析：NumPy, Pandas, Matplotlib, Plotly等
 
 
+已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
 
 ### 感受Python之美
 
@@ -43,48 +64,57 @@ a, b = b, a
 set([1,2,2,3,3,3]) # {1, 2, 3}
 ```
 
-5) 一行代码多个列表中的最大值
+5) 一行代码求多个列表中的最大值
 
 ```python
 max(max([ [1,2,3], [5,1], [4] ], key=lambda v: max(v))) # 5
 ```
 
+6) 一行代码生成逆序序列
+
+```python
+list(range(10,-1,-1)) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+```
 
 #### 2 Python绘图
 
-Python绘图方便、漂亮，如下为绘制的stack类型的柱状图：
+Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出热力图：
 
-![image-20191225101046701](./img/image-20191225101046701.png)
+<img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
 
-Python绘制散点图：
+炫酷的水球图：
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzS3KTX8YzWzkPvDIiaIibsxHDz2C93qwpoFRqiaL6EVeSFibAT04ggxNbHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="./img/liquid.gif" alt="Sample"  width="600" height="450">
 
+经常使用的词云图：
 
+<img src="https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png" alt="Sample"  width="600" height="300">
 
 #### 3 Python动画
 
 仅适用Python的常用绘图库：Matplotlib，就能制作出动画，辅助算法新手入门基本的排序算法。如下为一个随机序列，使用`快速排序算法`，由小到大排序的过程动画展示：
 
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="Sample"  width="600" height="300">
 
 归并排序动画展示：
 
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="Sample"  width="600" height="300">
 
+使用turtule绘制的漫天雪花：
 
+<img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
+
+timeline时间轮播图：
+
+<img src="./img/timeline.gif" alt="Sample"  width="600" height="300">
 
 #### 4 Python数据分析
 
 Python非常适合做数值计算、数据分析，一行代码完成数据透视：
 
-
-
 ```python
 pd.pivot_table(df, index=['Manager', 'Rep'], values=['Price'], aggfunc=np.sum)
 ```
-
-
 
 #### 5 Python机器学习
 
@@ -976,7 +1006,7 @@ def excepter(f):
     return wrapper
 ```
 
-#### 60 global
+#### 60 global 声明全局变量
 先回答为什么要有`global`，一个变量被多个函数引用，想让全局变量被所有函数共享。有的伙伴可能会想这还不简单，这样写：
 ```python
 i = 5
@@ -1304,7 +1334,7 @@ print(r)  # [('b', 5), ('d', 5)]
 #### 79 合并两个字典
 
 ```python
-def merge_dict2(dic1, dic2):
+def merge_dict(dic1, dic2):
     return {**dic1, **dic2}  # python3.5后支持的一行代码实现合并字典
 
 merge_dict({'a': 1, 'b': 2}, {'c': 3})  # {'a': 1, 'b': 2, 'c': 3}
@@ -1317,10 +1347,8 @@ from heapq import nlargest
 
 # 返回字典d前n个最大值对应的键
 
-
 def topn_dict(d, n):
     return nlargest(n, d, key=lambda k: d[k])
-
 
 topn_dict({'a': 10, 'b': 8, 'c': 9, 'd': 10}, 3)  # ['a', 'd', 'c']
 ```
@@ -1339,8 +1367,6 @@ def anagram(str1, str2):
 anagram('eleven+two', 'twelve+one')  # True 这是一对神器的变位词
 anagram('eleven', 'twelve')  # False
 ```
-
-
 
 
 #### 82 逻辑上合并字典
@@ -1363,24 +1389,580 @@ merged2 = ChainMap(dic1,dic2)
 print(merged2) # ChainMap({'x': 1, 'y': 2}, {'y': 3, 'z': 4})
 ```
 
-(2) ChainMap节省内存
-
-`ChainMap`这种只在逻辑上合并字典的方法，可以大大节省内存的使用。普通的合并字典会重新创建一个字典，其占用内存会很大，演示如下：
+#### 83 命名元组提高可读性
 
 ```python
-import sys
-sys.getsizeof(merged1) # 240
+from collections import namedtuple
+Point = namedtuple('Point', ['x', 'y', 'z'])  # 定义名字为Point的元祖，字段属性有x,y,z
+lst = [Point(1.5, 2, 3.0), Point(-0.3, -1.0, 2.1), Point(1.3, 2.8, -2.5)]
+print(lst[0].y - lst[1].y)
 ```
 
-结果显示会占用`240`个字节，`ChainMap`合并后的字典由于只是创建列表，其元素只是指针变量（指向了原来的字典），占用字节自然会小很多：
+使用命名元组写出来的代码可读性更好，尤其处理上百上千个属性时作用更加凸显。
+
+#### 84 样本抽样
+
+使用`sample`抽样，如下例子从100个样本中随机抽样10个。
 
 ```python
-sys.getsizeof(merged2) #56
+from random import randint,sample
+lst = [randint(0,50) for _ in range(100)]
+print(lst[:5])# [38, 19, 11, 3, 6]
+lst_sample = sample(lst,10)
+print(lst_sample) # [33, 40, 35, 49, 24, 15, 48, 29, 37, 24]
 ```
 
-只占用`56`个字节，相比第一种合并方法节省内存4倍多。
+#### 85 重洗数据集
 
-### 二、Python字符串和正则
+使用`shuffle`用来重洗数据集，**值得注意`shuffle`是对lst就地(in place)洗牌，节省存储空间**
+
+```python
+from random import shuffle
+lst = [randint(0,50) for _ in range(100)]
+shuffle(lst)
+print(lst[:5]) # [50, 3, 48, 1, 26]
+```
+
+#### 86 10个均匀分布的坐标点
+
+random模块中的`uniform(a,b)`生成[a,b)内的一个随机数，如下生成10个均匀分布的二维坐标点
+
+```python
+from random import uniform
+In [1]: [(uniform(0,10),uniform(0,10)) for _ in range(10)]
+Out[1]: 
+[(9.244361194237328, 7.684326645514235),
+ (8.129267671737324, 9.988395854203773),
+ (9.505278771040661, 2.8650440524834107),
+ (3.84320100484284, 1.7687190176304601),
+ (6.095385729409376, 2.377133802224657),
+ (8.522913365698605, 3.2395995841267844),
+ (8.827829601859406, 3.9298809217233766),
+ (1.4749644859469302, 8.038753079253127),
+ (9.005430657826324, 7.58011186920019),
+ (8.700789540392917, 1.2217577293254112)]
+```
+
+#### 87 10个高斯分布的坐标点
+
+random模块中的`gauss(u,sigma)`生成均值为u, 标准差为sigma的满足高斯分布的值，如下生成10个二维坐标点，样本误差(y-2*x-1)满足均值为0，标准差为1的高斯分布：
+
+```python
+from random import gauss
+x = range(10)
+y = [2*xi+1+gauss(0,1) for xi in x]
+points = list(zip(x,y))
+### 10个二维点：
+[(0, -0.86789025305992),
+ (1, 4.738439437453464),
+ (2, 5.190278040856102),
+ (3, 8.05270893133576),
+ (4, 9.979481700775292),
+ (5, 11.960781766216384),
+ (6, 13.025427054303737),
+ (7, 14.02384035204836),
+ (8, 15.33755823101161),
+ (9, 17.565074449028497)]
+```
+
+#### 88 chain高效串联多个容器对象
+
+`chain`函数串联a和b，兼顾内存效率同时写法更加优雅。
+
+```python
+from itertools import chain
+a = [1,3,5,0]
+b = (2,4,6)
+
+for i in chain(a,b):
+  print(i)
+### 结果
+1
+3
+5
+0
+2
+4
+6
+```
+
+#### 89 操作函数对象
+
+```python
+In [31]: def f():
+    ...:     print('i\'m f')
+    ...:
+
+In [32]: def g():
+    ...:     print('i\'m g')
+    ...:
+
+In [33]: [f,g][1]()
+i'm g
+```
+
+创建函数对象的list，根据想要调用的index，方便统一调用。
+
+#### 90 生成逆序序列
+
+```python
+list(range(10,-1,-1)) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+```
+
+第三个参数为负时，表示从第一个参数开始递减，终止到第二个参数(不包括此边界)
+
+#### 91 函数的五类参数使用例子
+
+python五类参数：位置参数，关键字参数，默认参数，可变位置或关键字参数的使用。
+
+```python
+def f(a,*b,c=10,**d):
+  print(f'a:{a},b:{b},c:{c},d:{d}')
+```
+*默认参数`c`不能位于可变关键字参数`d`后.*
+
+调用f:
+```python
+In [10]: f(1,2,5,width=10,height=20)
+a:1,b:(2, 5),c:10,d:{'width': 10, 'height': 20}
+```
+可变位置参数`b`实参后被解析为元组`(2,5)`;而c取得默认值10; d被解析为字典.
+
+再次调用f:
+```python
+In [11]: f(a=1,c=12)
+a:1,b:(),c:12,d:{}
+```
+a=1传入时a就是关键字参数，b,d都未传值，c被传入12，而非默认值。
+
+注意观察参数`a`, 既可以`f(1)`,也可以`f(a=1)` 其可读性比第一种更好，建议使用f(a=1)。如果要强制使用`f(a=1)`，需要在前面添加一个**星号**:
+```python
+def f(*,a,*b):
+  print(f'a:{a},b:{b}')
+```
+此时f(1)调用，将会报错：`TypeError: f() takes 0 positional arguments but 1 was given`
+
+只能`f(a=1)`才能OK.
+
+说明前面的`*`发挥作用，它变为只能传入关键字参数，那么如何查看这个参数的类型呢？借助python的`inspect`模块：
+
+```python
+In [22]: for name,val in signature(f).parameters.items():
+    ...:     print(name,val.kind)
+    ...:
+a KEYWORD_ONLY
+b VAR_KEYWORD
+```
+
+可看到参数`a`的类型为`KEYWORD_ONLY`，也就是仅仅为关键字参数。
+
+但是，如果f定义为：
+```python
+def f(a,*b):
+  print(f'a:{a},b:{b}')
+```
+查看参数类型：
+```python
+In [24]: for name,val in signature(f).parameters.items():
+    ...:     print(name,val.kind)
+    ...:
+a POSITIONAL_OR_KEYWORD
+b VAR_POSITIONAL
+```
+可以看到参数`a`既可以是位置参数也可是关键字参数。
+
+### 二 Python之坑
+
+#### 1 含单个元素的元组
+
+Python中有些函数的参数类型为元组，其内有1个元素，这样创建是错误的：
+
+```python
+c = (5) # NO!
+```
+
+它实际创建一个整型元素5，必须要在元素后加一个`逗号`:
+
+```python
+c = (5,) # YES!
+```
+
+#### 2 默认参数设为空
+
+含有默认参数的函数，如果类型为容器，且设置为空：
+
+```python
+def f(a,b=[]):  # NO!
+    print(b)
+    return b
+
+ret = f(1)
+ret.append(1)
+ret.append(2)
+# 当再调用f(1)时，预计打印为 []
+f(1)
+# 但是却为 [1,2]
+```
+
+这是可变类型的默认参数之坑，请务必设置此类默认参数为None：
+
+```python
+def f(a,b=None): # YES!
+    pass
+```
+
+#### 3 共享变量未绑定之坑
+
+有时想要多个函数共享一个全局变量，但却在某个函数内试图修改它为局部变量：
+
+```python
+i = 1
+def f():
+    i+=1 #NO!
+    
+def g():
+    print(i)
+```
+
+应该在f函数内显示声明`i`为global变量：
+
+```python
+i = 1
+def f():
+    global i # YES!
+    i+=1
+```
+
+#### 4 lambda自由参数之坑
+
+排序和分组的key函数常使用lambda，表达更加简洁，但是有个坑新手容易掉进去：
+
+```python
+a = [lambda x: x+i for i in range(3)] # NO!
+for f in a:
+    print(f(1))
+# 你可能期望输出：1,2,3
+```
+
+但是实际却输出: 3,3,3. 定义lambda使用的`i`被称为自由参数，它只在调用lambda函数时，值才被真正确定下来，这就犹如下面打印出2，你肯定确信无疑吧。
+
+```python
+a = 0
+a = 1
+a = 2
+def f(a):
+    print(a)
+```
+
+正确做法是转化`自由参数`为lambda函数的`默认参数`：
+
+```python
+a = [lambda x,i=i: x+i for i in range(3)] # YES!
+```
+
+#### 5 各种参数使用之坑
+
+Python强大多变，原因之一在于函数参数类型的多样化。方便的同时，也为使用者带来更多的约束规则。如果不了解这些规则，调用函数时，可能会出现如下一些语法异常：
+
+*(1) SyntaxError: positional argument follows keyword argument*
+
+
+*(2) TypeError: f() missing 1 required keyword-only argument: 'b'*
+
+
+*(3) SyntaxError: keyword argument repeated*
+
+*(4) TypeError: f() missing 1 required positional argument: 'b'*
+
+*(5) TypeError: f() got an unexpected keyword argument 'a'*
+
+*(6) TypeError: f() takes 0 positional arguments but 1 was given*
+
+
+总结主要的参数使用规则
+
+位置参数
+
+`位置参数`的定义：`函数调用`时根据函数定义的参数位（形参）置来传递参数，是最常见的参数类型。
+
+```python
+def f(a):
+  return a
+
+f(1) # 位置参数 
+```
+位置参数不能缺少：
+```python
+def f(a,b):
+  pass
+
+f(1) # TypeError: f() missing 1 required positional argument: 'b'
+```
+
+**规则1：位置参数必须一一对应，缺一不可**
+
+关键字参数
+
+在函数调用时，通过‘键--值’方式为函数形参传值，不用按照位置为函数形参传值。
+
+```python
+def f(a):
+  print(f'a:{a}')
+```
+这么调用，`a`就是关键字参数：
+```python
+f(a=1)
+```
+但是下面调用就不OK:
+```python
+f(a=1,20.) # SyntaxError: positional argument follows keyword argument
+```
+
+**规则2：关键字参数必须在位置参数右边**
+
+
+下面调用也不OK:
+```python
+f(1,width=20.,width=30.) #SyntaxError: keyword argument repeated
+
+```
+
+**规则3：对同一个形参不能重复传值**
+
+
+默认参数
+
+在定义函数时，可以为形参提供默认值。对于有默认值的形参，调用函数时如果为该参数传值，则使用传入的值，否则使用默认值。如下`b`是默认参数：
+```python
+def f(a,b=1):
+  print(f'a:{a}, b:{b}')
+
+```
+
+
+**规则4：无论是函数的定义还是调用，默认参数的定义应该在位置形参右面**
+
+只在定义时赋值一次；默认参数通常应该定义成不可变类型
+
+
+可变位置参数
+
+如下定义的参数a为可变位置参数：
+```python
+def f(*a):
+  print(a)
+```
+调用方法：
+```python
+f(1) #打印结果为元组： (1,)
+f(1,2,3) #打印结果：(1, 2, 3)
+```
+
+但是，不能这么调用：
+```python
+f(a=1) # TypeError: f() got an unexpected keyword argument 'a'
+```
+
+
+可变关键字参数
+
+如下`a`是可变关键字参数：
+```python
+def f(**a):
+  print(a)
+```
+调用方法：
+```python
+f(a=1) #打印结果为字典：{'a': 1}
+f(a=1,b=2,width=3) #打印结果：{'a': 1, 'b': 2, 'width': 3}
+```
+
+但是，不能这么调用：
+```python
+f(1) TypeError: f() takes 0 positional arguments but 1 was given
+```
+
+接下来，单独推送分析一个小例子，综合以上各种参数类型的函数及调用方法，敬请关注。
+
+#### 6 列表删除之坑
+
+删除一个列表中的元素，此元素可能在列表中重复多次：
+
+```python
+def del_item(lst,e):
+    return [lst.remove(i) for i in e if i==e] # NO!
+```
+
+考虑删除这个序列[1,3,3,3,5]中的元素3，结果发现只删除其中两个：
+
+```python
+del_item([1,3,3,3,5],3) # 结果：[1,3,5]
+```
+
+正确做法：
+
+```python
+def del_item(lst,e):
+    d = dict(zip(range(len(lst)),lst)) # YES! 构造字典
+    return [v for k,v in d.items() if v!=e]
+
+```
+
+#### 7 列表快速复制之坑
+
+在python中`*`与列表操作，实现快速元素复制：
+
+```python
+a = [1,3,5] * 3 # [1,3,5,1,3,5,1,3,5]
+a[0] = 10 # [10, 2, 3, 1, 2, 3, 1, 2, 3]
+```
+
+如果列表元素为列表或字典等复合类型：
+
+```python
+a = [[1,3,5],[2,4]] * 3 # [[1, 3, 5], [2, 4], [1, 3, 5], [2, 4], [1, 3, 5], [2, 4]]
+
+a[0][0] = 10 #  
+```
+
+结果可能出乎你的意料，其他`a[1[0]`等也被修改为10
+
+```python
+[[10, 3, 5], [2, 4], [10, 3, 5], [2, 4], [10, 3, 5], [2, 4]]
+```
+
+这是因为*复制的复合对象都是浅引用，也就是说id(a[0])与id(a[2])门牌号是相等的。如果想要实现深复制效果，这么做：
+
+```python
+a = [[] for _ in range(3)]
+```
+
+#### 8 字符串驻留
+```python
+In [1]: a = 'something'
+    ...: b = 'some'+'thing'
+    ...: id(a)==id(b)
+Out[1]: True
+```
+如果上面例子返回`True`，但是下面例子为什么是`False`:
+```python
+In [1]: a = '@zglg.com'
+
+In [2]: b = '@zglg'+'.com'
+
+In [3]: id(a)==id(b)
+Out[3]: False
+```
+这与Cpython 编译优化相关，行为称为`字符串驻留`，但驻留的字符串中只包含字母，数字或下划线。
+
+#### 9 相同值的不可变对象
+```python
+In [5]: d = {}
+    ...: d[1] = 'java'
+    ...: d[1.0] = 'python'
+
+In [6]: d
+Out[6]: {1: 'python'}
+
+### key=1,value=java的键值对神器消失了
+In [7]: d[1]
+Out[7]: 'python'
+In [8]: d[1.0]
+Out[8]: 'python'
+```
+这是因为具有相同值的不可变对象在Python中始终具有`相同的哈希值`
+
+由于存在`哈希冲突`，不同值的对象也可能具有相同的哈希值。
+
+#### 10 对象销毁顺序
+创建一个类`SE`:
+```python
+class SE(object):
+  def __init__(self):
+    print('init')
+  def __del__(self):
+    print('del')
+```
+创建两个SE实例，使用`is`判断：
+```python
+In [63]: SE() is SE()
+init
+init
+del
+del
+Out[63]: False
+
+```
+创建两个SE实例，使用`id`判断：
+```python
+In [64]: id(SE()) == id(SE())
+init
+del
+init
+del
+Out[64]: True
+```
+
+调用`id`函数, Python 创建一个 SE 类的实例，并使用`id`函数获得内存地址后，销毁内存丢弃这个对象。
+
+当连续两次进行此操作, Python会将相同的内存地址分配给第二个对象，所以两个对象的id值是相同的.
+
+
+但是is行为却与之不同，通过打印顺序就可以看到。
+
+#### 11 充分认识for
+```python
+In [65]: for i in range(5):
+    ...:   print(i)
+    ...:   i = 10
+0
+1
+2
+3
+4
+```
+为什么不是执行一次就退出？
+
+按照for在Python中的工作方式, i = 10 并不会影响循环。range(5)生成的下一个元素就被解包，并赋值给目标列表的变量`i`.
+
+#### 12 认识执行时机
+
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+```
+`g`为生成器，list(g)后返回`[1,3,5]`，因为每个元素肯定至少都出现一次。所以这个结果这不足为奇。但是，请看下例：
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+array = [5, 7, 9]
+```
+请问,list(g)等于多少？这不是和上面那个例子结果一样吗，结果也是`[1,3,5]`，但是：
+```python
+In [74]: list(g)
+Out[74]: [5]
+```
+
+这有些不可思议~~ 原因在于：
+
+生成器表达式中, in 子句在声明时执行, 而条件子句则是在运行时执行。
+
+
+所以代码：
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+array = [5, 7, 9]
+```
+
+等价于：
+```python
+g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
+```
+
+正在陆续汇总更多Python使用之坑 ... 
+
+### 三、Python字符串和正则
 
 字符串无所不在，字符串的处理也是最常见的操作。本章节将总结和字符串处理相关的一切操作。主要包括基本的字符串操作；高级字符串操作之正则。目前共有`16`个小例子
 
@@ -1745,7 +2327,7 @@ print(s)
 
 
 
-### 三、Python文件
+### 四、Python文件
 
 #### 1 获取后缀名
 
@@ -2148,7 +2730,7 @@ print(hash_cry32('hello'))  # 5d41402abc4b2a76b9719d911017c592
 
 
 
-### 四、Python日期
+### 五、Python日期
 
 Python日期章节，由表示大日期的`calendar`, `date`模块，逐渐过渡到表示时间刻度更小的模块：`datetime`, `time`模块，按照此逻辑展开，总结了最常用的`9`个关于时间处理模块的例子。
 
@@ -2339,7 +2921,7 @@ print(strftime("%m-%d-%Y %H:%M:%S", localtime()))  # 转化为定制的格式
 
 
 
-### 五、Python利器
+### 六、Python利器
 Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`14`例。
 
 
@@ -2757,7 +3339,7 @@ print("append/compre:",round(a/c,3))
 # append/compre: 2.749
 ```
 
-### 六、Python画图
+### 七、Python画图
 
 Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`10`个。
 
@@ -2805,8 +3387,7 @@ p.done()
 
 结果：
 
-![](D:\source\python-small-examples/img/turtle1.png)
-
+![](./img/turtle1.png)
 
 #### 2 turtle绘制漫天雪花
 
@@ -2882,8 +3463,8 @@ main()
 
 动态图结果展示：
 
-![](./img/turtlesnow.gif)
 
+<img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
 
 #### 3 wordcloud词云图
 
@@ -2943,8 +3524,7 @@ fig.add_trace(
 fig.show()
 ```
 
-![1576311610044](../img/plotly1.png)
-
+<img src="./img/plotly1.png" alt="Sample"  width="600" height="300">
 
 
 #### 5 seaborn热力图
@@ -2968,10 +3548,7 @@ plt.show()
 ```
 
 
-
-![](./img/heatmap.png)
-
-
+<img src="./img/heatmap.png" alt="Sample"  width="600" height="300">
 
 #### 6 matplotlib折线图
 
@@ -3000,7 +3577,7 @@ def label(ax, text, y=0):
                           ec='#8B7E66'))
 ```
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzH3RRjsHl5TELibR1AiaVc8VdTpe4SuKiagibdqqjNV8R5iclic44AZnTjPzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzH3RRjsHl5TELibR1AiaVc8VdTpe4SuKiagibdqqjNV8R5iclic44AZnTjPzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 ```python
 import numpy as np
@@ -3081,7 +3658,7 @@ plt.show()
 
 #### 8 matplotlib柱状图
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzzBv3R8fHsVV6mEcV1KALF5u927OjdAwyhS4NUVHAAhlsBeC24zCricg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzzBv3R8fHsVV6mEcV1KALF5u927OjdAwyhS4NUVHAAhlsBeC24zCricg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 对应代码：
 
@@ -3140,7 +3717,8 @@ main()
 
 #### 9 matplotlib等高线图
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzMGnSAHhCHG1bNEWHh1VJcmYN8E1ZBjPaL5iclH2HrvyYmCuDeibbfV3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzMGnSAHhCHG1bNEWHh1VJcmYN8E1ZBjPaL5iclH2HrvyYmCuDeibbfV3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 对应代码：
 
@@ -3175,7 +3753,7 @@ plt.show()
 
 #### 10 imshow图
 
-[![img](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)
+![](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)
 
 对应代码：
 
@@ -3228,10 +3806,275 @@ def setup_axes():
 main()
 ```
 
+#### 11 pyecharts绘制仪表盘
+
+使用pip install pyecharts 安装，版本为 v1.6，pyecharts绘制仪表盘，只需要几行代码：
+
+```python
+from pyecharts import charts
+
+# 仪表盘
+gauge = charts.Gauge()
+gauge.add('Python小例子', [('Python机器学习', 30), ('Python基础', 70.),
+                        ('Python正则', 90)])
+gauge.render(path="./data/仪表盘.html")
+print('ok')
+```
+
+仪表盘中共展示三项，每项的比例为30%,70%,90%，如下图默认名称显示第一项：Python机器学习，完成比例为30%
+
+<img src="./img/image-20191228194635902.png" alt="Sample"  width="600" height="450">
+
+#### 12 pyecharts漏斗图
+
+```python
+from pyecharts import options as opts
+from pyecharts.charts import Funnel, Page
+from random import randint
+
+def funnel_base() -> Funnel:
+  c = (
+    Funnel()
+    .add("豪车", [list(z) for z in zip(['宝马', '法拉利', '奔驰', '奥迪', '大众', '丰田', '特斯拉'],
+                 [randint(1, 20) for _ in range(7)])])
+    .set_global_opts(title_opts=opts.TitleOpts(title="豪车漏斗图"))
+  )
+  return c
+funnel_base().render('./img/car_fnnel.html')
+```
+
+以7种车型及某个属性值绘制的漏斗图，属性值大越靠近漏斗的大端。
+
+<img src="https://i.loli.net/2019/12/28/aCGfBp6YIvWqU84.png" alt="Sample"  width="600" height="300">
+
+#### 13 pyecharts日历图
+
+```python
+import datetime
+import random
+from pyecharts import options as opts
+from pyecharts.charts import Calendar
+
+def calendar_interval_1() -> Calendar:
+    begin = datetime.date(2019, 1, 1)
+    end = datetime.date(2019, 12, 27)
+    data = [
+        [str(begin + datetime.timedelta(days=i)), random.randint(1000, 25000)]
+        for i in range(0, (end - begin).days + 1, 2)  # 隔天统计
+    ]
+    calendar = (
+      Calendar(init_opts=opts.InitOpts(width="1200px")).add(
+            "", data, calendar_opts=opts.CalendarOpts(range_="2019"))
+        .set_global_opts(
+            title_opts=opts.TitleOpts(title="Calendar-2019年步数统计"),
+            visualmap_opts=opts.VisualMapOpts(
+                max_=25000,
+                min_=1000,
+                orient="horizontal",
+                is_piecewise=True,
+                pos_top="230px",
+                pos_left="100px",
+            ),
+        )
+    )
+    return calendar
+
+calendar_interval_1().render('./img/calendar.html')
+```
+
+绘制2019年1月1日到12月27日的步行数，官方给出的图形宽度`900px`不够，只能显示到9月份，本例使用`opts.InitOpts(width="1200px")`做出微调，并且`visualmap`显示所有步数，每隔一天显示一次：
+
+![](https://i.loli.net/2019/12/28/Zw9mWM1QtUVjCgn.png)
+
+#### 14 pyecharts绘制graph图
+
+```python
+import json
+import os
+from pyecharts import options as opts
+from pyecharts.charts import Graph, Page
+
+def graph_base() -> Graph:
+    nodes = [
+        {"name": "cus1", "symbolSize": 10},
+        {"name": "cus2", "symbolSize": 30},
+        {"name": "cus3", "symbolSize": 20}
+    ]
+    links = []
+    for i in nodes:
+        if i.get('name') == 'cus1':
+            continue
+        for j in nodes:
+            if j.get('name') == 'cus1':
+                continue
+            links.append({"source": i.get("name"), "target": j.get("name")})
+    c = (
+        Graph()
+        .add("", nodes, links, repulsion=8000)
+        .set_global_opts(title_opts=opts.TitleOpts(title="customer-influence"))
+    )
+    return c
+```
+
+构建图，其中客户点1与其他两个客户都没有关系(`link`)，也就是不存在有效边：
+
+![](https://i.loli.net/2019/12/28/ts4WrTQINSaHdM1.png)
+
+#### 15 pyecharts水球图
+
+```python
+from pyecharts import options as opts
+from pyecharts.charts import Liquid, Page
+from pyecharts.globals import SymbolType
+
+def liquid() -> Liquid:
+    c = (
+        Liquid()
+        .add("lq", [0.67, 0.30, 0.15])
+        .set_global_opts(title_opts=opts.TitleOpts(title="Liquid"))
+    )
+    return c
+
+liquid().render('./img/liquid.html')
+```
+
+水球图的取值`[0.67, 0.30, 0.15]`表示下图中的`三个波浪线`，一般代表三个百分比:
+
+<img src="./img/liquid.gif" alt="Sample"  width="600" height="450">
+
+#### 16 pyecharts饼图
+
+```python
+from pyecharts import options as opts
+from pyecharts.charts import Pie
+from random import randint
+
+def pie_base() -> Pie:
+    c = (
+        Pie()
+        .add("", [list(z) for z in zip(['宝马', '法拉利', '奔驰', '奥迪', '大众', '丰田', '特斯拉'],
+                                       [randint(1, 20) for _ in range(7)])])
+        .set_global_opts(title_opts=opts.TitleOpts(title="Pie-基本示例"))
+        .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))
+    )
+    return c
+
+pie_base().render('./img/pie_pyecharts.html')
+```
+<img src="./img/20191229105841.png" alt="Sample"  width="600" height="350">
 
 
+#### 17 pyecharts极坐标图
 
-### 七、Python实战
+```python
+import random
+from pyecharts import options as opts
+from pyecharts.charts import Page, Polar
+
+def polar_scatter0() -> Polar:
+    data = [(alpha, random.randint(1, 100)) for alpha in range(101)] # r = random.randint(1, 100)
+    print(data)
+    c = (
+        Polar()
+        .add("", data, type_="bar", label_opts=opts.LabelOpts(is_show=False))
+        .set_global_opts(title_opts=opts.TitleOpts(title="Polar"))
+    )
+    return c
+
+polar_scatter0().render('./img/polar.html')
+```
+
+极坐标表示为`(夹角,半径)`，如(6,94)表示夹角为6，半径94的点：
+
+<img src="https://i.loli.net/2019/12/28/QxVOFuDB5y6wgpJ.png" alt="Sample"  width="600" height="500">
+
+#### 18 pyecharts词云图
+
+```python
+from pyecharts import options as opts
+from pyecharts.charts import Page, WordCloud
+from pyecharts.globals import SymbolType
+
+words = [
+    ("Python", 100),
+    ("C++", 80),
+    ("Java", 95),
+    ("R", 50),
+    ("JavaScript", 79),
+    ("C", 65)
+]
+
+def wordcloud() -> WordCloud:
+    c = (
+        WordCloud()
+        # word_size_range: 单词字体大小范围
+        .add("", words, word_size_range=[20, 100], shape='cardioid')
+        .set_global_opts(title_opts=opts.TitleOpts(title="WordCloud"))
+    )
+    return c
+
+wordcloud().render('./img/wordcloud.html')
+```
+
+`("C",65)`表示在本次统计中C语言出现65次
+
+
+<img src="https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png" alt="Sample"  width="600" height="300">
+
+#### 19 pyecharts系列柱状图
+
+```python
+from pyecharts import options as opts
+from pyecharts.charts import Bar
+from random import randint
+
+def bar_series() -> Bar:
+    c = (
+        Bar()
+        .add_xaxis(['宝马', '法拉利', '奔驰', '奥迪', '大众', '丰田', '特斯拉'])
+        .add_yaxis("销量", [randint(1, 20) for _ in range(7)])
+        .add_yaxis("产量", [randint(1, 20) for _ in range(7)])
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar的主标题", subtitle="Bar的副标题"))
+    )
+    return c
+
+bar_series().render('./img/bar_series.html')
+```
+
+<img src="https://i.loli.net/2019/12/28/egamLZw2oMHA19T.png" alt="Sample"  width="600" height="300">
+
+#### 20 pyecharts热力图
+
+```python
+import random
+from pyecharts import options as opts
+from pyecharts.charts import HeatMap
+
+def heatmap_car() -> HeatMap:
+    x = ['宝马', '法拉利', '奔驰', '奥迪', '大众', '丰田', '特斯拉']
+    y = ['中国','日本','南非','澳大利亚','阿根廷','阿尔及利亚','法国','意大利','加拿大']
+    value = [[i, j, random.randint(0, 100)]
+             for i in range(len(x)) for j in range(len(y))]
+    c = (
+        HeatMap()
+        .add_xaxis(x)
+        .add_yaxis("销量", y, value)
+        .set_global_opts(
+            title_opts=opts.TitleOpts(title="HeatMap"),
+            visualmap_opts=opts.VisualMapOpts(),
+        )
+    )
+    return c
+
+heatmap_car().render('./img/heatmap_pyecharts.html')
+```
+
+热力图描述的实际是三维关系，x轴表示车型，y轴表示国家，每个色块的颜色值代表销量，颜色刻度尺显示在左下角，颜色越红表示销量越大。
+
+
+<img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
+
+### 八、Python实战
 
 
 #### 1 环境搭建
@@ -3529,33 +4372,25 @@ Name: temperature, dtype: object
 
 `designer.exe`文件，双击启动：
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia73PibMMgfnm3I5DrS5IeqAehYZDpAqJ4Euia40Wnaf9Kr4qDrBWgMemw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia73PibMMgfnm3I5DrS5IeqAehYZDpAqJ4Euia40Wnaf9Kr4qDrBWgMemw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 创建窗体，命名为`XiaoDing`，整个的界面如下所示：
 
 ![img](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaVdvX5Y9Zxh82jzm2YvT23wXTuaMTqKX4RzSic3zVULMPIUO5Fy5LMDw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaVdvX5Y9Zxh82jzm2YvT23wXTuaMTqKX4RzSic3zVULMPIUO5Fy5LMDw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 `qt 设计器`提供的常用控件基本都能满足开发需求，通过拖动左侧的控件，很便捷的就能搭建出如下的UI界面，比传统的手写控件代码要方便很多。
 
 最终设计的计算器`XiaoDing`界面如下，
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoicianCCIiaNlXy5ugv1blJ83KDUrvuTq9icB3hN6zXUy5rib1ITLibgeUxiaOCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoicianCCIiaNlXy5ugv1blJ83KDUrvuTq9icB3hN6zXUy5rib1ITLibgeUxiaOCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
 比如，其中一个用于计算器显示的对象：`lcdNumber`，对象的类型为：`LCD Number`。右侧为计算器中用到的所有对象。
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia9syg40IVicTZ6PqYGVa21aRIhicuCFygibVSXRTdLApn00ticG6pIPibADQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia9syg40IVicTZ6PqYGVa21aRIhicuCFygibVSXRTdLApn00ticG6pIPibADQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciabNVLAb7Nicu2sb4YREYU5HbvII8K8CdVibXC5TNrN29Th6jWqEDRxLqA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciabNVLAb7Nicu2sb4YREYU5HbvII8K8CdVibXC5TNrN29Th6jWqEDRxLqA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  >
 
 2)  转py文件
 
@@ -3709,11 +4544,9 @@ if __name__ == '__main__':
     app.exec_()
 ```
 
-完整代码请参考点击阅读原文下载，代码只有100行。完整代码请点击文章最底部的【阅读原文】。启动后的界面如下：
+<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-### 第八章 Python基础算法
+### 第九章 Python基础算法
 
 #### 1 领略算法魅力
 
@@ -3752,7 +4585,7 @@ if __name__ == '__main__':
 
 
 
-### 第九章 Python机器学习
+### 第十章 Python机器学习
 
 #### 1 引言
 
@@ -3897,3 +4730,6 @@ if __name__ == '__main__':
 
 
 > 以上就是机器学习最常用的优化技巧：拉格朗日乘数法的图形讲解，相信大家已经找到一定感觉，接下来几天我们通过例子，详细阐述机器学习的具体概念，常用算法，使用Python实现主要的算法，使用Sklearn，Kaggle数据实战这些算法。
+
+
+
