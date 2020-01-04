@@ -1573,6 +1573,38 @@ b VAR_POSITIONAL
 ```
 可以看到参数`a`既可以是位置参数也可是关键字参数。
 
+#### 92  使用slice对象
+
+python切片操作使用`a[start:stop:step]`，如生成蛋糕序列`cake1`：
+```python
+cake1 = list(range(5,0,-1)) # [5,4,3,2,1]
+b = cake1[1:10:2] # 4,2
+```
+生成另一个蛋糕序列`cake2`:
+```python
+from random import randint
+cake2 = [randint(1,100) for _ in range(100)]
+# 同样以间隔为2切前10个元素，得到切片d
+d = cake2[1:10:2] # [10, 1, 9, 34, 91]
+```
+你看，我们使用同一种切法，分别切开两个蛋糕`cake1`,`cake2`. 后来发现这种切法极为经典，又拿它去切更多的容器对象。
+
+那么，为什么不把这种切法封装为一个对象呢？ 于是就有了`slice`对象。
+
+定义slice对象极为简单，如把上面的切法定义成slice对象：
+```python
+perfect_cake_slice_way = slice(1,10,-2)
+#去切cake1
+cake1[perfect_cake_slice_wa]
+```
+猜测是slice对象的第三个参数`stride`为*负数的问题*
+
+改为正数`slice(1,10,2)`后结果与普通的切片操作`a[1:10:2]` 得到结果一致。
+
+stride为负数得到结果与普通切片操作不一致的问题，感觉可优化。
+
+一句话总结：频繁使用同一切片的操作可使用`slice`抽出来，复用的同时还能提高代码可读性。
+
 ### 二 Python之坑
 
 #### 1 含单个元素的元组
@@ -4082,13 +4114,13 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 
 #### 1 一行代码优化输出的异常信息
 
-```
+```python
 pip install pretty-errors
 ```
 
 写一个函数测试：
 
-```
+```python
 def divided_zero():
     for i in range(10, -1, -1):
         print(10/i)
@@ -4099,7 +4131,7 @@ divided_zero()
 
 在没有import这个`pretty-errors`前，输出的错误信息有些冗余：
 
-```
+```python
 Traceback (most recent call last):
   File "c:\Users\HUAWEI\.vscode\extensions\ms-python.python-2019.11.50794\pythonFiles\ptvsd_launcher.py", line 43, in <module>
     main(ptvsdArgs)
@@ -4124,7 +4156,7 @@ ZeroDivisionError: division by zero
 
 我们使用刚安装的`pretty_errors`，`import`下:
 
-```
+```python
 import pretty_errors
 
 def divided_zero():
@@ -4136,7 +4168,7 @@ divided_zero()
 
 此时看看输出的错误信息，非常精简只有2行，去那些冗余信息：
 
-```
+```python
 ZeroDivisionError:
 division by zero
 ```
