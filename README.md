@@ -1575,35 +1575,69 @@ b VAR_POSITIONAL
 
 #### 92  使用slice对象
 
-python切片操作使用`a[start:stop:step]`，如生成蛋糕序列`cake1`：
-```python
-cake1 = list(range(5,0,-1)) # [5,4,3,2,1]
-b = cake1[1:10:2] # 4,2
-```
-生成另一个蛋糕序列`cake2`:
-```python
-from random import randint
-cake2 = [randint(1,100) for _ in range(100)]
-# 同样以间隔为2切前10个元素，得到切片d
-d = cake2[1:10:2] # [10, 1, 9, 34, 91]
-```
-你看，我们使用同一种切法，分别切开两个蛋糕`cake1`,`cake2`. 后来发现这种切法极为经典，又拿它去切更多的容器对象。
+生成关于蛋糕的序列cake1：
 
-那么，为什么不把这种切法封装为一个对象呢？ 于是就有了`slice`对象。
+```
+In [1]: cake1 = list(range(5,0,-1))
+
+In [2]: b = cake1[1:10:2]
+
+In [3]: b
+Out[3]: [4, 2]
+
+In [4]: cake1
+Out[4]: [5, 4, 3, 2, 1]
+```
+
+再生成一个序列：
+
+```
+In [5]: from random import randint
+   ...: cake2 = [randint(1,100) for _ in range(100)]
+   ...: # 同样以间隔为2切前10个元素，得到切片d
+   ...: d = cake2[1:10:2]
+In [6]: d
+Out[6]: [75, 33, 63, 93, 15]
+```
+
+你看，我们使用同一种切法，分别切开两个蛋糕cake1,cake2. 后来发现这种切法`极为经典`，又拿它去切更多的容器对象。
+
+那么，为什么不把这种切法封装为一个对象呢？于是就有了slice对象。
 
 定义slice对象极为简单，如把上面的切法定义成slice对象：
-```python
-perfect_cake_slice_way = slice(1,10,-2)
-#去切cake1
-cake1[perfect_cake_slice_wa]
+
 ```
-猜测是slice对象的第三个参数`stride`为*负数的问题*
+perfect_cake_slice_way = slice(1,10,2)
+#去切cake1
+cake1_slice = cake1[perfect_cake_slice_way] 
+cake2_slice = cake2[perfect_cake_slice_way]
 
-改为正数`slice(1,10,2)`后结果与普通的切片操作`a[1:10:2]` 得到结果一致。
+In [11]: cake1_slice
+Out[11]: [4, 2]
 
-stride为负数得到结果与普通切片操作不一致的问题，感觉可优化。
+In [12]: cake2_slice
+Out[12]: [75, 33, 63, 93, 15]
+```
 
-一句话总结：频繁使用同一切片的操作可使用`slice`抽出来，复用的同时还能提高代码可读性。
+与上面的结果一致。
+
+对于逆向序列切片，`slice`对象一样可行：
+
+```
+a = [1,3,5,7,9,0,3,5,7]
+a_ = a[5:1:-1]
+
+named_slice = slice(5,1,-1)
+a_slice = a[named_slice] 
+
+In [14]: a_
+Out[14]: [0, 9, 7, 5]
+
+In [15]: a_slice
+Out[15]: [0, 9, 7, 5]
+```
+
+频繁使用同一切片的操作可使用slice对象抽出来，复用的同时还能提高代码可读性。
 
 ### 二 Python之坑
 
@@ -1993,8 +2027,6 @@ array = [5, 7, 9]
 ```python
 g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
 ```
-
-正在陆续汇总更多Python使用之坑 ... 
 
 ### 三、Python字符串和正则
 
