@@ -4143,7 +4143,7 @@ division by zero
 
 完整的输出信息如下图片所示：
 
-![img](https://mmbiz.qpic.cn/sz_mmbiz_png/tdJziaFLKKeSaMHlCZrSz6Nmdh7Y9DEpePW4H52tSgmQR5pMhCX9SF3HPSvWKDdlegSDfpaTtQndpMMPXfbSyFQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20200104103849047](./img/image-20200104103849047.png)
 
 ### 九、Python实战
 
