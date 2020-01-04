@@ -1,4 +1,4 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有190个例子：
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有`200`个例子：
 
 第零章：感受Python之美
 
@@ -4141,6 +4141,64 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 <img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
 
 
+
+#### 21 matplotlib绘制动画
+
+`matplotlib`是python中最经典的绘图包，里面`animation`模块能绘制动画。
+
+首先导入小例子使用的模块：
+```python
+from matplotlib import pyplot as plt
+from matplotlib import animation
+from random import randint, random
+```
+
+生成数据，`frames_count`是帧的个数，`data_count`每个帧的柱子个数
+
+```python
+class Data:
+    data_count = 32
+    frames_count = 2
+
+    def __init__(self, value):
+        self.value = value
+        self.color = (0.5, random(), random()) #rgb
+
+    # 造数据
+    @classmethod
+    def create(cls):
+        return [[Data(randint(1, cls.data_count)) for _ in range(cls.data_count)]
+                for frame_i in range(cls.frames_count)]
+```
+
+绘制动画：`animation.FuncAnimation`函数的回调函数的参数`fi`表示第几帧，注意要调用`axs.cla()`清除上一帧。
+
+```python
+def draw_chart():
+    fig = plt.figure(1, figsize=(16, 9))
+    axs = fig.add_subplot(111)
+    axs.set_xticks([])
+    axs.set_yticks([])
+
+    # 生成数据
+    frames = Data.create()
+
+    def animate(fi):
+        axs.cla()  # clear last frame
+        axs.set_xticks([])
+        axs.set_yticks([])
+        return axs.bar(list(range(Data.data_count)),        # X
+                       [d.value for d in frames[fi]],       # Y
+                       1,                                   # width
+                       color=[d.color for d in frames[fi]]  # color
+                       )
+    # 动画展示
+    anim = animation.FuncAnimation(fig, animate, frames=len(frames))
+    plt.show()
+
+
+draw_chart()
+```
 
 ### 八：Python实用工具
 
