@@ -16,11 +16,13 @@
 
 第七章：Python画图
 
-第八章：Python实战
+第八章：Python实用工具
 
-第九章：Python基础算法
+第九章：Python实战
 
-第十章：Python机器学习
+第十章：Python基础算法
+
+第十一章：Python机器学习
 
 > 后续章节：
 >
@@ -4074,7 +4076,76 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 
 <img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
 
-### 八、Python实战
+
+
+### 八：Python实用工具
+
+#### 1 一行代码优化输出的异常信息
+
+```
+pip install pretty-errors
+```
+
+写一个函数测试：
+
+```
+def divided_zero():
+    for i in range(10, -1, -1):
+        print(10/i)
+
+
+divided_zero()
+```
+
+在没有import这个`pretty-errors`前，输出的错误信息有些冗余：
+
+```
+Traceback (most recent call last):
+  File "c:\Users\HUAWEI\.vscode\extensions\ms-python.python-2019.11.50794\pythonFiles\ptvsd_launcher.py", line 43, in <module>
+    main(ptvsdArgs)
+  File "c:\Users\HUAWEI\.vscode\extensions\ms-python.python-2019.11.50794\pythonFiles\lib\python\old_ptvsd\ptvsd\__main__.py",
+line 432, in main
+    run()
+  File "c:\Users\HUAWEI\.vscode\extensions\ms-python.python-2019.11.50794\pythonFiles\lib\python\old_ptvsd\ptvsd\__main__.py",
+line 316, in run_file
+    runpy.run_path(target, run_name='__main__')
+  File "D:\anaconda3\lib\runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "D:\anaconda3\lib\runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "D:\anaconda3\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "d:\source\sorting-visualizer-master\sorting\debug_test.py", line 6, in <module>
+    divided_zero()
+  File "d:\source\sorting-visualizer-master\sorting\debug_test.py", line 3, in divided_zero
+    print(10/i)
+ZeroDivisionError: division by zero
+```
+
+我们使用刚安装的`pretty_errors`，`import`下:
+
+```
+import pretty_errors
+
+def divided_zero():
+    for i in range(10, -1, -1):
+        print(10/i)
+
+divided_zero()
+```
+
+此时看看输出的错误信息，非常精简只有2行，去那些冗余信息：
+
+```
+ZeroDivisionError:
+division by zero
+```
+
+完整的输出信息如下图片所示：
+
+![img](https://mmbiz.qpic.cn/sz_mmbiz_png/tdJziaFLKKeSaMHlCZrSz6Nmdh7Y9DEpePW4H52tSgmQR5pMhCX9SF3HPSvWKDdlegSDfpaTtQndpMMPXfbSyFQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+### 九、Python实战
 
 
 #### 1 环境搭建
@@ -4546,7 +4617,7 @@ if __name__ == '__main__':
 
 <img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
 
-### 第九章 Python基础算法
+### 十、 Python基础算法
 
 #### 1 领略算法魅力
 
@@ -4585,7 +4656,7 @@ if __name__ == '__main__':
 
 
 
-### 第十章 Python机器学习
+### 十一、 Python机器学习
 
 #### 1 引言
 
