@@ -4265,7 +4265,44 @@ division by zero
 
 完整的输出信息如下图片所示：
 
+
+
 ![image-20200104103849047](./img/image-20200104103849047.png)
+
+#### 2 两行代码实现旋转和缩放图像
+
+首先安装pillow:
+
+```python
+pip install pillow
+```
+
+旋转图像下面图像45度：
+
+![](./img/plotly2.png)
+
+```python
+In [1]: from PIL import Image
+In [2]: im = Image.open('./img/plotly2.png')
+In [4]: im.rotate(45).show()
+```
+
+旋转45度后的效果图
+
+![image-20200105085120611](./img/image-20200105085120611.png)
+
+等比例缩放图像：
+
+```python
+im.thumbnail((128,72),Image.ANTIALIAS)
+```
+
+缩放后的效果图：
+
+![](./img/pillow_suofang.png)
+
+
+
 
 ### 九、Python实战
 
