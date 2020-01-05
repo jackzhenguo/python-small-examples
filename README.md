@@ -26,12 +26,10 @@
 
 > 后续章节：
 >
-> 1) 不断丰富原有1~7章节；
-> 2) Python基础算法；
-> 3) python 机器学习，包括机器学习的基础概念和十大核心算法以及Sklearn和Kaggle实战的小例子。
-> 4) PyQt制作GUI
-> 5) Flask前端开发
-> 6) Python数据分析：NumPy, Pandas, Matplotlib, Plotly等
+> 1) 不断丰富原有1~7章节
+> 2) PyQt制作GUI
+> 3) Flask前端开发
+> 4) Python数据分析
 
 
 已发[《Python之路.1.1.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1)最新版本包括7个章节：`Python基础`，`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` 章节，共计`147个`小例子。
@@ -5141,3 +5139,99 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 
 
+#### 8 均匀分布
+
+导入本次实验所用的4种常见分布，连续分布的代表：`beta`分布、`正态`分布，`均匀`分布，离散分布的代表：`二项`分布。
+
+绘图装饰器带有四个参数分别表示`legend`的2类说明文字，y轴label, 保存的png文件名称。
+
+```python
+import pretty_errors
+import numpy as np
+from scipy.stats import beta, norm, uniform, binom
+import matplotlib.pyplot as plt
+from functools import wraps
+
+# 定义带四个参数的画图装饰器
+
+def my_plot(label0=None, label1=None, ylabel='probability density function', fn=None):
+    def decorate(f):
+        @wraps(f)
+        def myplot():
+            fig = plt.figure(figsize=(16, 9))
+            ax = fig.add_subplot(111)
+            x, y, y1 = f()
+            ax.plot(x, y, linewidth=2, c='r', label=label0)
+            ax.plot(x, y1, linewidth=2, c='b', label=label1)
+            ax.legend()
+            plt.ylabel(ylabel)
+            # plt.show()
+            plt.savefig('./img/%s' % (fn,))
+            print('%s保存成功' % (fn,))
+            plt.close()
+        return myplot
+    return decorate
+```
+
+```python
+# 均匀分布(uniform)
+@my_plot(label0='b-a=1.0', label1='b-a=2.0', fn='uniform.png')
+def unif():
+    x = np.arange(-0.01, 2.01, 0.01)
+    y = uniform.pdf(x, loc=0.0, scale=1.0)
+    y1 = uniform.pdf(x, loc=0.0, scale=2.0)
+    return x, y, y1
+```
+
+![](./img/uniform.png)
+
+#### 9 **二项分布**
+
+红色曲线表示发生一次概率为0.3，重复50次的密度函数，二项分布期望值为0.3*50 = 15次。看到这50次实验，很可能出现的次数为10~20.可与蓝色曲线对比分析。
+
+```python
+# 二项分布
+@my_plot(label0='n=50,p=0.3', label1='n=50,p=0.7', fn='binom.png', ylabel='probability mass function')
+def bino():
+    x = np.arange(50)
+    n, p, p1 = 50, 0.3, 0.7
+    y = binom.pmf(x, n=n, p=p)
+    y1 = binom.pmf(x, n=n, p=p1)
+    return x, y, y1
+```
+
+![](./img/binom.png)
+
+#### 10 高斯分布
+
+红色曲线表示均值为0，标准差为1.0的概率密度函数，蓝色曲线的标准差更大，所以它更矮胖，显示出取值的多样性，和不稳定性。
+
+```python
+# 高斯 分布
+@my_plot(label0='u=0.,sigma=1.0', label1='u=0.,sigma=2.0', fn='guass.png')
+def guass():
+    x = np.arange(-5, 5, 0.1)
+    y = norm.pdf(x, loc=0.0, scale=1.0)
+    y1 = norm.pdf(x, loc=0., scale=2.0)
+    return x, y, y1
+```
+
+![](./img/guass.png)
+
+#### 11 beta分布
+
+beta分布的期望值如下，可从下面的两条曲线中加以验证：
+
+![image-20200105205845965](./img/image-20200105205845965.png)
+
+```python
+# beta 分布
+@my_plot(label0='a=10., b=30.', label1='a=4., b=4.', fn='beta.png')
+def bet():
+    x = np.arange(-0.01, 1, 0.001)
+    y = beta.pdf(x, a=10., b=30.)
+    y1 = beta.pdf(x, a=4., b=4.)
+    return x, y, y1
+```
+
+![](./img/beta.png)
