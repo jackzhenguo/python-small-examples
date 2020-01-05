@@ -4303,6 +4303,14 @@ im.thumbnail((128,72),Image.ANTIALIAS)
 
 
 
+过滤图像后的效果图：
+
+```python
+from PIL import ImageFilter
+im.filter(ImageFilter.CONTOUR).show()
+```
+
+![](./img/pillow_filter.png)
 
 ### 九、Python实战
 
