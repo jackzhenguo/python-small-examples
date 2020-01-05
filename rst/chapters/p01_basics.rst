@@ -1,8 +1,10 @@
 =============================
-第一章：基本操作
+引言：感受Python之美
 =============================
 
-环境搭建方法，包管理方法，python常用工具，基础语法，基础的类型等。
+已发\ `《Python之路.1.1.pdf》 <https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.1>`__\ 最新版本包括7个章节：\ ``Python基础``\ ，\ ``Python字符串和正则``\ ，\ ``Python文件``\ ，\ ``Python日期``,
+``Python利器``\ ，\ ``Python画图`` 章节，共计\ ``147个``\ 小例子。
+
 
 
 
