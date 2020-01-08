@@ -3340,35 +3340,8 @@ list index out of range: 10
 spending time:1.01
 ```
 
-#### 13 定制递减迭代器
 
-```python
-#编写一个迭代器，通过循环语句，实现对某个正整数的依次递减1，直到0.
-class Descend(Iterator):
-    def __init__(self,N):
-        self.N=N
-        self.a=0
-    def __iter__(self):
-        return self 
-    def __next__(self):
-        while self.a<self.N:
-            self.N-=1
-            return self.N
-        raise StopIteration
-    
-descend_iter=Descend(10)
-print(list(descend_iter))
-[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-```
-
-核心要点：
-
-1 `__nex__ `名字不能变，实现定制的迭代逻辑
-
-2 `raise StopIteration`：通过 raise 中断程序，必须这样写
-
-
-#### 14 测试运行时长的装饰器
+#### 13 测试运行时长的装饰器
 
 
 ```python
@@ -3403,6 +3376,123 @@ print("append/compre:",round(a/c,3))
 # append/compre: 2.749
 ```
 
+
+
+#### 14 装饰器通俗理解
+
+再看一个装饰器：
+
+```python
+def call_print(f):
+  def g():
+    print('you\'re calling %s function'%(f.__name__,))
+  return g
+```
+
+使用`call_print`装饰器：
+
+```python
+@call_print
+def myfun():
+  pass
+ 
+@call_print
+def myfun2():
+  pass
+```
+
+myfun()后返回：
+
+```python
+In [27]: myfun()
+you're calling myfun function
+
+In [28]: myfun2()
+you're calling myfun2 function
+```
+
+**使用call_print**
+
+你看，`@call_print`放置在任何一个新定义的函数上面，都会默认输出一行，你正在调用这个函数的名。
+
+这是为什么呢？注意观察新定义的`call_print`函数(加上@后便是装饰器):
+
+```python
+def call_print(f):
+  def g():
+    print('you\'re calling %s function'%(f.__name__,))
+  return g
+```
+
+它必须接受一个函数`f`，然后返回另外一个函数`g`.
+
+**装饰器本质**
+
+本质上，它与下面的调用方式效果是等效的：
+
+```
+def myfun():
+  pass
+
+def myfun2():
+  pass
+  
+def call_print(f):
+  def g():
+    print('you\'re calling %s function'%(f.__name__,))
+  return g
+```
+
+下面是最重要的代码：
+
+```
+myfun = call_print(myfun)
+myfun2 = call_print(myfun2)
+```
+
+大家看明白吗？也就是call_print(myfun)后不是返回一个函数吗，然后再赋值给myfun.
+
+再次调用myfun, myfun2时，效果是这样的：
+
+```python
+In [32]: myfun()
+you're calling myfun function
+
+In [33]: myfun2()
+you're calling myfun2 function
+```
+
+你看，这与装饰器的实现效果是一模一样的。装饰器的写法可能更加直观些，所以不用显示的这样赋值：`myfun = call_print(myfun)`，`myfun2 = call_print(myfun2)`，但是装饰器的这种封装，猛一看，有些不好理解。
+
+#### 15 定制递减迭代器
+
+```python
+#编写一个迭代器，通过循环语句，实现对某个正整数的依次递减1，直到0.
+class Descend(Iterator):
+    def __init__(self,N):
+        self.N=N
+        self.a=0
+    def __iter__(self):
+        return self 
+    def __next__(self):
+        while self.a<self.N:
+            self.N-=1
+            return self.N
+        raise StopIteration
+    
+descend_iter=Descend(10)
+print(list(descend_iter))
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+```
+
+核心要点：
+
+1 `__nex__ `名字不能变，实现定制的迭代逻辑
+
+2 `raise StopIteration`：通过 raise 中断程序，必须这样写
+
+
+
 ### 七、Python画图
 
 Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`10`个。
@@ -3414,7 +3504,7 @@ turtle绘图的函数非常好用，基本看到函数名字，就能知道它�
 1 导入库
 
 ```python
-import turtle
+import turtle as p
 ```
 
 2 定义画圆函数
