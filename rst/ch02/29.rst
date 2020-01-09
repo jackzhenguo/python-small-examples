@@ -1,0 +1,20 @@
+29 对象是否有这个属性
+---------------------
+
+.. code:: python
+
+   In [1]: class Student():
+      ...:     def __init__(self,id,name):
+      ...:         self.id = id
+      ...:         self.name = name
+      ...:     def __repr__(self):
+      ...:         return 'id = '+self.id +', name = '+self.name
+
+   In [2]: xiaoming = Student(id='001',name='xiaoming')
+   In [3]: hasattr(xiaoming,'name')
+   Out[3]: True
+
+   In [4]: hasattr(xiaoming,'address')
+   Out[4]: False
+
+.. _header-n1470:

@@ -1,0 +1,13 @@
+77 命名元组提高可读性
+---------------------
+
+.. code:: python
+
+   from collections import namedtuple
+   Point = namedtuple('Point', ['x', 'y', 'z'])  # 定义名字为Point的元祖，字段属性有x,y,z
+   lst = [Point(1.5, 2, 3.0), Point(-0.3, -1.0, 2.1), Point(1.3, 2.8, -2.5)]
+   print(lst[0].y - lst[1].y)
+
+使用命名元组写出来的代码可读性更好，尤其处理上百上千个属性时作用更加凸显。
+
+.. _header-n1654:

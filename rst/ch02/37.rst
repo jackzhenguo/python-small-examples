@@ -1,0 +1,47 @@
+37 创建迭代器类型
+-----------------
+
+使用\ ``iter(obj, sentinel)``, 返回一个可迭代对象,
+sentinel可省略(一旦迭代到此元素，立即终止)
+
+.. code:: python
+
+   In [1]: lst = [1,3,5]
+
+   In [2]: for i in iter(lst):
+       ...:     print(i)
+       ...:
+   1
+   3
+   5
+
+.. code:: python
+
+   In [1]: class TestIter(object):
+       ...:     def __init__(self):
+       ...:         self.l=[1,3,2,3,4,5]
+       ...:         self.i=iter(self.l)
+       ...:     def __call__(self):  #定义了__call__方法的类的实例是可调用的
+       ...:         item = next(self.i)
+       ...:         print ("__call__ is called,fowhich would return",item)
+       ...:         return item
+       ...:     def __iter__(self): #支持迭代协议(即定义有__iter__()函数)
+       ...:         print ("__iter__ is called!!")
+       ...:         return iter(self.l)
+   In [2]: t = TestIter()
+   In [3]: t() # 因为实现了__call__，所以t实例能被调用
+   __call__ is called,which would return 1
+   Out[3]: 1
+
+   In [4]: for e in TestIter(): # 因为实现了__iter__方法，所以t能被迭代
+       ...:     print(e)
+       ...: 
+   __iter__ is called!!
+   1
+   3
+   2
+   3
+   4
+   5
+
+.. _header-n1496:

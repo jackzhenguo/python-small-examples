@@ -1,0 +1,47 @@
+61 全展开
+---------
+
+对于如下数组：
+
+.. code:: 
+
+   [[[1,2,3],[4,5]]]
+
+如何完全展开成一维的。这个小例子实现的\ ``flatten``\ 是递归版，两个参数分别表示带展开的数组，输出数组。
+
+.. code:: python
+
+   from collections.abc import *
+
+   def flatten(lst, out_lst=None):
+       if out_lst is None:
+           out_lst = []
+       for i in lst:
+           if isinstance(i, Iterable): # 判断i是否可迭代
+               flatten(i, out_lst)  # 尾数递归
+           else:
+               out_lst.append(i)    # 产生结果
+       return out_lst
+
+调用\ ``flatten``:
+
+.. code:: python
+
+   print(flatten([[1,2,3],[4,5]]))
+   print(flatten([[1,2,3],[4,5]], [6,7]))
+   print(flatten([[[1,2,3],[4,5,6]]]))
+   # 结果：
+   [1, 2, 3, 4, 5]
+   [6, 7, 1, 2, 3, 4, 5]
+   [1, 2, 3, 4, 5, 6]
+
+numpy里的\ ``flatten``\ 与上面的函数实现有些微妙的不同：
+
+.. code:: python
+
+   import numpy
+   b = numpy.array([[1,2,3],[4,5]])
+   b.flatten()
+   array([list([1, 2, 3]), list([4, 5])], dtype=object)
+
+.. _header-n1612:

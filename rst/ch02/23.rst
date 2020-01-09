@@ -1,0 +1,13 @@
+23 查看变量所占字节数
+---------------------
+
+.. code:: python
+
+   In [1]: import sys
+
+   In [2]: a = {'a':1,'b':2.0}
+
+   In [3]: sys.getsizeof(a) # 占用240个字节
+   Out[3]: 240
+
+.. _header-n1384:

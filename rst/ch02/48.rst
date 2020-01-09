@@ -1,0 +1,20 @@
+48 拿来就用的排序函数
+---------------------
+
+排序：
+
+.. code:: python
+
+   In [1]: a = [1,4,2,3,1]
+
+   In [2]: sorted(a,reverse=True)
+   Out[2]: [4, 3, 2, 1, 1]
+
+   In [3]: a = [{'name':'xiaoming','age':18,'gender':'male'},{'name':'
+        ...: xiaohong','age':20,'gender':'female'}]
+   In [4]: sorted(a,key=lambda x: x['age'],reverse=False)
+   Out[4]:
+   [{'name': 'xiaoming', 'age': 18, 'gender': 'male'},
+    {'name': 'xiaohong', 'age': 20, 'gender': 'female'}]
+
+.. _header-n1558:

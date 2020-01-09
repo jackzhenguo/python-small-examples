@@ -1,0 +1,29 @@
+
+36 父子关系鉴定
+---------------
+
+.. code:: python
+
+   In [1]: class undergraduate(Student):
+       ...:     def studyClass(self):
+       ...:         pass
+       ...:     def attendActivity(self):
+       ...:         pass
+
+   In [2]: issubclass(undergraduate,Student)
+   Out[2]: True
+
+   In [3]: issubclass(object,Student)
+   Out[3]: False
+
+   In [4]: issubclass(Student,object)
+   Out[4]: True
+
+如果class是classinfo元组中某个元素的子类，也会返回True
+
+.. code:: python
+
+   In [1]: issubclass(int,(int,float))
+   Out[1]: True
+
+.. _header-n1492:

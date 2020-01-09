@@ -1,0 +1,14 @@
+
+65 求众数
+---------
+
+.. code:: python
+
+   def top1(lst):
+       return max(lst, default='列表为空', key=lambda v: lst.count(v))
+
+   lst = [1, 3, 3, 2, 1, 1, 2]
+   r = top1(lst)
+   print(f'{lst}中出现次数最多的元素为:{r}')  # [1, 3, 3, 2, 1, 1, 2]中出现次数最多的元素为:1
+
+.. _header-n1620:

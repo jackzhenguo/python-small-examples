@@ -1,0 +1,17 @@
+43 创建range序列
+----------------
+
+| 1) range(stop)
+| 2) range(start, stop[,step])
+
+生成一个不可变序列：
+
+.. code:: python
+
+   In [1]: range(11)
+   Out[1]: range(0, 11)
+
+   In [2]: range(0,11,1)
+   Out[2]: range(0, 11)
+
+.. _header-n1543:

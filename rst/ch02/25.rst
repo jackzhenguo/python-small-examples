@@ -1,0 +1,22 @@
+25 转为浮点类型 
+----------------
+
+将一个整数或数值型字符串转换为浮点数
+
+.. code:: python
+
+   In [1]: float(3)
+   Out[1]: 3.0
+
+如果不能转化为浮点数，则会报\ ``ValueError``:
+
+.. code:: python
+
+   In [2]: float('a')
+   ValueError                                Traceback (most recent call last)
+   <ipython-input-11-99859da4e72c> in <module>()
+   ----> 1 float('a')
+
+   ValueError: could not convert string to float: 'a'
+
+.. _header-n1392:

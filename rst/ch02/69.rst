@@ -1,0 +1,17 @@
+69 浮点数等差数列
+-----------------
+
+.. code:: python
+
+   def rang(start, stop, n):
+       start,stop,n = float('%.2f' % start), float('%.2f' % stop),int('%.d' % n)
+       step = (stop-start)/n
+       lst = [start]
+       while n > 0:
+           start,n = start+step,n-1
+           lst.append(round((start), 2))
+       return lst
+
+   rang(1, 8, 10) # [1.0, 1.7, 2.4, 3.1, 3.8, 4.5, 5.2, 5.9, 6.6, 7.3, 8.0]
+
+.. _header-n1630:

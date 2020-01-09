@@ -1,0 +1,19 @@
+28 动态获取对象属性 
+--------------------
+
+获取对象的属性
+
+.. code:: python
+
+   In [1]: class Student():
+      ...:     def __init__(self,id,name):
+      ...:         self.id = id
+      ...:         self.name = name
+      ...:     def __repr__(self):
+      ...:         return 'id = '+self.id +', name = '+self.name
+
+   In [2]: xiaoming = Student(id='001',name='xiaoming')
+   In [3]: getattr(xiaoming,'name') # 获取xiaoming这个实例的name属性值
+   Out[3]: 'xiaoming'
+
+.. _header-n1468:

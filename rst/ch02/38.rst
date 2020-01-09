@@ -1,0 +1,13 @@
+38 所有对象之根
+---------------
+
+object 是所有类的基类
+
+.. code:: python
+
+   In [1]: o = object()
+
+   In [2]: type(o)
+   Out[2]: object
+
+.. _header-n1499:

@@ -1,0 +1,23 @@
+41 打印
+-------
+
+.. code:: python
+
+   In [5]: lst = [1,3,5]
+
+   In [6]: print(lst)
+   [1, 3, 5]
+
+   In [7]: print(f'lst: {lst}')
+   lst: [1, 3, 5]
+
+   In [8]: print('lst:{}'.format(lst))
+   lst:[1, 3, 5]
+
+   In [9]: print('lst:',lst)
+   lst: [1, 3, 5]
+
+.. _header-n1534:
+
+
+

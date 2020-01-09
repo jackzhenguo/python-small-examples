@@ -1,0 +1,23 @@
+76 逻辑上合并字典
+-----------------
+
+| (1) 两种合并字典方法
+| 这是一般的字典合并写法
+
+.. code:: python
+
+   dic1 = {'x': 1, 'y': 2 }
+   dic2 = {'y': 3, 'z': 4 }
+   merged1 = {**dic1, **dic2} # {'x': 1, 'y': 3, 'z': 4}
+
+修改merged['x']=10，dic1中的x值\ ``不变``\ ，\ ``merged``\ 是重新生成的一个\ ``新字典``\ 。
+
+但是，\ ``ChainMap``\ 却不同，它在内部创建了一个容纳这些字典的列表。因此使用ChainMap合并字典，修改merged['x']=10后，dic1中的x值\ ``改变``\ ，如下所示：
+
+.. code:: python
+
+   from collections import ChainMap
+   merged2 = ChainMap(dic1,dic2)
+   print(merged2) # ChainMap({'x': 1, 'y': 2}, {'y': 3, 'z': 4})
+
+.. _header-n1651:

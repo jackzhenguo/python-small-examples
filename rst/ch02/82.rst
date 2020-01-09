@@ -1,0 +1,23 @@
+82 chain高效串联多个容器对象
+----------------------------
+
+``chain``\ 函数串联a和b，兼顾内存效率同时写法更加优雅。
+
+.. code:: python
+
+   from itertools import chain
+   a = [1,3,5,0]
+   b = (2,4,6)
+
+   for i in chain(a,b):
+     print(i)
+   ### 结果
+   1
+   3
+   5
+   0
+   2
+   4
+   6
+
+.. _header-n1669:

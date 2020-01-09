@@ -1,0 +1,19 @@
+30 返回对象的哈希值 
+--------------------
+
+返回对象的哈希值，值得注意的是自定义的实例都是可哈希的，\ ``list``,
+``dict``, ``set``\ 等可变对象都是不可哈希的(unhashable)
+
+.. code:: python
+
+   In [1]: hash(xiaoming)
+   Out[1]: 6139638
+
+   In [2]: hash([1,2,3])
+   TypeError                                 Traceback (most recent call last)
+   <ipython-input-32-fb5b1b1d9906> in <module>()
+   ----> 1 hash([1,2,3])
+
+   TypeError: unhashable type: 'list'
+
+.. _header-n1473:
