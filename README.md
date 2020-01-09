@@ -2804,6 +2804,8 @@ Python日期章节，由表示大日期的`calendar`, `date`模块，逐渐过�
 
 ```python
 import calendar
+from datetime import date
+mydate = date.today()
 year_calendar_str = calendar.calendar(2019)
 print(f"{mydate.year}年的日历图：{year_calendar_str}\n")
 ```
@@ -2854,6 +2856,9 @@ Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
 
 ```python
 import calendar
+from datetime import date
+
+mydate = date.today()
 is_leap = calendar.isleap(mydate.year)
 print_leap_str = "%s年是闰年" if is_leap else "%s年不是闰年\n"
 print(print_leap_str % mydate.year)
@@ -2869,7 +2874,11 @@ print(print_leap_str % mydate.year)
 
 ```python
 import calendar
+from datetime import date
+
+mydate = date.today()
 month_calendar_str = calendar.month(mydate.year, mydate.month)
+
 print(f"{mydate.year}年-{mydate.month}月的日历图：{month_calendar_str}\n")
 ```
 
@@ -2890,6 +2899,9 @@ Mo Tu We Th Fr Sa Su
 
 ```python
 import calendar
+from datetime import date
+
+mydate = date.today()
 weekday, days = calendar.monthrange(mydate.year, mydate.month)
 print(f'{mydate.year}年-{mydate.month}月的第一天是那一周的第{weekday}天\n')
 print(f'{mydate.year}年-{mydate.month}月共有{days}天\n')
@@ -2909,6 +2921,7 @@ print(f'{mydate.year}年-{mydate.month}月共有{days}天\n')
 
 ```python
 from datetime import date
+mydate = date.today()
 month_first_day = date(mydate.year, mydate.month, 1)
 print(f"当月第一天:{month_first_day}\n")
 ```
@@ -2926,6 +2939,7 @@ print(f"当月第一天:{month_first_day}\n")
 ```python
 from datetime import date
 import calendar
+mydate = date.today()
 _, days = calendar.monthrange(mydate.year, mydate.month)
 month_last_day = date(mydate.year, mydate.month, days)
 print(f"当月最后一天:{month_last_day}\n")
