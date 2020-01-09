@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 ================================================
-Python small-examples Documentation
+Python-small-examples Documentation
 ================================================
 
 Contents:

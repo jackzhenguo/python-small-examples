@@ -1,0 +1,130 @@
+3 \\d 匹配数字[0-9]
+-------------------
+
+findall找出全部位置的所有匹配
+
+.. code:: python
+
+   s = '一共20行代码运行时间13.59s'
+   pat = r'\d+' # +表示匹配数字(\d表示数字的通用字符)1次或多次
+   r = re.findall(pat,s)
+   print(r)
+   # ['20', '13', '59']
+
+.. _header-n1850:
+
+4 匹配浮点数和整数
+------------------
+
+?表示前一个字符匹配0或1次
+
+.. code:: python
+
+   s = '一共20行代码运行时间13.59s'
+   pat = r'\d+\.?\d+' # ?表示匹配小数点(\.)0次或1次，这种写法有个小bug，不能匹配到个位数的整数
+   r = re.findall(pat,s)
+   print(r)
+   # ['20', '13.59']
+
+   # 更好的写法：
+   pat = r'\d+\.\d+|\d+' # A|B，匹配A失败才匹配B
+
+.. _header-n1853:
+
+5 ^匹配字符串的开头
+-------------------
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'^[emrt]' # 查找以字符e,m,r或t开始的字符串
+   r = re.findall(pat,s)
+   print(r)
+   # [],因为字符串的开头是字符`T`，不在emrt匹配范围内，所以返回为空
+   IN [11]: s2 = 'email for me is guozhennianhua@163.com'
+   re.findall('^[emrt].*',s2)# 匹配以e,m,r,t开始的字符串，后面是多个任意字符
+   Out[11]: ['email for me is guozhennianhua@163.com']
+
+.. _header-n1855:
+
+6 re.I 忽略大小写
+-----------------
+
+.. code:: python
+
+   s = 'That'
+   pat = r't' 
+   r = re.findall(pat,s,re.I)
+   In [22]: r
+   Out[22]: ['T', 't']
+
+.. _header-n1857:
+
+7 理解compile的作用
+-------------------
+
+如果要做很多次匹配，可以先编译匹配串：
+
+.. code:: python
+
+   import re
+   pat = re.compile('\W+') # \W 匹配不是数字和字母的字符
+   has_special_chars = pat.search('ed#2@edc') 
+   if has_special_chars:
+       print(f'str contains special characters:{has_special_chars.group(0)}')
+
+   ###输出结果: 
+    # str contains special characters:#   
+
+   ### 再次使用pat正则编译对象 做匹配
+   again_pattern = pat.findall('guozhennianhua@163.com')
+   if '@' in again_pattern:
+       print('possibly it is an email')
+
+.. _header-n1860:
+
+8 使用()捕获单词，不想带空格
+----------------------------
+
+使用\ ``()``\ 捕获
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'\s([a-zA-Z]+)'  
+   r = re.findall(pat,s)
+   print(r) #['module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
+
+看到提取单词中未包括第一个单词，使用\ ``?``\ 表示前面字符出现0次或1次，但是此字符还有表示贪心或非贪心匹配含义，使用时要谨慎。
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'\s?([a-zA-Z]+)'  
+   r = re.findall(pat,s)
+   print(r) #['This', 'module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
+
+.. _header-n1865:
+
+9 split分割单词
+---------------
+
+使用以上方法分割单词不是简洁的，仅仅是为了演示。分割单词最简单还是使用\ ``split``\ 函数。
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'\s+'  
+   r = re.split(pat,s)
+   print(r) # ['This', 'module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
+
+   ### 上面这句话也可直接使用str自带的split函数：
+   s.split(' ') #使用空格分隔
+
+   ### 但是，对于风格符更加复杂的情况，split无能为力，只能使用正则
+
+   s = 'This,,,   module ; \t   provides|| regular ; '
+   words = re.split('[,\s;|]+',s)  #这样分隔出来，最后会有一个空字符串
+   words = [i for i in words if len(i)>0]
+
+.. _header-n1868:

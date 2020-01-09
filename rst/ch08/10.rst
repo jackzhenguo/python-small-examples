@@ -1,0 +1,59 @@
+10 imshow图
+-----------
+
+.. figure:: https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31
+   :alt: 
+
+对应代码：
+
+.. code:: python
+
+   import matplotlib.pyplot as plt
+   import numpy as np
+   from matplotlib.cbook import get_sample_data
+   from mpl_toolkits import axes_grid1
+
+   import example_utils
+
+
+   def main():
+       fig, axes = setup_axes()
+       plot(axes, *load_data())
+       # example_utils.title(fig, '"ax.imshow(data, ...)": Colormapped or RGB arrays')
+       fig.savefig('imshow_example.png', facecolor='none')
+       plt.show()
+
+
+   def plot(axes, img_data, scalar_data, ny):
+
+       # 默认线性插值
+       axes[0].imshow(scalar_data, cmap='gist_earth', extent=[0, ny, ny, 0])
+
+       # 最近邻插值
+       axes[1].imshow(scalar_data, cmap='gist_earth', interpolation='nearest',
+                      extent=[0, ny, ny, 0])
+
+       # 展示RGB/RGBA数据
+       axes[2].imshow(img_data)
+
+
+   def load_data():
+       img_data = plt.imread(get_sample_data('5.png'))
+       ny, nx, nbands = img_data.shape
+       scalar_data = np.load(get_sample_data('bivariate_normal.npy'))
+       return img_data, scalar_data, ny
+
+
+   def setup_axes():
+       fig = plt.figure(figsize=(6, 3))
+       axes = axes_grid1.ImageGrid(fig, [0, 0, .93, 1], (1, 3), axes_pad=0)
+
+       for ax in axes:
+           ax.set(xticks=[], yticks=[])
+       return fig, axes
+
+
+   main()
+
+.. _header-n2162:
+

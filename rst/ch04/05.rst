@@ -1,0 +1,19 @@
+以下是正则部分
+
+.. code:: python
+
+   import re
+
+.. _header-n1843:
+
+1 查找第一个匹配串
+------------------
+
+.. code:: python
+
+   s = 'i love python very much'
+   pat = 'python' 
+   r = re.search(pat,s)
+   print(r.span()) #(7,13)
+
+.. _header-n1845:

@@ -1,0 +1,42 @@
+12 认识执行时机
+---------------
+
+.. code:: python
+
+   array = [1, 3, 5]
+   g = (x for x in array if array.count(x) > 0)
+
+``g``\ 为生成器，list(g)后返回\ ``[1,3,5]``\ ，因为每个元素肯定至少都出现一次。所以这个结果这不足为奇。但是，请看下例：
+
+.. code:: python
+
+   array = [1, 3, 5]
+   g = (x for x in array if array.count(x) > 0)
+   array = [5, 7, 9]
+
+请问,list(g)等于多少？这不是和上面那个例子结果一样吗，结果也是\ ``[1,3,5]``\ ，但是：
+
+.. code:: python
+
+   In [74]: list(g)
+   Out[74]: [5]
+
+这有些不可思议~~ 原因在于：
+
+生成器表达式中, in 子句在声明时执行, 而条件子句则是在运行时执行。
+
+所以代码：
+
+.. code:: python
+
+   array = [1, 3, 5]
+   g = (x for x in array if array.count(x) > 0)
+   array = [5, 7, 9]
+
+等价于：
+
+.. code:: python
+
+   g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
+
+.. _header-n1830:

@@ -1,0 +1,58 @@
+9 批量获取文件修改时间
+----------------------
+
+.. code:: python
+
+   # 获取目录下文件的修改时间
+   import os
+   from datetime import datetime
+
+   print(f"当前时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+   def get_modify_time(indir):
+       for root, _, files in os.walk(indir):  # 循环D:\works目录和子目录
+           for file in files:
+               absfile = os.path.join(root, file)
+               modtime = datetime.fromtimestamp(os.path.getmtime(absfile))
+               now = datetime.now()
+               difftime = now-modtime
+               if difftime.days < 20:  # 条件筛选超过指定时间的文件
+                   print(f"""{absfile}
+                       修改时间[{modtime.strftime('%Y-%m-%d %H:%M:%S')}]
+                       距今[{difftime.days:3d}天{difftime.seconds//3600:2d}时{difftime.seconds%3600//60:2d}]"""
+                         )  # 打印相关信息
+
+
+   get_modify_time('./data')
+
+.. code:: 
+
+   打印效果：
+   当前时间：2019-12-22 16:38:53
+   ./data\cut_words.csv
+                       修改时间[2019-12-21 10:34:15]
+                       距今[  1天 6时 4]
+   当前时间：2019-12-22 16:38:53
+   ./data\cut_words.csv
+                       修改时间[2019-12-21 10:34:15]
+                       距今[  1天 6时 4]
+   ./data\email_test.docx
+                       修改时间[2019-12-03 07:46:29]
+                       距今[ 19天 8时52]
+   ./data\email_test.jpg
+                       修改时间[2019-12-03 07:46:29]
+                       距今[ 19天 8时52]
+   ./data\email_test.xlsx
+                       修改时间[2019-12-03 07:46:29]
+                       距今[ 19天 8时52]
+   ./data\iotest.txt
+                       修改时间[2019-12-13 08:23:18]
+                       距今[  9天 8时15]
+   ./data\pyside2.md
+                       修改时间[2019-12-05 08:17:22]
+                       距今[ 17天 8时21]
+   ./data\PySimpleGUI-4.7.1-py3-none-any.whl
+                       修改时间[2019-12-05 00:25:47]
+                       距今[ 17天16时13]
+
+.. _header-n1962:

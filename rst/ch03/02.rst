@@ -1,0 +1,27 @@
+2 默认参数设为空
+----------------
+
+含有默认参数的函数，如果类型为容器，且设置为空：
+
+.. code:: python
+
+   def f(a,b=[]):  # NO!
+       print(b)
+       return b
+
+   ret = f(1)
+   ret.append(1)
+   ret.append(2)
+   # 当再调用f(1)时，预计打印为 []
+   f(1)
+   # 但是却为 [1,2]
+
+这是可变类型的默认参数之坑，请务必设置此类默认参数为None：
+
+.. code:: python
+
+   def f(a,b=None): # YES!
+       pass
+
+.. _header-n1721:
+

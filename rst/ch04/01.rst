@@ -1,0 +1,14 @@
+.. _header-n1832:
+
+1 反转字符串
+------------
+
+.. code:: python
+
+   st="python"
+   #方法1
+   ''.join(reversed(st))
+   #方法2
+   st[::-1]
+
+.. _header-n1834:
