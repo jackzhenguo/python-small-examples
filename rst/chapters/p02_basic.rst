@@ -6,9 +6,8 @@
 ``global``\ 等；内置数据结构包括：列表(list), 字典(dict), 集合(set),
 元组(tuple) 以及相关的高级模块\ ``collections``\ 中的\ ``Counter``,
 ``namedtuple``,
-``defaultdict``\ ，\ ``heapq``\ 模块。目前共有\ ``82``\ 个小例子
+``defaultdict``\ ，\ ``heapq``\ 模块。目前共有\ ``86``\ 个小例子
 
-此章节一共包括\ ``100个``\ 基础小例子。
 
 
 .. toctree::
