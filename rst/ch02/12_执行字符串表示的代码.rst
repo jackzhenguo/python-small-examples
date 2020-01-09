@@ -1,0 +1,18 @@
+15 执行字符串表示的代码
+-----------------------
+
+将字符串编译成python能识别或可执行的代码，也可以将文字读成字符串再编译。
+
+.. code:: python
+
+   In [1]: s  = "print('helloworld')"
+       
+   In [2]: r = compile(s,"<string>", "exec")
+       
+   In [3]: r
+   Out[3]: <code object <module> at 0x0000000005DE75D0, file "<string>", line 1>
+       
+   In [4]: exec(r)
+   helloworld
+
+.. _header-n1361:
