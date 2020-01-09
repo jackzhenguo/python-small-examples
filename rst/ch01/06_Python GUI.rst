@@ -1,10 +1,10 @@
-6 Python-GUI
+﻿6 Python-GUI
 ------------
 
-PyQt���������GUI���ܹ�Ѹ��ͨ���϶��齨�������ʹ�÷��㡣����Ϊʹ��PyQt�����Ƶ�һ��ר���Լ���С�����ļ�������
+PyQt设计器开发GUI，能够迅速通过拖动组建搭建出来，使用方便。如下为使用PyQt，定制的一个专属自己的小而美的计算器。
 
-����֮�⣬ʹ��Python��Flask��ܴWeb��ܣ�Ҳ�ǳ����㡣
+除此之外，使用Python的Flask框架搭建Web框架，也非常方便。
 
-��֮�������\ ``PythonС����``\ ���㶼��ѧ������ʹ��Python�ɻ�ķ����������Ȥ��С���ӣ���ӭ��ע��
+总之，在这个\ ``Python小例子``\ ，你都能学到关于使用Python干活的方方面面的有趣的小例子，欢迎关注。
 
 .. _header-n1311:
