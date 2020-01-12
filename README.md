@@ -1,32 +1,11 @@
 告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有`200`个例子：
 
-引言：感受Python之美
-
-第一章：Python基础 
-
-第二章：Python之坑
-
-第三章：Python字符串和正则
-
-第四章：Python文件
-
-第五章：Python日期
-
-第六章：Python利器
-
-第七章：Python画图
-
-第八章：Python实用工具
-
-第九章：Python实战
-
-第十章：Python基础算法
-
-第十一章：Python机器学习
+感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python、机器学习和深度学习实战
 
 > 后续章节：
 >
-> 1) 不断丰富原有1~7章节
+> 1) 丰满1~9章节，不断扩充小例子
+>
 > 2) PyQt制作GUI
 > 3) Flask前端开发
 > 4) Python数据分析
@@ -80,25 +59,29 @@ list(range(10,-1,-1)) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出热力图：
 
-<img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
+![](./img/image-20191229101724665.png)
 
 炫酷的水球图：
 
-<img src="./img/liquid.gif" alt="Sample"  width="600" height="450">
+![](./img/liquid.gif)
+
+
+
+
 
 经常使用的词云图：
 
-<img src="https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png" alt="Sample"  width="600" height="300">
+![1578809198185](./img/1578809198185.png)
 
 #### 3 Python动画
 
 仅适用Python的常用绘图库：Matplotlib，就能制作出动画，辅助算法新手入门基本的排序算法。如下为一个随机序列，使用`快速排序算法`，由小到大排序的过程动画展示：
 
-<img src="https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="Sample"  width="600" height="300">
+![](./img/640.gif)
 
 归并排序动画展示：
 
-<img src="https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="Sample"  width="600" height="300">
+![](./img/641.gif)
 
 使用turtule绘制的漫天雪花：
 
@@ -106,7 +89,7 @@ Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出�
 
 timeline时间轮播图：
 
-<img src="./img/timeline.gif" alt="Sample"  width="600" height="300">
+![](./img/timeline.gif)
 
 #### 4 Python数据分析
 
@@ -125,7 +108,7 @@ from sklearn.cluster import KMeans
 KMeans( n_clusters=3 )
 ```
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/e4kxNicDVcCGpkBThJSo6hrL3NpV3iasxOXslKOpDkxqVApeZughwf6hRNCP8WBf7fGHfxUQiaFA4Z7HQexyHB2oA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![img](./img/kmeans.png)
 
 #### 6 Python-GUI
 
@@ -1635,396 +1618,8 @@ Out[15]: [0, 9, 7, 5]
 
 频繁使用同一切片的操作可使用slice对象抽出来，复用的同时还能提高代码可读性。
 
-### 二 Python之坑
 
-#### 1 含单个元素的元组
-
-Python中有些函数的参数类型为元组，其内有1个元素，这样创建是错误的：
-
-```python
-c = (5) # NO!
-```
-
-它实际创建一个整型元素5，必须要在元素后加一个`逗号`:
-
-```python
-c = (5,) # YES!
-```
-
-#### 2 默认参数设为空
-
-含有默认参数的函数，如果类型为容器，且设置为空：
-
-```python
-def f(a,b=[]):  # NO!
-    print(b)
-    return b
-
-ret = f(1)
-ret.append(1)
-ret.append(2)
-# 当再调用f(1)时，预计打印为 []
-f(1)
-# 但是却为 [1,2]
-```
-
-这是可变类型的默认参数之坑，请务必设置此类默认参数为None：
-
-```python
-def f(a,b=None): # YES!
-    pass
-```
-
-#### 3 共享变量未绑定之坑
-
-有时想要多个函数共享一个全局变量，但却在某个函数内试图修改它为局部变量：
-
-```python
-i = 1
-def f():
-    i+=1 #NO!
-    
-def g():
-    print(i)
-```
-
-应该在f函数内显示声明`i`为global变量：
-
-```python
-i = 1
-def f():
-    global i # YES!
-    i+=1
-```
-
-#### 4 lambda自由参数之坑
-
-排序和分组的key函数常使用lambda，表达更加简洁，但是有个坑新手容易掉进去：
-
-```python
-a = [lambda x: x+i for i in range(3)] # NO!
-for f in a:
-    print(f(1))
-# 你可能期望输出：1,2,3
-```
-
-但是实际却输出: 3,3,3. 定义lambda使用的`i`被称为自由参数，它只在调用lambda函数时，值才被真正确定下来，这就犹如下面打印出2，你肯定确信无疑吧。
-
-```python
-a = 0
-a = 1
-a = 2
-def f(a):
-    print(a)
-```
-
-正确做法是转化`自由参数`为lambda函数的`默认参数`：
-
-```python
-a = [lambda x,i=i: x+i for i in range(3)] # YES!
-```
-
-#### 5 各种参数使用之坑
-
-Python强大多变，原因之一在于函数参数类型的多样化。方便的同时，也为使用者带来更多的约束规则。如果不了解这些规则，调用函数时，可能会出现如下一些语法异常：
-
-*(1) SyntaxError: positional argument follows keyword argument*
-
-
-*(2) TypeError: f() missing 1 required keyword-only argument: 'b'*
-
-
-*(3) SyntaxError: keyword argument repeated*
-
-*(4) TypeError: f() missing 1 required positional argument: 'b'*
-
-*(5) TypeError: f() got an unexpected keyword argument 'a'*
-
-*(6) TypeError: f() takes 0 positional arguments but 1 was given*
-
-
-总结主要的参数使用规则
-
-位置参数
-
-`位置参数`的定义：`函数调用`时根据函数定义的参数位（形参）置来传递参数，是最常见的参数类型。
-
-```python
-def f(a):
-  return a
-
-f(1) # 位置参数 
-```
-位置参数不能缺少：
-```python
-def f(a,b):
-  pass
-
-f(1) # TypeError: f() missing 1 required positional argument: 'b'
-```
-
-**规则1：位置参数必须一一对应，缺一不可**
-
-关键字参数
-
-在函数调用时，通过‘键--值’方式为函数形参传值，不用按照位置为函数形参传值。
-
-```python
-def f(a):
-  print(f'a:{a}')
-```
-这么调用，`a`就是关键字参数：
-```python
-f(a=1)
-```
-但是下面调用就不OK:
-```python
-f(a=1,20.) # SyntaxError: positional argument follows keyword argument
-```
-
-**规则2：关键字参数必须在位置参数右边**
-
-
-下面调用也不OK:
-```python
-f(1,width=20.,width=30.) #SyntaxError: keyword argument repeated
-
-```
-
-**规则3：对同一个形参不能重复传值**
-
-
-默认参数
-
-在定义函数时，可以为形参提供默认值。对于有默认值的形参，调用函数时如果为该参数传值，则使用传入的值，否则使用默认值。如下`b`是默认参数：
-```python
-def f(a,b=1):
-  print(f'a:{a}, b:{b}')
-
-```
-
-
-**规则4：无论是函数的定义还是调用，默认参数的定义应该在位置形参右面**
-
-只在定义时赋值一次；默认参数通常应该定义成不可变类型
-
-
-可变位置参数
-
-如下定义的参数a为可变位置参数：
-```python
-def f(*a):
-  print(a)
-```
-调用方法：
-```python
-f(1) #打印结果为元组： (1,)
-f(1,2,3) #打印结果：(1, 2, 3)
-```
-
-但是，不能这么调用：
-```python
-f(a=1) # TypeError: f() got an unexpected keyword argument 'a'
-```
-
-
-可变关键字参数
-
-如下`a`是可变关键字参数：
-```python
-def f(**a):
-  print(a)
-```
-调用方法：
-```python
-f(a=1) #打印结果为字典：{'a': 1}
-f(a=1,b=2,width=3) #打印结果：{'a': 1, 'b': 2, 'width': 3}
-```
-
-但是，不能这么调用：
-```python
-f(1) TypeError: f() takes 0 positional arguments but 1 was given
-```
-
-接下来，单独推送分析一个小例子，综合以上各种参数类型的函数及调用方法，敬请关注。
-
-#### 6 列表删除之坑
-
-删除一个列表中的元素，此元素可能在列表中重复多次：
-
-```python
-def del_item(lst,e):
-    return [lst.remove(i) for i in e if i==e] # NO!
-```
-
-考虑删除这个序列[1,3,3,3,5]中的元素3，结果发现只删除其中两个：
-
-```python
-del_item([1,3,3,3,5],3) # 结果：[1,3,5]
-```
-
-正确做法：
-
-```python
-def del_item(lst,e):
-    d = dict(zip(range(len(lst)),lst)) # YES! 构造字典
-    return [v for k,v in d.items() if v!=e]
-
-```
-
-#### 7 列表快速复制之坑
-
-在python中`*`与列表操作，实现快速元素复制：
-
-```python
-a = [1,3,5] * 3 # [1,3,5,1,3,5,1,3,5]
-a[0] = 10 # [10, 2, 3, 1, 2, 3, 1, 2, 3]
-```
-
-如果列表元素为列表或字典等复合类型：
-
-```python
-a = [[1,3,5],[2,4]] * 3 # [[1, 3, 5], [2, 4], [1, 3, 5], [2, 4], [1, 3, 5], [2, 4]]
-
-a[0][0] = 10 #  
-```
-
-结果可能出乎你的意料，其他`a[1[0]`等也被修改为10
-
-```python
-[[10, 3, 5], [2, 4], [10, 3, 5], [2, 4], [10, 3, 5], [2, 4]]
-```
-
-这是因为*复制的复合对象都是浅引用，也就是说id(a[0])与id(a[2])门牌号是相等的。如果想要实现深复制效果，这么做：
-
-```python
-a = [[] for _ in range(3)]
-```
-
-#### 8 字符串驻留
-```python
-In [1]: a = 'something'
-    ...: b = 'some'+'thing'
-    ...: id(a)==id(b)
-Out[1]: True
-```
-如果上面例子返回`True`，但是下面例子为什么是`False`:
-```python
-In [1]: a = '@zglg.com'
-
-In [2]: b = '@zglg'+'.com'
-
-In [3]: id(a)==id(b)
-Out[3]: False
-```
-这与Cpython 编译优化相关，行为称为`字符串驻留`，但驻留的字符串中只包含字母，数字或下划线。
-
-#### 9 相同值的不可变对象
-```python
-In [5]: d = {}
-    ...: d[1] = 'java'
-    ...: d[1.0] = 'python'
-
-In [6]: d
-Out[6]: {1: 'python'}
-
-### key=1,value=java的键值对神器消失了
-In [7]: d[1]
-Out[7]: 'python'
-In [8]: d[1.0]
-Out[8]: 'python'
-```
-这是因为具有相同值的不可变对象在Python中始终具有`相同的哈希值`
-
-由于存在`哈希冲突`，不同值的对象也可能具有相同的哈希值。
-
-#### 10 对象销毁顺序
-创建一个类`SE`:
-```python
-class SE(object):
-  def __init__(self):
-    print('init')
-  def __del__(self):
-    print('del')
-```
-创建两个SE实例，使用`is`判断：
-```python
-In [63]: SE() is SE()
-init
-init
-del
-del
-Out[63]: False
-
-```
-创建两个SE实例，使用`id`判断：
-```python
-In [64]: id(SE()) == id(SE())
-init
-del
-init
-del
-Out[64]: True
-```
-
-调用`id`函数, Python 创建一个 SE 类的实例，并使用`id`函数获得内存地址后，销毁内存丢弃这个对象。
-
-当连续两次进行此操作, Python会将相同的内存地址分配给第二个对象，所以两个对象的id值是相同的.
-
-
-但是is行为却与之不同，通过打印顺序就可以看到。
-
-#### 11 充分认识for
-```python
-In [65]: for i in range(5):
-    ...:   print(i)
-    ...:   i = 10
-0
-1
-2
-3
-4
-```
-为什么不是执行一次就退出？
-
-按照for在Python中的工作方式, i = 10 并不会影响循环。range(5)生成的下一个元素就被解包，并赋值给目标列表的变量`i`.
-
-#### 12 认识执行时机
-
-```python
-array = [1, 3, 5]
-g = (x for x in array if array.count(x) > 0)
-```
-`g`为生成器，list(g)后返回`[1,3,5]`，因为每个元素肯定至少都出现一次。所以这个结果这不足为奇。但是，请看下例：
-```python
-array = [1, 3, 5]
-g = (x for x in array if array.count(x) > 0)
-array = [5, 7, 9]
-```
-请问,list(g)等于多少？这不是和上面那个例子结果一样吗，结果也是`[1,3,5]`，但是：
-```python
-In [74]: list(g)
-Out[74]: [5]
-```
-
-这有些不可思议~~ 原因在于：
-
-生成器表达式中, in 子句在声明时执行, 而条件子句则是在运行时执行。
-
-
-所以代码：
-```python
-array = [1, 3, 5]
-g = (x for x in array if array.count(x) > 0)
-array = [5, 7, 9]
-```
-
-等价于：
-```python
-g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
-```
-
-### 三、Python字符串和正则
+### 二、Python字符串和正则
 
 字符串无所不在，字符串的处理也是最常见的操作。本章节将总结和字符串处理相关的一切操作。主要包括基本的字符串操作；高级字符串操作之正则。目前共有`20`个小例子
 
@@ -2388,8 +1983,15 @@ print(s)
 ```
 
 
+### 三、Python文件、日期和多线程
 
-### 四、Python文件
+Python文件IO操作涉及文件读写操作，获取文件`后缀名`，修改后缀名，获取文件修改时间，`压缩`文件，`加密`文件等操作。
+
+Python日期章节，由表示大日期的`calendar`, `date`模块，逐渐过渡到表示时间刻度更小的模块：`datetime`, `time`模块，按照此逻辑展开。
+
+Python`多线程`希望透过5个小例子，帮助你对多线程模型编程本质有些更清晰的认识。
+
+一共总结最常用的`24`个关于文件和时间处理模块的例子。
 
 #### 1 获取后缀名
 
@@ -2792,13 +2394,11 @@ print(hash_cry32('hello'))  # 5d41402abc4b2a76b9719d911017c592
 
 
 
-### 五、Python日期
-
-Python日期章节，由表示大日期的`calendar`, `date`模块，逐渐过渡到表示时间刻度更小的模块：`datetime`, `time`模块，按照此逻辑展开，总结了最常用的`9`个关于时间处理模块的例子。
 
 
 
-#### 1 年的日历图
+
+#### 12 年的日历图
 
 ```python
 import calendar
@@ -2850,7 +2450,7 @@ Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
 
 
 
-#### 2 判断是否为闰年
+#### 13 判断是否为闰年
 
 ```python
 import calendar
@@ -2893,7 +2493,7 @@ Mo Tu We Th Fr Sa Su
 30 31
 ```
 
-#### 4 月有几天
+#### 14 月有几天
 
 ```python
 import calendar
@@ -2915,7 +2515,7 @@ print(f'{mydate.year}年-{mydate.month}月共有{days}天\n')
 
 
 
-#### 5 月第一天
+#### 15 月第一天
 
 ```python
 from datetime import date
@@ -2932,7 +2532,7 @@ print(f"当月第一天:{month_first_day}\n")
 
 
 
-#### 6 月最后一天
+#### 16 月最后一天
 
 ```python
 from datetime import date
@@ -2951,7 +2551,7 @@ print(f"当月最后一天:{month_last_day}\n")
 
 
 
-#### 7 获取当前时间
+#### 17 获取当前时间
 
 ```python
 from datetime import date, datetime
@@ -2969,7 +2569,7 @@ print(strftime("%Y-%m-%d %H:%M:%S", local_time))  # 转化为定制的格式 201
 
 
 
-#### 8 字符时间转时间
+#### 18 字符时间转时间
 
 ```python
 from time import strptime
@@ -2983,7 +2583,7 @@ print(struct_time) # struct_time类型就是time中的一个类
 
 
 
-#### 9 时间转字符时间
+#### 19 时间转字符时间
 
 ```python
 from time import strftime, strptime, localtime
@@ -2997,7 +2597,293 @@ print(strftime("%m-%d-%Y %H:%M:%S", localtime()))  # 转化为定制的格式
 
 
 
-### 六、Python利器
+#### 20 默认启动主线程
+
+一般的，程序默认执行只在一个线程，这个线程称为主线程，例子演示如下：
+
+导入线程相关的模块 `threading`:
+
+```python
+import threading
+```
+
+threading的类方法 `current_thread()`返回当前线程：
+
+```python
+t = threading.current_thread()
+print(t) # <_MainThread(MainThread, started 139908235814720)>
+```
+
+所以，验证了程序默认是在`MainThead`中执行。
+
+`t.getName()`获得这个线程的名字，其他常用方法，`getName()`获得线程`id`,`isAlive()`判断线程是否存活等。
+
+```python
+print(t.getName()) # MainThread
+print(t.ident) # 139908235814720
+print(t.isAlive()) # True
+```
+
+以上这些仅是介绍多线程的`背景知识`，因为到目前为止，我们有且仅有一个"干活"的主线程
+
+#### 21 创建线程
+
+创建一个线程：
+
+```python
+my_thread = threading.Thread()
+```
+
+创建一个名称为`my_thread`的线程：
+
+```python
+my_thread = threading.Thread(name='my_thread')
+```
+
+创建线程的目的是告诉它帮助我们做些什么，做些什么通过参数`target`传入，参数类型为`callable`，函数就是可调用的：
+
+```python
+def print_i(i):
+    print('打印i:%d'%(i,))
+my_thread = threading.Thread(target=print_i,args=(1,))
+```
+
+`my_thread`线程已经全副武装，但是我们得按下发射按钮，启动start()，它才开始真正起飞。
+
+```python
+my_thread().start()
+```
+
+打印结果如下，其中`args`指定函数`print_i`需要的参数i，类型为元祖。
+
+```python
+打印i:1
+```
+
+至此，多线程相关的核心知识点，已经总结完毕。但是，仅仅知道这些，还不够！光纸上谈兵，当然远远不够。
+
+接下来，聊聊应用多线程编程，最本质的一些东西。
+
+**3 交替获得CPU时间片**
+
+为了更好解释，假定计算机是单核的，尽管对于`cpython`，这个假定有些多余。
+
+开辟3个线程，装到`threads`中:
+
+```python
+import time
+from datetime import datetime
+import threading
+
+
+def print_time():
+    for _ in range(5): # 在每个线程中打印5次
+        time.sleep(0.1) # 模拟打印前的相关处理逻辑
+        print('当前线程%s,打印结束时间为:%s'%(threading.current_thread().getName(),datetime.today()))
+
+
+threads = [threading.Thread(name='t%d'%(i,),target=print_time) for i in range(3)]
+```
+
+启动3个线程：
+
+```python
+[t.start() for t in threads]
+```
+
+打印结果如下，`t0`,`t1`,`t2`三个线程，根据操作系统的调度算法，轮询获得CPU时间片，注意观察，`t2`线程可能被连续调度，从而获得时间片。
+
+```python
+当前线程t0,打印结束时间为:2020-01-12 02:27:15.705235
+当前线程t1,打印结束时间为:2020-01-12 02:27:15.705402
+当前线程t2,打印结束时间为:2020-01-12 02:27:15.705687
+当前线程t0,打印结束时间为:2020-01-12 02:27:15.805767
+当前线程t1,打印结束时间为:2020-01-12 02:27:15.805886
+当前线程t2,打印结束时间为:2020-01-12 02:27:15.806044
+当前线程t0,打印结束时间为:2020-01-12 02:27:15.906200
+当前线程t2,打印结束时间为:2020-01-12 02:27:15.906320
+当前线程t1,打印结束时间为:2020-01-12 02:27:15.906433
+当前线程t0,打印结束时间为:2020-01-12 02:27:16.006581
+当前线程t1,打印结束时间为:2020-01-12 02:27:16.006766
+当前线程t2,打印结束时间为:2020-01-12 02:27:16.007006
+当前线程t2,打印结束时间为:2020-01-12 02:27:16.107564
+当前线程t0,打印结束时间为:2020-01-12 02:27:16.107290
+当前线程t1,打印结束时间为:2020-01-12 02:27:16.107741
+```
+
+#### 22 多线程抢夺同一个变量
+
+多线程编程，存在抢夺同一个变量的问题。
+
+比如下面例子，创建的10个线程同时竞争全局变量`a`:
+​
+
+```python
+import threading
+
+
+a = 0
+def add1():
+    global a    
+    a += 1
+    print('%s  adds a to 1: %d'%(threading.current_thread().getName(),a))
+    
+threads = [threading.Thread(name='t%d'%(i,),target=add1) for i in range(10)]
+[t.start() for t in threads]
+```
+
+执行结果：
+
+```python
+t0  adds a to 1: 1
+t1  adds a to 1: 2
+t2  adds a to 1: 3
+t3  adds a to 1: 4
+t4  adds a to 1: 5
+t5  adds a to 1: 6
+t6  adds a to 1: 7
+t7  adds a to 1: 8
+t8  adds a to 1: 9
+t9  adds a to 1: 10
+```
+
+结果一切正常，每个线程执行一次，把`a`的值加1，最后`a` 变为10，一切正常。
+
+运行上面代码十几遍，一切也都正常。
+
+所以，我们能下结论：这段代码是线程安全的吗？
+
+NO！
+
+多线程中，只要存在同时读取和修改一个全局变量的情况，如果不采取其他措施，就一定不是线程安全的。
+
+尽管，有时，某些情况的资源竞争，暴露出问题的概率`极低极低`：
+
+本例中，如果线程0 在修改a后，其他某些线程还是get到的是没有修改前的值，就会暴露问题。
+
+
+
+但是在本例中，`a = a + 1`这种修改操作，花费的时间太短了，短到我们无法想象。所以，线程间轮询执行时，都能get到最新的a值。所以，暴露问题的概率就变得微乎其微。
+
+#### 23 代码稍作改动，叫问题暴露出来
+
+只要弄明白问题暴露的原因，叫问题出现还是不困难的。
+
+想象数据库的写入操作，一般需要耗费我们可以感知的时间。
+
+为了模拟这个写入动作，简化期间，我们只需要延长修改变量`a`的时间，问题很容易就会还原出来。
+
+```python
+import threading
+import time
+
+
+a = 0
+def add1():
+    global a    
+    tmp = a + 1
+    time.sleep(0.2) # 延时0.2秒，模拟写入所需时间
+    a = tmp
+    print('%s  adds a to 1: %d'%(threading.current_thread().getName(),a))
+    
+threads = [threading.Thread(name='t%d'%(i,),target=add1) for i in range(10)]
+[t.start() for t in threads]
+```
+
+重新运行代码，只需一次，问题立马完全暴露，结果如下：
+
+```python
+t0  adds a to 1: 1
+t1  adds a to 1: 1
+t2  adds a to 1: 1
+t3  adds a to 1: 1
+t4  adds a to 1: 1
+t5  adds a to 1: 1
+t7  adds a to 1: 1
+t6  adds a to 1: 1
+t8  adds a to 1: 1
+t9  adds a to 1: 1
+```
+
+看到，10个线程全部运行后，`a`的值只相当于一个线程执行的结果。
+
+下面分析，为什么会出现上面的结果：
+
+这是一个很有说服力的例子，因为在修改a前，有0.2秒的休眠时间，某个线程延时后，CPU立即分配计算资源给其他线程。直到分配给所有线程后，根据结果反映出，0.2秒的休眠时长还没耗尽，这样每个线程get到的a值都是0，所以才出现上面的结果。
+
+
+
+以上最核心的三行代码：
+
+```python
+tmp = a + 1
+time.sleep(0.2) # 延时0.2秒，模拟写入所需时间
+a = tmp
+```
+
+
+
+
+
+#### 24 加上一把锁，避免以上情况出现
+
+知道问题出现的原因后，要想修复问题，也没那么复杂。
+
+通过python中提供的锁机制，某段代码只能单线程执行时，上锁，其他线程等待，直到释放锁后，其他线程再争锁，执行代码，释放锁，重复以上。
+
+创建一把锁`locka`:
+
+```python
+import threading
+import time
+
+
+locka = threading.Lock()
+```
+
+通过 `locka.acquire()` 获得锁，通过`locka.release()`释放锁，它们之间的这些代码，只能单线程执行。
+
+```python
+a = 0
+def add1():
+    global a    
+    try:
+        locka.acquire() # 获得锁
+        tmp = a + 1
+        time.sleep(0.2) # 延时0.2秒，模拟写入所需时间
+        a = tmp
+    finally:
+        locka.release() # 释放锁
+    print('%s  adds a to 1: %d'%(threading.current_thread().getName(),a))
+    
+threads = [threading.Thread(name='t%d'%(i,),target=add1) for i in range(10)]
+[t.start() for t in threads]
+```
+
+执行结果如下：
+
+```python
+t0  adds a to 1: 1
+t1  adds a to 1: 2
+t2  adds a to 1: 3
+t3  adds a to 1: 4
+t4  adds a to 1: 5
+t5  adds a to 1: 6
+t6  adds a to 1: 7
+t7  adds a to 1: 8
+t8  adds a to 1: 9
+t9  adds a to 1: 10
+```
+
+一起正常，其实这已经是单线程顺序执行了，就本例子而言，已经失去多线程的价值，并且还带来了因为线程创建开销，浪费时间的副作用。
+
+程序中只有一把锁，通过 `try...finally`还能确保不发生死锁。但是，当程序中启用多把锁，还是很容易发生死锁。
+
+注意使用场合，避免死锁，是我们在使用多线程开发时需要注意的一些问题。
+
+
+
+### 四、Python三大利器
 Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`14`例。
 
 
@@ -3505,9 +3391,9 @@ print(list(descend_iter))
 
 
 
-### 七、Python画图
+### 五、Python绘图
 
-Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`10`个。
+Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`21`个。
 
 #### 1 turtle绘制奥运五环图
 
@@ -3690,7 +3576,7 @@ fig.add_trace(
 fig.show()
 ```
 
-<img src="./img/plotly1.png" alt="Sample"  width="600" height="300">
+![]
 
 
 #### 5 seaborn热力图
@@ -3714,7 +3600,7 @@ plt.show()
 ```
 
 
-<img src="./img/heatmap.png" alt="Sample"  width="600" height="300">
+![](./img/heatmap.png)
 
 #### 6 matplotlib折线图
 
@@ -3743,7 +3629,7 @@ def label(ax, text, y=0):
                           ec='#8B7E66'))
 ```
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzH3RRjsHl5TELibR1AiaVc8VdTpe4SuKiagibdqqjNV8R5iclic44AZnTjPzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+![](./img/matplotlib1.png)
 
 ```python
 import numpy as np
@@ -3780,7 +3666,7 @@ plt.show()
 
 
 #### 7 matplotlib散点图
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzS3KTX8YzWzkPvDIiaIibsxHDz2C93qwpoFRqiaL6EVeSFibAT04ggxNbHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![1578811129148](./img/1578811129148.png)
 
 对应代码：
 
@@ -3824,7 +3710,7 @@ plt.show()
 
 #### 8 matplotlib柱状图
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzzBv3R8fHsVV6mEcV1KALF5u927OjdAwyhS4NUVHAAhlsBeC24zCricg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+![1578811155501](./img/1578811155501.png)
 
 对应代码：
 
@@ -3884,7 +3770,7 @@ main()
 #### 9 matplotlib等高线图
 
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzMGnSAHhCHG1bNEWHh1VJcmYN8E1ZBjPaL5iclH2HrvyYmCuDeibbfV3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+![1578811177737](./img/1578811177737.png)
 
 对应代码：
 
@@ -3919,7 +3805,7 @@ plt.show()
 
 #### 10 imshow图
 
-![](https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31)
+![1578811404145](./img/1578811404145.png)
 
 对应代码：
 
@@ -3989,7 +3875,7 @@ print('ok')
 
 仪表盘中共展示三项，每项的比例为30%,70%,90%，如下图默认名称显示第一项：Python机器学习，完成比例为30%
 
-<img src="./img/image-20191228194635902.png" alt="Sample"  width="600" height="450">
+![](./img/image-20191228194635902.png)
 
 #### 12 pyecharts漏斗图
 
@@ -4011,7 +3897,7 @@ funnel_base().render('./img/car_fnnel.html')
 
 以7种车型及某个属性值绘制的漏斗图，属性值大越靠近漏斗的大端。
 
-<img src="https://i.loli.net/2019/12/28/aCGfBp6YIvWqU84.png" alt="Sample"  width="600" height="300">
+![1578811483265](./img/1578811483265.png)
 
 #### 13 pyecharts日历图
 
@@ -4050,7 +3936,7 @@ calendar_interval_1().render('./img/calendar.html')
 
 绘制2019年1月1日到12月27日的步行数，官方给出的图形宽度`900px`不够，只能显示到9月份，本例使用`opts.InitOpts(width="1200px")`做出微调，并且`visualmap`显示所有步数，每隔一天显示一次：
 
-![](https://i.loli.net/2019/12/28/Zw9mWM1QtUVjCgn.png)
+![1578811543851](./img/1578811543851.png)
 
 #### 14 pyecharts绘制graph图
 
@@ -4084,7 +3970,7 @@ def graph_base() -> Graph:
 
 构建图，其中客户点1与其他两个客户都没有关系(`link`)，也就是不存在有效边：
 
-![](https://i.loli.net/2019/12/28/ts4WrTQINSaHdM1.png)
+![1578811569529](./img/1578811569529.png)
 
 #### 15 pyecharts水球图
 
@@ -4106,7 +3992,7 @@ liquid().render('./img/liquid.html')
 
 水球图的取值`[0.67, 0.30, 0.15]`表示下图中的`三个波浪线`，一般代表三个百分比:
 
-<img src="./img/liquid.gif" alt="Sample"  width="600" height="450">
+![](./img/liquid.gif)
 
 #### 16 pyecharts饼图
 
@@ -4127,7 +4013,7 @@ def pie_base() -> Pie:
 
 pie_base().render('./img/pie_pyecharts.html')
 ```
-<img src="./img/20191229105841.png" alt="Sample"  width="600" height="350">
+![](./img/20191229105841.png)
 
 
 #### 17 pyecharts极坐标图
@@ -4152,7 +4038,7 @@ polar_scatter0().render('./img/polar.html')
 
 极坐标表示为`(夹角,半径)`，如(6,94)表示夹角为6，半径94的点：
 
-<img src="https://i.loli.net/2019/12/28/QxVOFuDB5y6wgpJ.png" alt="Sample"  width="600" height="500">
+![1578811648010](./img/1578811648010.png)
 
 #### 18 pyecharts词云图
 
@@ -4185,7 +4071,7 @@ wordcloud().render('./img/wordcloud.html')
 `("C",65)`表示在本次统计中C语言出现65次
 
 
-<img src="https://i.loli.net/2019/12/28/nSs8MY9Dc4I1egk.png" alt="Sample"  width="600" height="300">
+![1578811675413](./img/1578811675413.png)
 
 #### 19 pyecharts系列柱状图
 
@@ -4207,7 +4093,7 @@ def bar_series() -> Bar:
 bar_series().render('./img/bar_series.html')
 ```
 
-<img src="https://i.loli.net/2019/12/28/egamLZw2oMHA19T.png" alt="Sample"  width="600" height="300">
+![1578811781930](./img/1578811781930.png)
 
 #### 20 pyecharts热力图
 
@@ -4238,7 +4124,7 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 热力图描述的实际是三维关系，x轴表示车型，y轴表示国家，每个色块的颜色值代表销量，颜色刻度尺显示在左下角，颜色越红表示销量越大。
 
 
-<img src="./img/image-20191229101724665.png" alt="Sample"  width="600" height="300">
+![](./img/image-20191229101724665.png)
 
 
 
@@ -4300,10 +4186,402 @@ def draw_chart():
 draw_chart()
 ```
 
-### 八：Python实用工具
 
-#### 1 一行代码优化输出的异常信息
 
+### 六、 Python之坑
+
+#### 1 含单个元素的元组
+
+Python中有些函数的参数类型为元组，其内有1个元素，这样创建是错误的：
+
+```python
+c = (5) # NO!
+```
+
+它实际创建一个整型元素5，必须要在元素后加一个`逗号`:
+
+```python
+c = (5,) # YES!
+```
+
+#### 2 默认参数设为空
+
+含有默认参数的函数，如果类型为容器，且设置为空：
+
+```python
+def f(a,b=[]):  # NO!
+    print(b)
+    return b
+
+ret = f(1)
+ret.append(1)
+ret.append(2)
+# 当再调用f(1)时，预计打印为 []
+f(1)
+# 但是却为 [1,2]
+```
+
+这是可变类型的默认参数之坑，请务必设置此类默认参数为None：
+
+```python
+def f(a,b=None): # YES!
+    pass
+```
+
+#### 3 共享变量未绑定之坑
+
+有时想要多个函数共享一个全局变量，但却在某个函数内试图修改它为局部变量：
+
+```python
+i = 1
+def f():
+    i+=1 #NO!
+    
+def g():
+    print(i)
+```
+
+应该在f函数内显示声明`i`为global变量：
+
+```python
+i = 1
+def f():
+    global i # YES!
+    i+=1
+```
+
+#### 4 lambda自由参数之坑
+
+排序和分组的key函数常使用lambda，表达更加简洁，但是有个坑新手容易掉进去：
+
+```python
+a = [lambda x: x+i for i in range(3)] # NO!
+for f in a:
+    print(f(1))
+# 你可能期望输出：1,2,3
+```
+
+但是实际却输出: 3,3,3. 定义lambda使用的`i`被称为自由参数，它只在调用lambda函数时，值才被真正确定下来，这就犹如下面打印出2，你肯定确信无疑吧。
+
+```python
+a = 0
+a = 1
+a = 2
+def f(a):
+    print(a)
+```
+
+正确做法是转化`自由参数`为lambda函数的`默认参数`：
+
+```python
+a = [lambda x,i=i: x+i for i in range(3)] # YES!
+```
+
+#### 5 各种参数使用之坑
+
+Python强大多变，原因之一在于函数参数类型的多样化。方便的同时，也为使用者带来更多的约束规则。如果不了解这些规则，调用函数时，可能会出现如下一些语法异常：
+
+*(1) SyntaxError: positional argument follows keyword argument*
+
+
+*(2) TypeError: f() missing 1 required keyword-only argument: 'b'*
+
+
+*(3) SyntaxError: keyword argument repeated*
+
+*(4) TypeError: f() missing 1 required positional argument: 'b'*
+
+*(5) TypeError: f() got an unexpected keyword argument 'a'*
+
+*(6) TypeError: f() takes 0 positional arguments but 1 was given*
+
+
+总结主要的参数使用规则
+
+位置参数
+
+`位置参数`的定义：`函数调用`时根据函数定义的参数位（形参）置来传递参数，是最常见的参数类型。
+
+```python
+def f(a):
+  return a
+
+f(1) # 位置参数 
+```
+位置参数不能缺少：
+```python
+def f(a,b):
+  pass
+
+f(1) # TypeError: f() missing 1 required positional argument: 'b'
+```
+
+**规则1：位置参数必须一一对应，缺一不可**
+
+关键字参数
+
+在函数调用时，通过‘键--值’方式为函数形参传值，不用按照位置为函数形参传值。
+
+```python
+def f(a):
+  print(f'a:{a}')
+```
+这么调用，`a`就是关键字参数：
+```python
+f(a=1)
+```
+但是下面调用就不OK:
+```python
+f(a=1,20.) # SyntaxError: positional argument follows keyword argument
+```
+
+**规则2：关键字参数必须在位置参数右边**
+
+
+下面调用也不OK:
+```python
+f(1,width=20.,width=30.) #SyntaxError: keyword argument repeated
+
+```
+
+**规则3：对同一个形参不能重复传值**
+
+
+默认参数
+
+在定义函数时，可以为形参提供默认值。对于有默认值的形参，调用函数时如果为该参数传值，则使用传入的值，否则使用默认值。如下`b`是默认参数：
+```python
+def f(a,b=1):
+  print(f'a:{a}, b:{b}')
+
+```
+
+
+**规则4：无论是函数的定义还是调用，默认参数的定义应该在位置形参右面**
+
+只在定义时赋值一次；默认参数通常应该定义成不可变类型
+
+
+可变位置参数
+
+如下定义的参数a为可变位置参数：
+```python
+def f(*a):
+  print(a)
+```
+调用方法：
+```python
+f(1) #打印结果为元组： (1,)
+f(1,2,3) #打印结果：(1, 2, 3)
+```
+
+但是，不能这么调用：
+```python
+f(a=1) # TypeError: f() got an unexpected keyword argument 'a'
+```
+
+
+可变关键字参数
+
+如下`a`是可变关键字参数：
+```python
+def f(**a):
+  print(a)
+```
+调用方法：
+```python
+f(a=1) #打印结果为字典：{'a': 1}
+f(a=1,b=2,width=3) #打印结果：{'a': 1, 'b': 2, 'width': 3}
+```
+
+但是，不能这么调用：
+```python
+f(1) TypeError: f() takes 0 positional arguments but 1 was given
+```
+
+接下来，单独推送分析一个小例子，综合以上各种参数类型的函数及调用方法，敬请关注。
+
+#### 6 列表删除之坑
+
+删除一个列表中的元素，此元素可能在列表中重复多次：
+
+```python
+def del_item(lst,e):
+    return [lst.remove(i) for i in e if i==e] # NO!
+```
+
+考虑删除这个序列[1,3,3,3,5]中的元素3，结果发现只删除其中两个：
+
+```python
+del_item([1,3,3,3,5],3) # 结果：[1,3,5]
+```
+
+正确做法：
+
+```python
+def del_item(lst,e):
+    d = dict(zip(range(len(lst)),lst)) # YES! 构造字典
+    return [v for k,v in d.items() if v!=e]
+
+```
+
+#### 7 列表快速复制之坑
+
+在python中`*`与列表操作，实现快速元素复制：
+
+```python
+a = [1,3,5] * 3 # [1,3,5,1,3,5,1,3,5]
+a[0] = 10 # [10, 2, 3, 1, 2, 3, 1, 2, 3]
+```
+
+如果列表元素为列表或字典等复合类型：
+
+```python
+a = [[1,3,5],[2,4]] * 3 # [[1, 3, 5], [2, 4], [1, 3, 5], [2, 4], [1, 3, 5], [2, 4]]
+
+a[0][0] = 10 #  
+```
+
+结果可能出乎你的意料，其他`a[1[0]`等也被修改为10
+
+```python
+[[10, 3, 5], [2, 4], [10, 3, 5], [2, 4], [10, 3, 5], [2, 4]]
+```
+
+这是因为*复制的复合对象都是浅引用，也就是说id(a[0])与id(a[2])门牌号是相等的。如果想要实现深复制效果，这么做：
+
+```python
+a = [[] for _ in range(3)]
+```
+
+#### 8 字符串驻留
+```python
+In [1]: a = 'something'
+    ...: b = 'some'+'thing'
+    ...: id(a)==id(b)
+Out[1]: True
+```
+如果上面例子返回`True`，但是下面例子为什么是`False`:
+```python
+In [1]: a = '@zglg.com'
+
+In [2]: b = '@zglg'+'.com'
+
+In [3]: id(a)==id(b)
+Out[3]: False
+```
+这与Cpython 编译优化相关，行为称为`字符串驻留`，但驻留的字符串中只包含字母，数字或下划线。
+
+#### 9 相同值的不可变对象
+```python
+In [5]: d = {}
+    ...: d[1] = 'java'
+    ...: d[1.0] = 'python'
+
+In [6]: d
+Out[6]: {1: 'python'}
+
+### key=1,value=java的键值对神器消失了
+In [7]: d[1]
+Out[7]: 'python'
+In [8]: d[1.0]
+Out[8]: 'python'
+```
+这是因为具有相同值的不可变对象在Python中始终具有`相同的哈希值`
+
+由于存在`哈希冲突`，不同值的对象也可能具有相同的哈希值。
+
+#### 10 对象销毁顺序
+创建一个类`SE`:
+```python
+class SE(object):
+  def __init__(self):
+    print('init')
+  def __del__(self):
+    print('del')
+```
+创建两个SE实例，使用`is`判断：
+```python
+In [63]: SE() is SE()
+init
+init
+del
+del
+Out[63]: False
+
+```
+创建两个SE实例，使用`id`判断：
+```python
+In [64]: id(SE()) == id(SE())
+init
+del
+init
+del
+Out[64]: True
+```
+
+调用`id`函数, Python 创建一个 SE 类的实例，并使用`id`函数获得内存地址后，销毁内存丢弃这个对象。
+
+当连续两次进行此操作, Python会将相同的内存地址分配给第二个对象，所以两个对象的id值是相同的.
+
+
+但是is行为却与之不同，通过打印顺序就可以看到。
+
+#### 11 充分认识for
+```python
+In [65]: for i in range(5):
+    ...:   print(i)
+    ...:   i = 10
+0
+1
+2
+3
+4
+```
+为什么不是执行一次就退出？
+
+按照for在Python中的工作方式, i = 10 并不会影响循环。range(5)生成的下一个元素就被解包，并赋值给目标列表的变量`i`.
+
+#### 12 认识执行时机
+
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+```
+`g`为生成器，list(g)后返回`[1,3,5]`，因为每个元素肯定至少都出现一次。所以这个结果这不足为奇。但是，请看下例：
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+array = [5, 7, 9]
+```
+请问,list(g)等于多少？这不是和上面那个例子结果一样吗，结果也是`[1,3,5]`，但是：
+```python
+In [74]: list(g)
+Out[74]: [5]
+```
+
+这有些不可思议~~ 原因在于：
+
+生成器表达式中, in 子句在声明时执行, 而条件子句则是在运行时执行。
+
+
+所以代码：
+```python
+array = [1, 3, 5]
+g = (x for x in array if array.count(x) > 0)
+array = [5, 7, 9]
+```
+
+等价于：
+```python
+g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
+```
+
+### 七、 Python第三方包
+
+#### 1 优化代码异常输出包
+
+一行代码优化输出的异常信息
 ```python
 pip install pretty-errors
 ```
@@ -4369,7 +4647,9 @@ division by zero
 
 ![image-20200104103849047](./img/image-20200104103849047.png)
 
-#### 2 两行代码实现旋转和缩放图像
+#### 2 图像处理包pillow
+
+两行代码实现旋转和缩放图像
 
 首先安装pillow:
 
@@ -4412,7 +4692,466 @@ im.filter(ImageFilter.CONTOUR).show()
 
 ![](./img/pillow_filter.png)
 
-### 九、Python实战
+
+### 八、 机器学习和深度学必知算法
+
+#### 1 领略算法魅力
+
+深刻研究排序算法是入门算法较为好的一种方法，现在还记得4年前手动实现常见8种排序算法，通过随机生成一些数据，逐个校验代码实现的排序过程是否与预期的一致，越做越有劲，越有劲越想去研究，公交车上，吃饭的路上。。。那些画面，现在依然记忆犹新。
+
+能力有限，当时并没有生成排序过程的动画，所以这些年想着抽时间一定把排序的过程都制作成动画，然后分享出来，让更多的小伙伴看到，通过排序算法的动态演示动画，找到学习算法的真正乐趣，从而迈向一个新的认知领域。
+
+当时我还是用C++写的，时过境迁，Python迅速崛起，得益于Python的简洁，接口易用，最近终于有人在github中开源了使用Python动画展示排序算法的项目，真是倍感幸运。
+
+动画还是用matplotlib做出来的，这就更完美了，一边学完美的算法，一边还能提升Python熟练度，一边还能学到使用matplotlib制作动画。
+
+快速排序动画展示
+
+![img](./img/642.gif)
+
+归并排序动画展示
+
+
+![img](./img/643.gif)
+
+堆排序动画展示
+
+![img](./img/644.gif)
+
+这些算法动画使用Matplotlib制作，接下来逐个补充。
+
+#### 2 排序算法的动画展示
+
+学会第一部分如何制作动画后，可将此技术应用于排序算法调整过程的动态展示上。
+
+首先生成测试使用的数据，待排序的数据个数至多`20个`，待排序序列为`random_wait_sort`，为每个值赋一个颜色值，这个由`random_rgb`负责：
+
+```python
+data_count = 20  # here, max value of data_count is 20
+
+random_wait_sort = [12, 34, 32, 24, 28, 39, 5,
+                    22, 11, 25, 33, 32, 1, 25, 3, 8, 7, 1, 34, 7]
+
+random_rgb = [(0.5, 0.811565104942967, 0.11211028937187217),
+              (0.5, 0.5201323831224014, 0.6660999602342474),
+              (0.5, 0.575976663060455, 0.17788242607567772),
+              (0.5, 0.6880174797416493, 0.43581701833249353),
+              (0.5, 0.4443131322001743, 0.6993600264279745),
+              (0.5, 0.5538835821863523, 0.889276053938713),
+              (0.5, 0.4851681185146841, 0.7977608586163772),
+              (0.5, 0.3886717808488436, 0.09319137949618972),
+              (0.5, 0.8952456581687489, 0.8282376936934484),
+              (0.5, 0.16360202854998007, 0.4538892160157194),
+              (0.5, 0.23233400128809478, 0.8544141586189615),
+              (0.5, 0.5224648797546528, 0.8194014475829123),
+              (0.5, 0.49396099968405016, 0.47441724394796825),
+              (0.5, 0.12078104526714728, 0.7715022079860492),
+              (0.5, 0.19428498518228154, 0.08174917157481443),
+              (0.5, 0.6058698403873457, 0.6085936584142663),
+              (0.5, 0.7801178568951216, 0.6414767240649862),
+              (0.5, 0.4768865661174162, 0.3889866229610085),
+              (0.5, 0.4301945092238082, 0.961688141676841),
+              (0.5, 0.40496648895289855, 0.24234095882836093)]
+
+
+```
+
+再封装一个简单的数据对象`Data`：
+```python
+class Data:
+    def __init__(self, value, rgb):
+        self.value = value
+        self.color = rgb
+
+    # 造数据
+    @classmethod
+    def create(cls):
+        return [Data(val, rgb) for val, rgb in zip(random_wait_sort[:data_count],
+                                                   random_rgb[:data_count])]
+```
+
+
+#### 3 先拿冒泡实验
+
+一旦发生调整，我们立即保存到帧列表`frames`中，注意此处需要`deepcopy`:
+```python
+# 冒泡排序
+def bubble_sort(waiting_sort_data):
+    frames = [waiting_sort_data]
+    ds = copy.deepcopy(waiting_sort_data)
+    for i in range(data_count-1):
+        for j in range(data_count-i-1):
+            if ds[j].value > ds[j+1].value:
+                ds[j], ds[j+1] = ds[j+1], ds[j]
+                frames.append(copy.deepcopy(ds))
+    frames.append(ds)
+    return frames
+```
+
+实验结果图：
+
+![image-20200104232411426](./img/image-20200104232411426.png)
+
+完整动画演示：
+
+![img](./img/bubble_sort.gif)
+
+#### 4 快速排序
+先上代码，比较经典，值得回味：
+```python
+def quick_sort(data_set):
+    frames = [data_set]
+    ds = copy.deepcopy(data_set)
+
+    def qsort(head, tail):
+        if tail - head > 1:
+            i = head
+            j = tail - 1
+            pivot = ds[j].value
+            while i < j:
+                if ds[i].value > pivot or ds[j].value < pivot:
+                    ds[i], ds[j] = ds[j], ds[i]
+                    frames.append(copy.deepcopy(ds))
+                if ds[i].value == pivot:
+                    j -= 1
+                else:
+                    i += 1
+            qsort(head, i)
+            qsort(i+1, tail)
+
+    qsort(0, data_count)
+    frames.append(ds)
+    return frames
+```
+快速排序算法对输入为随机的序列优势往往较为明显，同样的输入数据，它只需要`24`帧调整就能完成排序：
+
+![image-20200104232337713](./img/image-20200104232337713.png)
+
+#### 5 选择排序
+选择排序和堆排序都是选择思维，但是性能却不如堆排序：
+```python
+def selection_sort(data_set):
+    frames = [data_set]
+    ds = copy.deepcopy(data_set)
+    for i in range(0, data_count-1):
+        for j in range(i+1, data_count):
+            if ds[j].value < ds[i].value:
+                ds[i], ds[j] = ds[j], ds[i]
+                frames.append(copy.deepcopy(ds))
+
+    frames.append(ds)
+    return frames
+```
+同样的输入数据，它完成排序需要`108`帧:
+
+![image-20200104232448531](./img/image-20200104232448531.png)
+
+
+
+动画展示如下，每轮会从未排序的列表中，挑出一个最小值，放到已排序序列后面。
+
+![img](./img/select_sort.gif)
+
+#### 6 堆排序
+堆排序大大改进了选择排序，逻辑上使用二叉树，先建立一个大根堆，然后根节点与未排序序列的最后一个元素交换，重新对未排序序列建堆。
+
+完整代码如下：
+
+```python
+def heap_sort(data_set):
+    frames = [data_set]
+    ds = copy.deepcopy(data_set)
+
+    def heap_adjust(head, tail):
+        i = head * 2 + 1  # head的左孩子
+        while i < tail:
+            if i + 1 < tail and ds[i].value < ds[i+1].value:  # 选择一个更大的孩子
+                i += 1
+            if ds[i].value <= ds[head].value:
+                break
+            ds[head], ds[i] = ds[i], ds[head]
+            frames.append(copy.deepcopy(ds))
+            head = i
+            i = i * 2 + 1
+
+    # 建立一个最大堆，从最后一个父节点开始调整
+    for i in range(data_count//2-1, -1, -1):
+        heap_adjust(i, data_count)
+    for i in range(data_count-1, 0, -1):
+        ds[i], ds[0] = ds[0], ds[i]  # 把最大值放在位置i处
+        heap_adjust(0, i)  # 从0~i-1进行堆调整
+    frames.append(ds)
+    return frames
+```
+堆排序的性能也比较优秀，完成排序需要51次调整。
+
+![image-20200104232824967](./img/image-20200104232824967.png)
+
+
+#### 7 综合
+依次调用以上常见的4种排序算法，分别保存所有帧和html文件。
+
+```python
+waiting_sort_data = Data.create()
+for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
+    frames = sort_method(waiting_sort_data)
+    draw_chart(frames, file_name='%s.html' % (sort_method.__name__,))
+```
+
+获取以上完整代码、所有数据文件、结果文件：[完整源码下载](./data/sort.zip)
+
+---
+
+### 
+
+#### 9 优化算法
+
+机器学习是一个目标函数优化问题，给定目标函数f，约束条件会有一般包括以下三类：
+
+1. 仅含等式约束
+2. 仅含不等式约束
+3. 等式和不等式约束混合型
+
+当然还有一类没有任何约束条件的最优化问题
+
+关于最优化问题，大都令人比较头疼，首先大多教材讲解通篇都是公式，各种符号表达，各种梯度，叫人看的云里雾里。
+
+有没有结合几何图形阐述以上问题的？很庆幸，还真有这么好的讲解材料，图文并茂，逻辑推导严谨，更容易叫我们理解`拉格朗日乘数法`、`KKT条件`为什么就能求出极值。
+
+
+
+#### 10 仅含等式约束
+假定目标函数是连续可导函数，问题定义如下：
+
+![1578812286324](./img/1578812286324.png)
+
+然后：
+
+![1578812306173](./img/1578812306173.png)
+
+
+通过以上方法求解此类问题，但是为什么它能求出极值呢？
+
+#### 11 找找感觉
+
+大家时间都有限，只列出最核心的逻辑，找找sense, 如有兴趣可回去下载PPT仔细体会。
+
+此解释中对此类问题的定义：
+
+![1578812336141](./img/1578812336141.png)
+
+为了更好的阐述，给定一个具体例子，锁定：
+
+![1578812354197](./img/1578812354197.png)
+
+
+
+所以，f(x)的一系列取值包括0,1,100,10000等任意实数：
+
+
+
+![1578812380549](./img/1578812380549.png)
+
+
+
+但是，约束条件`h(x)`注定会约束`f(x)`不会等于100，不会等于10000...
+
+
+
+![1578812405788](./img/1578812405788.png)
+
+
+
+一个可行点：
+
+![1578812432196](./img/1578812432196.png)
+
+#### 12 梯度下降
+
+我们想要寻找一个移动`x`的规则，使得移动后`f(x+delta_x)`变小，当然必须满足约束`h(x+delta_x)=0`
+
+![1578812461492](./img/1578812461492.png)
+
+使得`f(x`)减小最快的方向就是它的梯度反方向，即
+
+![1578812526928](./img/1578812526928.png)
+
+![1578812555425](./img/1578812555425.png)
+
+因此，要想f(x+delta_x) 变小，通过图形可以看出，只要保持和梯度反方向夹角小于90，也就是保持大概一个方向，`f(x+delta_x)`就会变小，转化为公式就是：
+
+![1578812584788](./img/1578812584788.png)
+
+如下所示的一个`delta_x`就是一个会使得f(x)减小的方向，但是这种移动将会破坏等式约束: `h(x)=0`，关于准确的移动方向下面第四小节会讲到
+
+![1578812611316](./img/1578812611316.png)
+
+#### 13 约束面的法向
+
+
+
+约束面的外法向：
+
+![1578812646197](./img/1578812646197.png)
+
+
+
+![1578812671357](./img/1578812671357.png)
+
+约束面的内法向：
+
+
+
+![1578812701522](./img/1578812701522.png)
+
+绿圈表示法向的`正交`方向
+
+**x沿着绿圈内的方向移动，将会使得f(x)减小，同时满足等式约束h(x) = 0**
+
+![1578812721685](./img/1578812721685.png)
+
+#### 14 大胆猜想
+
+
+
+ 我们不妨大胆假设，如果满足下面的条件：
+
+![1578812749903](./img/1578812749903.png)
+
+根据第四小节讲述，`delta_x`必须正交于`h(x)`，所以：
+
+![1578812770462](./img/1578812770462.png)
+
+所以：
+
+![1578812792568](./img/1578812792568.png)
+
+至此，我们就找到`f(x)`偏导数等于0的点，就是下图所示的**两个关键点（它们也是f(x)与h(x)的临界点）**。且必须满足以下条件，也就是两个向量必须是平行的：
+
+![1578812814963](./img/1578812814963.png)
+
+![1578812850771](./img/1578812850771.png)
+
+#### 15 完全解码拉格朗日乘数法
+
+至此，已经完全解码拉格朗日乘数法，拉格朗日巧妙的构造出下面这个式子：
+
+![1578812874316](./img/1578812874316.png)
+
+**还有取得极值的的三个条件，都是对以上五个小节中涉及到的条件的编码**
+
+![1578812930092](./img/1578812930092.png)
+
+关于第三个条件，稍加说明。
+
+对于含有多个变量，比如本例子就含有2个变量`x1`, `x2`，就是一个多元优化问题，需要求二阶导，二阶导的矩阵就被称为`海塞矩阵`（Hessian Matrix）
+
+与求解一元问题一样，仅凭一阶导数等于是无法判断极值的，需要求二阶导，并且二阶导大于0才是极小值，小于0是极大值，等于0依然无法判断是否在此点去的极值。
+
+
+
+> 以上就是机器学习最常用的优化技巧：拉格朗日乘数法的图形讲解，相信大家已经找到一定感觉，接下来几天我们通过例子，详细阐述机器学习的具体概念，常用算法，使用Python实现主要的算法，使用Sklearn，Kaggle数据实战这些算法。
+
+
+
+#### 16 均匀分布
+
+导入本次实验所用的4种常见分布，连续分布的代表：`beta`分布、`正态`分布，`均匀`分布，离散分布的代表：`二项`分布。
+
+绘图装饰器带有四个参数分别表示`legend`的2类说明文字，y轴label, 保存的png文件名称。
+
+```python
+import pretty_errors
+import numpy as np
+from scipy.stats import beta, norm, uniform, binom
+import matplotlib.pyplot as plt
+from functools import wraps
+
+# 定义带四个参数的画图装饰器
+
+def my_plot(label0=None, label1=None, ylabel='probability density function', fn=None):
+    def decorate(f):
+        @wraps(f)
+        def myplot():
+            fig = plt.figure(figsize=(16, 9))
+            ax = fig.add_subplot(111)
+            x, y, y1 = f()
+            ax.plot(x, y, linewidth=2, c='r', label=label0)
+            ax.plot(x, y1, linewidth=2, c='b', label=label1)
+            ax.legend()
+            plt.ylabel(ylabel)
+            # plt.show()
+            plt.savefig('./img/%s' % (fn,))
+            print('%s保存成功' % (fn,))
+            plt.close()
+        return myplot
+    return decorate
+```
+
+```python
+# 均匀分布(uniform)
+@my_plot(label0='b-a=1.0', label1='b-a=2.0', fn='uniform.png')
+def unif():
+    x = np.arange(-0.01, 2.01, 0.01)
+    y = uniform.pdf(x, loc=0.0, scale=1.0)
+    y1 = uniform.pdf(x, loc=0.0, scale=2.0)
+    return x, y, y1
+```
+
+![](./img/uniform.png)
+
+#### 17 **二项分布**
+
+红色曲线表示发生一次概率为0.3，重复50次的密度函数，二项分布期望值为0.3*50 = 15次。看到这50次实验，很可能出现的次数为10~20.可与蓝色曲线对比分析。
+
+```python
+# 二项分布
+@my_plot(label0='n=50,p=0.3', label1='n=50,p=0.7', fn='binom.png', ylabel='probability mass function')
+def bino():
+    x = np.arange(50)
+    n, p, p1 = 50, 0.3, 0.7
+    y = binom.pmf(x, n=n, p=p)
+    y1 = binom.pmf(x, n=n, p=p1)
+    return x, y, y1
+```
+
+![](./img/binom.png)
+
+#### 18 高斯分布
+
+红色曲线表示均值为0，标准差为1.0的概率密度函数，蓝色曲线的标准差更大，所以它更矮胖，显示出取值的多样性，和不稳定性。
+
+```python
+# 高斯 分布
+@my_plot(label0='u=0.,sigma=1.0', label1='u=0.,sigma=2.0', fn='guass.png')
+def guass():
+    x = np.arange(-5, 5, 0.1)
+    y = norm.pdf(x, loc=0.0, scale=1.0)
+    y1 = norm.pdf(x, loc=0., scale=2.0)
+    return x, y, y1
+```
+
+![](./img/guass.png)
+
+#### 19 beta分布
+
+beta分布的期望值如下，可从下面的两条曲线中加以验证：
+
+![image-20200105205845965](./img/image-20200105205845965.png)
+
+```python
+# beta 分布
+@my_plot(label0='a=10., b=30.', label1='a=4., b=4.', fn='beta.png')
+def bet():
+    x = np.arange(-0.01, 1, 0.001)
+    y = beta.pdf(x, a=10., b=30.)
+    y1 = beta.pdf(x, a=4., b=4.)
+    return x, y, y1
+```
+
+![](./img/beta.png)
+
+### 九、Python、机器学习和深度学习实战
 
 
 #### 1 环境搭建
@@ -4522,7 +5261,7 @@ sender_mail()
 
 
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25N30MmbE2PjM2F1j86EUFfdzva26tvlwVpR2MGEcLXJvjWQ8v3BrzEwmFxpjia4zohfzbkDBpnNjg/640?wx_fmt=png)
+![1578811858798](./img/1578811858798.png)
 
 
 
@@ -4710,25 +5449,25 @@ Name: temperature, dtype: object
 
 `designer.exe`文件，双击启动：
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia73PibMMgfnm3I5DrS5IeqAehYZDpAqJ4Euia40Wnaf9Kr4qDrBWgMemw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+![1578811899182]./img/1578811899182.png)
 
 创建窗体，命名为`XiaoDing`，整个的界面如下所示：
 
-![img](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaVdvX5Y9Zxh82jzm2YvT23wXTuaMTqKX4RzSic3zVULMPIUO5Fy5LMDw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+
+![1578811933606](./img/1578811933606.png)
 
 `qt 设计器`提供的常用控件基本都能满足开发需求，通过拖动左侧的控件，很便捷的就能搭建出如下的UI界面，比传统的手写控件代码要方便很多。
 
 最终设计的计算器`XiaoDing`界面如下，
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoicianCCIiaNlXy5ugv1blJ83KDUrvuTq9icB3hN6zXUy5rib1ITLibgeUxiaOCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+![1578811959147](./img/1578811959147.png)
 
 比如，其中一个用于计算器显示的对象：`lcdNumber`，对象的类型为：`LCD Number`。右侧为计算器中用到的所有对象。
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1Tcoicia9syg40IVicTZ6PqYGVa21aRIhicuCFygibVSXRTdLApn00ticG6pIPibADQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
+![1578811991539](./img/1578811991539.png)
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciabNVLAb7Nicu2sb4YREYU5HbvII8K8CdVibXC5TNrN29Th6jWqEDRxLqA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  >
+![1578812033865](./img/1578812033865.png)
 
 2)  转py文件
 
@@ -4882,458 +5621,4 @@ if __name__ == '__main__':
     app.exec_()
 ```
 
-<img src="https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25fl867daHB4tcw6K1TcoiciaxZtJBDMfcgJAvnCWHCad74mLjrkX97EFolhUjdOucTK6tqgw2PaziaQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Sample"  width="600" height="300">
-
-### 十、 Python基础算法
-
-#### 1 领略算法魅力
-
-深刻研究排序算法是入门算法较为好的一种方法，现在还记得4年前手动实现常见8种排序算法，通过随机生成一些数据，逐个校验代码实现的排序过程是否与预期的一致，越做越有劲，越有劲越想去研究，公交车上，吃饭的路上。。。那些画面，现在依然记忆犹新。
-
-能力有限，当时并没有生成排序过程的动画，所以这些年想着抽时间一定把排序的过程都制作成动画，然后分享出来，让更多的小伙伴看到，通过排序算法的动态演示动画，找到学习算法的真正乐趣，从而迈向一个新的认知领域。
-
-当时我还是用C++写的，时过境迁，Python迅速崛起，得益于Python的简洁，接口易用，最近终于有人在github中开源了使用Python动画展示排序算法的项目，真是倍感幸运。
-
-动画还是用matplotlib做出来的，这就更完美了，一边学完美的算法，一边还能提升Python熟练度，一边还能学到使用matplotlib制作动画。
-
-快速排序动画展示
-
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHibX8xewf1Sgyvfh3VAR7IkWdwQtbNsniaiaXHzjG0Tcefl3Dv4OibhbGeg/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
-
-归并排序动画展示
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaHpD5ibgM0kmia30zVM163X3RF9HnX2icibkJNghcibfjicxbibIJLLYprxqOqw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
-
-堆排序动画展示
-
-![img](https://mmbiz.qpic.cn/mmbiz_gif/FQd8gQcyN256Z0UkwIAVsP1pMsIUYTaH7HenTzoiaicwFrMTCiav18yLEhPmXombelTAlAMeBhzic4icnsuoQg1D7sw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
-
-这些算法动画使用Matplotlib制作，接下来逐个补充。
-
-#### 2 排序算法的动画展示
-
-学会第一部分如何制作动画后，可将此技术应用于排序算法调整过程的动态展示上。
-
-首先生成测试使用的数据，待排序的数据个数至多`20个`，待排序序列为`random_wait_sort`，为每个值赋一个颜色值，这个由`random_rgb`负责：
-
-```python
-data_count = 20  # here, max value of data_count is 20
-
-random_wait_sort = [12, 34, 32, 24, 28, 39, 5,
-                    22, 11, 25, 33, 32, 1, 25, 3, 8, 7, 1, 34, 7]
-
-random_rgb = [(0.5, 0.811565104942967, 0.11211028937187217),
-              (0.5, 0.5201323831224014, 0.6660999602342474),
-              (0.5, 0.575976663060455, 0.17788242607567772),
-              (0.5, 0.6880174797416493, 0.43581701833249353),
-              (0.5, 0.4443131322001743, 0.6993600264279745),
-              (0.5, 0.5538835821863523, 0.889276053938713),
-              (0.5, 0.4851681185146841, 0.7977608586163772),
-              (0.5, 0.3886717808488436, 0.09319137949618972),
-              (0.5, 0.8952456581687489, 0.8282376936934484),
-              (0.5, 0.16360202854998007, 0.4538892160157194),
-              (0.5, 0.23233400128809478, 0.8544141586189615),
-              (0.5, 0.5224648797546528, 0.8194014475829123),
-              (0.5, 0.49396099968405016, 0.47441724394796825),
-              (0.5, 0.12078104526714728, 0.7715022079860492),
-              (0.5, 0.19428498518228154, 0.08174917157481443),
-              (0.5, 0.6058698403873457, 0.6085936584142663),
-              (0.5, 0.7801178568951216, 0.6414767240649862),
-              (0.5, 0.4768865661174162, 0.3889866229610085),
-              (0.5, 0.4301945092238082, 0.961688141676841),
-              (0.5, 0.40496648895289855, 0.24234095882836093)]
-
-
-```
-
-再封装一个简单的数据对象`Data`：
-```python
-class Data:
-    def __init__(self, value, rgb):
-        self.value = value
-        self.color = rgb
-
-    # 造数据
-    @classmethod
-    def create(cls):
-        return [Data(val, rgb) for val, rgb in zip(random_wait_sort[:data_count],
-                                                   random_rgb[:data_count])]
-```
-
-
-#### 3 先拿冒泡实验
-
-一旦发生调整，我们立即保存到帧列表`frames`中，注意此处需要`deepcopy`:
-```python
-# 冒泡排序
-def bubble_sort(waiting_sort_data):
-    frames = [waiting_sort_data]
-    ds = copy.deepcopy(waiting_sort_data)
-    for i in range(data_count-1):
-        for j in range(data_count-i-1):
-            if ds[j].value > ds[j+1].value:
-                ds[j], ds[j+1] = ds[j+1], ds[j]
-                frames.append(copy.deepcopy(ds))
-    frames.append(ds)
-    return frames
-```
-
-实验结果图：
-
-![image-20200104232411426](./img/image-20200104232411426.png)
-
-完整动画演示：
-
-![img](./img/bubble_sort.gif)
-
-#### 4 快速排序
-先上代码，比较经典，值得回味：
-```python
-def quick_sort(data_set):
-    frames = [data_set]
-    ds = copy.deepcopy(data_set)
-
-    def qsort(head, tail):
-        if tail - head > 1:
-            i = head
-            j = tail - 1
-            pivot = ds[j].value
-            while i < j:
-                if ds[i].value > pivot or ds[j].value < pivot:
-                    ds[i], ds[j] = ds[j], ds[i]
-                    frames.append(copy.deepcopy(ds))
-                if ds[i].value == pivot:
-                    j -= 1
-                else:
-                    i += 1
-            qsort(head, i)
-            qsort(i+1, tail)
-
-    qsort(0, data_count)
-    frames.append(ds)
-    return frames
-```
-快速排序算法对输入为随机的序列优势往往较为明显，同样的输入数据，它只需要`24`帧调整就能完成排序：
-
-![image-20200104232337713](./img/image-20200104232337713.png)
-
-#### 5 选择排序
-选择排序和堆排序都是选择思维，但是性能却不如堆排序：
-```python
-def selection_sort(data_set):
-    frames = [data_set]
-    ds = copy.deepcopy(data_set)
-    for i in range(0, data_count-1):
-        for j in range(i+1, data_count):
-            if ds[j].value < ds[i].value:
-                ds[i], ds[j] = ds[j], ds[i]
-                frames.append(copy.deepcopy(ds))
-
-    frames.append(ds)
-    return frames
-```
-同样的输入数据，它完成排序需要`108`帧:
-
-![image-20200104232448531](./img/image-20200104232448531.png)
-
-
-
-动画展示如下，每轮会从未排序的列表中，挑出一个最小值，放到已排序序列后面。
-
-![img](./img/select_sort.gif)
-
-#### 6 堆排序
-堆排序大大改进了选择排序，逻辑上使用二叉树，先建立一个大根堆，然后根节点与未排序序列的最后一个元素交换，重新对未排序序列建堆。
-
-完整代码如下：
-
-```python
-def heap_sort(data_set):
-    frames = [data_set]
-    ds = copy.deepcopy(data_set)
-
-    def heap_adjust(head, tail):
-        i = head * 2 + 1  # head的左孩子
-        while i < tail:
-            if i + 1 < tail and ds[i].value < ds[i+1].value:  # 选择一个更大的孩子
-                i += 1
-            if ds[i].value <= ds[head].value:
-                break
-            ds[head], ds[i] = ds[i], ds[head]
-            frames.append(copy.deepcopy(ds))
-            head = i
-            i = i * 2 + 1
-
-    # 建立一个最大堆，从最后一个父节点开始调整
-    for i in range(data_count//2-1, -1, -1):
-        heap_adjust(i, data_count)
-    for i in range(data_count-1, 0, -1):
-        ds[i], ds[0] = ds[0], ds[i]  # 把最大值放在位置i处
-        heap_adjust(0, i)  # 从0~i-1进行堆调整
-    frames.append(ds)
-    return frames
-```
-堆排序的性能也比较优秀，完成排序需要51次调整。
-
-![image-20200104232824967](./img/image-20200104232824967.png)
-
-
-#### 7 综合
-依次调用以上常见的4种排序算法，分别保存所有帧和html文件。
-
-```python
-waiting_sort_data = Data.create()
-for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
-    frames = sort_method(waiting_sort_data)
-    draw_chart(frames, file_name='%s.html' % (sort_method.__name__,))
-```
-
-获取以上完整代码、所有数据文件、结果文件：[完整源码下载](./data/sort.zip)
-
----
-
-### 十一、 Python机器学习
-
-#### 1 引言
-
-机器学习是一个目标函数优化问题，给定目标函数f，约束条件会有一般包括以下三类：
-
-1. 仅含等式约束
-2. 仅含不等式约束
-3. 等式和不等式约束混合型
-
-当然还有一类没有任何约束条件的最优化问题
-
-关于最优化问题，大都令人比较头疼，首先大多教材讲解通篇都是公式，各种符号表达，各种梯度，叫人看的云里雾里。
-
-有没有结合几何图形阐述以上问题的？很庆幸，还真有这么好的讲解材料，图文并茂，逻辑推导严谨，更容易叫我们理解`拉格朗日乘数法`、`KKT条件`为什么就能求出极值。
-
-
-
-#### 2 仅含等式约束
-假定目标函数是连续可导函数，问题定义如下：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceYcFHnQksH3ZgF0CMYp1s4cYPR5YialMQs46trGjicgxPALHC1rN4mXKg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-然后：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuycelRpUBuNQwJj5oQQ8QktOBibCIbcxbVWTxnFye14m5iazoxEst88K9Dng/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
-通过以上方法求解此类问题，但是为什么它能求出极值呢？
-
-#### 3 找找感觉
-
-大家时间都有限，只列出最核心的逻辑，找找sense, 如有兴趣可回去下载PPT仔细体会。
-
-此解释中对此类问题的定义：
-
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/FQd8gQcyN27HY2RsrOicg569iaLUpVuycetLx0gaA8qGQNFfz8ZXYw1QaLoAXm1jwIWwNGlyicfBBkOntG9WMs0og/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-为了更好的阐述，给定一个具体例子，锁定：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceQibFRulITicamVH6pTOiaHdDV89INiaicuQMRX86OjpcDw9YmawZPVLEUPw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
-
-所以，f(x)的一系列取值包括0,1,100,10000等任意实数：
-
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceqWZr7hU6PhKqvJeXN00xKUCJlnGfqUYtO5pDHN2P5xyNtzshkgaicjg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
-
-但是，约束条件`h(x)`注定会约束`f(x)`不会等于100，不会等于10000...
-
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceTVCgwQsk315dxdQmS0W2iaPib2RqpfRdH0UlCZ9gIYu1pJ53uQV53JJw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
-
-一个可行点：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceUBWaFUWkpxlz7gQpAY5TgBZ894g1BlrcOfPIBfgPflib19hLYr2cSDA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-#### 4 梯度下降
-
-我们想要寻找一个移动`x`的规则，使得移动后`f(x+delta_x)`变小，当然必须满足约束`h(x+delta_x)=0`
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyce3EhmMq1dMhA8rnpDVoia6a3JHhPFVkavEEQhafPsEQP6MEHHkcSgbSA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)使得`f(x`)减小最快的方向就是它的梯度反方向，即
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyce6UFsJgA0M8JbjMbed2FDkjT6JNuibcDSqz9N3VibVRz2JHiblEZZRAtfw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-![img](https://mmbiz.qpic.cn/mmbiz_jpg/FQd8gQcyN27HY2RsrOicg569iaLUpVuycesXN0ECXHs3hK234unbUuwywWnibSSbicl7I6EP2u3yOfRliaaRQUxz5dg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-因此，要想f(x+delta_x) 变小，通过图形可以看出，只要保持和梯度反方向夹角小于90，也就是保持大概一个方向，`f(x+delta_x)`就会变小，转化为公式就是：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceiafpfo06d42FaVfAGNQw808GmGt5ib4az1CwqxY2rHay5vkBAFj8FeEA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-如下所示的一个`delta_x`就是一个会使得f(x)减小的方向，但是这种移动将会破坏等式约束: `h(x)=0`，关于准确的移动方向下面第四小节会讲到
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyce1C04y8Vs2TPJkV8icVibbFbsp2qW7w3bzaOZWXneIicxrnjUdLcVoQtCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-#### 5 约束面的法向
-
-
-
-约束面的外法向：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceBPOeoyXLxpWk6OIZ0PygC7WNWjZpeyWx6qGia1jMLwrDefopyXJ0QAw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceNmQ9UjdT4hdhXCBEiaG4PEdAjFIvhJVxzBrjxvvrtk8MRLZtuIJwZgQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-约束面的内法向：
-
-
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyce2krGLNt1rgAZAxHicnTIwGFnZbTgXlygrZ8Nsv5sBRnSXHpAlxOaaeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-绿圈表示法向的`正交`方向
-
-**x沿着绿圈内的方向移动，将会使得f(x)减小，同时满足等式约束h(x) = 0**
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyce9PeBl0GkZl4EhgmOia4mRBIwkHTSNys4EicEZ72AK0GTQ1kqer9N1AhQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-#### 6 大胆猜想
-
-
-
- 我们不妨大胆假设，如果满足下面的条件：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuycexjAPibEn1A66IOCicUL3icXrvb1dFxnjF8icKQrW8S9SxqmEj7xWMfoSYw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-根据第四小节讲述，`delta_x`必须正交于`h(x)`，所以：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceyArqYEDONMoVIDnIVegSx0kAw9KWLBs66826FMCMI0O5WaiciaOzFs9w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-所以：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceMgoOhRcZ5SOrD58hVGLoVWzps5sZnFAaJGiaCBw1kk4PtdXrLPTCxww/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-至此，我们就找到`f(x)`偏导数等于0的点，就是下图所示的**两个关键点（它们也是f(x)与h(x)的临界点）**。且必须满足以下条件，也就是两个向量必须是平行的：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuycexjAPibEn1A66IOCicUL3icXrvb1dFxnjF8icKQrW8S9SxqmEj7xWMfoSYw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)![img](https://mmbiz.qpic.cn/mmbiz_jpg/FQd8gQcyN27HY2RsrOicg569iaLUpVuyceTIibaXbFCX7scIH5QGvpjO2PyNpEvycqdJCa3bzL3qbCwS5NpchZrfw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-#### 7 完全解码拉格朗日乘数法
-
-至此，已经完全解码拉格朗日乘数法，拉格朗日巧妙的构造出下面这个式子：
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuyce6Zsbhc8Iqu3xlHicQbqsaHHb4LI0mhNWujJc8yKwHhr2iaoBshRoBSCA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-**还有取得极值的的三个条件，都是对以上五个小节中涉及到的条件的编码**
-
-![img](https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN27HY2RsrOicg569iaLUpVuycesnKeAia8p5OmzibRzujsVic15TXUXH8QzHQXP7gl0AcXDiaAn7ARoicsvkQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
-关于第三个条件，稍加说明。
-
-对于含有多个变量，比如本例子就含有2个变量`x1`, `x2`，就是一个多元优化问题，需要求二阶导，二阶导的矩阵就被称为`海塞矩阵`（Hessian Matrix）
-
-与求解一元问题一样，仅凭一阶导数等于是无法判断极值的，需要求二阶导，并且二阶导大于0才是极小值，小于0是极大值，等于0依然无法判断是否在此点去的极值。
-
-
-
-> 以上就是机器学习最常用的优化技巧：拉格朗日乘数法的图形讲解，相信大家已经找到一定感觉，接下来几天我们通过例子，详细阐述机器学习的具体概念，常用算法，使用Python实现主要的算法，使用Sklearn，Kaggle数据实战这些算法。
-
-
-
-#### 8 均匀分布
-
-导入本次实验所用的4种常见分布，连续分布的代表：`beta`分布、`正态`分布，`均匀`分布，离散分布的代表：`二项`分布。
-
-绘图装饰器带有四个参数分别表示`legend`的2类说明文字，y轴label, 保存的png文件名称。
-
-```python
-import pretty_errors
-import numpy as np
-from scipy.stats import beta, norm, uniform, binom
-import matplotlib.pyplot as plt
-from functools import wraps
-
-# 定义带四个参数的画图装饰器
-
-def my_plot(label0=None, label1=None, ylabel='probability density function', fn=None):
-    def decorate(f):
-        @wraps(f)
-        def myplot():
-            fig = plt.figure(figsize=(16, 9))
-            ax = fig.add_subplot(111)
-            x, y, y1 = f()
-            ax.plot(x, y, linewidth=2, c='r', label=label0)
-            ax.plot(x, y1, linewidth=2, c='b', label=label1)
-            ax.legend()
-            plt.ylabel(ylabel)
-            # plt.show()
-            plt.savefig('./img/%s' % (fn,))
-            print('%s保存成功' % (fn,))
-            plt.close()
-        return myplot
-    return decorate
-```
-
-```python
-# 均匀分布(uniform)
-@my_plot(label0='b-a=1.0', label1='b-a=2.0', fn='uniform.png')
-def unif():
-    x = np.arange(-0.01, 2.01, 0.01)
-    y = uniform.pdf(x, loc=0.0, scale=1.0)
-    y1 = uniform.pdf(x, loc=0.0, scale=2.0)
-    return x, y, y1
-```
-
-![](./img/uniform.png)
-
-#### 9 **二项分布**
-
-红色曲线表示发生一次概率为0.3，重复50次的密度函数，二项分布期望值为0.3*50 = 15次。看到这50次实验，很可能出现的次数为10~20.可与蓝色曲线对比分析。
-
-```python
-# 二项分布
-@my_plot(label0='n=50,p=0.3', label1='n=50,p=0.7', fn='binom.png', ylabel='probability mass function')
-def bino():
-    x = np.arange(50)
-    n, p, p1 = 50, 0.3, 0.7
-    y = binom.pmf(x, n=n, p=p)
-    y1 = binom.pmf(x, n=n, p=p1)
-    return x, y, y1
-```
-
-![](./img/binom.png)
-
-#### 10 高斯分布
-
-红色曲线表示均值为0，标准差为1.0的概率密度函数，蓝色曲线的标准差更大，所以它更矮胖，显示出取值的多样性，和不稳定性。
-
-```python
-# 高斯 分布
-@my_plot(label0='u=0.,sigma=1.0', label1='u=0.,sigma=2.0', fn='guass.png')
-def guass():
-    x = np.arange(-5, 5, 0.1)
-    y = norm.pdf(x, loc=0.0, scale=1.0)
-    y1 = norm.pdf(x, loc=0., scale=2.0)
-    return x, y, y1
-```
-
-![](./img/guass.png)
-
-#### 11 beta分布
-
-beta分布的期望值如下，可从下面的两条曲线中加以验证：
-
-![image-20200105205845965](./img/image-20200105205845965.png)
-
-```python
-# beta 分布
-@my_plot(label0='a=10., b=30.', label1='a=4., b=4.', fn='beta.png')
-def bet():
-    x = np.arange(-0.01, 1, 0.001)
-    y = beta.pdf(x, a=10., b=30.)
-    y1 = beta.pdf(x, a=4., b=4.)
-    return x, y, y1
-```
-
-![](./img/beta.png)
+![1578812059285](./img/1578812059285.png)
