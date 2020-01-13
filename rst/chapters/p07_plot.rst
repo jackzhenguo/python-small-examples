@@ -1,4 +1,4 @@
-七、Python画图
+六、Python绘图
 ==============
 
 Python常用的绘图工具包括：\ ``matplotlib``, ``seaborn``,
@@ -11,4 +11,4 @@ Python常用的绘图工具包括：\ ``matplotlib``, ``seaborn``,
    :maxdepth: 1
    :glob:
 
-   ../ch08/*
+   ../ch07/*

@@ -1,64 +1,25 @@
-8 matplotlib柱状图
-------------------
-
-.. figure:: https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzzBv3R8fHsVV6mEcV1KALF5u927OjdAwyhS4NUVHAAhlsBeC24zCricg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1
-   :alt: 
-
-对应代码：
+8 字符串驻留
+------------
 
 .. code:: python
 
-   import numpy as np
-   import matplotlib.pyplot as plt
+   In [1]: a = 'something'
+       ...: b = 'some'+'thing'
+       ...: id(a)==id(b)
+   Out[1]: True
 
-   import example_utils
+如果上面例子返回\ ``True``\ ，但是下面例子为什么是\ ``False``:
 
+.. code:: python
 
-   def main():
-       fig, axes = example_utils.setup_axes()
+   In [1]: a = '@zglg.com'
 
-       basic_bar(axes[0])
-       tornado(axes[1])
-       general(axes[2])
+   In [2]: b = '@zglg'+'.com'
 
-       # example_utils.title(fig, '"ax.bar(...)": Plot rectangles')
-       fig.savefig('bar_example.png', facecolor='none')
-       plt.show()
+   In [3]: id(a)==id(b)
+   Out[3]: False
 
-   # 子图1
-   def basic_bar(ax):
-       y = [1, 3, 4, 5.5, 3, 2]
-       err = [0.2, 1, 2.5, 1, 1, 0.5]
-       x = np.arange(len(y))
-       ax.bar(x, y, yerr=err, color='lightblue', ecolor='black')
-       ax.margins(0.05)
-       ax.set_ylim(bottom=0)
-       example_utils.label(ax, 'bar(x, y, yerr=e)')
+这与Cpython
+编译优化相关，行为称为\ ``字符串驻留``\ ，但驻留的字符串中只包含字母，数字或下划线。
 
-   # 子图2
-   def tornado(ax):
-       y = np.arange(8)
-       x1 = y + np.random.random(8) + 1
-       x2 = y + 3 * np.random.random(8) + 1
-       ax.barh(y, x1, color='lightblue')
-       ax.barh(y, -x2, color='salmon')
-       ax.margins(0.15)
-       example_utils.label(ax, 'barh(x, y)')
-
-   # 子图3
-   def general(ax):
-       num = 10
-       left = np.random.randint(0, 10, num)
-       bottom = np.random.randint(0, 10, num)
-       width = np.random.random(num) + 0.5
-       height = np.random.random(num) + 0.5
-       ax.bar(left, height, width, bottom, color='salmon')
-       ax.margins(0.15)
-       example_utils.label(ax, 'bar(l, h, w, b)')
-
-
-   main()
-
-.. _header-n2154:
-
-
+.. _header-n1800:

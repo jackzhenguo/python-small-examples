@@ -1,39 +1,23 @@
-9 matplotlib等高线图
+9 相同值的不可变对象
 --------------------
-
-.. figure:: https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzMGnSAHhCHG1bNEWHh1VJcmYN8E1ZBjPaL5iclH2HrvyYmCuDeibbfV3A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1
-   :alt: 
-
-对应代码：
 
 .. code:: python
 
-   import matplotlib.pyplot as plt
-   import numpy as np
-   from matplotlib.cbook import get_sample_data
+   In [5]: d = {}
+       ...: d[1] = 'java'
+       ...: d[1.0] = 'python'
 
-   import example_utils
+   In [6]: d
+   Out[6]: {1: 'python'}
 
-   z = np.load(get_sample_data('bivariate_normal.npy'))
+   ### key=1,value=java的键值对神器消失了
+   In [7]: d[1]
+   Out[7]: 'python'
+   In [8]: d[1.0]
+   Out[8]: 'python'
 
-   fig, axes = example_utils.setup_axes()
+这是因为具有相同值的不可变对象在Python中始终具有\ ``相同的哈希值``
 
-   axes[0].contour(z, cmap='gist_earth')
-   example_utils.label(axes[0], 'contour')
+由于存在\ ``哈希冲突``\ ，不同值的对象也可能具有相同的哈希值。
 
-   axes[1].contourf(z, cmap='gist_earth')
-   example_utils.label(axes[1], 'contourf')
-
-   axes[2].contourf(z, cmap='gist_earth')
-   cont = axes[2].contour(z, colors='black')
-   axes[2].clabel(cont, fontsize=6)
-   example_utils.label(axes[2], 'contourf + contour\n + clabel')
-
-   # example_utils.title(fig, '"contour, contourf, clabel": Contour/label 2D data',
-   #                     y=0.96)
-   fig.savefig('contour_example.png', facecolor='none')
-
-   plt.show()
-
-.. _header-n2158:
-
+.. _header-n1804:

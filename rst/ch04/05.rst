@@ -1,19 +1,19 @@
-以下是正则部分
+8 获取指定后缀名的文件
+----------------------
 
 .. code:: python
 
-   import re
+    import os
 
-.. _header-n1843:
+    def find_file(work_dir,extension='jpg'):
+        lst = []
+        for filename in os.listdir(work_dir):
+            print(filename)
+            splits = os.path.splitext(filename)
+            ext = splits[1] # 拿到扩展名
+            if ext == '.'+extension:
+                lst.append(filename)
+        return lst
 
-1 查找第一个匹配串
-------------------
-
-.. code:: python
-
-   s = 'i love python very much'
-   pat = 'python' 
-   r = re.search(pat,s)
-   print(r.span()) #(7,13)
-
-.. _header-n1845:
+    r = find_file('.','md') 
+    print(r) # 返回所有目录下的md文件

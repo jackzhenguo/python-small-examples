@@ -1,29 +1,64 @@
-8 sum函数计算和聚合同时做
--------------------------
+8 matplotlib柱状图
+------------------
 
-Python中的聚合类函数\ ``sum``,\ ``min``,\ ``max``\ 第一个参数是\ ``iterable``\ 类型，一般使用方法如下：
+.. figure:: ./img/1578811155501.png
+   :alt: 
 
-.. code:: python
-
-   a = [4,2,5,1]
-   sum([i+1 for i in a]) # 16
-
-使用列表生成式\ ``[i+1 for i in a]``\ 创建一个长度与\ ``a``\ 一行的临时列表，这步完成后，再做\ ``sum``\ 聚合。
-
-试想如果你的数组\ ``a``\ 长度十百万级，再创建一个这样的临时列表就很不划算，最好是一边算一边聚合，稍改动为如下：
+对应代码：
 
 .. code:: python
 
-   a = [4,2,5,1]
-   sum(i+1 for i in a) # 16
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-此时\ ``i+1 for i in a``\ 是\ ``(i+1 for i in a)``\ 的简写，得到一个生成器(\ ``generator``)对象，如下所示：
+   import example_utils
 
-.. code:: python
 
-   In [8]:(i+1 for i in a)
-   OUT [8]:<generator object <genexpr> at 0x000002AC7FFA8CF0>
+   def main():
+       fig, axes = example_utils.setup_axes()
 
-生成器每迭代一步吐出(\ ``yield``)一个元素并计算和聚合后，进入下一次迭代，直到终点。
+       basic_bar(axes[0])
+       tornado(axes[1])
+       general(axes[2])
 
-.. _header-n2052:
+       # example_utils.title(fig, '"ax.bar(...)": Plot rectangles')
+       fig.savefig('bar_example.png', facecolor='none')
+       plt.show()
+
+   # 子图1
+   def basic_bar(ax):
+       y = [1, 3, 4, 5.5, 3, 2]
+       err = [0.2, 1, 2.5, 1, 1, 0.5]
+       x = np.arange(len(y))
+       ax.bar(x, y, yerr=err, color='lightblue', ecolor='black')
+       ax.margins(0.05)
+       ax.set_ylim(bottom=0)
+       example_utils.label(ax, 'bar(x, y, yerr=e)')
+
+   # 子图2
+   def tornado(ax):
+       y = np.arange(8)
+       x1 = y + np.random.random(8) + 1
+       x2 = y + 3 * np.random.random(8) + 1
+       ax.barh(y, x1, color='lightblue')
+       ax.barh(y, -x2, color='salmon')
+       ax.margins(0.15)
+       example_utils.label(ax, 'barh(x, y)')
+
+   # 子图3
+   def general(ax):
+       num = 10
+       left = np.random.randint(0, 10, num)
+       bottom = np.random.randint(0, 10, num)
+       width = np.random.random(num) + 0.5
+       height = np.random.random(num) + 0.5
+       ax.bar(left, height, width, bottom, color='salmon')
+       ax.margins(0.15)
+       example_utils.label(ax, 'bar(l, h, w, b)')
+
+
+   main()
+
+.. _header-n2154:
+
+

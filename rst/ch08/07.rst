@@ -1,46 +1,32 @@
-7 matplotlib散点图
+7 列表快速复制之坑
 ------------------
 
-.. figure:: https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25BicBcb6EQVsWlJcZwBJyQzS3KTX8YzWzkPvDIiaIibsxHDz2C93qwpoFRqiaL6EVeSFibAT04ggxNbHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1
-   :alt: 
-
-对应代码：
+在python中\ ``*``\ 与列表操作，实现快速元素复制：
 
 .. code:: python
 
-   """
-   散点图的基本用法
-   """
-   import numpy as np
-   import matplotlib.pyplot as plt
+   a = [1,3,5] * 3 # [1,3,5,1,3,5,1,3,5]
+   a[0] = 10 # [10, 2, 3, 1, 2, 3, 1, 2, 3]
 
-   import example_utils
+如果列表元素为列表或字典等复合类型：
 
-   # 随机生成数据
-   np.random.seed(1874)
-   x, y, z = np.random.normal(0, 1, (3, 100))
-   t = np.arctan2(y, x)
-   size = 50 * np.cos(2 * t)**2 + 10
+.. code:: python
 
-   fig, axes = example_utils.setup_axes()
+   a = [[1,3,5],[2,4]] * 3 # [[1, 3, 5], [2, 4], [1, 3, 5], [2, 4], [1, 3, 5], [2, 4]]
 
-   # 子图1
-   axes[0].scatter(x, y, marker='o',  color='darkblue', facecolor='white', s=80)
-   example_utils.label(axes[0], 'scatter(x, y)')
+   a[0][0] = 10 #  
 
-   # 子图2
-   axes[1].scatter(x, y, marker='s', color='darkblue', s=size)
-   example_utils.label(axes[1], 'scatter(x, y, s)')
+结果可能出乎你的意料，其他\ ``a[1[0]``\ 等也被修改为10
 
-   # 子图3
-   axes[2].scatter(x, y, s=size, c=z,  cmap='gist_ncar')
-   example_utils.label(axes[2], 'scatter(x, y, s, c)')
+.. code:: python
 
-   # example_utils.title(fig, '"ax.scatter(...)": Colored/scaled markers',
-   #                     y=0.95)
-   fig.savefig('scatter_example.png', facecolor='none')
+   [[10, 3, 5], [2, 4], [10, 3, 5], [2, 4], [10, 3, 5], [2, 4]]
 
-   plt.show()
+这是因为*复制的复合对象都是浅引用，也就是说id(a[0])与id(a[2])门牌号是相等的。如果想要实现深复制效果，这么做：
 
-.. _header-n2150:
+.. code:: python
+
+   a = [[] for _ in range(3)]
+
+.. _header-n1795:
 
