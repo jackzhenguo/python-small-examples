@@ -22,4 +22,16 @@ https://github.com/jackzhenguo/python-small-examples
 
 被AI权威媒体《量子位》报道，下面是报道截图：
 
-![](../img/liangzi.jpg)
+
+.. figure:: ../img/liangzi.jpg
+   :alt: 
+
+
+如果这些小例子，对你有帮助，请我喝杯咖啡~~ 
+
+这样我更有动力，写出更多好的小例子。任意金额，都是鼓励！
+
+任意金额，都是鼓励！  
+
+.. figure:: ../img/wechat-shoukuan.jpg
+   :alt: 
