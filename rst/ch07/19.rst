@@ -19,7 +19,7 @@
 
    bar_series().render('./img/bar_series.html')
 
-.. figure:: ./img/1578811781930.png
+.. figure:: ../../img/1578811781930.png
    :alt: 
 
 .. _header-n2197:

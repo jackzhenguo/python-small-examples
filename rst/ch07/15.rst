@@ -19,7 +19,7 @@
 
 水球图的取值\ ``[0.67, 0.30, 0.15]``\ 表示下图中的\ ``三个波浪线``\ ，一般代表三个百分比:
 
-.. figure:: E:\guozhen3\资料库\06self\python-small-examples\img\liquid.gif
+.. figure:: ../../img/liquid.gif
    :alt: 
 
 .. _header-n2183:
