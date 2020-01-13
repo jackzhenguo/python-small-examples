@@ -19,9 +19,11 @@ Python小例子
 ``Python基础算法``\ ，\ ``机器学习核心知识``
 章节，目前超过\ ``200个``\ 小例子。
 
-我会一直每天更新一个小例子，欢迎您的 star.
+我会一直每天更新一个小例子，欢迎star.
 
 https://github.com/jackzhenguo/python-small-examples
 
+很荣幸，这个库被AI权威媒体《量子位》报道，下面是报道截图：
 
+![](../img/liangzi.jpg)
 

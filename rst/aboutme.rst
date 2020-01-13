@@ -14,4 +14,12 @@ Python 小例子
 
 ![](../img/python-small-examples.png)
 
+很荣幸，
 
+Python小例子库：
+
+https://github.com/jackzhenguo/python-small-examples
+
+被AI权威媒体《量子位》报道，下面是报道截图：
+
+![](../img/liangzi.jpg)
