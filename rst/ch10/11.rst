@@ -44,6 +44,6 @@
         y1 = uniform.pdf(x, loc=0.0, scale=2.0)
         return x, y, y1
 
-.. figure:: ./img/uniform.png
+.. figure:: ../../img/uniform.png
    :alt: 
 

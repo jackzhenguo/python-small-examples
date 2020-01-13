@@ -17,5 +17,5 @@ beta分布的期望值如下，可从下面的两条曲线中加以验证：
         y1 = beta.pdf(x, a=4., b=4.)
         return x, y, y1
 
-.. figure:: ./img/beta.png
+.. figure:: ../../img/beta.png
    :alt:

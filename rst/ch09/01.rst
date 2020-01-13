@@ -1,5 +1,4 @@
-八：Python实用工具
-==================
+
 
 .. _header-n2210:
 
@@ -67,7 +66,7 @@
 
 完整的输出信息如下图片所示：
 
-.. figure:: D:\source\python-small-examples\tmp\img\image-20200104103849047.png
+.. figure:: ../../img/image-20200104103849047.png
    :alt: 
 
 .. _header-n2223:

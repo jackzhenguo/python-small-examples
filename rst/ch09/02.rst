@@ -9,7 +9,7 @@
 
 旋转图像下面图像45度：
 
-.. figure:: D:\source\img\plotly2.png
+.. figure:: ../../img/plotly2.png
    :alt: 
 
 .. code:: python
@@ -20,7 +20,7 @@
 
 旋转45度后的效果图
 
-.. figure:: D:\source\img\image-20200105085120611.png
+.. figure:: ../../img/image-20200105085120611.png
    :alt: 
 
 等比例缩放图像：
@@ -31,7 +31,7 @@
 
 缩放后的效果图：
 
-.. figure:: D:\source\python-small-examples\tmp\img\pillow_suofang.png
+.. figure:: ../../img/pillow_suofang.png
    :alt: 
 
 过滤图像后的效果图：
@@ -41,7 +41,7 @@
    from PIL import ImageFilter
    im.filter(ImageFilter.CONTOUR).show()
 
-.. figure:: D:\source\img\pillow_filter.png
+.. figure:: ../../img/pillow_filter.png
    :alt: 
 
 .. _header-n2239:

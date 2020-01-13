@@ -14,17 +14,17 @@
 
 快速排序动画展示
 
-.. figure:: E:\guozhen3\资料库\06self\python-small-examples\img\642.gif
+.. figure:: ../../img/642.gif
    :alt: 
 
 归并排序动画展示
 
-.. figure:: E:\guozhen3\资料库\06self\python-small-examples\img\643.gif
+.. figure:: ../../img/643.gif
    :alt: 
    
 堆排序动画展示
 
-.. figure:: E:\guozhen3\资料库\06self\python-small-examples\img\644.gif
+.. figure:: ../../img/644.gif
    :alt: 
 
 这些算法动画使用Matplotlib制作，接下来逐个补充。

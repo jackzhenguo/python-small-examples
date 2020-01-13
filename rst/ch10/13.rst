@@ -13,5 +13,5 @@
         y1 = norm.pdf(x, loc=0., scale=2.0)
         return x, y, y1
 
-.. figure:: ./img/guass.png
+.. figure:: ../../img/guass.png
    :alt: 

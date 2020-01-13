@@ -31,7 +31,7 @@
    x = wc.generate(words)
    x.to_file('../data/geo_data.png')
 
-.. figure:: ../../img/geo_data.png
+.. figure:: ../../data/geo_data.png
    :alt: 
 
 .. _header-n2132:

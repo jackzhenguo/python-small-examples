@@ -15,6 +15,6 @@
         y1 = binom.pmf(x, n=n, p=p1)
         return x, y, y1
 
-.. figure:: ./img/binom.png
+.. figure:: ../../img/binom.png
    :alt: 
 
