@@ -9,26 +9,28 @@
 
 ``designer.exe``\ 文件，双击启动：
 
-![1578811899182]./img/1578811899182.png)
+
+.. figure:: ../../img/1578811899182.png
+   :alt: 
 
 创建窗体，命名为\ ``XiaoDing``\ ，整个的界面如下所示：
 
-.. figure:: ./img/1578811933606.png
+.. figure:: ../../img/1578811933606.png
    :alt: 
 
 ``qt 设计器``\ 提供的常用控件基本都能满足开发需求，通过拖动左侧的控件，很便捷的就能搭建出如下的UI界面，比传统的手写控件代码要方便很多。
 
 最终设计的计算器\ ``XiaoDing``\ 界面如下，
 
-.. figure:: ./img/1578811959147.png
+.. figure:: ../../img/1578811959147.png
    :alt: 
 
 比如，其中一个用于计算器显示的对象：\ ``lcdNumber``\ ，对象的类型为：\ ``LCD Number``\ 。右侧为计算器中用到的所有对象。
 
-.. figure:: ./img/1578811991539.png
+.. figure:: ../../img/1578811991539.png
    :alt: 
 
-.. figure:: ./img/1578812033865.png
+.. figure:: ../../img/1578812033865.png
    :alt: 
 
 2) 转py文件
@@ -179,5 +181,5 @@ main函数：
         window = MainWindow()
         app.exec_()
 
-.. figure:: ./img/1578812059285.png
+.. figure:: ../../img/1578812059285.png
    :alt:
