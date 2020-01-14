@@ -14,7 +14,7 @@
 
 
 
-欢饮直接在线阅读和学习：https://python-small-examples.readthedocs.io/en/latest/
+欢迎直接在线阅读和学习：https://python-small-examples.readthedocs.io/en/latest/
 
 
 
