@@ -1,72 +1,88 @@
 
+.. _header-n2347:
 
-.. _header-n2241:
+1 领略算法魅力
+--------------
 
-1 环境搭建
-----------
+深刻研究排序算法是入门算法较为好的一种方法，现在还记得4年前手动实现常见8种排序算法，通过随机生成一些数据，逐个校验代码实现的排序过程是否与预期的一致，越做越有劲，越有劲越想去研究，公交车上，吃饭的路上。。。那些画面，现在依然记忆犹新。
 
-区分几个小白容易混淆的概念：pycharm，python解释器，conda安装，pip安装，总结来说：
+能力有限，当时并没有生成排序过程的动画，所以这些年想着抽时间一定把排序的过程都制作成动画，然后分享出来，让更多的小伙伴看到，通过排序算法的动态演示动画，找到学习算法的真正乐趣，从而迈向一个新的认知领域。
 
--  ``pycharm``\ 是python开发的集成开发环境(Integrated Development
-   Environment，简称IDE)，它本身无法执行Python代码
+当时我还是用C++写的，时过境迁，Python迅速崛起，得益于Python的简洁，接口易用，最近终于有人在github中开源了使用Python动画展示排序算法的项目，真是倍感幸运。
 
--  ``python解释器``\ 才是真正执行代码的工具，pycharm里可设置Python解释器，一般去python官网下载python3.7或python3.8版本；如果安装过\ ``anaconda``\ ，它里面必然也包括一个某版本的Python解释器；pycharm配置python解释器选择哪一个都可以。
+动画还是用matplotlib做出来的，这就更完美了，一边学完美的算法，一边还能提升Python熟练度，一边还能学到使用matplotlib制作动画。
 
--  anaconda是python常用包的合集，并提供给我们使用\ ``conda``\ 命令非常方便的安装各种Python包。
+快速排序动画展示
 
--  ``conda安装``\ ：我们安装过anaconda软件后，就能够使用conda命令下载anaconda源里(比如中科大镜像源)的包
+.. figure:: ../../img/642.gif
+   :alt: 
 
--  ``pip安装``\ ：类似于conda安装的python安装包的方法
+归并排序动画展示
 
-**修改镜像源**
+.. figure:: ../../img/643.gif
+   :alt: 
+   
+堆排序动画展示
 
-在使用安装\ ``conda``
-安装某些包会出现慢或安装失败问题，最有效方法是修改镜像源为国内镜像源。之前都选用清华镜像源，但是2019年后已停止服务。推荐选用中科大镜像源。
+.. figure:: ../../img/644.gif
+   :alt: 
 
-先查看已经安装过的镜像源，cmd窗口执行命令：
+这些算法动画使用Matplotlib制作，接下来逐个补充。
 
-.. code:: python
+.. _header-n2359:
 
-   conda config --show
+2 排序算法的动画展示
+--------------------
 
-查看配置项\ ``channels``\ ，如果显示带有\ ``tsinghua``\ ，则说明已安装过清华镜像。
+学会第一部分如何制作动画后，可将此技术应用于排序算法调整过程的动态展示上。
 
-.. code:: python
-
-   channels:
-   - https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
-   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
-   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-
-下一步，使用\ ``conda config --remove channels url地址``\ 删除清华镜像，如下命令删除第一个。然后，依次删除所有镜像源
+首先生成测试使用的数据，待排序的数据个数至多\ ``20个``\ ，待排序序列为\ ``random_wait_sort``\ ，为每个值赋一个颜色值，这个由\ ``random_rgb``\ 负责：
 
 .. code:: python
 
-   conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/
+   data_count = 20  # here, max value of data_count is 20
 
-添加目前可用的中科大镜像源：
+   random_wait_sort = [12, 34, 32, 24, 28, 39, 5,
+                       22, 11, 25, 33, 32, 1, 25, 3, 8, 7, 1, 34, 7]
 
-.. code:: 
+   random_rgb = [(0.5, 0.811565104942967, 0.11211028937187217),
+                 (0.5, 0.5201323831224014, 0.6660999602342474),
+                 (0.5, 0.575976663060455, 0.17788242607567772),
+                 (0.5, 0.6880174797416493, 0.43581701833249353),
+                 (0.5, 0.4443131322001743, 0.6993600264279745),
+                 (0.5, 0.5538835821863523, 0.889276053938713),
+                 (0.5, 0.4851681185146841, 0.7977608586163772),
+                 (0.5, 0.3886717808488436, 0.09319137949618972),
+                 (0.5, 0.8952456581687489, 0.8282376936934484),
+                 (0.5, 0.16360202854998007, 0.4538892160157194),
+                 (0.5, 0.23233400128809478, 0.8544141586189615),
+                 (0.5, 0.5224648797546528, 0.8194014475829123),
+                 (0.5, 0.49396099968405016, 0.47441724394796825),
+                 (0.5, 0.12078104526714728, 0.7715022079860492),
+                 (0.5, 0.19428498518228154, 0.08174917157481443),
+                 (0.5, 0.6058698403873457, 0.6085936584142663),
+                 (0.5, 0.7801178568951216, 0.6414767240649862),
+                 (0.5, 0.4768865661174162, 0.3889866229610085),
+                 (0.5, 0.4301945092238082, 0.961688141676841),
+                 (0.5, 0.40496648895289855, 0.24234095882836093)]
 
-   conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
-
-并设置搜索时显示通道地址：
+再封装一个简单的数据对象\ ``Data``\ ：
 
 .. code:: python
 
-   conda config --set show_channel_urls yes
+   class Data:
+       def __init__(self, value, rgb):
+           self.value = value
+           self.color = rgb
 
-确认是否安装镜像源成功，执行\ ``conda config --show``\ ，找到\ ``channels``\ 值为如下：
+       # 造数据
+       @classmethod
+       def create(cls):
+           return [Data(val, rgb) for val, rgb in zip(random_wait_sort[:data_count],
+                                                      random_rgb[:data_count])]
 
-.. code:: 
+.. _header-n2366:
 
-   channels:
-     - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
-     - defaults
 
-Done~
 
-.. _header-n2269:
 

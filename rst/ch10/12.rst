@@ -1,0 +1,20 @@
+16 二项分布
+---------------
+
+红色曲线表示发生一次概率为0.3，重复50次的密度函数，二项分布期望值为0.3\*50
+= 15次。看到这50次实验，很可能出现的次数为10~20.可与蓝色曲线对比分析。
+
+.. code:: python
+
+    # 二项分布
+    @my_plot(label0='n=50,p=0.3', label1='n=50,p=0.7', fn='binom.png', ylabel='probability mass function')
+    def bino():
+        x = np.arange(50)
+        n, p, p1 = 50, 0.3, 0.7
+        y = binom.pmf(x, n=n, p=p)
+        y1 = binom.pmf(x, n=n, p=p1)
+        return x, y, y1
+
+.. figure:: ../../img/binom.png
+   :alt: 
+

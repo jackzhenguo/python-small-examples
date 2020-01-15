@@ -1,34 +1,25 @@
-11 测试函数运行时间的装饰器
----------------------------
+11 pyecharts绘制仪表盘
+----------------------
+
+使用pip install pyecharts 安装，版本为
+v1.6，pyecharts绘制仪表盘，只需要几行代码：
 
 .. code:: python
 
-   #测试函数执行时间的装饰器示例
-   import time
-   def timing_func(fn):
-       def wrapper():
-           start=time.time()
-           fn()   #执行传入的fn参数
-           stop=time.time()
-           return (stop-start)
-       return wrapper
-   @timing_func
-   def test_list_append():
-       lst=[]
-       for i in range(0,100000):
-           lst.append(i)  
-   @timing_func
-   def test_list_compre():
-       [i for i in range(0,100000)]  #列表生成式
-   a=test_list_append()
-   c=test_list_compre()
-   print("test list append time:",a)
-   print("test list comprehension time:",c)
-   print("append/compre:",round(a/c,3))
+   from pyecharts import charts
 
-   test list append time: 0.0219423770904541
-   test list comprehension time: 0.007980823516845703
-   append/compre: 2.749
+   # 仪表盘
+   gauge = charts.Gauge()
+   gauge.add('Python小例子', [('Python机器学习', 30), ('Python基础', 70.),
+                           ('Python正则', 90)])
+   gauge.render(path="./data/仪表盘.html")
+   print('ok')
 
-.. _header-n2058:
+仪表盘中共展示三项，每项的比例为30%,70%,90%，如下图默认名称显示第一项：Python机器学习，完成比例为30%
+
+.. figure:: ../../img/image-20191228194635902.png
+   :alt: 
+
+.. _header-n2167:
+
 

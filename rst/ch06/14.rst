@@ -1,0 +1,89 @@
+14 装饰器通俗理解
+-----------------
+
+再看一个装饰器：
+
+.. code:: python
+
+   def call_print(f):
+     def g():
+       print('you\'re calling %s function'%(f.__name__,))
+     return g
+
+使用\ ``call_print``\ 装饰器：
+
+.. code:: python
+
+   @call_print
+   def myfun():
+     pass
+    
+   @call_print
+   def myfun2():
+     pass
+
+myfun()后返回：
+
+.. code:: python
+
+   In [27]: myfun()
+   you're calling myfun function
+
+   In [28]: myfun2()
+   you're calling myfun2 function
+
+**使用call_print**
+
+你看，\ ``@call_print``\ 放置在任何一个新定义的函数上面，都会默认输出一行，你正在调用这个函数的名。
+
+这是为什么呢？注意观察新定义的\ ``call_print``\ 函数(加上@后便是装饰器):
+
+.. code:: python
+
+   def call_print(f):
+     def g():
+       print('you\'re calling %s function'%(f.__name__,))
+     return g
+
+它必须接受一个函数\ ``f``\ ，然后返回另外一个函数\ ``g``.
+
+**装饰器本质**
+
+本质上，它与下面的调用方式效果是等效的：
+
+.. code:: 
+
+   def myfun():
+     pass
+
+   def myfun2():
+     pass
+     
+   def call_print(f):
+     def g():
+       print('you\'re calling %s function'%(f.__name__,))
+     return g
+
+下面是最重要的代码：
+
+.. code:: 
+
+   myfun = call_print(myfun)
+   myfun2 = call_print(myfun2)
+
+大家看明白吗？也就是call_print(myfun)后不是返回一个函数吗，然后再赋值给myfun.
+
+再次调用myfun, myfun2时，效果是这样的：
+
+.. code:: python
+
+   In [32]: myfun()
+   you're calling myfun function
+
+   In [33]: myfun2()
+   you're calling myfun2 function
+
+你看，这与装饰器的实现效果是一模一样的。装饰器的写法可能更加直观些，所以不用显示的这样赋值：\ ``myfun = call_print(myfun)``\ ，\ ``myfun2 = call_print(myfun2)``\ ，但是装饰器的这种封装，猛一看，有些不好理解。
+
+.. _header-n2094:
+

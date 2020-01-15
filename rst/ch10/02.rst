@@ -1,48 +1,30 @@
-2 自动群发邮件
+3 先拿冒泡实验
 --------------
 
-Python自动群发邮件
+一旦发生调整，我们立即保存到帧列表\ ``frames``\ 中，注意此处需要\ ``deepcopy``:
 
 .. code:: python
 
-   import smtplib
-   from email import (header)
-   from email.mime import (text, application, multipart)
-   import time
+   # 冒泡排序
+   def bubble_sort(waiting_sort_data):
+       frames = [waiting_sort_data]
+       ds = copy.deepcopy(waiting_sort_data)
+       for i in range(data_count-1):
+           for j in range(data_count-i-1):
+               if ds[j].value > ds[j+1].value:
+                   ds[j], ds[j+1] = ds[j+1], ds[j]
+                   frames.append(copy.deepcopy(ds))
+       frames.append(ds)
+       return frames
 
-   def sender_mail():
-       smt_p = smtplib.SMTP()
-       smt_p.connect(host='smtp.qq.com', port=25)
-       sender, password = '113097485@qq.com', "**************"
-       smt_p.login(sender, password)
-       receiver_addresses, count_num = [
-           'guozhennianhua@163.com', 'xiaoxiazi99@163.com'], 1
-       for email_address in receiver_addresses:
-           try:
-               msg = multipart.MIMEMultipart()
-               msg['From'] = "zhenguo"
-               msg['To'] = email_address
-               msg['subject'] = header.Header('这是邮件主题通知', 'utf-8')
-               msg.attach(text.MIMEText(
-                   '这是一封测试邮件，请勿回复本邮件~', 'plain', 'utf-8'))
-               smt_p.sendmail(sender, email_address, msg.as_string())
-               time.sleep(10)
-               print('第%d次发送给%s' % (count_num, email_address))
-               count_num = count_num + 1
-           except Exception as e:
-               print('第%d次给%s发送邮件异常' % (count_num, email_address))
-               continue
-       smt_p.quit()
+实验结果图：
 
-   sender_mail()
-
-| 注意：
-| 发送邮箱是qq邮箱，所以要在qq邮箱中设置开启SMTP服务，设置完成时会生成一个授权码，将这个授权码赋值给文中的\ ``password``\ 变量。
-
-发送后的截图：
-
-.. figure:: https://mmbiz.qpic.cn/mmbiz_png/FQd8gQcyN25N30MmbE2PjM2F1j86EUFfdzva26tvlwVpR2MGEcLXJvjWQ8v3BrzEwmFxpjia4zohfzbkDBpnNjg/640?wx_fmt=png
+.. figure:: ../../img/image-20200104232411426.png
    :alt: 
 
-.. _header-n2279:
+完整动画演示：
 
+.. figure:: ../../img/bubble_sort.gif
+   :alt: 
+
+.. _header-n2373:

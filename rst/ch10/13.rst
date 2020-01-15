@@ -1,0 +1,17 @@
+17 高斯分布
+-----------
+
+红色曲线表示均值为0，标准差为1.0的概率密度函数，蓝色曲线的标准差更大，所以它更矮胖，显示出取值的多样性，和不稳定性。
+
+.. code:: python
+
+    # 高斯 分布
+    @my_plot(label0='u=0.,sigma=1.0', label1='u=0.,sigma=2.0', fn='guass.png')
+    def guass():
+        x = np.arange(-5, 5, 0.1)
+        y = norm.pdf(x, loc=0.0, scale=1.0)
+        y1 = norm.pdf(x, loc=0., scale=2.0)
+        return x, y, y1
+
+.. figure:: ../../img/guass.png
+   :alt: 

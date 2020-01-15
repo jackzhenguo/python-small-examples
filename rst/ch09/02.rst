@@ -1,0 +1,47 @@
+2 两行代码实现旋转和缩放图像
+----------------------------
+
+首先安装pillow:
+
+.. code:: python
+
+   pip install pillow
+
+旋转图像下面图像45度：
+
+.. figure:: ../../img/plotly2.png
+   :alt: 
+
+.. code:: python
+
+   In [1]: from PIL import Image
+   In [2]: im = Image.open('./img/plotly2.png')
+   In [4]: im.rotate(45).show()
+
+旋转45度后的效果图
+
+.. figure:: ../../img/image-20200105085120611.png
+   :alt: 
+
+等比例缩放图像：
+
+.. code:: python
+
+   im.thumbnail((128,72),Image.ANTIALIAS)
+
+缩放后的效果图：
+
+.. figure:: ../../img/pillow_suofang.png
+   :alt: 
+
+过滤图像后的效果图：
+
+.. code:: python
+
+   from PIL import ImageFilter
+   im.filter(ImageFilter.CONTOUR).show()
+
+.. figure:: ../../img/pillow_filter.png
+   :alt: 
+
+.. _header-n2239:

@@ -1,0 +1,28 @@
+17 pyecharts极坐标图
+--------------------
+
+.. code:: python
+
+   import random
+   from pyecharts import options as opts
+   from pyecharts.charts import Page, Polar
+
+   def polar_scatter0() -> Polar:
+       data = [(alpha, random.randint(1, 100)) for alpha in range(101)] # r = random.randint(1, 100)
+       print(data)
+       c = (
+           Polar()
+           .add("", data, type_="bar", label_opts=opts.LabelOpts(is_show=False))
+           .set_global_opts(title_opts=opts.TitleOpts(title="Polar"))
+       )
+       return c
+
+   polar_scatter0().render('./img/polar.html')
+
+极坐标表示为\ ``(夹角,半径)``\ ，如(6,94)表示夹角为6，半径94的点：
+
+.. figure:: ../../img/1578811648010.png
+   :alt: 
+
+.. _header-n2190:
+

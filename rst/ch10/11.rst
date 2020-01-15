@@ -1,0 +1,49 @@
+15 均匀分布
+-----------
+
+导入本次实验所用的4种常见分布，连续分布的代表：\ ``beta``\ 分布、\ ``正态``\ 分布，\ ``均匀``\ 分布，离散分布的代表：\ ``二项``\ 分布。
+
+绘图装饰器带有四个参数分别表示\ ``legend``\ 的2类说明文字，y轴label,
+保存的png文件名称。
+
+.. code:: python
+
+    import pretty_errors
+    import numpy as np
+    from scipy.stats import beta, norm, uniform, binom
+    import matplotlib.pyplot as plt
+    from functools import wraps
+
+    # 定义带四个参数的画图装饰器
+
+    def my_plot(label0=None, label1=None, ylabel='probability density function', fn=None):
+        def decorate(f):
+            @wraps(f)
+            def myplot():
+                fig = plt.figure(figsize=(16, 9))
+                ax = fig.add_subplot(111)
+                x, y, y1 = f()
+                ax.plot(x, y, linewidth=2, c='r', label=label0)
+                ax.plot(x, y1, linewidth=2, c='b', label=label1)
+                ax.legend()
+                plt.ylabel(ylabel)
+                # plt.show()
+                plt.savefig('./img/%s' % (fn,))
+                print('%s保存成功' % (fn,))
+                plt.close()
+            return myplot
+        return decorate
+
+.. code:: python
+
+    # 均匀分布(uniform)
+    @my_plot(label0='b-a=1.0', label1='b-a=2.0', fn='uniform.png')
+    def unif():
+        x = np.arange(-0.01, 2.01, 0.01)
+        y = uniform.pdf(x, loc=0.0, scale=1.0)
+        y1 = uniform.pdf(x, loc=0.0, scale=2.0)
+        return x, y, y1
+
+.. figure:: ../../img/uniform.png
+   :alt: 
+

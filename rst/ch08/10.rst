@@ -1,59 +1,46 @@
-10 imshow图
------------
 
-.. figure:: https://camo.githubusercontent.com/7d73ce5053864430bc8b2d7191870889c848106b/68747470733a2f2f6d6d62697a2e717069632e636e2f6d6d62697a5f706e672f46516438675163794e32354269634263623645515673576c4a635a77424a79517a6b4647626963707879753858727774784d73314e466177656d35696369627a6f4c716f356d7364353847343965477a6e3455304247554261772f3634303f77785f666d743d706e672674703d7765627026777866726f6d3d352677785f6c617a793d312677785f636f3d31
-   :alt: 
+10 对象销毁顺序
+---------------
 
-对应代码：
+创建一个类\ ``SE``:
 
 .. code:: python
 
-   import matplotlib.pyplot as plt
-   import numpy as np
-   from matplotlib.cbook import get_sample_data
-   from mpl_toolkits import axes_grid1
+   class SE(object):
+     def __init__(self):
+       print('init')
+     def __del__(self):
+       print('del')
 
-   import example_utils
+创建两个SE实例，使用\ ``is``\ 判断：
 
+.. code:: python
 
-   def main():
-       fig, axes = setup_axes()
-       plot(axes, *load_data())
-       # example_utils.title(fig, '"ax.imshow(data, ...)": Colormapped or RGB arrays')
-       fig.savefig('imshow_example.png', facecolor='none')
-       plt.show()
+   In [63]: SE() is SE()
+   init
+   init
+   del
+   del
+   Out[63]: False
 
+创建两个SE实例，使用\ ``id``\ 判断：
 
-   def plot(axes, img_data, scalar_data, ny):
+.. code:: python
 
-       # 默认线性插值
-       axes[0].imshow(scalar_data, cmap='gist_earth', extent=[0, ny, ny, 0])
+   In [64]: id(SE()) == id(SE())
+   init
+   del
+   init
+   del
+   Out[64]: True
 
-       # 最近邻插值
-       axes[1].imshow(scalar_data, cmap='gist_earth', interpolation='nearest',
-                      extent=[0, ny, ny, 0])
+调用\ ``id``\ 函数, Python 创建一个 SE
+类的实例，并使用\ ``id``\ 函数获得内存地址后，销毁内存丢弃这个对象。
 
-       # 展示RGB/RGBA数据
-       axes[2].imshow(img_data)
+当连续两次进行此操作,
+Python会将相同的内存地址分配给第二个对象，所以两个对象的id值是相同的.
 
+但是is行为却与之不同，通过打印顺序就可以看到。
 
-   def load_data():
-       img_data = plt.imread(get_sample_data('5.png'))
-       ny, nx, nbands = img_data.shape
-       scalar_data = np.load(get_sample_data('bivariate_normal.npy'))
-       return img_data, scalar_data, ny
-
-
-   def setup_axes():
-       fig = plt.figure(figsize=(6, 3))
-       axes = axes_grid1.ImageGrid(fig, [0, 0, .93, 1], (1, 3), axes_pad=0)
-
-       for ax in axes:
-           ax.set(xticks=[], yticks=[])
-       return fig, axes
-
-
-   main()
-
-.. _header-n2162:
+.. _header-n1814:
 

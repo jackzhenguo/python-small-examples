@@ -1,0 +1,48 @@
+5 groupby单字段分组
+-------------------
+
+天气记录：
+
+.. code:: python
+
+   a = [{'date': '2019-12-15', 'weather': 'cloud'},
+    {'date': '2019-12-13', 'weather': 'sunny'},
+    {'date': '2019-12-14', 'weather': 'cloud'}]
+
+按照天气字段\ ``weather``\ 分组汇总：
+
+.. code:: python
+
+   from itertools import groupby
+   for k, items in  groupby(a,key=lambda x:x['weather']):
+        print(k)
+
+输出结果看出，分组失败！原因：分组前必须按照分组字段\ ``排序``\ ，这个很坑~
+
+.. code:: python
+
+   cloud
+   sunny
+   cloud
+
+修改代码：
+
+.. code:: python
+
+   a.sort(key=lambda x: x['weather'])
+   for k, items in  groupby(a,key=lambda x:x['weather']):
+        print(k)
+        for i in items:
+            print(i)
+
+输出结果：
+
+.. code:: python
+
+   cloud
+   {'date': '2019-12-15', 'weather': 'cloud'}
+   {'date': '2019-12-14', 'weather': 'cloud'}
+   sunny
+   {'date': '2019-12-13', 'weather': 'sunny'}
+
+.. _header-n2032:

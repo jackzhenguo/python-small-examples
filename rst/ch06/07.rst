@@ -1,0 +1,30 @@
+7 groupby多字段分组
+-------------------
+
+``itemgetter``\ 是一个类，\ ``itemgetter('weather')``\ 返回一个可调用的对象，它的参数可有多个：
+
+.. code:: python
+
+   from operator import itemgetter
+   from itertools import groupby
+
+   a.sort(key=itemgetter('weather', 'date'))
+   for k, items in groupby(a, key=itemgetter('weather')):
+        print(k)
+        for i in items:
+            print(i)
+
+结果如下，使用\ ``weather``\ 和\ ``date``\ 两个字段排序\ ``a``\ ，
+
+.. code:: python
+
+   cloud
+   {'date': '2019-12-14', 'weather': 'cloud'}
+   {'date': '2019-12-15', 'weather': 'cloud'}
+   sunny
+   {'date': '2019-12-13', 'weather': 'sunny'}
+
+注意这个结果与上面结果有些微妙不同，这个更多是我们想看到和使用更多的。
+
+.. _header-n2043:
+

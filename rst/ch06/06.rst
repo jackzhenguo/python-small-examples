@@ -1,0 +1,31 @@
+6 itemgetter和key函数
+---------------------
+
+注意到\ ``sort``\ 和\ ``groupby``\ 所用的\ ``key``\ 函数，除了\ ``lambda``\ 写法外，还有一种简写，就是使用\ ``itemgetter``\ ：
+
+.. code:: python
+
+   a = [{'date': '2019-12-15', 'weather': 'cloud'},
+    {'date': '2019-12-13', 'weather': 'sunny'},
+    {'date': '2019-12-14', 'weather': 'cloud'}]
+   from operator import itemgetter
+   from itertools import groupby
+
+   a.sort(key=itemgetter('weather'))
+   for k, items in groupby(a, key=itemgetter('weather')):
+        print(k)
+        for i in items:
+            print(i)
+
+结果：
+
+.. code:: python
+
+   cloud
+   {'date': '2019-12-15', 'weather': 'cloud'}
+   {'date': '2019-12-14', 'weather': 'cloud'}
+   sunny
+   {'date': '2019-12-13', 'weather': 'sunny'}
+
+.. _header-n2037:
+
