@@ -1,0 +1,29 @@
+
+2 read\_csv使用说明
+-------------------
+
+说明，本次导入\ ``dat``\ 文件使用\ ``pandas.read_csv``\ 函数。
+
+第一个位置参数\ ``./data/movietweetings/ratings.dat`` 表示文件的相对路径
+
+第二个关键字参数：\ ``delimiter='::'``\ ，表示文件分隔符使用\ ``::``
+
+后面几个关键字参数分别代表使用的引擎，文件没有表头，所以\ ``header``\ 为\ ``None;``
+
+导入后dataframe的列名使用\ ``names``\ 关键字设置，这个参数大家可以记住，比较有用。
+
+Kaggle电影数据集第一节，我们使用数据处理利器 ``pandas``\ ，
+函数\ ``read_csv`` 导入给定的三个数据文件。
+
+.. code:: python
+
+    import pandas as pd
+
+    movies = pd.read_csv('./data/movietweetings/movies.dat', delimiter='::', engine='python', header=None, names = ['Movie ID', 'Movie Title', 'Genre'])
+    users = pd.read_csv('./data/movietweetings/users.dat', delimiter='::', engine='python', header=None, names = ['User ID', 'Twitter ID'])
+    ratings = pd.read_csv('./data/movietweetings/ratings.dat', delimiter='::', engine='python', header=None, names = ['User ID', 'Movie ID', 'Rating', 'Rating Timestamp'])
+
+用到的\ ``read_csv``\ ，某些重要的参数，如何使用在上一节也有所提到。下面开始数据探索分析(EDA)
+
+    找出得分前10喜剧(comedy)
+

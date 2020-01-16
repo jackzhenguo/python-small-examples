@@ -1,0 +1,42 @@
+
+6 按列筛选
+----------
+
+pandas最方便的地方，就是向量化运算，尽可能减少了for循环的嵌套。
+
+按列筛选这种常见需求，自然可以轻松应对。
+
+为了照顾初次接触 pandas 的朋友，分两步去写：
+
+.. code:: python
+
+    mask = pd.notnull(combine['Genre'])
+
+结果是一列只含\ ``True 或 False``\ 的值
+
+.. code:: python
+
+    result = combine[mask]
+    print(result.head())
+
+结果中，Genre字段中至少含有一个Comedy字符串，表明验证了我们以上操作是OK的。
+
+.. code:: python
+
+        User ID  Movie ID  Rating  Rating Timestamp             Movie Title  \
+    12        1   1588173       9        1372821281      Warm Bodies (2013)   
+    13        1   1711425       3        1372604878        21 & Over (2013)   
+    14        1   2024432       8        1372703553   Identity Thief (2013)   
+    17        1   2101441       1        1372633473  Spring Breakers (2012)   
+    28        2   1431045       7        1457733508         Deadpool (2016)   
+
+                                 Genre  
+    12           Comedy|Horror|Romance  
+    13                          Comedy  
+    14    Adventure|Comedy|Crime|Drama  
+    17              Comedy|Crime|Drama  
+    28  Action|Adventure|Comedy|Sci-Fi  
+
+工作紧张，现在每天只能写一点。我尽量写的详细点，一步一步来吧，希望能帮助到想入门Python数据分析的朋友。
+
+明天继续朝着目标，前进一点点~
