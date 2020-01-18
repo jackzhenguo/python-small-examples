@@ -1,0 +1,68 @@
+
+5 连接两个表
+------------
+
+拿到所有喜剧的ID后，要想找出其中平均得分最高的前10喜剧，需要关联另一张表：\ ``ratings``:
+
+再回顾下ratings表结构：
+
+.. code:: python
+
+       User ID  Movie ID  Rating  Rating Timestamp
+    0        1    111161      10        1373234211
+    1        1    117060       7        1373415231
+    2        1    120755       6        1373424360
+    3        1    317919       6        1373495763
+    4        1    454876      10        1373621125
+    5        1    790724       8        1374641320
+    6        1    882977       8        1372898763
+    7        1   1229238       9        1373506523
+    8        1   1288558       5        1373154354
+    9        1   1300854       8        1377165712
+
+pandas
+中使用\ ``join``\ 关联两张表，连接字段是\ ``Movie ID``\ ，如果顺其自然这么使用\ ``join``\ ：
+
+.. code:: python
+
+    combine = ratings.join(comedy, on='Movie ID', rsuffix='2')
+
+左右滑动，查看完整代码
+
+大家可验证这种写法，仔细一看，会发现结果非常诡异。
+
+究其原因，这是pandas
+join函数使用的一个算是坑点，它在官档中介绍，连接右表时，此处右表是\ ``comedy``\ ，它的\ ``index``\ 要求是连接字段，也就是
+``Movie ID``.
+
+左表的index不要求，但是要在参数 ``on``\ 中给定。
+
+**以上是要注意的一点**
+
+修改为：
+
+.. code:: python
+
+    combine = ratings.join(comedy.set_index('Movie ID'), on='Movie ID')
+    print(combine.head(10))
+
+以上是OK的写法
+
+观察结果：
+
+.. code:: python
+
+       User ID  Movie ID  Rating  Rating Timestamp Movie Title Genre
+    0        1    111161      10        1373234211         NaN   NaN
+    1        1    117060       7        1373415231         NaN   NaN
+    2        1    120755       6        1373424360         NaN   NaN
+    3        1    317919       6        1373495763         NaN   NaN
+    4        1    454876      10        1373621125         NaN   NaN
+    5        1    790724       8        1374641320         NaN   NaN
+    6        1    882977       8        1372898763         NaN   NaN
+    7        1   1229238       9        1373506523         NaN   NaN
+    8        1   1288558       5        1373154354         NaN   NaN
+    9        1   1300854       8        1377165712         NaN   NaN
+
+Genre列为\ ``NaN``\ 表明，这不是喜剧。需要筛选出此列不为\ ``NaN``
+的记录。

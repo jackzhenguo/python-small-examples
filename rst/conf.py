@@ -44,16 +44,16 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'python3-small-examples'
-copyright = u'2019, zhenguo'
+copyright = u'2019, Emily Guo'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '1.0'
+version = '1.2'
 # The full version, including alpha/beta/rc tags.
-release = '1.0.0'
+release = '1.2.378'
 
 exclude_patterns = []
 
@@ -68,7 +68,7 @@ htmlhelp_basename = 'python3-small-examples doc'
 # -- Options for LaTeX output ---------------------------------------------
 
 # 注：在生成html的时候这句话要注释
-# latex_engine = 'xelatex'
+#latex_engine = 'xelatex'
 
 latex_elements={# The paper size ('letterpaper' or 'a4paper').
 'papersize':'a4paper',# The font size ('10pt', '11pt' or '12pt').
@@ -92,8 +92,8 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'python3-small-examples.tex', u'《Python 小例子》',
-   u'zhenguo', 'howto'),
+  ('index', 'python3-small-examples.tex', u'Python小例子',
+   u'作者：Emily Guo', 'manual'),
 ]
 
 # -- Options for manual page output ---------------------------------------
@@ -101,8 +101,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'python3-small-examples', u'《Python 小例子》',
-     [u'zhenguo'], 1)
+    ('index', 'python3-small-examples', u'Python小例子',
+     [u'Emily Guo'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -116,7 +116,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'python3-small-examples', u'《Python 小例子》',
-   u'zhenguo', 'python3-small-examples', '《Python 小例子》',
+   u'Emily Guo', 'python3-small-examples', '《Python 小例子》',
    'Miscellaneous'),
 ]
 
