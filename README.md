@@ -5628,7 +5628,48 @@ if __name__ == '__main__':
 
 ![1578812059285](./img/1578812059285.png)
 
-#### 6 Kaggle影评数据分析实战
+### 十、数据分析
+
+#### 1 长数据变宽的特殊方法
+pandas中一个dataFrame实例：
+```python
+Out[89]:
+        a  val
+0  apple1  1.0
+1  apple2  2.0
+2  apple3  3.0
+3  apple4  4.0
+4  apple5  5.0
+```
+
+我们的**目标**是变为如下结构：
+```python
+a  apple1  apple2  apple3  apple4  apple5
+0     1.0     2.0     3.0     4.0     5.0
+```
+
+乍看可使用`pivot`，但很难一步到位。
+
+所以另辟蹊径，提供一种简单且好理解的方法：
+
+```python
+In [113]: pd.DataFrame(index=[0],columns=df.a,data=dict(zip(df.a,df.val)))
+Out[113]:
+a  apple1  apple2  apple3  apple4  apple5
+0     1.0     2.0     3.0     4.0     5.0
+```
+点击图片，左右滑动查看完整代码
+
+以上方法是重新创建一个DataFrame,直接把`df.a`所有可能取值作为新dataframe的列，index调整为`[0]`，注意类型必须是数组类型(array-like 或者 Index)，两个轴确定后，`data`填充数据域。
+
+```python
+In [116]: dict(zip(df.a,df.val))
+Out[116]: {'apple1': 1.0, 'apple2': 2.0, 'apple3': 3.0, 'apple4': 4.0, 'apple5': 5.0}
+```
+
+
+
+####  10 Kaggle影评数据分析实战
 
 1 导入数据
 数据来自kaggle，共包括三个文件：
@@ -5951,3 +5992,4 @@ print(result.head())
 工作紧张，现在每天只能写一点。我尽量写的详细点，一步一步来吧，希望能帮助到想入门Python数据分析的朋友。
 
 明天继续朝着目标，前进一点点~
+
