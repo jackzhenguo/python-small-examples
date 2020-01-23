@@ -4191,7 +4191,92 @@ def draw_chart():
 draw_chart()
 ```
 
+#### 22 pyecharts绘图属性设置方法
 
+昨天一位读者朋友问我`pyecharts`中，y轴如何显示在右侧。先说下如何设置，同时阐述例子君是如何找到找到此属性的。
+
+这是pyecharts中一般的绘图步骤：
+```python
+from pyecharts.faker import Faker
+from pyecharts import options as opts
+from pyecharts.charts import Bar
+from pyecharts.commons.utils import JsCode
+
+def bar_base() -> Bar:
+    c = (
+        Bar()
+        .add_xaxis(Faker.choose())
+        .add_yaxis("商家A", Faker.values())
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本示例", subtitle="我是副标题"))
+    )
+    return c
+
+bar_base().render('./bar.html')
+```
+那么，如何设置y轴显示在右侧，添加一行代码：
+```python
+.set_global_opts(yaxis_opts=opts.AxisOpts(position='right'))
+```
+也就是：
+```python
+c = (
+        Bar()
+        .add_xaxis(Faker.choose())
+        .add_yaxis("商家A", Faker.values())
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本示例", subtitle="我是副标题"))
+        .set_global_opts(yaxis_opts=opts.AxisOpts(position='right'))
+    )
+```
+
+如何锁定这个属性，首先应该在set_global_opts函数的参数中找，它一共有以下`11`个设置参数，它们位于模块`charts.py`:
+```python
+title_opts: types.Title = opts.TitleOpts(),
+legend_opts: types.Legend = opts.LegendOpts(),
+tooltip_opts: types.Tooltip = None,
+toolbox_opts: types.Toolbox = None,
+brush_opts: types.Brush = None,
+xaxis_opts: types.Axis = None,
+yaxis_opts: types.Axis = None,
+visualmap_opts: types.VisualMap = None,
+datazoom_opts: types.DataZoom = None,
+graphic_opts: types.Graphic = None,
+axispointer_opts: types.AxisPointer = None,
+```
+因为是设置y轴显示在右侧，自然想到设置参数`yaxis_opts`，因为其类型为`types.Axis`，所以再进入`types.py`，同时定位到`Axis`：
+```python
+Axis = Union[opts.AxisOpts, dict, None]
+```
+Union是pyecharts中可容纳多个类型的并集列表，也就是Axis可能为`opts.AxisOpt`, `dict`, 或`None`三种类型。查看第一个`opts.AxisOpt`类，它共定义以下`25`个参数：
+```python
+type_: Optional[str] = None,
+name: Optional[str] = None,
+is_show: bool = True,
+is_scale: bool = False,
+is_inverse: bool = False,
+name_location: str = "end",
+name_gap: Numeric = 15,
+name_rotate: Optional[Numeric] = None,
+interval: Optional[Numeric] = None,
+grid_index: Numeric = 0,
+position: Optional[str] = None,
+offset: Numeric = 0,
+split_number: Numeric = 5,
+boundary_gap: Union[str, bool, None] = None,
+min_: Union[Numeric, str, None] = None,
+max_: Union[Numeric, str, None] = None,
+min_interval: Numeric = 0,
+max_interval: Optional[Numeric] = None,
+axisline_opts: Union[AxisLineOpts, dict, None] = None,
+axistick_opts: Union[AxisTickOpts, dict, None] = None,
+axislabel_opts: Union[LabelOpts, dict, None] = None,
+axispointer_opts: Union[AxisPointerOpts, dict, None] = None,
+name_textstyle_opts: Union[TextStyleOpts, dict, None] = None,
+splitarea_opts: Union[SplitAreaOpts, dict, None] = None,
+splitline_opts: Union[SplitLineOpts, dict] = SplitLineOpts(),
+```
+观察后尝试参数`position`，结合官档：`https://pyecharts.org/#/zh-cn/global_options?id=axisopts%ef%bc%9a%e5%9d%90%e6%a0%87%e8%bd%b4%e9%85%8d%e7%bd%ae%e9%a1%b9`，介绍x轴设置position时有bottom, top, 所以y轴设置很可能就是left,right.
+
+OK！
 
 ### 六、 Python之坑
 
