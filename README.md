@@ -10,7 +10,7 @@
 > 3) Flask前端开发
 > 4) Python数据分析
 
-已发[《Python之路.1.2.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.2.378)最新版本`V1.2.378`包括`11`个章节：`Python基础`，`Python之坑`,`Python字符串和正则`，`Python文件`，`Python日期`, `Python利器`，`Python画图` ,`Python实用工具`，`Python实战`, `Python基础算法`，`机器学习核心知识` 章节，目前超过`200个`小例子。
+已发[《我的Python之路V1.3.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.3)最新版本`V1.3包括`9个章节：`Python基础`，`Python字符串和正则`，`Python文件和日期`，`Python多线程`, `Python三大利器`，`Python画图` ,`Python之坑`,`基础算法小例子`，`Python实战`，目前超过`200个`小例子。
 
 
 
