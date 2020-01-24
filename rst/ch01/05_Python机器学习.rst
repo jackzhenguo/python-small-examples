@@ -9,5 +9,5 @@ Python机器学习库\ ``Sklearn``\ 功能强大，接口易用，包括数据�
     from sklearn.cluster import KMeans
     KMeans( n_clusters=3 )
 
-.. figure:: ./img/kmeans.png
+.. figure:: ../../img/kmeans.png
    :alt: 
