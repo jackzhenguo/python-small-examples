@@ -4278,6 +4278,375 @@ splitline_opts: Union[SplitLineOpts, dict] = SplitLineOpts(),
 
 OK！
 
+#### 23 pyecharts绘图属性设置方法(下)
+
+![](./img/pyecharts-bar.png)
+
+**分步讲解如何配置为上图**
+
+1)柱状图显示效果动画对应控制代码：
+
+```python
+animation_opts=opts.AnimationOpts(
+                    animation_delay=500, animation_easing="cubicOut"
+                )
+```
+2)柱状图显示主题对应控制代码：
+```python
+theme=ThemeType.MACARONS
+```
+3)添加x轴对应的控制代码：
+```python
+add_xaxis( ["草莓", "芒果", "葡萄", "雪梨", "西瓜", "柠檬", "车厘子"]
+```
+4)添加y轴对应的控制代码：
+```python
+add_yaxis("A", Faker.values(),
+```
+5)修改柱间距对应的控制代码：
+```python
+category_gap="50%"
+```
+
+6)A系列柱子是否显示对应的控制代码：
+```python
+is_selected=True
+```
+
+7)A系列柱子颜色渐变对应的控制代码：
+```python
+itemstyle_opts={
+            "normal": {
+                "color": JsCode("""new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(0, 244, 255, 1)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(0, 77, 167, 1)'
+                }], false)"""),
+                "barBorderRadius": [6, 6, 6, 6],
+                "shadowColor": 'rgb(0, 160, 221)',
+            }}
+```
+8)A系列柱子最大和最小值`标记点`对应的控制代码：
+```python
+markpoint_opts=opts.MarkPointOpts(
+                data=[
+                    opts.MarkPointItem(type_="max", name="最大值"),
+                    opts.MarkPointItem(type_="min", name="最小值"),
+                ]
+            )
+```
+9)A系列柱子最大和最小值`标记线`对应的控制代码：
+```python
+markline_opts=opts.MarkLineOpts(
+                data=[
+                    opts.MarkLineItem(type_="min", name="最小值"),
+                    opts.MarkLineItem(type_="max", name="最大值")
+                ]
+            )
+```
+10)柱状图标题对应的控制代码：
+```python
+title_opts=opts.TitleOpts(title="Bar-参数使用例子"
+```
+11)柱状图非常有用的toolbox显示对应的控制代码：
+```python
+toolbox_opts=opts.ToolboxOpts()
+```
+
+12)Y轴显示在右侧对应的控制代码：
+```python
+yaxis_opts=opts.AxisOpts(position="right")
+```
+13)Y轴名称对应的控制代码：
+```python
+yaxis_opts=opts.AxisOpts(,name="Y轴")
+```
+14)数据轴区域放大缩小设置对应的控制代码：
+```python
+datazoom_opts=opts.DataZoomOpts()
+```
+
+**完整代码**
+
+```python
+def bar_border_radius():
+    c = (
+        Bar(init_opts=opts.InitOpts(
+                animation_opts=opts.AnimationOpts(
+                    animation_delay=500, animation_easing="cubicOut"
+                ),
+                theme=ThemeType.MACARONS))
+        .add_xaxis( ["草莓", "芒果", "葡萄", "雪梨", "西瓜", "柠檬", "车厘子"])
+        .add_yaxis("A", Faker.values(),category_gap="50%",markpoint_opts=opts.MarkPointOpts(),is_selected=True)
+        .set_series_opts(itemstyle_opts={
+            "normal": {
+                "color": JsCode("""new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(0, 244, 255, 1)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(0, 77, 167, 1)'
+                }], false)"""),
+                "barBorderRadius": [6, 6, 6, 6],
+                "shadowColor": 'rgb(0, 160, 221)',
+            }}, markpoint_opts=opts.MarkPointOpts(
+                data=[
+                    opts.MarkPointItem(type_="max", name="最大值"),
+                    opts.MarkPointItem(type_="min", name="最小值"),
+                ]
+            ),markline_opts=opts.MarkLineOpts(
+                data=[
+                    opts.MarkLineItem(type_="min", name="最小值"),
+                    opts.MarkLineItem(type_="max", name="最大值")
+                ]
+            ))
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-参数使用例子"), toolbox_opts=opts.ToolboxOpts(),yaxis_opts=opts.AxisOpts(position="right",name="Y轴"),datazoom_opts=opts.DataZoomOpts(),)
+        
+    )
+
+    return c
+
+bar_border_radius().render()
+```
+
+#### 24 pyecharts原来可以这样快速入门(上)
+
+最近两天，翻看下`pyecharts`的源码，感叹这个框架写的真棒，思路清晰，设计简洁，通俗易懂，推荐读者们有空也阅读下。
+
+bee君是被pyecharts官档介绍-五个特性所吸引：
+
+1)简洁的 API 设计，使用如丝滑般流畅，支持链式调用;
+
+2)囊括了 30+ 种常见图表，应有尽有;
+
+3)支持主流 Notebook 环境，Jupyter Notebook 和 JupyterLab;
+
+4)可轻松集成至 Flask，Django 等主流 Web 框架;
+
+5)高度灵活的配置项，可轻松搭配出精美的图表
+
+pyecharts 确实也如上面五个特性介绍那样，使用起来非常方便。那么，有些读者不禁好奇会问，pyecharts 是如何做到的？
+
+我们不妨从pyecharts官档`5分钟入门pyecharts`章节开始，由表(最高层函数)及里(底层函数也就是所谓的`源码`)，一探究竟。
+
+
+
+**官方第一个例子**
+
+不妨从官档给出的第一个例子说起，
+
+```python
+from pyecharts.charts import Bar
+
+bar = Bar()
+bar.add_xaxis(["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"])
+bar.add_yaxis("商家A", [5, 20, 36, 10, 75, 90])
+# render 会生成本地 HTML 文件，默认会在当前目录生成 render.html 文件
+# 也可以传入路径参数，如 bar.render("mycharts.html")
+bar.render()
+```
+
+第一行代码：`from pyecharts.charts import Bar`，先上一张源码中`包的结构图`：
+
+![](./img/pyecharts1.jpg)
+
+`bar.py`模块中定义了类`Bar(RectChart)`，如下所示：
+
+```python
+class Bar(RectChart):
+    """
+    <<< Bar Chart >>>
+
+    Bar chart presents categorical data with rectangular bars
+    with heights or lengths proportional to the values that they represent.
+    """
+```
+
+
+
+这里有读者可能会有以下两个问题：
+
+1)为什么根据图1中的包结构，为什么不这么写：`from pyecharts.charts.basic_charts import Bar`
+
+![](./img/pyechart2.jpg)
+
+
+
+答：请看图2中`__init__.py`模块，文件内容如下，看到导入`charts`包，而非`charts.basic_charts`
+
+```python
+from pyecharts import charts, commons, components, datasets, options, render, scaffold
+from pyecharts._version import __author__, __version__
+```
+
+2)`Bar(RectChart)`是什么意思
+
+答：RectChart是Bar的子类
+
+下面4行代码，很好理解，没有特殊性。
+
+pyecharts主要两个大版本,0.5基版本和1.0基版本，从1.0基版本开始全面支持`链式调用`，bee君也很喜爱这种链式调用模式，代码看起来更加紧凑：
+
+```python
+from pyecharts.charts import Bar
+
+bar = (
+    Bar()
+    .add_xaxis(["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"])
+    .add_yaxis("商家A", [5, 20, 36, 10, 75, 90])
+)
+bar.render()
+```
+
+实现`链式调用`也没有多难，保证返回类本身`self`即可，如果非要有其他返回对象，那么要提到类内以便被全局共享，
+
+add_xaxis函数返回`self`
+
+```python
+    def add_xaxis(self, xaxis_data: Sequence):
+        self.options["xAxis"][0].update(data=xaxis_data)
+        self._xaxis_data = xaxis_data
+        return self
+```
+
+add_yaxis函数同样返回`self`.
+
+#### 25 pyecharts原来可以这样快速入门(中)
+
+**一切皆options**
+
+
+
+pyecharts用起来很爽的另一个重要原因，`参数配置项`封装的非常nice，通过定义一些列基础的配置组件，比如`global_options.py`模块中定义的配置对象有以下`27`个
+
+```python
+    AngleAxisItem,
+    AngleAxisOpts,
+    AnimationOpts,
+    Axis3DOpts,
+    AxisLineOpts,
+    AxisOpts,
+    AxisPointerOpts,
+    AxisTickOpts,
+    BrushOpts,
+    CalendarOpts,
+    DataZoomOpts,
+    Grid3DOpts,
+    GridOpts,
+    InitOpts,
+    LegendOpts,
+    ParallelAxisOpts,
+    ParallelOpts,
+    PolarOpts,
+    RadarIndicatorItem,
+    RadiusAxisItem,
+    RadiusAxisOpts,
+    SingleAxisOpts,
+    TitleOpts,
+    ToolBoxFeatureOpts,
+    ToolboxOpts,
+    TooltipOpts,
+    VisualMapOpts,
+```
+
+#### 26 pyecharts原来可以这样快速入门(下)
+
+**第二个例子**
+
+了解上面的配置对象后，再看官档给出的第二个例子，与第一个例子相比，增加了一行代码：`set_global_opts`函数
+
+```python
+from pyecharts.charts import Bar
+from pyecharts import options as opts
+
+# V1 版本开始支持链式调用
+# 你所看到的格式其实是 `black` 格式化以后的效果
+# 可以执行 `pip install black` 下载使用
+bar = (
+    Bar()
+    .add_xaxis(["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"])
+    .add_yaxis("商家A", [5, 20, 36, 10, 75, 90])
+    .set_global_opts(title_opts=opts.TitleOpts(title="主标题", subtitle="副标题"))
+    
+bar.render()
+```
+
+`set_global_opts`函数在pyecharts中被高频使用，它定义在底层基础模块`Chart.py`中，它是前面说到的`RectChart`的子类，`Bar`类的孙子类。
+
+浏览下函数的参数：
+
+```python
+def set_global_opts(
+        self,
+        title_opts: types.Title = opts.TitleOpts(),
+        legend_opts: types.Legend = opts.LegendOpts(),
+        tooltip_opts: types.Tooltip = None,
+        toolbox_opts: types.Toolbox = None,
+        brush_opts: types.Brush = None,
+        xaxis_opts: types.Axis = None,
+        yaxis_opts: types.Axis = None,
+        visualmap_opts: types.VisualMap = None,
+        datazoom_opts: types.DataZoom = None,
+        graphic_opts: types.Graphic = None,
+        axispointer_opts: types.AxisPointer = None,
+    ):
+```
+
+以第二个参数`title_opts`为例，说明`pyecharts`中参数赋值的风格。
+
+首先，`title_opts`是`默认参数`，默认值为`opts.TitleOpts()`，这个对象在上一节中，我们提到过，是`global_options.py`模块中定义的`27`个配置对象种的一个。
+
+其次，pyecharts中为了增强代码可读性，参数的类型都显示的给出。此处它的类型为：`types.Title`. 这是什么类型？它的类型不是`TitleOpts`吗？不急，看看Title这个类型的定义：
+
+```python
+Title = Union[opts.TitleOpts, dict]
+```
+
+原来`Title`可能是`opts.TitleOpts`, 也可能是python原生的`dict`. 通过`Union`实现的就是这种`类型效果`。所以这就解释了官档中为什么说也可以使用字典配置参数的问题，如下官档：
+
+```python
+  # 或者直接使用字典参数
+    # .set_global_opts(title_opts={"text": "主标题", "subtext": "副标题"})
+)
+```
+
+最后，真正的关于图表的标题相关的属性都被封装到TitleOpts类中，比如`title`,`subtitle`属性，查看源码，TitleOpts对象还有更多属性：
+
+```python
+class TitleOpts(BasicOpts):
+    def __init__(
+        self,
+        title: Optional[str] = None,
+        title_link: Optional[str] = None,
+        title_target: Optional[str] = None,
+        subtitle: Optional[str] = None,
+        subtitle_link: Optional[str] = None,
+        subtitle_target: Optional[str] = None,
+        pos_left: Optional[str] = None,
+        pos_right: Optional[str] = None,
+        pos_top: Optional[str] = None,
+        pos_bottom: Optional[str] = None,
+        padding: Union[Sequence, Numeric] = 5,
+        item_gap: Numeric = 10,
+        title_textstyle_opts: Union[TextStyleOpts, dict, None] = None,
+        subtitle_textstyle_opts: Union[TextStyleOpts, dict, None] = None,
+    ):
+```
+
+OK. 到此跟随5分钟入门的官档，结合两个例子实现的背后源码，探讨了：
+
+1)与包结构组织相关的`__init__.py`；
+
+2)类的继承关系:Bar->RectChart->Chart；
+
+3)链式调用；
+
+4)重要的参数配置包`options`，以TitleOpts类为例，`set_global_opts`将它装载到Bar类中实现属性自定义。
+
+
+
 ### 六、 Python之坑
 
 #### 1 含单个元素的元组
@@ -5252,7 +5621,7 @@ def bet():
 - `python解释器`才是真正执行代码的工具，pycharm里可设置Python解释器，一般去python官网下载python3.7或python3.8版本；如果安装过`anaconda`，它里面必然也包括一个某版本的Python解释器；pycharm配置python解释器选择哪一个都可以。
 - anaconda是python常用包的合集，并提供给我们使用`conda`命令非常方便的安装各种Python包。
 - `conda安装`：我们安装过anaconda软件后，就能够使用conda命令下载anaconda源里(比如中科大镜像源)的包
-- `pip安装`：类似于conda安装的python安装包的方法
+- `pip安装`：类似于conda安装的python安装包的方法，更加全面
 
 **修改镜像源**
 
