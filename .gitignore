@@ -11,4 +11,5 @@ data/movietweetings.zip
 rst2
 build
 data/*.html
-data/wechat_pic/*.html
+data/wechat_pic
+data/wechat_pic_all
