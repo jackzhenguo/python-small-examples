@@ -1623,6 +1623,51 @@ Out[15]: [0, 9, 7, 5]
 
 频繁使用同一切片的操作可使用slice对象抽出来，复用的同时还能提高代码可读性。
 
+#### 87 **判断str1是否为str2的permutation**
+
+排序词(permutation)：两个字符串含有相同字符，但字符顺序不同。
+
+```python
+from collections import defaultdict
+
+
+def is_permutation(str1, str2):
+    if str1 is None or str2 is None:
+        return False
+    if len(str1) != len(str2):
+        return False
+    unq_s1 = defaultdict(int)
+    unq_s2 = defaultdict(int)
+    for c1 in unq_s1:
+        unq_s1[c1] += 1
+    for c2 in unq_s2:
+        unq_s2[c2] += 1
+
+    return unq_s1 == unq_s2
+```
+
+这个小例子，使用python内置的`defaultdict`，默认类型初始化为`int`，计数默次数都为0. 这个解法本质是 `hash map lookup`
+
+统计出的两个defaultdict：unq_s1，unq_s2，如果相等，就表明str1、 str2互为排序词。
+
+下面测试：
+```python
+r = is_permutation('nice', 'cine')
+print(r)  # True
+
+r = is_permutation('', '')
+print(r)  # True
+
+r = is_permutation('', None)
+print(r)  # False
+
+r = is_permutation('work', 'woo')
+print(r)  # False
+
+```
+以上就是使用defaultdict的小例子，希望对读者朋友理解此类型有帮助。
+
+
 
 ### 二、Python字符串和正则
 
