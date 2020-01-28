@@ -1623,7 +1623,7 @@ Out[15]: [0, 9, 7, 5]
 
 频繁使用同一切片的操作可使用slice对象抽出来，复用的同时还能提高代码可读性。
 
-#### 87 **判断str1是否为str2的permutation**
+#### 87 str1是否为str2的permutation
 
 排序词(permutation)：两个字符串含有相同字符，但字符顺序不同。
 
@@ -1667,7 +1667,34 @@ print(r)  # False
 ```
 以上就是使用defaultdict的小例子，希望对读者朋友理解此类型有帮助。
 
+#### 88 str1是否由str2旋转而来
 
+`stringbook`旋转后得到`bookstring`,写一段代码验证`str1`是否为`str2`旋转得到。
+
+**思路**
+
+转化为判断：`str1`是否为`str2+str2`的子串
+
+```python
+def is_rotation(s1: str, s2: str) -> bool:
+    if s1 is None or s2 is None:
+        return False
+    if len(s1) != len(s2):
+        return False
+
+    def is_substring(s1: str, s2: str) -> bool:
+        return s1 in s2
+    return is_substring(s1, s2 + s2)
+```
+
+**测试**
+```python
+r = is_rotation('stringbook', 'bookstring')
+print(r)  # True
+
+r = is_rotation('greatman', 'maneatgr')
+print(r)  # False
+```
 
 ### 二、Python字符串和正则
 
@@ -5717,7 +5744,98 @@ channels:
 
 Done~
 
-#### 2 自动群发邮件
+#### 2 pytorch慢到无法安装，怎么办？
+
+**1 安装慢到装不上**
+
+最近几天，后台几个小伙伴问我，无论pip还是conda安装`pytorch`都太慢了，都是安装官方文档去做的，就是超时装不上，无法开展下一步，卡脖子的感觉太不好受。
+
+这些小伙伴按照pytorch官档提示，选择好后，完整复制上面命令`conda install pytorch torchvision cudatoolkit=10.1 -c pytorch`到cmd中，系统是windows.
+
+![image-20200128182456390](./img/image-20200128182456390.png)
+
+接下来提示，conda需要安装的包，他们操作选择`y`，继续安装，但是在安装时，发现进度条几乎一动不动。
+
+反复尝试，就是这样，有些无奈，还感叹怎么深度学习的路一开始就TMD的这么难！
+
+
+**2 这样能正常安装**
+
+无论是安装`cpu`版还是`cuda`版，网上关于这些的参考资料太多了，无非就是cuda硬件和cuda开发包的版本要对应，python版本要对应等，这些bee君觉得都不是事。
+
+就像几位读者朋友遇到的问题，关键还是如何解决`慢到无法装`的问题。
+
+最有效方法是添加镜像源，常见的清华或中科大。
+
+先查看是否已经安装相关镜像源，windows系统在`cmd`窗口中执行命令：
+
+```python
+conda config --show
+```
+
+bee君这里显示：
+```python
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+```
+说明已经安装好清华的镜像源。如果没有安装，请参考下面命令安装源：
+```python
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+```
+依次安装上面所有的源。
+
+并设置搜索时显示通道地址，执行下面命令：
+
+```python
+conda config --set show_channel_urls yes
+```
+
+**3 最关键一步**
+
+有的读者问我，他们已经都安装好镜像源，但是为什么安装还是龟速？问他们，是用哪个命令，他们回复：`conda install pytorch torchvision cudatoolkit=10.1 -c pytorch`
+
+好吧，执行上面命令，因为命令最后是`-c pytorch`，所以默认还是从conda源下载，新安装的清华等源没有用上。
+
+正确命令：`conda install pytorch torchvision cudatoolkit=10.1`，也就是去掉`-c pytorch`
+
+并且在安装时，也能看到使用了清华源。并且安装速度直线提升，顺利done
+
+**4 测试是否安装成功**
+
+结合官档，执行下面代码，`torch.cuda.is_available()`返回`True`，说明安装cuda成功。
+
+```python
+In [1]: import torch
+
+In [2]: torch.cuda
+Out[2]: <module 'torch.cuda' from 'D:\\Programs\\anaconda\\lib\\site-packages\\torch\\cuda\\__init__.py'>
+
+In [3]: torch.cuda.is_available()
+Out[3]: True
+
+In [4]: from __future__ import print_function
+
+In [5]: x = torch.rand(5,3)
+
+In [6]: print(x)
+tensor([[0.0604, 0.1135, 0.2656],
+        [0.5353, 0.9246, 0.3004],
+        [0.4872, 0.9592, 0.2215],
+        [0.2598, 0.5031, 0.6093],
+        [0.2986, 0.1599, 0.5862]])
+```
+
+这篇文章主要讨论安装`pytorch`慢到不能装的问题及方案，希望对读者朋友们有帮助。
+
+
+
+#### 3 自动群发邮件
 
 Python自动群发邮件
 
@@ -5769,7 +5887,7 @@ sender_mail()
 
 
 
-#### 3 二分搜索
+#### 4 二分搜索
 
 二分搜索是程序员必备的算法，无论什么场合，都要非常熟练地写出来。
 
@@ -5830,7 +5948,7 @@ found 100 at 6
 Out[11]: 6
 ```
 
-#### 4 爬取天气数据并解析温度值
+#### 5 爬取天气数据并解析温度值
 
 爬取天气数据并解析温度值
 
@@ -5943,7 +6061,7 @@ Name: temperature, dtype: object
 
 
 
-#### 5  制作小而美的计算器
+#### 6 制作小而美的计算器
 
 1)  ui设计
 
