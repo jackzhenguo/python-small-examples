@@ -5108,6 +5108,68 @@ array = [5, 7, 9]
 g = (x for x in [1,3,5] if [5,7,9].count(x) > 0)
 ```
 
+
+
+#### 13 创建空集合错误
+
+这是Python的一个集合：`{1,3,5}`，它里面没有重复元素，在去重等场景有重要应用。下面这样创建空集合是错误的：
+
+```python
+empty = {} #NO!
+```
+
+cpython会解释它为字典
+
+使用内置函数`set()`创建空集合：
+
+```python
+empty = set() #YES!
+```
+
+
+
+#### 14 pyecharts传入Numpy数据绘图失败
+
+echarts使用广泛，echarts+python结合后的包：pyecharts，同样可很好用，但是传入Numpy的数据，像下面这样绘图会失败：
+
+```python
+from pyecharts.charts import Bar
+import pyecharts.options as opts
+import numpy as np
+c = (
+    Bar()
+    .add_xaxis([1, 2, 3, 4, 5])
+    # 传入Numpy数据绘图失败！
+    .add_yaxis("商家A", np.array([0.1, 0.2, 0.3, 0.4, 0.5]))
+)
+
+c.render()
+```
+
+![image-20200129164119080](./img/image-20200129164119080.png)
+
+由此可见pyecharts对Numpy数据绘图不支持，传入原生Python的list:
+
+```python
+from pyecharts.charts import Bar
+import pyecharts.options as opts
+import numpy as np
+c = (
+    Bar()
+    .add_xaxis([1, 2, 3, 4, 5])
+    # 传入Python原生list
+    .add_yaxis("商家A", np.array([0.1, 0.2, 0.3, 0.4, 0.5]).tolist())
+)
+
+c.render()
+```
+
+![image-20200129164339971](./img/image-20200129164339971.png)
+
+
+
+
+
 ### 七、 Python第三方包
 
 #### 1 优化代码异常输出包
