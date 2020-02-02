@@ -1962,7 +1962,7 @@ print(m) # ['graph', 'math']
     [a-z]  匹配小写英文字母
     [A-Z]  匹配大写英文字母
 
-#### 14 密码安全检查
+#### 16 密码安全检查
 
 密码安全要求：1)要求密码为6到20位; 2)密码只包含英文字母和数字
 
@@ -1980,7 +1980,7 @@ pat.fullmatch('n0passw0Rd')
 Out[4]: <re.Match object; span=(0, 10), match='n0passw0Rd'>
 ```
 
-#### 15 爬取百度首页标题
+#### 17 爬取百度首页标题
 
 ```python
 import re
@@ -1998,7 +1998,7 @@ print(result) <re.Match object; span=(1358, 1382), match='<title>百度一下，
 result.group() # 百度一下，你就知道
 ```
 
-#### 16 批量转化为驼峰格式(Camel)
+#### 18 批量转化为驼峰格式(Camel)
 
 数据库字段名批量转化为驼峰格式
 
@@ -7042,3 +7042,38 @@ grid = (
 )
 grid.render_notebook()
 ```
+
+
+
+#### 14 生成哑变量
+
+分类变量的数值化，是指将枚举类变量转化为indicator变量或称dummy变量。
+
+那么什么是`indicator变量`，看看如下例子，A变量解析为：`[1,0,0]`, B解析为：`[0,1,0]`, C解析为：`[0,0,1]`
+```python
+In [8]: s = pd.Series(list('ABCA'))
+In [9]: pd.get_dummies(s)
+Out[9]:
+   A  B  C
+0  1  0  0
+1  0  1  0
+2  0  0  1
+3  1  0  0
+```
+
+如果输入的字符有4个唯一值，看到字符a被解析为[1,0,0,0]，向量长度为4.
+
+```python
+In [5]: s = pd.Series(list('abaccd'))
+In [6]: pd.get_dummies(s)
+Out[6]:
+   a  b  c  d
+0  1  0  0  0
+1  0  1  0  0
+2  1  0  0  0
+3  0  0  1  0
+4  0  0  1  0
+5  0  0  0  1
+```
+
+也就是说dummy向量的长度等于输入字符串中，唯一字符的个数。
