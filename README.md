@@ -1,14 +1,10 @@
 告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有`200`个例子：
 
-感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python、机器学习和深度学习实战|
+感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python实战|十、Pandas数据分析案例实战
 
-> 后续章节：
->
-> 1) 丰满1~9章节，不断扩充小例子
->
-> 2) PyQt制作GUI
-> 3) Flask前端开发
-> 4) Python数据分析
+> 目前，正在编写第十一章：一步一步掌握Flask web 开发
+
+
 
 已发[《我的Python之路V1.3.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.3)最新版本`V1.3包括`9个章节：`Python基础`，`Python字符串和正则`，`Python文件和日期`，`Python多线程`, `Python三大利器`，`Python画图` ,`Python之坑`,`基础算法小例子`，`Python实战`，目前超过`200个`小例子。
 
@@ -7077,3 +7073,58 @@ Out[6]:
 ```
 
 也就是说dummy向量的长度等于输入字符串中，唯一字符的个数。
+
+
+
+### 十一、一步一步掌握Flask web开发
+
+
+
+#### 1 Flask版 hello world
+
+Flask是Python轻量级web框架，容易上手，被广大Python开发者所喜爱。
+
+今天我们先从hello world开始，一步一步掌握Flask web开发。例子君是Flask框架的小白，接下来与读者朋友们，一起学习这个对我而言的新框架，大家多多指导。
+
+首先`pip install Flask`,安装Flask，然后import Flask，同时创建一个 `app`
+```python
+from flask import Flask
+
+App = Flask(__name__)
+```
+
+写一个index页的入口函数，返回hello world.
+
+通过装饰器：App.route('/')创建index页的路由或地址，一个`/`表示index页，也就是主页。
+
+```python
+@App.route('/')
+def index():
+    return "hello world"
+```
+
+调用 `index`函数:
+```python
+if __name__ == "__main__":
+    App.run(debug=True)
+```
+
+然后启动，会在console下看到如下启动信息，表明`服务启动成功`。
+```python
+* Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 663-788-611
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+ 接下来，打开一个网页，相当于启动客户端，并在Url栏中输入：`http://127.0.0.1:5000/`，看到页面上答应出`hello world`，证明服务访问成功。
+
+ 同时在服务端后台看到如下信息，表示处理一次来自客户端的`get`请求。
+ ```python
+ 27.0.0.1 - - [03/Feb/2020 21:26:50] "GET / HTTP/1.1" 200 -
+ ```
+
+ 以上就是flask的hello world 版。
+
+ 
