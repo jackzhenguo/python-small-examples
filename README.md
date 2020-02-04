@@ -1619,78 +1619,6 @@ Out[15]: [0, 9, 7, 5]
 
 频繁使用同一切片的操作可使用slice对象抽出来，复用的同时还能提高代码可读性。
 
-#### 87 str1是否为str2的permutation
-
-排序词(permutation)：两个字符串含有相同字符，但字符顺序不同。
-
-```python
-from collections import defaultdict
-
-
-def is_permutation(str1, str2):
-    if str1 is None or str2 is None:
-        return False
-    if len(str1) != len(str2):
-        return False
-    unq_s1 = defaultdict(int)
-    unq_s2 = defaultdict(int)
-    for c1 in unq_s1:
-        unq_s1[c1] += 1
-    for c2 in unq_s2:
-        unq_s2[c2] += 1
-
-    return unq_s1 == unq_s2
-```
-
-这个小例子，使用python内置的`defaultdict`，默认类型初始化为`int`，计数默次数都为0. 这个解法本质是 `hash map lookup`
-
-统计出的两个defaultdict：unq_s1，unq_s2，如果相等，就表明str1、 str2互为排序词。
-
-下面测试：
-```python
-r = is_permutation('nice', 'cine')
-print(r)  # True
-
-r = is_permutation('', '')
-print(r)  # True
-
-r = is_permutation('', None)
-print(r)  # False
-
-r = is_permutation('work', 'woo')
-print(r)  # False
-
-```
-以上就是使用defaultdict的小例子，希望对读者朋友理解此类型有帮助。
-
-#### 88 str1是否由str2旋转而来
-
-`stringbook`旋转后得到`bookstring`,写一段代码验证`str1`是否为`str2`旋转得到。
-
-**思路**
-
-转化为判断：`str1`是否为`str2+str2`的子串
-
-```python
-def is_rotation(s1: str, s2: str) -> bool:
-    if s1 is None or s2 is None:
-        return False
-    if len(s1) != len(s2):
-        return False
-
-    def is_substring(s1: str, s2: str) -> bool:
-        return s1 in s2
-    return is_substring(s1, s2 + s2)
-```
-
-**测试**
-```python
-r = is_rotation('stringbook', 'bookstring')
-print(r)  # True
-
-r = is_rotation('greatman', 'maneatgr')
-print(r)  # False
-```
 
 ### 二、Python字符串和正则
 
@@ -1766,7 +1694,7 @@ str_byte_len('字符')  # 6(个字节)
 import re
 ```
 
-#### 1 查找第一个匹配串
+#### 5 查找第一个匹配串
 
 ```python
 s = 'i love python very much'
@@ -1775,7 +1703,7 @@ r = re.search(pat,s)
 print(r.span()) #(7,13)
 ```
 
-#### 2 查找所有1的索引
+#### 6 查找所有1的索引
 
 ```python
 s = '山东省潍坊市青州第1中学高三1班'
@@ -1788,7 +1716,7 @@ for i in r:
 # <re.Match object; span=(14, 15), match='1'>
 ```
 
-#### 3 \d 匹配数字[0-9]
+#### 7 \d 匹配数字[0-9]
 findall找出全部位置的所有匹配
 ```python
 s = '一共20行代码运行时间13.59s'
@@ -1798,7 +1726,7 @@ print(r)
 # ['20', '13', '59']
 ```
 
-#### 4 匹配浮点数和整数
+#### 8 匹配浮点数和整数
 
 ?表示前一个字符匹配0或1次
 ```python
@@ -1811,7 +1739,7 @@ print(r)
 # 更好的写法：
 pat = r'\d+\.\d+|\d+' # A|B，匹配A失败才匹配B
 ```
-#### 5 ^匹配字符串的开头
+#### 9 ^匹配字符串的开头
 
 ```python
 s = 'This module provides regular expression matching operations similar to those found in Perl'
@@ -1824,7 +1752,7 @@ re.findall('^[emrt].*',s2)# 匹配以e,m,r,t开始的字符串，后面是多个
 Out[11]: ['email for me is guozhennianhua@163.com']
 
 ```
-#### 6 re.I 忽略大小写
+#### 10 re.I 忽略大小写
 
 ```python
 s = 'That'
@@ -1833,7 +1761,7 @@ r = re.findall(pat,s,re.I)
 In [22]: r
 Out[22]: ['T', 't']
 ```
-#### 7 理解compile的作用
+#### 11 理解compile的作用
 如果要做很多次匹配，可以先编译匹配串：
 ```python
 import re
@@ -1852,7 +1780,7 @@ if '@' in again_pattern:
 
 ```
 
-#### 8 使用()捕获单词，不想带空格
+#### 12 使用()捕获单词，不想带空格
 使用`()`捕获
 ```python
 s = 'This module provides regular expression matching operations similar to those found in Perl'
@@ -1868,7 +1796,7 @@ r = re.findall(pat,s)
 print(r) #['This', 'module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
 ```
 
-#### 9 split分割单词
+#### 13 split分割单词
 使用以上方法分割单词不是简洁的，仅仅是为了演示。分割单词最简单还是使用`split`函数。
 ```python
 s = 'This module provides regular expression matching operations similar to those found in Perl'
@@ -1886,7 +1814,7 @@ words = re.split('[,\s;|]+',s)  #这样分隔出来，最后会有一个空字�
 words = [i for i in words if len(i)>0]
 ```
 
-#### 10 match从字符串开始位置匹配
+#### 14 match从字符串开始位置匹配
 注意`match`,`search`等的不同：
 1) match函数
 ```python
@@ -1907,7 +1835,7 @@ In [91]: mystr = 'This'
 Out[91]: <re.Match object; span=(1, 3), match='hi'>
 ```
 
-#### 11 替换匹配的子串
+#### 15 替换匹配的子串
 `sub`函数实现对匹配子串的替换
 ```python
 content="hello 12345, hello 456321"    
@@ -1916,7 +1844,7 @@ m=pat.sub("666",content)
 print(m) # hello 666, hello 666
 ```
 
-#### 12 贪心捕获
+#### 16 贪心捕获
 (.*)表示捕获任意多个字符，尽可能多的匹配字符
 ```python
 content='<h>ddedadsad</h><div>graph</div>bb<div>math</div>cc'
@@ -1924,7 +1852,7 @@ pat=re.compile(r"<div>(.*)</div>")  #贪婪模式
 m=pat.findall(content)
 print(m) #匹配结果为： ['graph</div>bb<div>math']
 ```
-#### 13 非贪心捕获
+#### 17 非贪心捕获
 仅添加一个问号(`?`)，得到结果完全不同，这是非贪心匹配，通过这个例子体会贪心和非贪心的匹配的不同。
 ```python
 content='<h>ddedadsad</h><div>graph</div>bb<div>math</div>cc'
@@ -1934,7 +1862,7 @@ print(m) # ['graph', 'math']
 ```
 非贪心捕获，见好就收。
 
-#### 14 常用元字符总结
+#### 18 常用元字符总结
 
     . 匹配任意字符  
     ^ 匹配字符串开始位置 
@@ -1947,7 +1875,7 @@ print(m) # ['graph', 'math']
     {n,m} 前面的原子出现次数介于 n-m 之间
     ( ) 分组,需要输出的部分
 
-#### 15 常用通用字符总结
+#### 19 常用通用字符总结
 
     \s  匹配空白字符 
     \w  匹配任意字母/数字/下划线 
@@ -1958,7 +1886,7 @@ print(m) # ['graph', 'math']
     [a-z]  匹配小写英文字母
     [A-Z]  匹配大写英文字母
 
-#### 16 密码安全检查
+#### 20 密码安全检查
 
 密码安全要求：1)要求密码为6到20位; 2)密码只包含英文字母和数字
 
@@ -1976,7 +1904,7 @@ pat.fullmatch('n0passw0Rd')
 Out[4]: <re.Match object; span=(0, 10), match='n0passw0Rd'>
 ```
 
-#### 17 爬取百度首页标题
+#### 21 爬取百度首页标题
 
 ```python
 import re
@@ -1994,7 +1922,7 @@ print(result) <re.Match object; span=(1358, 1382), match='<title>百度一下，
 result.group() # 百度一下，你就知道
 ```
 
-#### 18 批量转化为驼峰格式(Camel)
+#### 22 批量转化为驼峰格式(Camel)
 
 数据库字段名批量转化为驼峰格式
 
@@ -2054,6 +1982,87 @@ print(s)
 # 结果
 ['studentId', 'studentName', 'studentAdd']
 ```
+
+
+
+#### 23 str1是否为str2的permutation
+
+排序词(permutation)：两个字符串含有相同字符，但字符顺序不同。
+
+```python
+from collections import defaultdict
+
+
+def is_permutation(str1, str2):
+    if str1 is None or str2 is None:
+        return False
+    if len(str1) != len(str2):
+        return False
+    unq_s1 = defaultdict(int)
+    unq_s2 = defaultdict(int)
+    for c1 in unq_s1:
+        unq_s1[c1] += 1
+    for c2 in unq_s2:
+        unq_s2[c2] += 1
+
+    return unq_s1 == unq_s2
+```
+
+这个小例子，使用python内置的`defaultdict`，默认类型初始化为`int`，计数默次数都为0. 这个解法本质是 `hash map lookup`
+
+统计出的两个defaultdict：unq_s1，unq_s2，如果相等，就表明str1、 str2互为排序词。
+
+下面测试：
+
+```python
+r = is_permutation('nice', 'cine')
+print(r)  # True
+
+r = is_permutation('', '')
+print(r)  # True
+
+r = is_permutation('', None)
+print(r)  # False
+
+r = is_permutation('work', 'woo')
+print(r)  # False
+
+```
+
+以上就是使用defaultdict的小例子，希望对读者朋友理解此类型有帮助。
+
+#### 24 str1是否由str2旋转而来
+
+`stringbook`旋转后得到`bookstring`,写一段代码验证`str1`是否为`str2`旋转得到。
+
+**思路**
+
+转化为判断：`str1`是否为`str2+str2`的子串
+
+```python
+def is_rotation(s1: str, s2: str) -> bool:
+    if s1 is None or s2 is None:
+        return False
+    if len(s1) != len(s2):
+        return False
+
+    def is_substring(s1: str, s2: str) -> bool:
+        return s1 in s2
+    return is_substring(s1, s2 + s2)
+```
+
+**测试**
+
+```python
+r = is_rotation('stringbook', 'bookstring')
+print(r)  # True
+
+r = is_rotation('greatman', 'maneatgr')
+print(r)  # False
+```
+
+### 二
+
 
 
 ### 三、Python文件、日期和多线程
