@@ -283,8 +283,6 @@ my name is xiaoming
 
 ```
 
-
-
 #### 12 十转ASCII
 
 查看十进制整数对应的`ASCII字符`
@@ -2061,9 +2059,7 @@ r = is_rotation('greatman', 'maneatgr')
 print(r)  # False
 ```
 
-### 二
-
-
+### 
 
 ### 三、Python文件、日期和多线程
 
@@ -5017,7 +5013,7 @@ In [5]: d = {}
 In [6]: d
 Out[6]: {1: 'python'}
 
-### key=1,value=java的键值对神器消失了
+### key=1,value=java的键值对神奇消失了
 In [7]: d[1]
 Out[7]: 'python'
 In [8]: d[1.0]
@@ -7134,6 +7130,107 @@ if __name__ == "__main__":
  27.0.0.1 - - [03/Feb/2020 21:26:50] "GET / HTTP/1.1" 200 -
  ```
 
- 以上就是flask的hello world 版。
+ 以上就是flask的hello world 版
 
- 
+#### 2 Flask之数据入库操作
+
+数据持久化就是将数据写入到数据库存储的过程。
+
+本例子使用`sqlite3`数据库。
+
+1)导入`sqlite3`，未安装前使用命令`pip install sqlite3`
+
+创建一个`py`文件：`sqlite3_started.py`，并写下第一行代码：
+```python
+import sqlite3
+```
+2)手动创建一个数据库实例`db`, 命名`test.db`
+
+3)创建与数据库实例`test.db`的连接:
+```python
+conn = sqlite3.connect("test.db")
+```
+
+4)拿到连接`conn`的cursor
+```python
+c = conn.cursor()
+```
+
+5)创建第一张表`books`
+
+共有四个字段：`id`,`sort`,`name`,`price`，类型分别为：`int`,`int`,`text`,`real`. 其中`id`为`primary key`. 主键的取值必须是唯一的(`unique`)，否则会报错。
+
+
+```python
+c.execute('''CREATE TABLE books
+      (id int primary key,
+       sort int,
+       name text,
+       price real)''')
+```
+第一次执行上面语句，表`books`创建完成。当再次执行时，就会报`重复建表`的错误。需要优化脚本，检查表是否存在`IF NOT EXISTS books`，不存在再创建：
+```python
+c.execute('''CREATE TABLE IF NOT EXISTS books
+      (id int primary key,
+       sort int,
+       name text,
+       price real)''')
+```
+
+6)插入一行记录
+
+共为4个字段赋值
+
+```python
+c.execute('''INSERT INTO books VALUES
+       (1, 
+       1, 
+       'computer science',
+       39.0)''')
+```
+
+7)一次插入多行记录
+
+先创建一个list:`books`，使用`executemany`一次插入多行。
+```python
+books = [(2, 2, 'Cook book', 68),
+         (3, 2, 'Python intro', 89),
+         (4, 3, 'machine learning', 59),
+         ]
+
+
+c.executemany('INSERT INTO books VALUES (?, ?, ?, ?)', books)
+```
+
+8)提交
+
+提交后才会真正生效，写入到数据库
+
+```python
+conn.commit()
+```
+
+9)关闭期初建立的连接conn
+
+务必记住手动关闭，否则会出现内存泄漏
+```python
+conn.close()
+print('Done')
+```
+
+10)查看结果
+例子君使用`vs code`，在扩展库中选择：`SQLite`安装。
+
+![image-20200208211721377](./img/image-20200208211721377.png)
+
+新建一个`sq`文件：`a.sql`，内容如下：
+
+```sql
+SELECT * from books 
+```
+右键`run query`，得到表`books`插入的4行记录可视化图：
+
+![image-20200208211806853](./img/image-20200208211806853.png)
+
+以上十步就是sqlite3写入数据库的主要步骤，作为Flask系列的第二篇，为后面的前端讲解打下基础。
+
