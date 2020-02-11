@@ -7234,3 +7234,217 @@ SELECT * from books
 
 以上十步就是sqlite3写入数据库的主要步骤，作为Flask系列的第二篇，为后面的前端讲解打下基础。
 
+#### 3 Flask各层调用关系
+
+这篇介绍Flask和B/S模式，即浏览器/服务器模式，是接下来快速理解Flask代码的关键理论篇：**理解Views、models和渲染模板层的调用关系**。
+
+1) 发出请求
+
+当我们在浏览器地址栏中输入某个地址，按回车后，完成第一步。
+
+2) 视图层 views接收1)步发出的请求，Flask中使用解释器的方式处理这个求情，实例代码如下，它通常涉及到调用models层和模板文件层
+
+```python
+@main_blue.route('/', methods=['GET', 'POST'])
+def index():
+    form = TestForm()
+    print('test')
+```
+
+3) models层会负责创建数据模型，执行CRUD操作
+
+4) 模板文件层处理html模板
+
+5) 组合后返回html
+
+6) models层和html模板组合后返回给views层
+
+7）最后views层响应并渲染到浏览器页面，我们就能看到请求的页面。
+
+完整过程图如下所示：
+
+![image-20200211152007983](./img/image-20200211152007983.png)
+
+读者朋友们，如果你和例子君一样都是初学Flask编程，需要好好理解上面的过程。理解这些对于接下来的编程会有一定的理论指导，方向性指导价值。
+
+
+
+#### 4 Flask之表单操作
+
+**1 开篇**
+
+先说一些关于Flask的基本知识，现在不熟悉它们，并不会影响对本篇的理解和掌握。
+
+Flask是一个基于Python开发，依赖`jinja2`模板和`Werkzeug` WSGI服务的一个微型框架。
+
+`Werkzeug`用来处理Socket服务，其在Flask中被用于接受和处理http请求；`Jinja2`被用来对模板进行处理，将`模板`和`数据`进行渲染，返回给用户的浏览器。
+
+这到这些，对于理解后面调试出现的两个问题会有帮助，不过不熟悉仍然没有关系。
+
+**2 基本表单**
+
+首先导入所需模块：
+
+```python
+from wtforms import StringField,PasswordField, BooleanField, SubmitField
+from flask_wtf import FlaskForm
+```
+
+`wtforms`和`flask_wtf`是flask创建web表单类常用的包。
+
+具体创建表单类的方法如下，登入表单`LoginForm`继承自`FlaskForm`.
+
+分别创建`StringFiled`实例用户名输入框`user_name`，密码框`password`，勾选框`remember_me`和提交按钮`submit`.
+
+```python
+class LoginForm(FlaskForm):
+    user_name = StringField()
+    password = PasswordField()
+    remember_me = BooleanField(label='记住我')
+    submit = SubmitField('Submit')
+```
+
+至此表单类对象创建完毕
+
+**3 html模板**
+
+使用`Bootstrap`. 它是由Twitter推出的一个用于前端开发的开源工具包，给予HTML、CSS、JavaScriot，提供简洁、直观、强悍的前端开发框架，是目前最受环境的前端框架。
+
+`flak_bootstrap`提供使用的接口。方法如下，首先`pip install bootstrap`，然后创建一个实例`bootstrap`.
+
+```python
+from flask_bootstrap import Bootstrap
+bootstrap = Bootstrap()
+```
+
+然后创建`index.html`文件，第一行导入创建的Bootstrap实例`bootstrap`：
+
+```python
+{% import  "bootstrap/wtf.html" as wtf %}
+```
+
+再创建第2节中创建的`LoginForm`实例`form`，调用渲染模板方法，参数`form`赋值为实例`form`:
+
+```python
+from flask import render_template
+form = LoginForm()
+render_template('index.html', form=form)
+```
+
+再在index.html输入以下代码，`{{ wtf.quick_form(form) }}`将实例`form`渲染到html页面中。
+
+```python
+<div class="container">
+    <h3>系统登入</h3>
+    <div class="col-md-4">
+        {{ wtf.quick_form(form) }}
+    </div>
+</div>
+```
+
+**4 index页面路由**
+
+`flask_wtf`创建的form，封装方法`validate_on_submit`，具有表单验证功能。
+
+```python
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = LoginForm()
+    if form.validate_on_submit():
+        print(form.data['user_name'])
+        return redirect(url_for('print_success'))
+
+    return render_template('index.html', form=form)
+```
+
+验证通过跳转到`print_success`方法终端点：
+
+```python
+@app.route('/success')
+def print_success():
+    return"表单验证通过"
+```
+
+**5 完整代码**
+
+共有两个文件：一个py，一个html:
+
+```python
+from flask import Flask
+from flask import render_template, redirect, url_for
+from wtforms import StringField,PasswordField, BooleanField, SubmitField
+from flask_wtf import FlaskForm
+from flask_bootstrap import Bootstrap
+
+bootstrap = Bootstrap()
+
+app = Flask(__name__)
+app.config['SECRET_KEY']  = "hard_to_guess_secret_key$$#@"
+
+bootstrap.init_app(app)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = LoginForm()
+    if form.validate_on_submit():
+        print(form.data['user_name'])
+        return redirect(url_for('print_success'))
+
+    return render_template('index.html', form=form)
+
+@app.route('/success')
+def print_success():
+    return"表单验证通过"
+
+
+class LoginForm(FlaskForm):
+    user_name = StringField()
+    password = PasswordField()
+    remember_me = BooleanField(label='记住我')
+    submit = SubmitField('Submit')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+html代码：
+
+```python
+{% import"bootstrap/wtf.html"as wtf %}
+<div class="container">
+    <h3>系统登入</h3>
+    <div class="col-md-4">
+        {{ wtf.quick_form(form) }}
+    </div>
+</div>
+```
+
+启动后，控制台显示如下：
+
+![img](https://mmbiz.qpic.cn/sz_mmbiz_png/tdJziaFLKKeSInrqeugLib297tOVNLAyn3a02iake1UdG4liaCOLI5rTibcEGB7jhaMop0sickBQo146VNRibibiauFp6cA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+然后网页中输入127.0.0.1:5000,网页显示：
+
+![image-20200211151446812](./img/image-20200211151446812.png)
+
+**6 两个错误**
+
+例子君也是Flask新手，在调试过程中，遇到下面两个错误。
+
+**1) CSRF需要配置密码**
+
+![image-20200211151505598](./img/image-20200211151505598.png)
+
+遇到这个错误，解决的方法就是配置一个密码。具体对应到第5节完整代码部分中的此行：
+
+```
+app.config['SECRET_KEY']  = "hard_to_guess_secret_key$$#@"
+```
+
+**2) index.html未找到异常**
+
+![image-20200211151533241](./img/image-20200211151533241.png)
+
+
+
+出现这个错误的原因不是因为index.html的物理路径有问题，而是我们需要创建一个文件夹并命名为：`templates`，然后把index.html移动到此文件夹下。
