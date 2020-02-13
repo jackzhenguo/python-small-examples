@@ -7448,3 +7448,351 @@ app.config['SECRET_KEY']  = "hard_to_guess_secret_key$$#@"
 
 
 出现这个错误的原因不是因为index.html的物理路径有问题，而是我们需要创建一个文件夹并命名为：`templates`，然后把index.html移动到此文件夹下。
+
+#### 5 Flask之Pyecharts绘图
+
+Flask系列已推送4篇，今天结合Flask和Pyecharts，做出一些好玩的东西。
+
+首先，参考官方文档导入所需包：
+
+```python
+from flask import Flask
+from jinja2 import Markup, Environment, FileSystemLoader
+from pyecharts.globals import CurrentConfig
+```
+
+配置环境，下面这行代码，告诉`jinja2`我的html模板位于哪个文件目录：
+
+```
+# 关于 CurrentConfig，可参考 [基本使用-全局变量]
+CurrentConfig.GLOBAL_ENV = Environment(loader=FileSystemLoader("./templates"))
+```
+
+如果此处配置的有问题，会弹出下面的异常：
+
+```
+jinja2.exceptions.TemplateNotFound: index.html
+```
+
+下面两行代码是Flask的常规操作：
+
+```python
+app = Flask(__name__, static_folder="templates")
+app.config['SECRET_KEY']  = "hard_to_guess_secret_key$$#@"
+```
+
+下面该pyecharts登台，还是一顿导包：
+```python
+from pyecharts.charts import Bar
+from pyecharts.faker import Faker
+import pyecharts.options as opts
+from pyecharts.commons.utils import JsCode
+from pyecharts.globals import ThemeType
+```
+
+创建一个基本的柱状图：
+```python
+def bar():
+    c = (
+        Bar(init_opts=opts.InitOpts(
+            animation_opts=opts.AnimationOpts(
+                animation_delay=500, animation_easing="cubicOut"
+            ),
+            theme=ThemeType.MACARONS))
+        .add_xaxis(["草莓", "芒果", "葡萄", "雪梨", "西瓜", "柠檬", "车厘子"])
+        .add_yaxis("销售量", Faker.values(), category_gap="50%", is_selected=True)
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本参数使用"), toolbox_opts=opts.ToolboxOpts(), datazoom_opts=opts.DataZoomOpts(),)
+
+    )
+
+    return c
+```
+
+下面是最重要的部分。pyecharts柱状图和flask的网页组装阶段。
+
+```python
+@app.route("/")
+def index():
+    c = bar()
+    return c.render_embed(template_name='index.html')
+```
+组装的代码相当简单，普通的pyecharts渲染使用`c.render(filename.html)`, 而嵌入到指定网页`index.html`中，使用API:`render_embed`.
+
+具体index.html上如何布局显示，就要写点html代码：
+```html
+{% import 'macro' as macro %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ chart.page_title }}</title>
+    {{ macro.render_chart_dependencies(chart) }}
+</head>
+<body>
+    {{ macro.render_chart_content(chart) }}
+</body>
+</html>
+```
+为了让html代码尽可能的复用，Pyecharts开发团队太有心，专门抽象出一个宏文件`macro`. 这部分代码大家就不用修改了，直接copy即可。
+
+为了保证本篇代码可复现，paster这个文件到这里：
+```html
+{%- macro render_chart_content(c) -%}
+    <div id="{{ c.chart_id }}" class="chart-container" style="width:{{ c.width }}; height:{{ c.height }};"></div>
+    <script>
+        var chart_{{ c.chart_id }} = echarts.init(
+            document.getElementById('{{ c.chart_id }}'), '{{ c.theme }}', {renderer: '{{ c.renderer }}'});
+        {% for js in c.js_functions.items %}
+            {{ js }}
+        {% endfor %}
+        var option_{{ c.chart_id }} = {{ c.json_contents }};
+        chart_{{ c.chart_id }}.setOption(option_{{ c.chart_id }});
+        {% if c._is_geo_chart %}
+            var bmap = chart_{{ c.chart_id }}.getModel().getComponent('bmap').getBMap();
+            {% if c.bmap_js_functions %}
+                {% for fn in c.bmap_js_functions.items %}
+                    {{ fn }}
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </script>
+{%- endmacro %}
+
+{%- macro render_notebook_charts(charts, libraries) -%}
+    <script>
+        require([{{ libraries | join(', ') }}], function(echarts) {
+        {% for c in charts %}
+            {% if c._component_type not in ("table", "image") %}
+                var chart_{{ c.chart_id }} = echarts.init(
+                    document.getElementById('{{ c.chart_id }}'), '{{ c.theme }}', {renderer: '{{ c.renderer }}'});
+                {% for js in c.js_functions.items %}
+                    {{ js }}
+                {% endfor %}
+                var option_{{ c.chart_id }} = {{ c.json_contents }};
+                chart_{{ c.chart_id }}.setOption(option_{{ c.chart_id }});
+                {% if c._is_geo_chart %}
+                    var bmap = chart_{{ c.chart_id }}.getModel().getComponent('bmap').getBMap();
+                    bmap.addControl(new BMap.MapTypeControl());
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        });
+    </script>
+{%- endmacro %}
+
+{%- macro render_chart_dependencies(c) -%}
+    {% for dep in c.dependencies %}
+        <script type="text/javascript" src="{{ dep }}"></script>
+    {% endfor %}
+{%- endmacro %}
+
+{%- macro render_chart_css(c) -%}
+    {% for dep in c.css_libs %}
+        <link rel="stylesheet"  href="{{ dep }}">
+    {% endfor %}
+{%- endmacro %}
+
+{%- macro display_tablinks(chart) -%}
+    <div class="tab">
+        {% for c in chart %}
+            <button class="tablinks" onclick="showChart(event, '{{ c.chart_id }}')">{{ c.tab_name }}</button>
+        {% endfor %}
+    </div>
+{%- endmacro %}
+
+{%- macro switch_tabs() -%}
+    <script>
+        (function() {
+            containers = document.getElementsByClassName("chart-container");
+            if(containers.length > 0) {
+                containers[0].style.display = "block";
+            }
+        })()
+
+        function showChart(evt, chartID) {
+            let containers = document.getElementsByClassName("chart-container");
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.display = "none";
+            }
+
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = "tablinks";
+            }
+
+            document.getElementById(chartID).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+{%- endmacro %}
+
+{%- macro generate_tab_css() %}
+    <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .chart-container {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+    </style>
+{%- endmacro %}
+
+{%- macro gen_components_content(chart) %}
+    {% if chart._component_type == "table" %}
+        <style>
+            .fl-table {
+                margin: 20px;
+                border-radius: 5px;
+                font-size: 12px;
+                border: none;
+                border-collapse: collapse;
+                max-width: 100%;
+                white-space: nowrap;
+                word-break: keep-all;
+            }
+
+            .fl-table th {
+                text-align: left;
+                font-size: 20px;
+            }
+
+            .fl-table tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+
+            .fl-table tr:hover td {
+                background: #00d1b2;
+                color: #F8F8F8;
+            }
+
+            .fl-table td, .fl-table th {
+                border-style: none;
+                border-top: 1px solid #dbdbdb;
+                border-left: 1px solid #dbdbdb;
+                border-bottom: 3px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+                padding: .5em .55em;
+                font-size: 15px;
+            }
+
+            .fl-table td {
+                border-style: none;
+                font-size: 15px;
+                vertical-align: center;
+                border-bottom: 1px solid #dbdbdb;
+                border-left: 1px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+                height: 30px;
+            }
+
+            .fl-table tr:nth-child(even) {
+                background: #F8F8F8;
+            }
+        </style>
+        <div id="{{ chart.chart_id }}" class="chart-container" style="">
+            <p class="title" {{ chart.title_opts.title_style }}> {{ chart.title_opts.title }}</p>
+            <p class="subtitle" {{ chart.title_opts.subtitle_style }}> {{ chart.title_opts.subtitle }}</p>
+            {{ chart.html_content }}
+        </div>
+    {% elif chart._component_type == "image" %}
+        <div id="{{ chart.chart_id }}" class="chart-container" style="">
+            <p class="title" {{ chart.title_opts.title_style }}> {{ chart.title_opts.title }}</p>
+            <p class="subtitle" {{ chart.title_opts.subtitle_style }}> {{ chart.title_opts.subtitle }}</p>
+            <img {{ chart.html_content }}/>
+        </div>
+    {% endif %}
+{%- endmacro %}
+
+```
+
+记得最后把这个文件名称为`macro`和`index.html`文件都统一放到`templates`文件夹下。
+
+这样就可以调试了：
+```python
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+
+
+![image-20200213230341390](./img/image-20200213230341390.png)
+
+**附加**
+
+再写一个展示页面，路由为`/bar2`:
+```python
+@app.route("/bar2")
+def bar2():
+    c = bar_border_radius()
+    return c.render_embed(template_name='index.html')
+```
+
+函数bar_border_radius定义如下：
+```python
+def bar_border_radius():
+    c = (
+        Bar(init_opts=opts.InitOpts(
+            animation_opts=opts.AnimationOpts(
+                animation_delay=500, animation_easing="cubicOut"
+            ),
+            theme=ThemeType.MACARONS))
+        .add_xaxis(["草莓", "芒果", "葡萄", "雪梨", "西瓜", "柠檬", "车厘子"])
+        .add_yaxis("销售量", Faker.values(), category_gap="50%", is_selected=True)
+        .set_series_opts(itemstyle_opts={
+            "normal": {
+                "color": JsCode("""new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(0, 244, 255, 1)'
+                }, {
+                    offset: 1,
+                    color: 'rgba(0, 77, 167, 1)'
+                }], false)"""),
+                "barBorderRadius": [6, 6, 6, 6],
+                "shadowColor": 'rgb(0, 160, 221)',
+            }}, markpoint_opts=opts.MarkPointOpts(
+                data=[
+                    opts.MarkPointItem(type_="max", name="最大值"),
+                    opts.MarkPointItem(type_="min", name="最小值"),
+                ]
+        ), markline_opts=opts.MarkLineOpts(
+                data=[
+                    opts.MarkLineItem(type_="min", name="最小值"),
+                    opts.MarkLineItem(type_="max", name="最大值")
+                ]
+        ))
+        .set_global_opts(title_opts=opts.TitleOpts(title="Bar-参数使用例子"), toolbox_opts=opts.ToolboxOpts(), yaxis_opts=opts.AxisOpts(position="right", name="Y轴"), datazoom_opts=opts.DataZoomOpts(),)
+
+    )
+
+    return c
+```
+
+这样又出现一个页面，演示如下：
+
+![image-20200213230359468](./img/image-20200213230359468.png)
