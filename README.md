@@ -2,6 +2,8 @@
 
 感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python实战|十、Pandas数据分析案例实战
 
+
+
 > 目前，正在编写第十一章：一步一步掌握Flask web 开发
 
 
@@ -7078,6 +7080,91 @@ Out[6]:
 ```
 
 也就是说dummy向量的长度等于输入字符串中，唯一字符的个数。
+
+#### 15 讨厌的SettingWithCopyWarning！！！
+
+Pandas 处理数据，太好用了，谁用谁知道！
+
+使用过 Pandas 的，几乎都会遇到一个警告：
+
+*SettingWithCopyWarning*
+
+非常烦人！
+
+尤其是刚接触 Pandas 的，完全不理解为什么弹出这么一串：
+
+```python
+d:\source\test\settingwithcopy.py:9: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy 
+```
+
+归根结底，是因为代码中出现`链式操作`...
+
+有人就问了，什么是`链式操作`?
+
+这样的：
+
+```python
+tmp = df[df.a<4]
+tmp['c'] = 200
+```
+
+先记住这个最典型的情况，即可！
+
+有的人就问了：出现这个 Warning, 需要理会它吗？ 
+
+如果结果不对，当然要理会；如果结果对，不care.
+
+举个例子~~
+
+```python
+import pandas as  pd
+
+df = pd.DataFrame({'a':[1,3,5],'b':[4,2,7]},index=['a','b','c'])
+df.loc[df.a<4,'c'] = 100
+print(df)
+print('it\'s ok')
+
+tmp = df[df.a<4]
+tmp['c'] = 200
+print('-----tmp------')
+print(tmp)
+print('-----df-------')
+print(df)
+```
+
+输出结果：
+```python
+   a  b      c
+a  1  4  100.0
+b  3  2  100.0
+c  5  7    NaN
+it's ok
+d:\source\test\settingwithcopy.py:9: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy     
+  tmp['c'] = 200
+-----tmp------
+   a  b    c
+a  1  4  200
+b  3  2  200
+-----df-------
+   a  b      c
+a  1  4  100.0
+b  3  2  100.0
+c  5  7    NaN
+```
+
+it's ok 行后面的发生链式赋值，导致结果错误。因为 tmp 变了，df 没赋上值啊，所以必须理会。
+
+it's ok 行前的是正解。
+
+以上，链式操作尽量避免，如何避免？多使用 `.loc[row_indexer,col_indexer]`，提示告诉我们的~
 
 
 
