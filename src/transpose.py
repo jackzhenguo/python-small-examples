@@ -1,3 +1,6 @@
+from collections.abc import Iterable
+
+
 def transpose(lst):
     if len(lst) > 0 and isinstance(lst[0], Iterable) is False:
         return lst
