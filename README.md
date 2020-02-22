@@ -3064,7 +3064,88 @@ t9  adds a to 1: 10
 
 注意使用场合，避免死锁，是我们在使用多线程开发时需要注意的一些问题。
 
+#### 25 1 分钟掌握 time 模块
 
+time 模块提供时间相关的类和函数
+
+记住一个类：`struct_time`，9 个整数组成的元组
+
+记住下面 5 个最常用函数
+
+首先导入`time`模块
+
+```python
+import time
+```
+
+**1 此时此刻时间浮点数**
+
+```python
+In [58]: seconds = time.time()
+In [60]: seconds
+Out[60]: 1582341559.0950701
+```
+
+**2 时间数组**
+
+```python
+In [61]: local_time = time.localtime(seconds)
+
+In [62]: local_time
+Out[62]: time.struct_time(tm_year=2020, tm_mon=2, tm_mday=22, tm_hour=11, tm_min=19, tm_sec=19, tm_wday=5, tm_yday=53, tm_isdst=0)
+```
+
+**3 时间字符串**
+
+`time.asctime` 语义： `as convert time`
+
+```python
+In [63]: str_time = time.asctime(local_time)
+
+In [64]: str_time
+Out[64]: 'Sat Feb 22 11:19:19 2020'
+```
+
+**4 格式化时间字符串**
+
+`time.strftime` 语义： `string format time`
+
+```python
+In [65]: format_time = time.strftime('%Y-%m-%d %H:%M:%S',local_time)
+
+In [66]: format_time
+Out[66]: '2020-02-22 11:19:19'
+```
+
+**5 字符时间转时间数组**
+
+```python
+In [68]: str_to_struct = time.strptime(format_time,'%Y-%m-%d %H:%M:%S')
+
+In [69]: str_to_struct
+Out[69]: time.struct_time(tm_year=2020, tm_mon=2, tm_mday=22, tm_hour=11, tm_min=19, tm_sec=19, tm_wday=5, tm_yday=53, tm_isdst=-1)
+```
+
+最后再记住常用字符串格式
+
+**常用字符串格式**
+
+%m：月
+
+%M: 分钟
+
+```markdown
+    %Y  Year with century as a decimal number.
+    %m  Month as a decimal number [01,12].
+    %d  Day of the month as a decimal number [01,31].
+    %H  Hour (24-hour clock) as a decimal number [00,23].
+    %M  Minute as a decimal number [00,59].
+    %S  Second as a decimal number [00,61].
+    %z  Time zone offset from UTC.
+    %a  Locale's abbreviated weekday name.
+    %A  Locale's full weekday name.
+    %b  Locale's abbreviated month name.
+```
 
 ### 四、Python三大利器
 Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`14`例。
