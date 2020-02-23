@@ -4904,7 +4904,65 @@ OK. 到此跟随5分钟入门的官档，结合两个例子实现的背后源码
 
 4)重要的参数配置包`options`，以TitleOpts类为例，`set_global_opts`将它装载到Bar类中实现属性自定义。
 
+#### 27 1 分钟学会画 pairplot 图
 
+seaborn 绘图库，基于 matplotlib 开发，提供更高层绘图接口。
+
+学习使用 seaborn 绘制 `pairplot` 图
+
+`pairplot` 图能直观的反映出两两特征间的关系，帮助我们对数据集建立初步印象，更好的完成分类和聚类任务。
+
+使用 skearn 导入经典的 Iris 数据集，共有 150 条记录，4 个特征，target 有三种不同值。如下所示：
+
+```markdown
+     sepal_length  sepal_width  petal_length  petal_width    species
+0             5.1          3.5           1.4          0.2     setosa
+1             4.9          3.0           1.4          0.2     setosa
+2             4.7          3.2           1.3          0.2     setosa
+3             4.6          3.1           1.5          0.2     setosa
+4             5.0          3.6           1.4          0.2     setosa
+..            ...          ...           ...          ...        ...
+145           6.7          3.0           5.2          2.3  virginica
+146           6.3          2.5           5.0          1.9  virginica
+147           6.5          3.0           5.2          2.0  virginica
+148           6.2          3.4           5.4          2.3  virginica
+149           5.9          3.0           5.1          1.8  virginica
+```
+
+使用 seaborn 绘制 `sepal_length`, `petal_length` 两个特征间的关系矩阵：
+
+```python
+from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import tree
+
+sns.set(style="ticks")
+
+df02 = df.iloc[:,[0,2,4]] # 选择一对特征
+sns.pairplot(df02)
+plt.show()
+```
+
+![image-20200223165617790](./img/image-20200223165617790.png)
+
+设置颜色多显：
+
+```
+sns.pairplot(df02, hue="species")
+plt.show()
+```
+
+![image-20200223165649794](./img/image-20200223165649794.png)
+
+绘制所有特征散点矩阵：
+
+```
+sns.pairplot(df, hue="species")
+plt.show()
+```
+
+![image-20200223165718091](./img/image-20200223165718091.png)
 
 ### 六、 Python之坑
 
