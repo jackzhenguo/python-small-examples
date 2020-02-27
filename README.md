@@ -1656,7 +1656,28 @@ print(f'更长的列表是{r}')
 
 - `lambda`函数返回值，等于`lambda v`冒号后表达式的返回值。
 
+#### 88 粘性之禅
 
+7 行代码够烧脑，不信试试~~
+
+```python
+def product(*args, repeat=1):
+    pools = [tuple(pool) for pool in args] * repeat
+    result = [[]]
+    for pool in pools:
+        result = [x+[y] for x in result for y in pool]
+    for prod in result:
+        yield tuple(prod)
+```
+
+
+调用函数：
+```python
+rtn = product('xyz', '12', repeat=3)
+print(list(rtn))
+```
+
+快去手动敲敲，看看输出啥吧~~
 
 ### 二、Python字符串和正则
 
