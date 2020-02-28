@@ -1,0 +1,30 @@
+5 选择排序
+----------
+
+选择排序和堆排序都是选择思维，但是性能却不如堆排序：
+
+.. code:: python
+
+   def selection_sort(data_set):
+       frames = [data_set]
+       ds = copy.deepcopy(data_set)
+       for i in range(0, data_count-1):
+           for j in range(i+1, data_count):
+               if ds[j].value < ds[i].value:
+                   ds[i], ds[j] = ds[j], ds[i]
+                   frames.append(copy.deepcopy(ds))
+
+       frames.append(ds)
+       return frames
+
+同样的输入数据，它完成排序需要\ ``108``\ 帧:
+
+.. figure:: ../../img/image-20200104232448531.png
+   :alt: 
+
+动画展示如下，每轮会从未排序的列表中，挑出一个最小值，放到已排序序列后面。
+
+.. figure:: ../../img/select_sort.gif
+   :alt: 
+
+.. _header-n2386:

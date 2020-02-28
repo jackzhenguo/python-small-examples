@@ -1,0 +1,32 @@
+
+4 lambda自由参数之坑
+--------------------
+
+排序和分组的key函数常使用lambda，表达更加简洁，但是有个坑新手容易掉进去：
+
+.. code:: python
+
+   a = [lambda x: x+i for i in range(3)] # NO!
+   for f in a:
+       print(f(1))
+   # 你可能期望输出：1,2,3
+
+但是实际却输出: 3,3,3.
+定义lambda使用的\ ``i``\ 被称为自由参数，它只在调用lambda函数时，值才被真正确定下来，这就犹如下面打印出2，你肯定确信无疑吧。
+
+.. code:: python
+
+   a = 0
+   a = 1
+   a = 2
+   def f(a):
+       print(a)
+
+正确做法是转化\ ``自由参数``\ 为lambda函数的\ ``默认参数``\ ：
+
+.. code:: python
+
+   a = [lambda x,i=i: x+i for i in range(3)] # YES!
+
+.. _header-n1733:
+

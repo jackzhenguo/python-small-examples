@@ -1,0 +1,68 @@
+1 默认启动主线程
+-----------------
+
+一般的，程序默认执行只在一个线程，这个线程称为主线程，例子演示如下：
+
+导入线程相关的模块 ``threading``:
+
+.. code:: python
+
+    import threading
+
+threading的类方法 ``current_thread()``\ 返回当前线程：
+
+.. code:: python
+
+    t = threading.current_thread()
+    print(t) # <_MainThread(MainThread, started 139908235814720)>
+
+所以，验证了程序默认是在\ ``MainThead``\ 中执行。
+
+``t.getName()``\ 获得这个线程的名字，其他常用方法，\ ``getName()``\ 获得线程\ ``id``,\ ``isAlive()``\ 判断线程是否存活等。
+
+.. code:: python
+
+    print(t.getName()) # MainThread
+    print(t.ident) # 139908235814720
+    print(t.isAlive()) # True
+
+以上这些仅是介绍多线程的\ ``背景知识``\ ，因为到目前为止，我们有且仅有一个"干活"的主线程
+
+2 创建线程
+-----------
+
+创建一个线程：
+
+.. code:: python
+
+    my_thread = threading.Thread()
+
+创建一个名称为\ ``my_thread``\ 的线程：
+
+.. code:: python
+
+    my_thread = threading.Thread(name='my_thread')
+
+创建线程的目的是告诉它帮助我们做些什么，做些什么通过参数\ ``target``\ 传入，参数类型为\ ``callable``\ ，函数就是可调用的：
+
+.. code:: python
+
+    def print_i(i):
+        print('打印i:%d'%(i,))
+    my_thread = threading.Thread(target=print_i,args=(1,))
+
+``my_thread``\ 线程已经全副武装，但是我们得按下发射按钮，启动start()，它才开始真正起飞。
+
+.. code:: python
+
+    my_thread().start()
+
+打印结果如下，其中\ ``args``\ 指定函数\ ``print_i``\ 需要的参数i，类型为元祖。
+
+.. code:: python
+
+    打印i:1
+
+至此，多线程相关的核心知识点，已经总结完毕。但是，仅仅知道这些，还不够！光纸上谈兵，当然远远不够。
+
+接下来，聊聊应用多线程编程，最本质的一些东西。

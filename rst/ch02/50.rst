@@ -1,0 +1,13 @@
+50 转元组
+---------
+
+ ``tuple()`` 将对象转为一个不可变的序列类型
+
+.. code:: python
+
+    In [16]: i_am_list = [1,3,5]
+    In [17]: i_am_tuple = tuple(i_am_list)
+    In [18]: i_am_tuple
+    Out[18]: (1, 3, 5)
+
+.. _header-n1564:

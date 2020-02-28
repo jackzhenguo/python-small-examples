@@ -1,0 +1,26 @@
+
+6 列表删除之坑
+--------------
+
+删除一个列表中的元素，此元素可能在列表中重复多次：
+
+.. code:: python
+
+   def del_item(lst,e):
+       return [lst.remove(i) for i in e if i==e] # NO!
+
+考虑删除这个序列[1,3,3,3,5]中的元素3，结果发现只删除其中两个：
+
+.. code:: python
+
+   del_item([1,3,3,3,5],3) # 结果：[1,3,5]
+
+正确做法：
+
+.. code:: python
+
+   def del_item(lst,e):
+       d = dict(zip(range(len(lst)),lst)) # YES! 构造字典
+       return [v for k,v in d.items() if v!=e]
+
+.. _header-n1786:

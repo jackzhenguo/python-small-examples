@@ -1,0 +1,58 @@
+6 加上一把锁，避免以上情况出现
+-------------------------------
+
+知道问题出现的原因后，要想修复问题，也没那么复杂。
+
+通过python中提供的锁机制，某段代码只能单线程执行时，上锁，其他线程等待，直到释放锁后，其他线程再争锁，执行代码，释放锁，重复以上。
+
+创建一把锁\ ``locka``:
+
+.. code:: python
+
+    import threading
+    import time
+
+
+    locka = threading.Lock()
+
+通过 ``locka.acquire()``
+获得锁，通过\ ``locka.release()``\ 释放锁，它们之间的这些代码，只能单线程执行。
+
+.. code:: python
+
+    a = 0
+    def add1():
+        global a    
+        try:
+            locka.acquire() # 获得锁
+            tmp = a + 1
+            time.sleep(0.2) # 延时0.2秒，模拟写入所需时间
+            a = tmp
+        finally:
+            locka.release() # 释放锁
+        print('%s  adds a to 1: %d'%(threading.current_thread().getName(),a))
+        
+    threads = [threading.Thread(name='t%d'%(i,),target=add1) for i in range(10)]
+    [t.start() for t in threads]
+
+执行结果如下：
+
+.. code:: python
+
+    t0  adds a to 1: 1
+    t1  adds a to 1: 2
+    t2  adds a to 1: 3
+    t3  adds a to 1: 4
+    t4  adds a to 1: 5
+    t5  adds a to 1: 6
+    t6  adds a to 1: 7
+    t7  adds a to 1: 8
+    t8  adds a to 1: 9
+    t9  adds a to 1: 10
+
+一起正常，其实这已经是单线程顺序执行了，就本例子而言，已经失去多线程的价值，并且还带来了因为线程创建开销，浪费时间的副作用。
+
+程序中只有一把锁，通过
+``try...finally``\ 还能确保不发生死锁。但是，当程序中启用多把锁，还是很容易发生死锁。
+
+注意使用场合，避免死锁，是我们在使用多线程开发时需要注意的一些问题。

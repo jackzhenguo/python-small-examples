@@ -1,0 +1,98 @@
+13 split分割单词
+---------------
+
+使用以上方法分割单词不是简洁的，仅仅是为了演示。分割单词最简单还是使用\ ``split``\ 函数。
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'\s+'  
+   r = re.split(pat,s)
+   print(r) # ['This', 'module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
+
+   ### 上面这句话也可直接使用str自带的split函数：
+   s.split(' ') #使用空格分隔
+
+   ### 但是，对于风格符更加复杂的情况，split无能为力，只能使用正则
+
+   s = 'This,,,   module ; \t   provides|| regular ; '
+   words = re.split('[,\s;|]+',s)  #这样分隔出来，最后会有一个空字符串
+   words = [i for i in words if len(i)>0]
+
+.. _header-n1868:
+
+
+
+
+
+14 match从字符串开始位置匹配
+----------------------------
+
+| 注意\ ``match``,\ ``search``\ 等的不同：
+| 1) match函数
+
+.. code:: python
+
+   import re
+   ### match
+   mystr = 'This'
+   pat = re.compile('hi')
+   pat.match(mystr) # None
+   pat.match(mystr,1) # 从位置1处开始匹配
+   Out[90]: <re.Match object; span=(1, 3), match='hi'>
+
+| 2) search函数
+| search是从字符串的任意位置开始匹配
+
+.. code:: python
+
+   In [91]: mystr = 'This'
+       ...: pat = re.compile('hi')
+       ...: pat.search(mystr)
+   Out[91]: <re.Match object; span=(1, 3), match='hi'>
+
+.. _header-n1873:
+
+15 替换匹配的子串
+-----------------
+
+``sub``\ 函数实现对匹配子串的替换
+
+.. code:: python
+
+   content="hello 12345, hello 456321"    
+   pat=re.compile(r'\d+') #要替换的部分
+   m=pat.sub("666",content)
+   print(m) # hello 666, hello 666
+
+.. _header-n1876:
+
+16 贪心捕获
+-----------
+
+(.*)表示捕获任意多个字符，尽可能多的匹配字符
+
+.. code:: python
+
+   content='<h>ddedadsad</h><div>graph</div>bb<div>math</div>cc'
+   pat=re.compile(r"<div>(.*)</div>")  #贪婪模式
+   m=pat.findall(content)
+   print(m) #匹配结果为： ['graph</div>bb<div>math']
+
+.. _header-n1879:
+
+17 非贪心捕获
+-------------
+
+仅添加一个问号(\ ``?``)，得到结果完全不同，这是非贪心匹配，通过这个例子体会贪心和非贪心的匹配的不同。
+
+.. code:: python
+
+   content='<h>ddedadsad</h><div>graph</div>bb<div>math</div>cc'
+   pat=re.compile(r"<div>(.*?)</div>")
+   m=pat.findall(content)
+   print(m) # ['graph', 'math']
+
+非贪心捕获，见好就收。
+
+.. _header-n1883:

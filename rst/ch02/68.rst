@@ -1,0 +1,13 @@
+68 列表反转
+-----------
+
+.. code:: python
+
+   def reverse(lst):
+       return lst[::-1]
+
+
+   r = reverse([1, -2, 3, 4, 1, 2])
+   print(r)  # [2, 1, 4, 3, -2, 1]
+
+.. _header-n1628:

@@ -1,0 +1,99 @@
+20 爬取百度首页标题
+-------------------
+
+.. code:: python
+
+   import re
+   from urllib import request
+
+   #爬虫爬取百度首页内容
+   data=request.urlopen("http://www.baidu.com/").read().decode()
+
+   #分析网页,确定正则表达式
+   pat=r'<title>(.*?)</title>'
+
+   result=re.search(pat,data)
+   print(result) <re.Match object; span=(1358, 1382), match='<title>百度一下，你就知道</title>'>
+
+   result.group() # 百度一下，你就知道
+
+.. _header-n1894:
+
+21 批量转化为驼峰格式(Camel)
+----------------------------
+
+数据库字段名批量转化为驼峰格式
+
+分析过程
+
+.. code:: python
+
+   # 用到的正则串讲解
+   # \s 指匹配： [ \t\n\r\f\v]
+   # A|B：表示匹配A串或B串
+   # re.sub(pattern, newchar, string): 
+   # substitue代替，用newchar字符替代与pattern匹配的字符所有.
+
+.. code:: python
+
+   # title(): 转化为大写，例子：
+   # 'Hello world'.title() # 'Hello World'
+
+.. code:: python
+
+   # print(re.sub(r"\s|_|", "", "He llo_worl\td"))
+   s = re.sub(r"(\s|_|-)+", " ",
+              'some_database_field_name').title().replace(" ", "")  
+   #结果： SomeDatabaseFieldName
+
+.. code:: python
+
+   # 可以看到此时的第一个字符为大写，需要转化为小写
+   s = s[0].lower()+s[1:]  # 最终结果
+
+整理以上分析得到如下代码：
+
+.. code:: python
+
+   import re
+   def camel(s):
+       s = re.sub(r"(\s|_|-)+", " ", s).title().replace(" ", "")
+       return s[0].lower() + s[1:]
+
+   # 批量转化
+   def batch_camel(slist):
+       return [camel(s) for s in slist]
+
+测试结果：
+
+.. code:: python
+
+   s = batch_camel(['student_id', 'student\tname', 'student-add'])
+   print(s)
+   # 结果
+   ['studentId', 'studentName', 'studentAdd']
+
+.. _header-n1910:
+
+22 密码安全检查
+---------------
+
+密码安全要求：1)要求密码为6到20位; 2)密码只包含英文字母和数字
+
+.. code:: python
+
+   pat = re.compile(r'\w{6,20}') # 这是错误的，因为\w通配符匹配的是字母，数字和下划线，题目要求不能含有下划线
+   # 使用最稳的方法：\da-zA-Z满足`密码只包含英文字母和数字`
+   pat = re.compile(r'[\da-zA-Z]{6,20}')
+
+选用最保险的\ ``fullmatch``\ 方法，查看是否整个字符串都匹配：
+
+.. code:: python
+
+   pat.fullmatch('qaz12') # 返回 None, 长度小于6
+   pat.fullmatch('qaz12wsxedcrfvtgb67890942234343434') # None 长度大于22
+   pat.fullmatch('qaz_231') # None 含有下划线
+   pat.fullmatch('n0passw0Rd')
+   Out[4]: <re.Match object; span=(0, 10), match='n0passw0Rd'>
+
+.. _header-n1892:

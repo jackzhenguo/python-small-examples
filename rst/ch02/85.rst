@@ -1,0 +1,75 @@
+85 函数的五类参数使用例子
+-------------------------
+
+python五类参数：位置参数，关键字参数，默认参数，可变位置或关键字参数的使用。
+
+.. code:: python
+
+   def f(a,*b,c=10,**d):
+     print(f'a:{a},b:{b},c:{c},d:{d}')
+
+*默认参数\ ``c``\ 不能位于可变关键字参数\ ``d``\ 后.*
+
+调用f:
+
+.. code:: python
+
+   In [10]: f(1,2,5,width=10,height=20)
+   a:1,b:(2, 5),c:10,d:{'width': 10, 'height': 20}
+
+可变位置参数\ ``b``\ 实参后被解析为元组\ ``(2,5)``;而c取得默认值10;
+d被解析为字典.
+
+再次调用f:
+
+.. code:: python
+
+   In [11]: f(a=1,c=12)
+   a:1,b:(),c:12,d:{}
+
+a=1传入时a就是关键字参数，b,d都未传值，c被传入12，而非默认值。
+
+注意观察参数\ ``a``, 既可以\ ``f(1)``,也可以\ ``f(a=1)``
+其可读性比第一种更好，建议使用f(a=1)。如果要强制使用\ ``f(a=1)``\ ，需要在前面添加一个\ **星号**:
+
+.. code:: python
+
+   def f(*,a,*b):
+     print(f'a:{a},b:{b}')
+
+此时f(1)调用，将会报错：\ ``TypeError: f() takes 0 positional arguments but 1 was given``
+
+只能\ ``f(a=1)``\ 才能OK.
+
+说明前面的\ ``*``\ 发挥作用，它变为只能传入关键字参数，那么如何查看这个参数的类型呢？借助python的\ ``inspect``\ 模块：
+
+.. code:: python
+
+   In [22]: for name,val in signature(f).parameters.items():
+       ...:     print(name,val.kind)
+       ...:
+   a KEYWORD_ONLY
+   b VAR_KEYWORD
+
+可看到参数\ ``a``\ 的类型为\ ``KEYWORD_ONLY``\ ，也就是仅仅为关键字参数。
+
+但是，如果f定义为：
+
+.. code:: python
+
+   def f(a,*b):
+     print(f'a:{a},b:{b}')
+
+查看参数类型：
+
+.. code:: python
+
+   In [24]: for name,val in signature(f).parameters.items():
+       ...:     print(name,val.kind)
+       ...:
+   a POSITIONAL_OR_KEYWORD
+   b VAR_POSITIONAL
+
+可以看到参数\ ``a``\ 既可以是位置参数也可是关键字参数。
+
+.. _header-n1697:

@@ -5,4 +5,13 @@ md2
 tmp
 Python之路.md
 Python之路.pdf
-src
+img/*.html
+data/movietweetings
+data/movietweetings.zip
+rst2
+build
+data/*.html
+data/wechat_pic
+data/wechat_pic_all
+.ipynb_checkpoints
+notebook

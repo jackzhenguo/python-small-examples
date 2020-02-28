@@ -1,0 +1,13 @@
+9 字符串转字节 
+---------------
+
+将一个\ ``字符串``\ 转换成\ ``字节``\ 类型
+
+.. code:: python
+
+   In [1]: s = "apple"
+
+   In [2]: bytes(s,encoding='utf-8')
+   Out[2]: b'apple'
+
+.. _header-n1341:

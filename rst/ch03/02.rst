@@ -1,0 +1,69 @@
+以下是正则部分
+
+.. code:: python
+
+   import re
+
+.. _header-n1843:
+
+5 查找第一个匹配串
+------------------
+
+.. code:: python
+
+   s = 'i love python very much'
+   pat = 'python' 
+   r = re.search(pat,s)
+   print(r.span()) #(7,13)
+
+.. _header-n1845:
+
+6 查找所有1的索引
+-----------------
+
+.. code:: python
+
+   s = '山东省潍坊市青州第1中学高三1班'
+   pat = '1'
+   r = re.finditer(pat,s)
+   for i in r:
+       print(i)
+
+   # <re.Match object; span=(9, 10), match='1'>
+   # <re.Match object; span=(14, 15), match='1'>
+
+.. _header-n1847:
+
+7 \\d 匹配数字[0-9]
+-------------------
+
+findall找出全部位置的所有匹配
+
+.. code:: python
+
+   s = '一共20行代码运行时间13.59s'
+   pat = r'\d+' # +表示匹配数字(\d表示数字的通用字符)1次或多次
+   r = re.findall(pat,s)
+   print(r)
+   # ['20', '13', '59']
+
+.. _header-n1850:
+
+
+8 匹配浮点数和整数
+------------------
+
+?表示前一个字符匹配0或1次
+
+.. code:: python
+
+   s = '一共20行代码运行时间13.59s'
+   pat = r'\d+\.?\d+' # ?表示匹配小数点(\.)0次或1次，这种写法有个小bug，不能匹配到个位数的整数
+   r = re.findall(pat,s)
+   print(r)
+   # ['20', '13.59']
+
+   # 更好的写法：
+   pat = r'\d+\.\d+|\d+' # A|B，匹配A失败才匹配B
+
+.. _header-n1853:

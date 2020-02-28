@@ -1,0 +1,14 @@
+78 样本抽样
+-----------
+
+使用\ ``sample``\ 抽样，如下例子从100个样本中随机抽样10个。
+
+.. code:: python
+
+   from random import randint,sample
+   lst = [randint(0,50) for _ in range(100)]
+   print(lst[:5])# [38, 19, 11, 3, 6]
+   lst_sample = sample(lst,10)
+   print(lst_sample) # [33, 40, 35, 49, 24, 15, 48, 29, 37, 24]
+
+.. _header-n1657:

@@ -1,0 +1,20 @@
+35 isinstance
+-------------
+
+判断\ *object*\ 是否为类\ *classinfo*\ 的实例，是返回true
+
+.. code:: python
+
+   In [1]: class Student():
+      ...:     def __init__(self,id,name):
+      ...:         self.id = id
+      ...:         self.name = name
+      ...:     def __repr__(self):
+      ...:         return 'id = '+self.id +', name = '+self.name
+
+   In [2]: xiaoming = Student(id='001',name='xiaoming')
+
+   In [3]: isinstance(xiaoming,Student)
+   Out[3]: True
+
+.. _header-n1488:

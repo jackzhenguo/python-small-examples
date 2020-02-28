@@ -1,0 +1,18 @@
+47 转为切片对象
+---------------
+
+*class* slice(\ *start*, *stop*\ [, *step*])
+
+返回一个表示由 range(start, stop, step) 所指定索引集的
+slice对象，它让代码可读性、可维护性变好。
+
+.. code:: python
+
+   In [1]: a = [1,4,2,3,1]
+
+   In [2]: my_slice_meaning = slice(0,5,2)
+
+   In [3]: a[my_slice_meaning]
+   Out[3]: [1, 2, 1]
+
+.. _header-n1555:

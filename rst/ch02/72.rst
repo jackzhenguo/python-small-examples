@@ -1,0 +1,16 @@
+72 值最大的字典
+---------------
+
+.. code:: python
+
+   def max_pairs(dic):
+       if len(dic) == 0:
+           return dic
+       max_val = max(map(lambda v: v[1], dic.items()))
+       return [item for item in dic.items() if item[1] == max_val]
+
+
+   r = max_pairs({'a': -10, 'b': 5, 'c': 3, 'd': 5})
+   print(r)  # [('b', 5), ('d', 5)]
+
+.. _header-n1637:

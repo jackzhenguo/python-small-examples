@@ -1,0 +1,76 @@
+.. _header-n1832:
+
+1 反转字符串
+------------
+
+.. code:: python
+
+   st="python"
+   #方法1
+   ''.join(reversed(st))
+   #方法2
+   st[::-1]
+
+.. _header-n1834:
+
+2 字符串切片操作
+----------------
+
+.. code:: python
+
+   字符串切片操作——查找替换3或5的倍数
+   In [1]:[str("java"[i%3*4:]+"python"[i%5*6:] or i) for i in range(1,15)]
+   OUT[1]:['1',
+    '2',
+    'java',
+    '4',
+    'python',
+    'java',
+    '7',
+    '8',
+    'java',
+    'python',
+    '11',
+    'java',
+    '13',
+    '14']
+
+.. _header-n1836:
+
+3 join串联字符串
+----------------
+
+.. code:: python
+
+   In [4]: mystr = ['1',
+      ...:  '2',
+      ...:  'java',
+      ...:  '4',
+      ...:  'python',
+      ...:  'java',
+      ...:  '7',
+      ...:  '8',
+      ...:  'java',
+      ...:  'python',
+      ...:  '11',
+      ...:  'java',
+      ...:  '13',
+      ...:  '14']
+
+   In [5]: ','.join(mystr) #用逗号连接字符串
+   Out[5]: '1,2,java,4,python,java,7,8,java,python,11,java,13,14'
+
+.. _header-n1838:
+
+
+4 字符串的字节长度
+------------------
+
+.. code:: python
+
+   def str_byte_len(mystr):
+       return (len(mystr.encode('utf-8')))
+
+
+   str_byte_len('i love python')  # 13(个字节)
+   str_byte_len('字符')  # 6(个字节)

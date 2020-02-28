@@ -1,0 +1,43 @@
+42 创建属性的两种方式
+---------------------
+
+返回 property 属性，典型的用法：
+
+.. code:: python
+
+   class C:
+       def __init__(self):
+           self._x = None
+
+       def getx(self):
+           return self._x
+
+       def setx(self, value):
+           self._x = value
+
+       def delx(self):
+           del self._x
+       # 使用property类创建 property 属性
+       x = property(getx, setx, delx, "I'm the 'x' property.")
+
+使用python装饰器，实现与上完全一样的效果代码：
+
+.. code:: python
+
+   class C:
+       def __init__(self):
+           self._x = None
+
+       @property
+       def x(self):
+           return self._x
+
+       @x.setter
+       def x(self, value):
+           self._x = value
+
+       @x.deleter
+       def x(self):
+           del self._x
+
+.. _header-n1539:

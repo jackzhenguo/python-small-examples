@@ -1,0 +1,11 @@
+40 次幂
+-------
+
+base为底的exp次幂，如果mod给出，取余
+
+.. code:: python
+
+   In [1]: pow(3, 2, 4)
+   Out[1]: 1
+
+.. _header-n1531:

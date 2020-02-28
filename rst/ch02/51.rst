@@ -1,0 +1,26 @@
+51 查看对象类型
+---------------
+
+*class* ``type``\ (*name*, *bases*, *dict*)
+
+传入一个参数时，返回 *object* 的类型：
+
+.. code:: python
+
+   In [1]: class Student():
+      ...:     def __init__(self,id,name):
+      ...:         self.id = id
+      ...:         self.name = name
+      ...:     def __repr__(self):
+      ...:         return 'id = '+self.id +', name = '+self.name
+      ...: 
+      ...: 
+
+   In [2]: xiaoming = Student(id='001',name='xiaoming')
+   In [3]: type(xiaoming)
+   Out[3]: __main__.Student
+
+   In [4]: type(tuple())
+   Out[4]: tuple
+
+.. _header-n1568:

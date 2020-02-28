@@ -1,0 +1,22 @@
+17 动态删除属性 
+----------------
+
+删除对象的属性
+
+.. code:: python
+    In [1]: class Student():
+       ...:     def __init__(self,id,name):
+       ...:         self.id = id
+       ...:         self.name = name
+       ...:     def __repr__(self):
+       ...:         return 'id = '+self.id +', name = '+self.name
+       ...:     def __call__(self):
+       ...:         print('I can be called')
+       ...:         print(f'my name is {self.name}')
+
+   In [1]: delattr(xiaoming,'id')
+
+   In [2]: hasattr(xiaoming,'id')
+   Out[2]: False
+
+.. _header-n1367:

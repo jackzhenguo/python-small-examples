@@ -1,0 +1,39 @@
+19 一键查看对象所有方法 
+------------------------
+
+不带参数时返回\ ``当前范围``\ 内的变量、方法和定义的类型列表；带参数时返回\ ``参数``\ 的属性，方法列表。
+
+.. code:: python
+
+   In [96]: dir(xiaoming)
+   Out[96]:
+   ['__class__',
+    '__delattr__',
+    '__dict__',
+    '__dir__',
+    '__doc__',
+    '__eq__',
+    '__format__',
+    '__ge__',
+    '__getattribute__',
+    '__gt__',
+    '__hash__',
+    '__init__',
+    '__init_subclass__',
+    '__le__',
+    '__lt__',
+    '__module__',
+    '__ne__',
+    '__new__',
+    '__reduce__',
+    '__reduce_ex__',
+    '__repr__',
+    '__setattr__',
+    '__sizeof__',
+    '__str__',
+    '__subclasshook__',
+    '__weakref__',
+    
+    'name']
+
+.. _header-n1373:

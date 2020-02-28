@@ -1,0 +1,74 @@
+9 ^匹配字符串的开头
+-------------------
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'^[emrt]' # 查找以字符e,m,r或t开始的字符串
+   r = re.findall(pat,s)
+   print(r)
+   # [],因为字符串的开头是字符`T`，不在emrt匹配范围内，所以返回为空
+   IN [11]: s2 = 'email for me is guozhennianhua@163.com'
+   re.findall('^[emrt].*',s2)# 匹配以e,m,r,t开始的字符串，后面是多个任意字符
+   Out[11]: ['email for me is guozhennianhua@163.com']
+
+.. _header-n1855:
+
+10 re.I 忽略大小写
+-----------------
+
+.. code:: python
+
+   s = 'That'
+   pat = r't' 
+   r = re.findall(pat,s,re.I)
+   In [22]: r
+   Out[22]: ['T', 't']
+
+.. _header-n1857:
+
+11 理解compile的作用
+-------------------
+
+如果要做很多次匹配，可以先编译匹配串：
+
+.. code:: python
+
+   import re
+   pat = re.compile('\W+') # \W 匹配不是数字和字母的字符
+   has_special_chars = pat.search('ed#2@edc') 
+   if has_special_chars:
+       print(f'str contains special characters:{has_special_chars.group(0)}')
+
+   ###输出结果: 
+    # str contains special characters:#   
+
+   ### 再次使用pat正则编译对象 做匹配
+   again_pattern = pat.findall('guozhennianhua@163.com')
+   if '@' in again_pattern:
+       print('possibly it is an email')
+
+.. _header-n1860:
+
+12 使用()捕获单词，不想带空格
+----------------------------
+
+使用\ ``()``\ 捕获
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'\s([a-zA-Z]+)'  
+   r = re.findall(pat,s)
+   print(r) #['module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
+
+看到提取单词中未包括第一个单词，使用\ ``?``\ 表示前面字符出现0次或1次，但是此字符还有表示贪心或非贪心匹配含义，使用时要谨慎。
+
+.. code:: python
+
+   s = 'This module provides regular expression matching operations similar to those found in Perl'
+   pat = r'\s?([a-zA-Z]+)'  
+   r = re.findall(pat,s)
+   print(r) #['This', 'module', 'provides', 'regular', 'expression', 'matching', 'operations', 'similar', 'to', 'those', 'found', 'in', 'Perl']
+
+.. _header-n1865:

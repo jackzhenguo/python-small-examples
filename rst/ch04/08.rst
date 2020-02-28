@@ -1,0 +1,76 @@
+16 月第一天
+-----------
+
+.. code:: python
+
+    from datetime import date
+    mydate = date.today()
+    month_first_day = date(mydate.year, mydate.month, 1)
+    print(f"当月第一天:{month_first_day}\n")
+
+打印结果：
+
+.. code:: python
+
+    当月第一天:2019-12-01
+
+17 月最后一天
+-------------
+
+.. code:: python
+
+    from datetime import date
+    import calendar
+    mydate = date.today()
+    _, days = calendar.monthrange(mydate.year, mydate.month)
+    month_last_day = date(mydate.year, mydate.month, days)
+    print(f"当月最后一天:{month_last_day}\n")
+
+打印结果：
+
+.. code:: python
+
+    当月最后一天:2019-12-31
+
+18 获取当前时间
+---------------
+
+.. code:: python
+
+    from datetime import date, datetime
+    from time import localtime
+
+    today_date = date.today()
+    print(today_date)  # 2019-12-22
+
+    today_time = datetime.today()
+    print(today_time)  # 2019-12-22 18:02:33.398894
+
+    local_time = localtime()
+    print(strftime("%Y-%m-%d %H:%M:%S", local_time))  # 转化为定制的格式 2019-12-22 18:13:41
+
+19 字符时间转时间
+-----------------
+
+.. code:: python
+
+    from time import strptime
+
+    # parse str time to struct time
+    struct_time = strptime('2019-12-22 10:10:08', "%Y-%m-%d %H:%M:%S")
+    print(struct_time) # struct_time类型就是time中的一个类
+
+    # time.struct_time(tm_year=2019, tm_mon=12, tm_mday=22, tm_hour=10, tm_min=10, tm_sec=8, tm_wday=6, tm_yday=356, tm_isdst=-1)
+
+20 时间转字符时间
+-----------------
+
+.. code:: python
+
+    from time import strftime, strptime, localtime
+
+    In [2]: print(localtime()) #这是输入的时间
+    Out[2]: time.struct_time(tm_year=2019, tm_mon=12, tm_mday=22, tm_hour=18, tm_min=24, tm_sec=56, tm_wday=6, tm_yday=356, tm_isdst=0)
+
+    print(strftime("%m-%d-%Y %H:%M:%S", localtime()))  # 转化为定制的格式
+    # 这是字符串表示的时间：   12-22-2019 18:26:21

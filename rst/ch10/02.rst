@@ -1,0 +1,30 @@
+3 先拿冒泡实验
+--------------
+
+一旦发生调整，我们立即保存到帧列表\ ``frames``\ 中，注意此处需要\ ``deepcopy``:
+
+.. code:: python
+
+   # 冒泡排序
+   def bubble_sort(waiting_sort_data):
+       frames = [waiting_sort_data]
+       ds = copy.deepcopy(waiting_sort_data)
+       for i in range(data_count-1):
+           for j in range(data_count-i-1):
+               if ds[j].value > ds[j+1].value:
+                   ds[j], ds[j+1] = ds[j+1], ds[j]
+                   frames.append(copy.deepcopy(ds))
+       frames.append(ds)
+       return frames
+
+实验结果图：
+
+.. figure:: ../../img/image-20200104232411426.png
+   :alt: 
+
+完整动画演示：
+
+.. figure:: ../../img/bubble_sort.gif
+   :alt: 
+
+.. _header-n2373:

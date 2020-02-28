@@ -1,0 +1,12 @@
+58 交换两元素
+-------------
+
+.. code:: python
+
+   def swap(a, b):
+       return b, a
+
+
+   print(swap(1, 0))  # (0,1)
+
+.. _header-n1592:

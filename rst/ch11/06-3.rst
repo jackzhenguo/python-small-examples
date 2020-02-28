@@ -1,0 +1,36 @@
+
+3 处理组合值
+------------
+
+表\ ``movies``\ 字段\ ``Genre``\ 表示电影的类型，可能有多个值，分隔符为\ ``|``\ ，取值也可能为\ ``None``.
+
+针对这类字段取值，可使用Pandas中Series提供的\ ``str``\ 做一步转化，\ **注意它是向量级的**\ ，下一步，如Python原生的\ ``str``\ 类似，使用\ ``contains``\ 判断是否含有\ ``comedy``\ 字符串：
+
+.. code:: python
+
+    mask = movies.Genre.str.contains('comedy',case=False,na=False)
+
+注意使用的两个参数：\ ``case``, ``na``
+
+| case为 False，表示对大小写不敏感；
+| na
+  Genre列某个单元格为\ ``NaN``\ 时，我们使用的充填值，此处填充为\ ``False``
+
+返回的\ ``mask``\ 是一维的\ ``Series``\ ，结构与
+movies.Genre相同，取值为True 或 False.
+
+观察结果：
+
+.. code:: python
+
+    0    False
+    1    False
+    2    False
+    3    False
+    4    False
+    5     True
+    6     True
+    7    False
+    8    False
+    9    False
+    Name: Genre, dtype: bool

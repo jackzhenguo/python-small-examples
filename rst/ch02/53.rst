@@ -1,0 +1,24 @@
+53 nonlocal用于内嵌函数中
+-------------------------
+
+| 关键词\ ``nonlocal``\ 常用于函数嵌套中，声明变量\ ``i``\ 为非局部变量；
+| 如果不声明，\ ``i+=1``\ 表明\ ``i``\ 为函数\ ``wrapper``\ 内的局部变量，因为在\ ``i+=1``\ 引用(reference)时,i未被声明，所以会报\ ``unreferenced variable``\ 的错误。
+
+.. code:: python
+
+   def excepter(f):
+       i = 0
+       t1 = time.time()
+       def wrapper(): 
+           try:
+               f()
+           except Exception as e:
+               nonlocal i
+               i += 1
+               print(f'{e.args[0]}: {i}')
+               t2 = time.time()
+               if i == n:
+                   print(f'spending time:{round(t2-t1,2)}')
+       return wrapper
+
+.. _header-n1574:

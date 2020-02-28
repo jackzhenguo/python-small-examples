@@ -1,0 +1,10 @@
+55 链式比较
+-----------
+
+.. code:: python
+
+   i = 3
+   print(1 < i < 3)  # False
+   print(1 < i <= 3)  # True
+
+.. _header-n1586:
