@@ -3168,7 +3168,70 @@ Out[69]: time.struct_time(tm_year=2020, tm_mon=2, tm_mday=22, tm_hour=11, tm_min
     %b  Locale's abbreviated month name.
 ```
 
+#### 26 4G 内存处理 10G 大小的文件
+
+4G 内存处理 10G 大小的文件，单机怎么做？
+
+下面的讨论基于的假定：可以单独处理一行数据，行间数据相关性为零。
+
+方法一：
+
+仅使用 Python 内置模板，逐行读取到内存。
+
+使用 yield，好处是解耦读取操作和处理操作：
+
+```python
+def python_read(filename):
+    with open(filename,'r',encoding='utf-8') as f:
+        while True:
+            line = f.readline()
+            if not line:
+                return
+            yield line
+```
+
+以上每次读取一行，逐行迭代，逐行处理数据
+
+```python
+if __name__ == '__main__':
+    g = python_read('./data/movies.dat')
+    for c in g:
+        print(c)
+        # process c
+```
+
+方法二：
+
+方法一有缺点，逐行读入，频繁的 IO 操作拖累处理效率。是否有一次 IO ，读取多行的方法？
+
+`pandas` 包 `read_csv` 函数，参数有 38 个之多，功能非常强大。
+
+关于单机处理大文件，`read_csv` 的 `chunksize` 参数能做到，设置为 `5`， 意味着一次读取 5 行。
+
+```python
+def pandas_read(filename,sep=',',chunksize=5):
+    reader = pd.read_csv(filename,sep,chunksize=chunksize)
+    while True:
+        try:
+            yield reader.get_chunk()
+        except StopIteration:
+            print('---Done---')
+            break
+```
+
+使用如同方法一：
+```python
+if __name__ == '__main__':
+    g = pandas_read('./data/movies.dat',sep="::")
+    for c in g:
+        print(c)
+        # process c
+```
+
+以上就是单机处理大文件的两个方法，推荐使用方法二，更加灵活。除了工作中会用到，面试中也有时被问到。
+
 ### 四、Python三大利器
+
 Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`14`例。
 
 
