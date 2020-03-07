@@ -1750,6 +1750,48 @@ Out[46]: True
 
 “元类就是深度的魔法，99%的用户应该根本不必为此操心。”
 
+#### 90 对象序列化
+
+对象序列化，是指将内存中的对象转化为可存储或传输的过程。很多场景，直接一个类对象，传输不方便。
+
+但是，当对象序列化后，就会更加方便，因为约定俗成的，接口间的调用或者发起的 web 请求，一般使用 json 串传输。
+
+实际使用中，一般对类对象序列化。先创建一个 Student 类型，并创建两个实例。
+
+```python
+    class Student():
+        def __init__(self,**args):
+            self.ids = args['ids']
+            self.name = args['name']
+            self.address = args['address']
+    xiaoming = Student(ids = 1,name = 'xiaoming',address = '北京')
+    xiaohong = Student(ids = 2,name = 'xiaohong',address = '南京')
+```
+
+导入 json 模块，调用 dump 方法，就会将列表对象 [xiaoming,xiaohong]，序列化到文件 json.txt 中。
+```python
+    import json
+    
+    with open('json.txt', 'w') as f:
+        json.dump([xiaoming,xiaohong], f, default=lambda obj: obj.__dict__, ensure_ascii=False, indent=2, sort_keys=True)
+```
+
+生成的文件内容，如下：
+```json
+    [
+      {
+        "address": "北京",
+        "ids": 1,
+        "name": "xiaoming"
+      },
+      {
+        "address": "南京",
+        "ids": 2,
+        "name": "xiaohong"
+      }
+    ]
+```
+
 ### 二、Python字符串和正则
 
 字符串无所不在，字符串的处理也是最常见的操作。本章节将总结和字符串处理相关的一切操作。主要包括基本的字符串操作；高级字符串操作之正则。目前共有`20`个小例子
