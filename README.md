@@ -7790,11 +7790,39 @@ sns.distplot(s, kde=False, fit = stats.dgamma)
 
 ![](https://imgkr.cn-bj.ufileos.com/f2c2a660-5433-4b4f-ad7b-d01da4121319.png)
 
+#### 17 Pandas 使用技巧
 
+对于动辄就几十或几百个 G 的数据，在读取的这么大数据的时候，我们有没有办法随机选取一小部分数据，然后读入内存，快速了解数据和开展 EDA ？
+
+使用 Pandas 的 skiprows 和 概率知识，就能做到。
+
+下面解释具体怎么做。
+
+如下所示，读取某 100 G 大小的 big_data.csv 数据
+
+1) 使用 skiprows 参数，
+
+2) x > 0 确保首行读入， 
+
+3) np.random.rand() > 0.01 表示 99% 的数据都会被随机过滤掉
+
+言外之意，只有全部数据的 1% 才有机会选入内存中。
+
+```python
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("big_data.csv", 
+skiprows = 
+lambda x: x>0 and np.random.rand() > 0.01)
+
+print("The shape of the df is {}. 
+It has been reduced 100 times!".format(df.shape))
+```
+
+使用这种方法，读取的数据量迅速缩减到原来的 1% ，对于迅速展开数据分析有一定的帮助。
 
 ### 十一、一步一步掌握Flask web开发
-
-
 
 #### 1 Flask版 hello world
 
