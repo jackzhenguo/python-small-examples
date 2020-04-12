@@ -1,14 +1,8 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有`200`个例子：
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有 `300` 个例子：
 
 感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python实战|十、Pandas数据分析案例实战
 
-
-
-> 目前，正在编写第十一章：一步一步掌握Flask web 开发
-
-
-
-已发[《我的Python之路V1.3.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.3)最新版本`V1.3包括`9个章节：`Python基础`，`Python字符串和正则`，`Python文件和日期`，`Python多线程`, `Python三大利器`，`Python画图` ,`Python之坑`,`基础算法小例子`，`Python实战`，目前超过`200个`小例子。
+已发[《我的Python之路V1.3.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.3)最新版本`V1.3包括`9个章节：`Python基础`，`Python字符串和正则`，`Python文件和日期`，`Python多线程`, `Python三大利器`，`Python画图` ,`Python之坑`,`基础算法小例子`，`Python实战`，目前超过`300个`小例子。
 
 
 
