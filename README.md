@@ -2172,9 +2172,9 @@ def is_permutation(str1, str2):
         return False
     unq_s1 = defaultdict(int)
     unq_s2 = defaultdict(int)
-    for c1 in unq_s1:
+    for c1 in str1:
         unq_s1[c1] += 1
-    for c2 in unq_s2:
+    for c2 in str2:
         unq_s2[c2] += 1
 
     return unq_s1 == unq_s2
