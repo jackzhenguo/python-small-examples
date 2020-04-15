@@ -6,7 +6,7 @@ Github 地址：https://github.com/jackzhenguo/python-small-examples
 
 欢迎关注 《Python小例子》官方公众号，与作者取得交流
 
-![image-20200415232239773](D:\source\python-small-examples\image-20200415232239773.png)
+![image-20200415232239773](img/image-20200415232239773.png)
 
 
 
@@ -4031,7 +4031,7 @@ fig.add_trace(
 fig.show()
 ```
 
-![image-20200416001202816](D:\source\python-small-examples\image-20200416001202816.png)
+![image-20200416001202816](img/image-20200416001202816.png)
 
 
 #### 5 seaborn热力图
