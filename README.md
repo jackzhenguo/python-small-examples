@@ -4,11 +4,35 @@
 
 Github 地址：https://github.com/jackzhenguo/python-small-examples
 
-欢迎关注 《Python小例子》官方公众号，与作者取得交流
+下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
 
-![image-20200415232239773](img/image-20200415232239773.png)
+<img src=img/image-20200415232239773.png width="30%"/>
 
+本库的目录：
 
+![image-20200416064121231](img/image-20200416064121231.png)
+
+![image-20200416064137460](img/image-20200416064137460.png)
+
+![image-20200416064157531](img/image-20200416064157531.png)
+
+![image-20200416064213842](img/image-20200416064213842.png)
+
+![image-20200416064236705](img/image-20200416064236705.png)
+
+![image-20200416064306210](img/image-20200416064306210.png)
+
+![image-20200416064321151](img/image-20200416064321151.png)
+
+![image-20200416064344342](img/image-20200416064344342.png)
+
+![image-20200416064404496](img/image-20200416064404496.png)
+
+![image-20200416064420779](img/image-20200416064420779.png)
+
+![image-20200416064431724](img/image-20200416064431724.png)
+
+![image-20200416064448151](img/image-20200416064448151.png)
 
 ### 感受Python之美
 
