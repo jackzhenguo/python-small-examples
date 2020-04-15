@@ -1,12 +1,12 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有 `300` 个例子：
+告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有 `247` 个例子：
 
 感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python实战|十、Pandas数据分析案例实战
 
-已发[《我的Python之路V1.3.pdf》](https://github.com/jackzhenguo/python-small-examples/releases/tag/V1.3)最新版本`V1.3包括`9个章节：`Python基础`，`Python字符串和正则`，`Python文件和日期`，`Python多线程`, `Python三大利器`，`Python画图` ,`Python之坑`,`基础算法小例子`，`Python实战`，目前超过`300个`小例子。
+Github 地址：https://github.com/jackzhenguo/python-small-examples
 
+欢迎关注 《Python小例子》官方公众号，与作者取得交流
 
-
-欢迎直接在线阅读和学习：https://python-small-examples.readthedocs.io/en/latest/
+![image-20200415232239773](D:\source\python-small-examples\image-20200415232239773.png)
 
 
 
@@ -117,7 +117,7 @@ PyQt设计器开发GUI，能够迅速通过拖动组建搭建出来，使用方�
 
 ### 一、Python基础
 
-`Python基础`主要总结Python常用内置函数；Python独有的语法特性、关键词`nonlocal`, ` global`等；内置数据结构包括：列表(list),  字典(dict),  集合(set),  元组(tuple) 以及相关的高级模块`collections`中的`Counter`,  `namedtuple`, `defaultdict`，`heapq`模块。目前共有`86`个小例子。
+`Python基础`主要总结Python常用内置函数；Python独有的语法特性、关键词`nonlocal`, ` global`等；内置数据结构包括：列表(list),  字典(dict),  集合(set),  元组(tuple) 以及相关的高级模块`collections`中的`Counter`,  `namedtuple`, `defaultdict`，`heapq`模块。目前共有`90`个小例子。
 
 #### 1 求绝对值
 
@@ -1788,7 +1788,7 @@ Out[46]: True
 
 ### 二、Python字符串和正则
 
-字符串无所不在，字符串的处理也是最常见的操作。本章节将总结和字符串处理相关的一切操作。主要包括基本的字符串操作；高级字符串操作之正则。目前共有`20`个小例子
+字符串无所不在，字符串的处理也是最常见的操作。本章节将总结和字符串处理相关的一切操作。主要包括基本的字符串操作；高级字符串操作之正则。目前共有`25`个小例子
 
 #### 1 反转字符串
 
@@ -2302,7 +2302,7 @@ Python日期章节，由表示大日期的`calendar`, `date`模块，逐渐过�
 
 Python`多线程`希望透过5个小例子，帮助你对多线程模型编程本质有些更清晰的认识。
 
-一共总结最常用的`24`个关于文件和时间处理模块的例子。
+一共总结最常用的`26`个关于文件和时间处理模块的例子。
 
 #### 1 获取后缀名
 
@@ -3339,7 +3339,7 @@ if __name__ == '__main__':
 
 ### 四、Python三大利器
 
-Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`14`例。
+Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`15`例。
 
 
 #### 1 寻找第n次出现位置
@@ -3848,7 +3848,7 @@ print(list(descend_iter))
 
 ### 五、Python绘图
 
-Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`21`个。
+Python常用的绘图工具包括：`matplotlib`, `seaborn`, `plotly`等，以及一些其他专用于绘制某类图如词云图等的包，描绘绘图轨迹的`turtle`包等。本章节将会使用一些例子由易到难的阐述绘图的经典小例子，目前共收录`27`个。
 
 #### 1 turtle绘制奥运五环图
 
@@ -4031,7 +4031,7 @@ fig.add_trace(
 fig.show()
 ```
 
-![]
+![image-20200416001202816](D:\source\python-small-examples\image-20200416001202816.png)
 
 
 #### 5 seaborn热力图
@@ -5791,7 +5791,7 @@ Out[7]: '人生苦短，我用Python'
 
 ![image-20200227225346560](./img/image-20200227225346560.png)
 
-### 八、 机器学习和深度学必知算法
+### 八、 必知算法
 
 #### 1 领略算法魅力
 
@@ -5998,11 +5998,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 获取以上完整代码、所有数据文件、结果文件：[完整源码下载](./data/sort.zip)
 
----
-
-### 
-
-#### 9 优化算法
+#### 8 优化算法
 
 机器学习是一个目标函数优化问题，给定目标函数f，约束条件会有一般包括以下三类：
 
@@ -6018,7 +6014,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 
 
-#### 10 仅含等式约束
+#### 9 仅含等式约束
 假定目标函数是连续可导函数，问题定义如下：
 
 ![1578812286324](./img/1578812286324.png)
@@ -6030,7 +6026,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 通过以上方法求解此类问题，但是为什么它能求出极值呢？
 
-#### 11 找找感觉
+#### 10 找找感觉
 
 大家时间都有限，只列出最核心的逻辑，找找sense, 如有兴趣可回去下载PPT仔细体会。
 
@@ -6064,7 +6060,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 ![1578812432196](./img/1578812432196.png)
 
-#### 12 梯度下降
+#### 11 梯度下降
 
 我们想要寻找一个移动`x`的规则，使得移动后`f(x+delta_x)`变小，当然必须满足约束`h(x+delta_x)=0`
 
@@ -6084,7 +6080,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 ![1578812611316](./img/1578812611316.png)
 
-#### 13 约束面的法向
+#### 12 约束面的法向
 
 
 
@@ -6108,7 +6104,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 ![1578812721685](./img/1578812721685.png)
 
-#### 14 大胆猜想
+#### 13 大胆猜想
 
 
 
@@ -6130,7 +6126,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 ![1578812850771](./img/1578812850771.png)
 
-#### 15 完全解码拉格朗日乘数法
+#### 14 完全解码拉格朗日乘数法
 
 至此，已经完全解码拉格朗日乘数法，拉格朗日巧妙的构造出下面这个式子：
 
@@ -6152,7 +6148,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 
 
-#### 16 均匀分布
+#### 15 均匀分布
 
 导入本次实验所用的4种常见分布，连续分布的代表：`beta`分布、`正态`分布，`均匀`分布，离散分布的代表：`二项`分布。
 
@@ -6198,7 +6194,7 @@ def unif():
 
 ![](./img/uniform.png)
 
-#### 17 **二项分布**
+#### 16 **二项分布**
 
 红色曲线表示发生一次概率为0.3，重复50次的密度函数，二项分布期望值为0.3*50 = 15次。看到这50次实验，很可能出现的次数为10~20.可与蓝色曲线对比分析。
 
@@ -6215,7 +6211,7 @@ def bino():
 
 ![](./img/binom.png)
 
-#### 18 高斯分布
+#### 17 高斯分布
 
 红色曲线表示均值为0，标准差为1.0的概率密度函数，蓝色曲线的标准差更大，所以它更矮胖，显示出取值的多样性，和不稳定性。
 
@@ -6231,7 +6227,7 @@ def guass():
 
 ![](./img/guass.png)
 
-#### 19 beta分布
+#### 18 beta分布
 
 beta分布的期望值如下，可从下面的两条曲线中加以验证：
 
@@ -6249,7 +6245,7 @@ def bet():
 
 ![](./img/beta.png)
 
-### 九、Python、机器学习和深度学习实战
+### 九、Python 实战
 
 
 #### 1 环境搭建
