@@ -1,6 +1,9 @@
 告别枯燥，60 秒学会一个小例子。系统学习Python，从入门到大师。已有 `247` 个例子。下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
 
-<img src=img/image-20200415232239773.png width="30%"/>
+<div align="center"> 
+    <img src="img/image-20200415232239773.png" width="20%"/>
+</div>
+
 
 本库的目录：
 
@@ -5614,11 +5617,8 @@ b'\xc8\xcb\xc9\xfa\xbf\xe0\xb6\xcc\xa3\xac\xce\xd2\xd3\xc3Python'
 
 ```python
 In [3]: b'\xc8\xcb\xc9\xfa\xbf\xe0\xb6\xcc\xa3\xac\xce\xd2\xd3\xc3Python'.decode()
----------------------------------------------------------------------------
 UnicodeDecodeError                        Traceback (most recent call last)
 <ipython-input-3-7d0ea6148880> in <module>
-----> 1 b'\xc8\xcb\xc9\xfa\xbf\xe0\xb6\xcc\xa3\xac\xce\xd2\xd3\xc3Python'.decode()
-
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc8 in position 0: invalid continuation byte
 ```
 
