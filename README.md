@@ -1,143 +1,10 @@
-告别枯燥，60秒学会一个小例子，系统学习Python，从入门到大师。**Python之路**已有 `247` 个例子：
-
-感受Python之美 | 一、Python基础 |二、Python字符串和正则|三、Python文件和日期|四、Python三大利器|五、Python绘图|六、Python之坑|七、Python第三方包|八、机器学习和深度学必知算法|九、Python实战|十、Pandas数据分析案例实战
-
-Github 地址：https://github.com/jackzhenguo/python-small-examples
-
-下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
+告别枯燥，60 秒学会一个小例子。系统学习Python，从入门到大师。已有 `247` 个例子。下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
 
 <img src=img/image-20200415232239773.png width="30%"/>
 
 本库的目录：
 
-![image-20200416064121231](img/image-20200416064121231.png)
-
-![image-20200416064137460](img/image-20200416064137460.png)
-
-![image-20200416064157531](img/image-20200416064157531.png)
-
-![image-20200416064213842](img/image-20200416064213842.png)
-
-![image-20200416064236705](img/image-20200416064236705.png)
-
-![image-20200416064306210](img/image-20200416064306210.png)
-
-![image-20200416064321151](img/image-20200416064321151.png)
-
-![image-20200416064344342](img/image-20200416064344342.png)
-
-![image-20200416064404496](img/image-20200416064404496.png)
-
-![image-20200416064420779](img/image-20200416064420779.png)
-
-![image-20200416064431724](img/image-20200416064431724.png)
-
-![image-20200416064448151](img/image-20200416064448151.png)
-
-### 感受Python之美
-
-#### 1 简洁之美
-
-通过一行代码，体会Python语言简洁之美
-
-1) 一行代码交换`a`,`b`：
-
-```python
-a, b = b, a
-```
-
-2) 一行代码反转列表
-
-```python
-[1,2,3][::-1] # [3,2,1]
-```
-
-3) 一行代码合并两个字典
-
-```python
-{**{'a':1,'b':2}, **{'c':3}} # {'a': 1, 'b': 2, 'c': 3}
-
-```
-4)  一行代码列表去重
-
-```python
-set([1,2,2,3,3,3]) # {1, 2, 3}
-```
-
-5) 一行代码求多个列表中的最大值
-
-```python
-max(max([ [1,2,3], [5,1], [4] ], key=lambda v: max(v))) # 5
-```
-
-6) 一行代码生成逆序序列
-
-```python
-list(range(10,-1,-1)) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-```
-
-#### 2 Python绘图
-
-Python绘图方便、漂亮，画图神器pyecharts几行代码就能绘制出热力图：
-
-![](./img/image-20191229101724665.png)
-
-炫酷的水球图：
-
-![](./img/liquid.gif)
-
-
-
-
-
-经常使用的词云图：
-
-![1578809198185](./img/1578809198185.png)
-
-#### 3 Python动画
-
-仅适用Python的常用绘图库：Matplotlib，就能制作出动画，辅助算法新手入门基本的排序算法。如下为一个随机序列，使用`快速排序算法`，由小到大排序的过程动画展示：
-
-![](./img/640.gif)
-
-归并排序动画展示：
-
-![](./img/641.gif)
-
-使用turtule绘制的漫天雪花：
-
-<img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
-
-timeline时间轮播图：
-
-![](./img/timeline.gif)
-
-#### 4 Python数据分析
-
-Python非常适合做数值计算、数据分析，一行代码完成数据透视：
-
-```python
-pd.pivot_table(df, index=['Manager', 'Rep'], values=['Price'], aggfunc=np.sum)
-```
-
-#### 5 Python机器学习
-
-Python机器学习库`Sklearn`功能强大，接口易用，包括数据预处理模块、回归、分类、聚类、降维等。一行代码创建一个KMeans聚类模型：
-
-```python
-from sklearn.cluster import KMeans
-KMeans( n_clusters=3 )
-```
-
-![img](./img/kmeans.png)
-
-#### 6 Python-GUI
-
-PyQt设计器开发GUI，能够迅速通过拖动组建搭建出来，使用方便。如下为使用PyQt，定制的一个专属自己的小而美的计算器。
-
-除此之外，使用Python的Flask框架搭建Web框架，也非常方便。
-
-总之，在这个`Python小例子`，你都能学到关于使用Python干活的方方面面的有趣的小例子，欢迎关注。
+[TOC]
 
 ### 一、Python基础
 
@@ -495,12 +362,7 @@ Out[1]: 3.0
 如果不能转化为浮点数，则会报`ValueError`:
 ```python
 In [2]: float('a')
-ValueError                                Traceback (most recent call last)
-<ipython-input-11-99859da4e72c> in <module>()
-----> 1 float('a')
-
-ValueError: could not convert string to float: 'a'
-
+# ValueError: could not convert string to float: 'a'
 ```
 
 #### 26 字符串格式化　
@@ -581,11 +443,7 @@ In [1]: hash(xiaoming)
 Out[1]: 6139638
 
 In [2]: hash([1,2,3])
-TypeError                                 Traceback (most recent call last)
-<ipython-input-32-fb5b1b1d9906> in <module>()
-----> 1 hash([1,2,3])
-
-TypeError: unhashable type: 'list'
+# TypeError: unhashable type: 'list'
   ```
 
 #### 31  一键帮助　
@@ -2862,7 +2720,7 @@ print(f"当月第一天:{month_first_day}\n")
 打印结果：
 
 ```python
-当月第一天:2019-12-01
+# 当月第一天:2019-12-01
 ```
 
 
@@ -3994,8 +3852,7 @@ main()
 
 动态图结果展示：
 
-
-<img src="./img/turtlesnow.gif" alt="Sample"  width="600" height="300">
+<img src="./img/turtlesnow.gif" alt="Sample"  width="50%">
 
 #### 3 wordcloud词云图
 
@@ -4055,7 +3912,7 @@ fig.add_trace(
 fig.show()
 ```
 
-![image-20200416001202816](img/image-20200416001202816.png)
+<img src="img/image-20200416001202816.png" width=50%/>
 
 
 #### 5 seaborn热力图
@@ -4078,8 +3935,7 @@ heatmap_plot = sns.heatmap(data, center=0, cmap='gist_rainbow')
 plt.show()
 ```
 
-
-![](./img/heatmap.png)
+<img src="./img/heatmap.png" width="50%" />
 
 #### 6 matplotlib折线图
 
@@ -4108,7 +3964,7 @@ def label(ax, text, y=0):
                           ec='#8B7E66'))
 ```
 
-![](./img/matplotlib1.png)
+<img src="./img/matplotlib1.png" width="60%"/>
 
 ```python
 import numpy as np
@@ -4145,7 +4001,7 @@ plt.show()
 
 
 #### 7 matplotlib散点图
-![1578811129148](./img/1578811129148.png)
+<img src="./img/1578811129148.png" width="60%"/>
 
 对应代码：
 
@@ -4189,7 +4045,7 @@ plt.show()
 
 #### 8 matplotlib柱状图
 
-![1578811155501](./img/1578811155501.png)
+<img src="./img/1578811155501.png" width="60%"/>
 
 对应代码：
 
@@ -4248,8 +4104,7 @@ main()
 
 #### 9 matplotlib等高线图
 
-
-![1578811177737](./img/1578811177737.png)
+<img src="./img/1578811177737.png" width="60%"/>
 
 对应代码：
 
@@ -4284,7 +4139,7 @@ plt.show()
 
 #### 10 imshow图
 
-![1578811404145](./img/1578811404145.png)
+<img src="./img/1578811404145.png" width="60%"/>
 
 对应代码：
 
@@ -4354,7 +4209,7 @@ print('ok')
 
 仪表盘中共展示三项，每项的比例为30%,70%,90%，如下图默认名称显示第一项：Python机器学习，完成比例为30%
 
-![](./img/image-20191228194635902.png)
+<img src="./img/image-20191228194635902.png" width="40%"/>
 
 #### 12 pyecharts漏斗图
 
@@ -4376,7 +4231,7 @@ funnel_base().render('./img/car_fnnel.html')
 
 以7种车型及某个属性值绘制的漏斗图，属性值大越靠近漏斗的大端。
 
-![1578811483265](./img/1578811483265.png)
+<img src="./img/1578811483265.png" width="50%"/>
 
 #### 13 pyecharts日历图
 
@@ -4415,7 +4270,7 @@ calendar_interval_1().render('./img/calendar.html')
 
 绘制2019年1月1日到12月27日的步行数，官方给出的图形宽度`900px`不够，只能显示到9月份，本例使用`opts.InitOpts(width="1200px")`做出微调，并且`visualmap`显示所有步数，每隔一天显示一次：
 
-![1578811543851](./img/1578811543851.png)
+<img src="./img/1578811543851.png" width="50%"/>
 
 #### 14 pyecharts绘制graph图
 
@@ -4449,7 +4304,7 @@ def graph_base() -> Graph:
 
 构建图，其中客户点1与其他两个客户都没有关系(`link`)，也就是不存在有效边：
 
-![1578811569529](./img/1578811569529.png)
+<img src="./img/1578811569529.png" width="50%"/>
 
 #### 15 pyecharts水球图
 
@@ -4471,7 +4326,7 @@ liquid().render('./img/liquid.html')
 
 水球图的取值`[0.67, 0.30, 0.15]`表示下图中的`三个波浪线`，一般代表三个百分比:
 
-![](./img/liquid.gif)
+<img src="./img/liquid.gif" width="50%"/>
 
 #### 16 pyecharts饼图
 
@@ -4492,7 +4347,7 @@ def pie_base() -> Pie:
 
 pie_base().render('./img/pie_pyecharts.html')
 ```
-![](./img/20191229105841.png)
+<img src="./img/20191229105841.png" width="50%"/>
 
 
 #### 17 pyecharts极坐标图
@@ -4517,7 +4372,7 @@ polar_scatter0().render('./img/polar.html')
 
 极坐标表示为`(夹角,半径)`，如(6,94)表示夹角为6，半径94的点：
 
-![1578811648010](./img/1578811648010.png)
+<img src="./img/1578811648010.png" width="50%"/>
 
 #### 18 pyecharts词云图
 
@@ -4549,8 +4404,7 @@ wordcloud().render('./img/wordcloud.html')
 
 `("C",65)`表示在本次统计中C语言出现65次
 
-
-![1578811675413](./img/1578811675413.png)
+<img src="./img/1578811675413.png" width="50%"/>
 
 #### 19 pyecharts系列柱状图
 
@@ -4572,7 +4426,7 @@ def bar_series() -> Bar:
 bar_series().render('./img/bar_series.html')
 ```
 
-![1578811781930](./img/1578811781930.png)
+<img src="./img/1578811781930.png" width="50%"/>
 
 #### 20 pyecharts热力图
 
@@ -4602,8 +4456,7 @@ heatmap_car().render('./img/heatmap_pyecharts.html')
 
 热力图描述的实际是三维关系，x轴表示车型，y轴表示国家，每个色块的颜色值代表销量，颜色刻度尺显示在左下角，颜色越红表示销量越大。
 
-
-![](./img/image-20191229101724665.png)
+<img src="./img/image-20191229101724665.png" width="50%"/>
 
 
 
@@ -4754,7 +4607,7 @@ OK！
 
 #### 23 pyecharts绘图属性设置方法(下)
 
-![](./img/pyecharts-bar.png)
+<img src="./img/pyecharts-bar.png" width="50%"/>
 
 **分步讲解如何配置为上图**
 
@@ -5159,7 +5012,7 @@ sns.pairplot(df02)
 plt.show()
 ```
 
-![image-20200223165617790](./img/image-20200223165617790.png)
+<img src="./img/image-20200223165617790.png" width="40%"/>
 
 设置颜色多显：
 
@@ -5168,7 +5021,7 @@ sns.pairplot(df02, hue="species")
 plt.show()
 ```
 
-![image-20200223165649794](./img/image-20200223165649794.png)
+<img src="./img/image-20200223165649794.png" width="40%"/>
 
 绘制所有特征散点矩阵：
 
@@ -5177,7 +5030,7 @@ sns.pairplot(df, hue="species")
 plt.show()
 ```
 
-![image-20200223165718091](./img/image-20200223165718091.png)
+<img src="./img/image-20200223165718091.png" width="50%"/>
 
 ### 六、 Python之坑
 
@@ -5606,7 +5459,7 @@ c = (
 c.render()
 ```
 
-![image-20200129164119080](./img/image-20200129164119080.png)
+<img src="./img/image-20200129164119080.png" width="50%"/>
 
 由此可见pyecharts对Numpy数据绘图不支持，传入原生Python的list:
 
@@ -5624,9 +5477,7 @@ c = (
 c.render()
 ```
 
-![image-20200129164339971](./img/image-20200129164339971.png)
-
-
+<img src="./img/image-20200129164339971.png" width="50%"/>
 
 
 
@@ -5698,7 +5549,7 @@ division by zero
 
 
 
-![image-20200104103849047](./img/image-20200104103849047.png)
+<img src="./img/image-20200104103849047.png" width="50%"/>
 
 #### 2 图像处理包pillow
 
@@ -5712,7 +5563,7 @@ pip install pillow
 
 旋转图像下面图像45度：
 
-![](./img/plotly2.png)
+<img src="./img/plotly2.png" width="40%"/>
 
 ```python
 In [1]: from PIL import Image
@@ -5722,7 +5573,7 @@ In [4]: im.rotate(45).show()
 
 旋转45度后的效果图
 
-![image-20200105085120611](./img/image-20200105085120611.png)
+<img src="./img/image-20200105085120611.png" width="40%"/>
 
 等比例缩放图像：
 
@@ -5743,7 +5594,7 @@ from PIL import ImageFilter
 im.filter(ImageFilter.CONTOUR).show()
 ```
 
-![](./img/pillow_filter.png)
+<img src="./img/pillow_filter.png" width="40%"/>
 
 #### 3 一行代码找到编码
 
@@ -5813,7 +5664,7 @@ Out[7]: '人生苦短，我用Python'
 
 目前，`chardet` 包支持的检测编码几十种，如下所示：
 
-![image-20200227225346560](./img/image-20200227225346560.png)
+<img src="./img/image-20200227225346560.png" width="50%"/>
 
 ### 八、 必知算法
 
@@ -5829,16 +5680,15 @@ Out[7]: '人生苦短，我用Python'
 
 快速排序动画展示
 
-![img](./img/642.gif)
+<img src="./img/642.gif" width="50%"/>
 
 归并排序动画展示
 
-
-![img](./img/643.gif)
+<img src="./img/643.gif" width="50%"/>
 
 堆排序动画展示
 
-![img](./img/644.gif)
+<img src="./img/644.gif" width="50%"/>
 
 这些算法动画使用Matplotlib制作，接下来逐个补充。
 
@@ -5912,11 +5762,11 @@ def bubble_sort(waiting_sort_data):
 
 实验结果图：
 
-![image-20200104232411426](./img/image-20200104232411426.png)
+<img src="./img/image-20200104232411426.png" width="50%"/>
 
 完整动画演示：
 
-![img](./img/bubble_sort.gif)
+<img src="./img/bubble_sort.gif" width="40%"/>
 
 #### 4 快速排序
 先上代码，比较经典，值得回味：
@@ -5945,9 +5795,7 @@ def quick_sort(data_set):
     frames.append(ds)
     return frames
 ```
-快速排序算法对输入为随机的序列优势往往较为明显，同样的输入数据，它只需要`24`帧调整就能完成排序：
-
-![image-20200104232337713](./img/image-20200104232337713.png)
+快速排序算法对输入为随机的序列优势往往较为明显，同样的输入数据，它只需要`24`帧调整就能完成排序。
 
 #### 5 选择排序
 选择排序和堆排序都是选择思维，但是性能却不如堆排序：
@@ -5964,15 +5812,9 @@ def selection_sort(data_set):
     frames.append(ds)
     return frames
 ```
-同样的输入数据，它完成排序需要`108`帧:
-
-![image-20200104232448531](./img/image-20200104232448531.png)
-
-
-
 动画展示如下，每轮会从未排序的列表中，挑出一个最小值，放到已排序序列后面。
 
-![img](./img/select_sort.gif)
+<img src="./img/select_sort.gif" width="40%"/>
 
 #### 6 堆排序
 堆排序大大改进了选择排序，逻辑上使用二叉树，先建立一个大根堆，然后根节点与未排序序列的最后一个元素交换，重新对未排序序列建堆。
@@ -6007,7 +5849,7 @@ def heap_sort(data_set):
 ```
 堆排序的性能也比较优秀，完成排序需要51次调整。
 
-![image-20200104232824967](./img/image-20200104232824967.png)
+<img src="./img/image-20200104232824967.png" width="50%"/>
 
 
 #### 7 综合
@@ -6045,7 +5887,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 然后：
 
-![1578812306173](./img/1578812306173.png)
+<img src="./img/1578812306173.png" width="50%"/>
 
 
 通过以上方法求解此类问题，但是为什么它能求出极值呢？
