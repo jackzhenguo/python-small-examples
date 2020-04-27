@@ -1,8 +1,6 @@
 告别枯燥，60 秒学会一个小例子。系统学习Python，从入门到大师。已有 `247` 个例子。下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
 
-<div align="center"> 
-    <img src="img/image-20200415232239773.png" width="20%"/>
-</div>
+<img src="img/image-20200415232239773.png" width="20%"/>
 
 
 本库的目录：
