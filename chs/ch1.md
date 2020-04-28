@@ -6,7 +6,7 @@
 
 下载本库所有例子 **PDF** 版本，请关注 《Python小例子》官方公众号后回复 **mypy** 🍏 🍏 
 
-<img src="E:/guozhen3/资料库/06self/python-small-examples/img/image-20200415232239773.png" width="20%"/>
+<img src="https://imgkr.cn-bj.ufileos.com/88f70b56-6b85-47e1-9186-7557d44f08cd.png" width="20%"/>
 
 如果转载本库小例子，请附上例子来源，链接：https://github.com/jackzhenguo/python-small-examples
 
@@ -1604,9 +1604,7 @@ print(f'更长的列表是{r}')
 
 程序完整运行过程，动画演示如下：
 
-<img src="../img/lambda_show.gif" width="50%"/>
-
-
+<img src="https://images.gitbook.cn/879e0c60-895c-11ea-8ce2-9d76930872bf" width="50%"/>
 
 
 结论：
