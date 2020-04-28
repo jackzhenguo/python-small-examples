@@ -1,8 +1,14 @@
-告别枯燥，60 秒学会一个小例子。系统学习Python，从入门到大师。已有 **223** 个例子。下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
+🚀 🚀 告别枯燥，60 秒学会一个小例子 🔥🔥
+
+系统学习Python，从入门到大师🚀 🚀   此库已有 **223** 个使用的小例子 🍎🍎
+
+下载本库所有例子 **PDF** 版本，请关注 《Python小例子》官方公众号后回复 **mypy** 🍏 🍏 
 
 <img src="img/image-20200415232239773.png" width="20%"/>
 
-本库的目录：
+如果转载本库小例子，请附上例子来源，链接：https://github.com/jackzhenguo/python-small-examples
+
+本库的目录
 
 [第一章：Python 基础+进阶](./chs/ch1.md)
 
@@ -6421,7 +6427,7 @@ print(m.group(2))
 
 最终结果
 
-```python
+```kepython
 Name: temperature, dtype: object
     location temperature  high  low
 0         香河     11/-5°C    11   -5
