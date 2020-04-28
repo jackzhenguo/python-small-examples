@@ -1,3 +1,15 @@
+🚀 🚀 告别枯燥，60 秒学会一个 Python 小例子 🔥🔥  
+
+是的，60 秒学会一个 Python 小例子 🔥🔥
+
+当前库已有🍎🍎 **223** 🍎🍎个实用的小例子 
+
+下载本库所有例子 **PDF** 版本，请关注 《Python小例子》官方公众号后回复 **mypy** 🍏 🍏 
+
+<img src="E:/guozhen3/资料库/06self/python-small-examples/img/image-20200415232239773.png" width="20%"/>
+
+如果转载本库小例子，请附上例子来源，链接：https://github.com/jackzhenguo/python-small-examples
+
 ### 三、Python文件、日期和多线程
 
 Python文件IO操作涉及文件读写操作，获取文件`后缀名`，修改后缀名，获取文件修改时间，`压缩`文件，`加密`文件等操作。
@@ -363,7 +375,7 @@ get_modify_time('./data')
     ./data\PySimpleGUI-4.7.1-py3-none-any.whl
                         修改时间[2019-12-05 00:25:47]
                         距今[ 17天16时13]
-    
+
 
 #### 125 批量压缩文件
 

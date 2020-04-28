@@ -1,3 +1,15 @@
+🚀 🚀 告别枯燥，60 秒学会一个 Python 小例子 🔥🔥  
+
+是的，60 秒学会一个 Python 小例子 🔥🔥
+
+当前库已有🍎🍎 **223** 🍎🍎个实用的小例子 
+
+下载本库所有例子 **PDF** 版本，请关注 《Python小例子》官方公众号后回复 **mypy** 🍏 🍏 
+
+<img src="E:/guozhen3/资料库/06self/python-small-examples/img/image-20200415232239773.png" width="20%"/>
+
+如果转载本库小例子，请附上例子来源，链接：https://github.com/jackzhenguo/python-small-examples
+
 ### 八、Python 实战
 
 

@@ -1,3 +1,15 @@
+🚀 🚀 告别枯燥，60 秒学会一个 Python 小例子 🔥🔥  
+
+是的，60 秒学会一个 Python 小例子 🔥🔥
+
+当前库已有🍎🍎 **223** 🍎🍎个实用的小例子 
+
+下载本库所有例子 **PDF** 版本，请关注 《Python小例子》官方公众号后回复 **mypy** 🍏 🍏 
+
+<img src="E:/guozhen3/资料库/06self/python-small-examples/img/image-20200415232239773.png" width="20%"/>
+
+如果转载本库小例子，请附上例子来源，链接：https://github.com/jackzhenguo/python-small-examples
+
 ### 四、Python三大利器
 
 Python中的三大利器包括：`迭代器`，`生成器`，`装饰器`，利用好它们才能开发出最高性能的Python程序，涉及到的内置模块 `itertools`提供迭代器相关的操作。此部分收录有意思的例子共计`15`例。
