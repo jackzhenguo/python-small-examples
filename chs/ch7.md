@@ -226,7 +226,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 假定目标函数是连续可导函数，问题定义如下：
 
-![1578812286324](../img\1578812286324.png)
+![1578812286324](../img/1578812286324.png)
 
 然后：
 
@@ -283,7 +283,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 因此，要想f(x+delta_x) 变小，通过图形可以看出，只要保持和梯度反方向夹角小于90，也就是保持大概一个方向，`f(x+delta_x)`就会变小，转化为公式就是：
 
-![1578812584788](../img\1578812584788.png)
+![1578812584788](../img/1578812584788.png)
 
 如下所示的一个`delta_x`就是一个会使得f(x)减小的方向，但是这种移动将会破坏等式约束: `h(x)=0`，关于准确的移动方向下面第四小节会讲到
 
@@ -307,7 +307,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 <img src="../img/1578812701522.png" width="40%"/>
 
-绿圈表示法向的`正交`方向
+绿圈表示法向的正交方向
 
 **x沿着绿圈内的方向移动，将会使得f(x)减小，同时满足等式约束h(x) = 0**
 
@@ -319,11 +319,11 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
  我们不妨大胆假设，如果满足下面的条件：
 
-![1578812749903](../img\1578812749903.png)
+![1578812749903](../img/1578812749903.png)
 
 根据第四小节讲述，`delta_x`必须正交于`h(x)`，所以：
 
-![1578812770462](../img\1578812770462.png)
+![1578812770462](../img/1578812770462.png)
 
 所以：
 
@@ -331,7 +331,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 至此，我们就找到`f(x)`偏导数等于0的点，就是下图所示的**两个关键点（它们也是f(x)与h(x)的临界点）**。且必须满足以下条件，也就是两个向量必须是平行的：
 
-![1578812814963](../img\1578812814963.png)
+![1578812814963](../img/1578812814963.png)
 
 <img src="../img/1578812850771.png" width="50%"/>
 
@@ -339,7 +339,7 @@ for sort_method in [bubble_sort, quick_sort, selection_sort, heap_sort]:
 
 至此，已经完全解码拉格朗日乘数法，拉格朗日巧妙的构造出下面这个式子：
 
-![1578812874316](../img\1578812874316.png)
+![1578812874316](../img/1578812874316.png)
 
 **还有取得极值的的三个条件，都是对以上五个小节中涉及到的条件的编码**
 
@@ -442,7 +442,7 @@ def guass():
 
 beta分布的期望值如下，可从下面的两条曲线中加以验证：
 
-![image-20200105205845965](../img\image-20200105205845965.png)
+![image-20200105205845965](../img/image-20200105205845965.png)
 
 ```python
 # beta 分布
