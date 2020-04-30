@@ -72,19 +72,19 @@ Out[5]: True
 调用对象的 \__repr__ 方法，获得该方法的返回值，如下例子返回值为字符串
 
 ```python
-class Student():
-    def __init__(self,id,name):
-        self.id = id
-        self.name = name
-    def __repr__(self):
-        return 'id = '+self.id +', name = '+self.name
-```
+In [1]: class Student():
+   ...:     def __init__(self,id,name):
+   ...:         self.id = id
+   ...:         self.name = name
+   ...:     def __repr__(self):
+   ...:         return 'id = '+self.id +', name = '+self.name
+   ...: 
+   ...: 
 
-```python
-In [2]: xiaoming = Student(id='1',name='xiaoming')
+In [2]: xiaoming = Student(id='001',name='xiaoming')
 
 In [3]: print(xiaoming)
-id = 1, name = xiaoming
+id = 001, name = xiaoming
 
 In [4]: ascii(xiaoming)
 Out[4]: 'id = 001, name = xiaoming'
