@@ -39,7 +39,7 @@
 
 #### 2 元素都为真
 
-接受一个可迭代对象，如果可迭代对象的**所有元素**都为真，那么返回 `True`，否则返回`False`
+接受一个可迭代对象，如果可迭代对象的所有元素都为真，那么返回 `True`，否则返回`False`
 
 有0，所以不是所有元素都为真
 ```python
@@ -55,7 +55,7 @@ True
 
 #### 3 元素至少一个为真　
 
-接受一个可迭代对象，如果可迭代对象里**至少有一个**元素为真，那么返回`True`，否则返回`False`
+接受一个可迭代对象，如果可迭代对象里至少有一个元素为真，那么返回`True`，否则返回`False`
 
 没有一个元素为真
 ```python
@@ -70,52 +70,50 @@ True
 
 #### 4 ascii展示对象　　
 
-调用对象的 \__repr__ 方法，获得该方法的返回值，如下例子返回值为字符串
+调用对象的 `__repr__` 方法，获得该方法的返回值，如下例子返回值为字符串
 
 ```python
-class Student():
+>>> class Student():
     def __init__(self,id,name):
         self.id = id
         self.name = name
     def __repr__(self):
         return 'id = '+self.id +', name = '+self.name
 ```
-
+调用：
 ```python
-In [2]: xiaoming = Student(id='1',name='xiaoming')
-
-In [3]: print(xiaoming)
+>>> xiaoming = Student(id='1',name='xiaoming')
+>>> xiaoming
 id = 1, name = xiaoming
-
-In [4]: ascii(xiaoming)
-Out[4]: 'id = 001, name = xiaoming'
+>>> ascii(xiaoming)
+'id = 1, name = xiaoming'
 ```
 
 #### 5  十转二
 
-将`十进制`转换为`二进制`
+将十进制转换为二进制：
 
 ```python
-In [1]: bin(10)
-Out[1]: '0b1010'
+>>> bin(10)
+'0b1010'
 ```
 
 #### 6 十转八
 
-将`十进制`转换为`八进制`
+十进制转换为八进制：
 
 ```python
-In [1]: oct(9)
-Out[1]: '0o11'
+>>> oct(9)
+'0o11'
 ```
 
 #### 7 十转十六
 
-将`十进制`转换为`十六进制`
+十进制转换为十六进制：
 
 ```python
-In [1]: hex(15)
-Out[1]: '0xf'
+>>> hex(15)
+'0xf'
 ```
 
 #### 8 判断是真是假　　
@@ -123,36 +121,32 @@ Out[1]: '0xf'
 测试一个对象是True, 还是False.
 
 ```python
-In [1]: bool([0,0,0])
-Out[1]: True
-
-In [2]: bool([])
-Out[2]: False
-
-In [3]: bool([1,0,1])
-Out[3]: True
+>>> bool([0,0,0])
+True
+>>> bool([])
+False
+>>> bool([1,0,1])
+True
 ```
 
 #### 9  字符串转字节　　
 
-将一个`字符串`转换成`字节`类型
+字符串转换为字节类型
 
 ```python
-In [1]: s = "apple"
-
-In [2]: bytes(s,encoding='utf-8')
-Out[2]: b'apple'
+>>> s = "apple"
+>>> bytes(s,encoding='utf-8')
+b'apple'
 ```
 
 #### 10 转为字符串　　
 
-将`字符类型`、`数值类型`等转换为`字符串`类型
+字符类型、数值型等转换为字符串类型
 
 ```python
-In [1]: i = 100
-
-In [2]: str(i)
-Out[2]: '100'
+>>> i = 100
+>>> str(i)
+'100'
 ```
 
 #### 11 是否可调用　　
