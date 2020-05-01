@@ -28,16 +28,155 @@
 
 `Python基础`主要总结Python常用内置函数；Python独有的语法特性、关键词`nonlocal`, ` global`等；内置数据结构包括：列表(list),  字典(dict),  集合(set),  元组(tuple) 以及相关的高级模块`collections`中的`Counter`,  `namedtuple`, `defaultdict`，`heapq`模块。目前共有`90`个小例子。
 
-#### 1 求绝对值
+#### 1  十转二
 
-绝对值或复数的模
+将十进制转换为二进制：
 
 ```python
->>> abs(-6)
-6
+>>> bin(10)
+'0b1010'
 ```
 
-#### 2 元素都为真
+#### 2 十转八
+
+十进制转换为八进制：
+
+```python
+>>> oct(9)
+'0o11'
+```
+
+#### 3 十转十六
+
+十进制转换为十六进制：
+
+```python
+>>> hex(15)
+'0xf'
+```
+
+#### 4  字符串转字节　　
+
+字符串转换为字节类型
+
+```python
+>>> s = "apple"
+>>> bytes(s,encoding='utf-8')
+b'apple'
+```
+
+#### 5 转为字符串　　
+
+字符类型、数值型等转换为字符串类型
+
+```python
+>>> i = 100
+>>> str(i)
+'100'
+```
+
+#### 6 十转ASCII
+
+十进制整数对应的 ASCII 字符
+
+```python
+>>> chr(65)
+'A'
+```
+
+#### 7 ASCII转十
+
+ASCII字符对应的十进制数
+
+```python
+>>> ord('A')
+65
+```
+
+#### 8 转为字典　　
+
+创建数据字典的几种方法
+
+```python
+>>> dict()
+{}
+>>> dict(a='a',b='b')
+{'a': 'a', 'b': 'b'}
+>>> dict(zip(['a','b'],[1,2]))
+{'a': 1, 'b': 2}
+>>> dict([('a',1),('b',2)])
+{'a': 1, 'b': 2}
+```
+
+#### 9 转为浮点类型　
+
+整数或数值型字符串转换为浮点数
+
+```python
+>>> float(3)
+3.0
+```
+
+如果不能转化为浮点数，则会报`ValueError`:
+
+```python
+>>> float('a')
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    float('a')
+ValueError: could not convert string to float: 'a'
+```
+
+#### 10  转为整型　　
+
+int(x, base =10) 
+
+x 可能为字符串或数值，将 x 转换为整数。
+
+如果参数是字符串，那么它可能包含符号和小数点。如果超出普通整数的表示范围，一个长整数被返回。  
+
+```python
+>>> int('12',16)
+18
+```
+
+#### 11  转为集合
+
+返回一个 set 对象，集合内不允许有重复元素：
+
+```python
+>>> a = [1,4,2,3,1]
+>>> set(a)
+{1, 2, 3, 4}
+```
+
+#### 12 转为切片
+
+*class* slice(*start*, *stop*[, *step*])
+
+返回一个由 range(start, stop, step) 指定索引集的 slice 对象，代码可读性变好。
+
+```python
+>>> a = [1,4,2,3,1]
+>>> my_slice = slice(0,5,2)
+>>> a[my_slice]
+[1, 2, 1]
+```
+
+#### 13 判断是真是假　　
+
+测试一个对象是True, 还是False.
+
+```python
+>>> bool([0,0,0])
+True
+>>> bool([])
+False
+>>> bool([1,0,1])
+True
+```
+
+#### 14 元素都为真判断
 
 接受一个可迭代对象，如果可迭代对象的所有元素都为真，那么返回 `True`，否则返回`False`
 
@@ -53,7 +192,7 @@ False
 True
 ```
 
-#### 3 元素至少一个为真　
+#### 15 元素至少一个为真判断　
 
 接受一个可迭代对象，如果可迭代对象里至少有一个元素为真，那么返回`True`，否则返回`False`
 
@@ -68,17 +207,26 @@ False
 True
 ```
 
-#### 4 ascii展示对象　　
+#### 16 求绝对值
 
-调用对象的 `__repr__` 方法，获得该方法的返回值，如下例子返回值为字符串
+绝对值或复数的模
+
+```python
+>>> abs(-6)
+6
+```
+
+#### 17 ascii 展示对象　　
+
+调用对象的 `__repr__` 方法，获得该方法的返回值，如下返回值为字符串
 
 ```python
 >>> class Student():
-    def __init__(self,id,name):
-        self.id = id
-        self.name = name
-    def __repr__(self):
-        return 'id = '+self.id +', name = '+self.name
+        def __init__(self,id,name):
+            self.id = id
+            self.name = name
+        def __repr__(self):
+            return 'id = '+self.id +', name = '+self.name
 ```
 调用：
 ```python
@@ -89,83 +237,31 @@ id = 1, name = xiaoming
 'id = 1, name = xiaoming'
 ```
 
-#### 5  十转二
+#### 18 是否可调用　　
 
-将十进制转换为二进制：
-
-```python
->>> bin(10)
-'0b1010'
-```
-
-#### 6 十转八
-
-十进制转换为八进制：
+判断对象是否可被调用，能被调用的对象是一个`callable` 对象。
 
 ```python
->>> oct(9)
-'0o11'
-```
-
-#### 7 十转十六
-
-十进制转换为十六进制：
-
-```python
->>> hex(15)
-'0xf'
-```
-
-#### 8 判断是真是假　　
-
-测试一个对象是True, 还是False.
-
-```python
->>> bool([0,0,0])
+>>> callable(str)
 True
->>> bool([])
+>>> callable(int)
+True
+```
+Student 对象实例目前不可调用：
+
+```python
+>>> class Student():
+        def __init__(self,id,name):
+            self.id = id
+            self.name = name
+        def __repr__(self):
+            return 'id = '+self.id +', name = '+self.name
+
+>>> xiaoming = Student(id='1',name='xiaoming')
+>>> callable(xiaoming)
 False
->>> bool([1,0,1])
-True
 ```
 
-#### 9  字符串转字节　　
-
-字符串转换为字节类型
-
-```python
->>> s = "apple"
->>> bytes(s,encoding='utf-8')
-b'apple'
-```
-
-#### 10 转为字符串　　
-
-字符类型、数值型等转换为字符串类型
-
-```python
->>> i = 100
->>> str(i)
-'100'
-```
-
-#### 11 是否可调用　　
-
-判断对象是否可被调用，能被调用的对象就是一个`callable` 对象，比如函数 `str`, `int` 等都是可被调用的，但是例子**4** 中`xiaoming`实例是不可被调用的：
-
-```python
-In [1]: callable(str)
-Out[1]: True
-
-In [2]: callable(int)
-Out[2]: True
-
-In [3]: xiaoming
-Out[3]: id = 001, name = xiaoming
-
-In [4]: callable(xiaoming)
-Out[4]: False
-```
 如果想让`xiaoming`能被调用 xiaoming(), 需要重写`Student`类的`__call__`方法：
 
 ```python
@@ -189,25 +285,7 @@ my name is xiaoming
 
 ```
 
-#### 12 十转ASCII
-
-查看十进制整数对应的`ASCII字符`
-
-```python
-In [1]: chr(65)
-Out[1]: 'A'
-```
-
-#### 13 ASCII转十
-
-查看某个`ASCII字符`对应的十进制数
-
-```python
-In [1]: ord('A')
-Out[1]: 65
-```
-
-#### 14 类方法　
+#### 19 类方法　
 
 `classmethod` 装饰器对应的函数不需要实例化，不需要 `self `参数，但第一个参数需要是表示自身类的 cls 参数，可以来调用类的属性，类的方法，实例化对象等。
 
@@ -223,7 +301,7 @@ In [1]: class Student():
     ...:         print(cls)
 ```
 
-#### 15 执行字符串表示的代码
+#### 20 执行字符串表示的代码
 
 将字符串编译成python能识别或可执行的代码，也可以将文字读成字符串再编译。
 
@@ -239,7 +317,7 @@ In [4]: exec(r)
 helloworld
 ```
 
-#### 16  创建复数
+#### 21  创建复数
 
 创建一个复数
 
@@ -248,7 +326,7 @@ In [1]: complex(1,2)
 Out[1]: (1+2j)
 ```
 
-#### 17 动态删除属性　　
+#### 22 动态删除属性　　
 
 删除对象的属性
 
@@ -259,25 +337,7 @@ In [2]: hasattr(xiaoming,'id')
 Out[2]: False
 ```
 
-#### 18 转为字典　　
-
-创建数据字典
-
-```python
-In [1]: dict()
-Out[1]: {}
-
-In [2]: dict(a='a',b='b')
-Out[2]: {'a': 'a', 'b': 'b'}
-
-In [3]: dict(zip(['a','b'],[1,2]))
-Out[3]: {'a': 1, 'b': 2}
-
-In [4]: dict([('a',1),('b',2)])
-Out[4]: {'a': 1, 'b': 2}
-```
-
-#### 19 一键查看对象所有方法　
+#### 23 一键查看对象所有方法　
 
 不带参数时返回`当前范围`内的变量、方法和定义的类型列表；带参数时返回`参数`的属性，方法列表。
 
@@ -310,11 +370,10 @@ Out[96]:
  '__str__',
  '__subclasshook__',
  '__weakref__',
- 
  'name']
 ```
 
-#### 20 取商和余数　　
+#### 24 取商和余数　　
 
 分别取商和余数
 
@@ -323,7 +382,7 @@ In [1]: divmod(10,3)
 Out[1]: (3, 1)
 ```
 
-#### 21 枚举对象　　
+#### 25 枚举对象　　
 
 返回一个可以枚举的对象，该对象的next()方法将返回一个元组。
 
@@ -337,7 +396,7 @@ In [1]: s = ["a","b","c"]
 3 c
 ```
 
-#### 22 计算表达式
+#### 26 计算表达式
 
 将字符串str 当成有效的表达式来求值并返回计算结果取出字符串中内容
 
@@ -348,7 +407,7 @@ In [1]: s = "1 + 3 +5"
 Out[1]: 9
 ```
 
-#### 23 查看变量所占字节数
+#### 27 查看变量所占字节数
 
 ```python
 In [1]: import sys
@@ -359,7 +418,7 @@ In [3]: sys.getsizeof(a) # 占用240个字节
 Out[3]: 240
 ```
 
-#### 24 过滤器　　
+#### 28 过滤器　　
 
 在函数中设定过滤条件，迭代元素，保留返回值为`True`的元素：
 
@@ -370,21 +429,7 @@ In [2]: list(fil)
 Out[2]: [11, 45, 13]
 ```
 
-#### 25 转为浮点类型　
-
-将一个整数或数值型字符串转换为浮点数
-
-```python
-In [1]: float(3)
-Out[1]: 3.0
-```
-如果不能转化为浮点数，则会报`ValueError`:
-```python
-In [2]: float('a')
-# ValueError: could not convert string to float: 'a'
-```
-
-#### 26 字符串格式化　
+#### 29 字符串格式化　
 
 格式化输出字符串，format(value, format_spec)实质上是调用了value的__format__(format_spec)方法。
 
@@ -408,7 +453,7 @@ i am tom,age18
 | 18         | {:<10d} | '18 '     | 左对齐 (宽度为10)            |
 | 18         | {:^10d} | ' 18 '    | 中间对齐 (宽度为10)          |
 
-#### 27 冻结集合　　
+#### 30 冻结集合　　
 
 创建一个不可修改的集合。
 
@@ -418,7 +463,7 @@ Out[1]: frozenset({1, 2, 3})
 ```
 因为不可修改，所以没有像`set`那样的`add`和`pop`方法
 
-#### 28 动态获取对象属性　
+#### 31 动态获取对象属性　
 
 获取对象的属性
 
@@ -435,7 +480,7 @@ In [3]: getattr(xiaoming,'name') # 获取xiaoming这个实例的name属性值
 Out[3]: 'xiaoming'
 ```
 
-#### 29 对象是否有这个属性
+#### 32 对象是否有这个属性
 
 ```python
 In [1]: class Student():
@@ -453,7 +498,7 @@ In [4]: hasattr(xiaoming,'address')
 Out[4]: False
 ```
 
-#### 30 返回对象的哈希值　　
+#### 33 返回对象的哈希值　　
 
 返回对象的哈希值，值得注意的是自定义的实例都是可哈希的，`list`, `dict`, `set`等可变对象都是不可哈希的(unhashable)
 
@@ -465,7 +510,7 @@ In [2]: hash([1,2,3])
 # TypeError: unhashable type: 'list'
   ```
 
-#### 31  一键帮助　
+#### 34  一键帮助　
 
 返回对象的帮助文档
 
@@ -506,15 +551,6 @@ Out[1]: 98234208
 In [1]: input()
 aa
 Out[1]: 'aa'
-```
-
-#### 34  转为整型　　
-
-int(x, base =10) , x可能为字符串或数值，将x 转换为一个普通整数。如果参数是字符串，那么它可能包含符号和小数点。如果超出了普通整数的表示范围，一个长整数被返回。  
-
-```python
-In [1]: int('12',16)
-Out[1]: 18
 ```
 
 #### 35 isinstance
@@ -749,32 +785,6 @@ Out[11]: 10.022
 
 In [12]: round(10.05,1)
 Out[12]: 10.1
-```
-
-#### 46 转为集合类型
-
-返回一个set对象，集合内不允许有重复元素：
-
-```python
-In [159]: a = [1,4,2,3,1]
-
-In [160]: set(a)
-Out[160]: {1, 2, 3, 4}
-```
-
-#### 47 转为切片对象
-
-*class* slice(*start*, *stop*[, *step*])
-
-返回一个表示由 range(start, stop, step) 所指定索引集的 slice对象，它让代码可读性、可维护性变好。
-
-```python
-In [1]: a = [1,4,2,3,1]
-
-In [2]: my_slice_meaning = slice(0,5,2)
-
-In [3]: a[my_slice_meaning]
-Out[3]: [1, 2, 1]
 ```
 
 #### 48 拿来就用的排序函数
@@ -5386,6 +5396,7 @@ array = [1, 3, 5]
 g = (x for x in array if array.count(x) > 0)
 ```
 `g`为生成器，list(g)后返回`[1,3,5]`，因为每个元素肯定至少都出现一次。所以这个结果这不足为奇。但是，请看下例：
+
 ```python
 array = [1, 3, 5]
 g = (x for x in array if array.count(x) > 0)
