@@ -1,6 +1,27 @@
-告别枯燥，60 秒学会一个小例子。系统学习Python，从入门到大师。已有 `247` 个例子。下载本库所有例子的PDF版本，请关注 《Python小例子》官方公众号后回复 mypy
+🚀 🚀 告别枯燥，60 秒学会一个 Python 小例子 ，当前库已有 **223** 个实用的小例子 。下载本库所有例子的 **PDF** 版本，请关注 《Python小例子》官方公众号后回复 **mypy** 🍏 🍏 
 
 <img src="img/image-20200415232239773.png" width="20%"/>
+
+如果转载本库小例子，请附上例子来源，链接：https://github.com/jackzhenguo/python-small-examples
+
+### 本库目录
+
+[第一章：Python 基础+进阶](./chs/ch1.md)
+
+[第二章：Python字符串+正则](./chs/ch2.md)
+
+[第三章：Python文件日期和多线程](./chs/ch3.md)
+
+[第四章：Python三大利器](./chs/ch4.md)
+
+[第五章：Python绘图](./chs/ch5.md)
+
+[第六章：Python坑点和工具](./chs/ch6.md)
+
+[第七章：算法入门](./chs/ch7.md)
+
+[第八章：Python实战](./chs/ch8.md)
+
 
 
 ### 一、Python基础
@@ -12,82 +33,87 @@
 绝对值或复数的模
 
 ```python
-In [1]: abs(-6)
-Out[1]: 6
+>>> abs(-6)
+6
 ```
 
 #### 2 元素都为真
 
-接受一个迭代器，如果迭代器的`所有元素`都为真，那么返回`True`，否则返回`False`
+接受一个可迭代对象，如果可迭代对象的所有元素都为真，那么返回 `True`，否则返回`False`
 
+有0，所以不是所有元素都为真
 ```python
-In [2]: all([1,0,3,6])
-Out[2]: False
+>>> all([1,0,3,6])
+False
+```
 
-In [3]: all([1,2,3])
-Out[3]: True
+所有元素都为真
+```python
+>>> all([1,2,3])
+True
 ```
 
 #### 3 元素至少一个为真　
 
-接受一个迭代器，如果迭代器里`至少有一个`元素为真，那么返回`True`，否则返回`False`
+接受一个可迭代对象，如果可迭代对象里至少有一个元素为真，那么返回`True`，否则返回`False`
 
+没有一个元素为真
 ```python
-In [4]: any([0,0,0,[]])
-Out[4]: False
-
-In [5]: any([0,0,1])
-Out[5]: True
+>>> any([0,0,0,[]])
+False
+```
+至少一个元素为真：
+```python
+>>> any([0,0,1])
+True
 ```
 
 #### 4 ascii展示对象　　
 
-调用对象的__repr__() 方法，获得该方法的返回值，如下例子返回值为字符串
+调用对象的 `__repr__` 方法，获得该方法的返回值，如下例子返回值为字符串
 
 ```python
-In [1]: class Student():
-   ...:     def __init__(self,id,name):
-   ...:         self.id = id
-   ...:         self.name = name
-   ...:     def __repr__(self):
-   ...:         return 'id = '+self.id +', name = '+self.name
-   ...: 
-   ...: 
-
-In [2]: xiaoming = Student(id='001',name='xiaoming')
-
-In [3]: print(xiaoming)
-id = 001, name = xiaoming
-
-In [4]: ascii(xiaoming)
-Out[4]: 'id = 001, name = xiaoming'
+>>> class Student():
+    def __init__(self,id,name):
+        self.id = id
+        self.name = name
+    def __repr__(self):
+        return 'id = '+self.id +', name = '+self.name
+```
+调用：
+```python
+>>> xiaoming = Student(id='1',name='xiaoming')
+>>> xiaoming
+id = 1, name = xiaoming
+>>> ascii(xiaoming)
+'id = 1, name = xiaoming'
 ```
 
 #### 5  十转二
 
-将`十进制`转换为`二进制`
+将十进制转换为二进制：
 
 ```python
-In [1]: bin(10)
-Out[1]: '0b1010'
+>>> bin(10)
+'0b1010'
 ```
 
 #### 6 十转八
 
-将`十进制`转换为`八进制`
+十进制转换为八进制：
 
 ```python
-In [1]: oct(9)
-Out[1]: '0o11'
+>>> oct(9)
+'0o11'
 ```
 
 #### 7 十转十六
 
-将`十进制`转换为`十六进制`
+十进制转换为十六进制：
 
 ```python
-In [1]: hex(15)
-Out[1]: '0xf'
+>>> hex(15)
+'0xf'
 ```
 
 #### 8 判断是真是假　　
@@ -95,41 +121,37 @@ Out[1]: '0xf'
 测试一个对象是True, 还是False.
 
 ```python
-In [1]: bool([0,0,0])
-Out[1]: True
-
-In [2]: bool([])
-Out[2]: False
-
-In [3]: bool([1,0,1])
-Out[3]: True
+>>> bool([0,0,0])
+True
+>>> bool([])
+False
+>>> bool([1,0,1])
+True
 ```
 
 #### 9  字符串转字节　　
 
-将一个`字符串`转换成`字节`类型
+字符串转换为字节类型
 
 ```python
-In [1]: s = "apple"
-
-In [2]: bytes(s,encoding='utf-8')
-Out[2]: b'apple'
+>>> s = "apple"
+>>> bytes(s,encoding='utf-8')
+b'apple'
 ```
 
 #### 10 转为字符串　　
 
-将`字符类型`、`数值类型`等转换为`字符串`类型
+数值型等转换为字符串类型
 
 ```python
-In [1]: i = 100
-
-In [2]: str(i)
-Out[2]: '100'
+>>> i = 100
+>>> str(i)
+'100'
 ```
 
 #### 11 是否可调用　　
 
-判断对象是否可被调用，能被调用的对象就是一个`callable` 对象，比如函数 `str`, `int` 等都是可被调用的，但是例子**4** 中`xiaoming`实例是不可被调用的：
+判断对象是否可被调用
 
 ```python
 In [1]: callable(str)
@@ -1392,7 +1414,7 @@ a=1传入时a就是关键字参数，b,d都未传值，c被传入12，而非默�
 
 注意观察参数`a`, 既可以`f(1)`,也可以`f(a=1)` 其可读性比第一种更好，建议使用f(a=1)。如果要强制使用`f(a=1)`，需要在前面添加一个**星号**:
 ```python
-def f(*,a,*b):
+def f(*,a,**b):
   print(f'a:{a},b:{b}')
 ```
 此时f(1)调用，将会报错：`TypeError: f() takes 0 positional arguments but 1 was given`
@@ -5003,7 +5025,7 @@ plt.show()
 
 <img src="./img/image-20200223165718091.png" width="50%"/>
 
-### 六、 Python之坑
+### 六、 Python 坑点和工具
 
 #### 185 含单个元素的元组
 
@@ -5446,10 +5468,6 @@ c.render()
 
 <img src="./img/image-20200129164339971.png" width="50%"/>
 
-
-
-### 七、 Python第三方包
-
 #### 199 优化代码异常输出包
 
 一行代码优化输出的异常信息
@@ -5630,7 +5648,7 @@ Out[7]: '人生苦短，我用Python'
 
 <img src="./img/image-20200227225346560.png" width="50%"/>
 
-### 八、 必知算法
+### 七、算法入门
 
 #### 202 领略算法魅力
 
@@ -6071,7 +6089,7 @@ def bet():
 
 <img src="./img/beta.png" width="50%"/>
 
-### 九、Python 实战
+### 八、Python 实战
 
 
 #### 219 环境搭建
@@ -6324,7 +6342,7 @@ found 100 at 6
 Out[11]: 6
 ```
 
-#### 5 爬取天气数据并解析温度值
+#### 223 爬取天气数据并解析温度值
 
 爬取天气数据并解析温度值
 
@@ -6406,7 +6424,7 @@ print(m.group(2))
 
 最终结果
 
-```python
+```kepython
 Name: temperature, dtype: object
     location temperature  high  low
 0         香河     11/-5°C    11   -5
