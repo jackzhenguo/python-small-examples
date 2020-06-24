@@ -1,3 +1,5 @@
+## 📚 介绍
+
 告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 
 
 当前库已有 **300** 多个实用的小例子、小案例 。
@@ -8,9 +10,27 @@
 
 <img src="img/Python小例子.jpg" width="20%"/>
 
+
+
 如果转载本库小例子、小案例，请备注下方链接：
 
 Python小例子 https://github.com/jackzhenguo/python-small-examples
+
+
+
+## 🤝 贡献
+
+欢迎贡献小例子，修改已有 bug，参考  [贡献方法](./contributing.md) 
+
+
+
+## ✅ License
+
+允许按照要求转载，但禁止用于任何商用目的！
+
+
+
+## 🔨 迭代第二版
 
 现在正在按照如下施工计划，迭代此库，欢迎持续关注。
 
@@ -110,7 +130,7 @@ https://github.com/jackzhenguo/python-small-examples
 
 
 
-
+## 🖥 完成第一版
 
 ### 一、Python基础
 
