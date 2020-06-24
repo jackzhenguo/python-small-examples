@@ -6,7 +6,7 @@
 
 下载本库完整案例的 **PDF** 版本，请扫码关注此库的官方公众号： **Python小例子** 后回复 **mypy**  
 
-<img src="img/image-20200415232239773.png" width="20%"/>
+<img src="img/Python小例子.jpg" width="20%"/>
 
 如果转载本库小例子、小案例，请备注下方链接：
 
