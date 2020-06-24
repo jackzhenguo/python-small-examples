@@ -14,7 +14,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 
 现在正在按照如下施工计划，迭代此库，欢迎持续关注。
 
-![image-20200624093723980](img\image-20200624093723980.png)
+![image-20200624093723980](./img/image-20200624093723980.png)
 
 主要章节和小节重新按照如下逻辑划分：
 
@@ -32,7 +32,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
   - 10 错误和异常
   - 11 类和对象
 
-![image-20200624093951499](img\image-20200624093951499.png)
+![image-20200624093951499](./img/image-20200624093951499.png)
 
 这一部分主要推送`Python 基础` 例子，整理成以上`11`个小的模块。目前这个章节例子充足，相信在接下来的一个月会整理完成。
 
@@ -49,7 +49,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
   - 9 lambda 表达式
   - 10 正则 常用
 
-![image-20200624094023575](img\image-20200624094023575.png)
+![image-20200624094023575](./img/image-20200624094023575.png)
 
 这一章节主要包括如上`10`个小节，主要包括`Python`常见的小模块，当然还有`collections`，`itertools` 等模块会打乱到以上模块中，不再单独拿出来分析。还有一些和 http，tcp 等具体的前后端实用模块，暂且不包括在这一章节中。
 
@@ -62,13 +62,13 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
   - turtle 常用
   - 三维绘图
 
-![image-20200624094100474](img\image-20200624094100474.png)
+![image-20200624094100474](./img/image-20200624094100474.png)
 
 这一章节是最有意思的，前期我们已经沉淀下大量的绘图素材，现在按照以上维度整理是再自然不过的。这次整理注意囊括常用的API和属性，不是做成大而全的那种。
 
 - 四、Python 数据分析
 
-![image-20200624094138680](E:\guozhen3\资料库\06self\python-small-examples\img\image-20200624094138680.png)
+![image-20200624094138680](./img/image-20200624094138680.png)
 
 这一章节也很有意思，主要包括Pandas 数据分析的实用技巧，虽然只列出8个，但是实际上应该有`40`多个，到时候一并整理到这个小例子库里。
 
@@ -84,7 +84,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
   - 字符串
   - 其他
 
-![image-20200624094502807](img\image-20200624094502807.png)
+![image-20200624094502807](./img/image-20200624094502807.png)
 
 算法和数据结构的重要性，我就不多说了。核心的常用的都会包括在这个库里，并且不是蜻蜓点水的飘过，而是一针见血的击中要害。比如上周和星友们一起再刷递归部分，说道递归必然会提到 base case，递归状态方程，记忆化存储，尾递归等。
 
@@ -102,7 +102,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 
 这一章节要讲好是有挑战性的，如何具体化表较典型的小例子是要仔细斟酌的。另外，只讲核心和最本质的东西，实战小项目，会是这个章节的几大特色。
 
-![image-20200624094538105](img\image-20200624094538105.png)
+![image-20200624094538105](./img/image-20200624094538105.png)
 
 以上就是《Python-small-examples》github 库的施工和整理计划，素材都有一定积累，需要的是不断打磨，耐心整理，争取今年全部施工完成。如果你有好的例子欢迎直接提交到此库：
 
