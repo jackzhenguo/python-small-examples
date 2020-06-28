@@ -903,7 +903,7 @@ Out[4]:
  {'name': 'xiaohong', 'age': 20, 'gender': 'female'}]
 ```
 
-####49 求和函数
+#### 49 求和函数
 
 求和：
 
@@ -1119,10 +1119,10 @@ score_mean(lst) # 9.1
 根据`例子分析`的语言描述，转化为如下代码：
 
 ```python
-for i in range(1,10):
-    ...:     for j in range(1,i+1):
-    ...:         print('%d*%d=%d'%(j,i,j*i),end="\t")
-    ...:     print()
+for i in range(1, 10):
+    for j in range(1, i+1):
+        print('%d * %d = %d' % (j, i, j * i) , end="\t")
+    print()
 ```
 
 #### 61 全展开
@@ -1762,37 +1762,37 @@ Out[46]: True
 实际使用中，一般对类对象序列化。先创建一个 Student 类型，并创建两个实例。
 
 ```python
-    class Student():
-        def __init__(self,**args):
-            self.ids = args['ids']
-            self.name = args['name']
-            self.address = args['address']
-    xiaoming = Student(ids = 1,name = 'xiaoming',address = '北京')
-    xiaohong = Student(ids = 2,name = 'xiaohong',address = '南京')
+class Student():
+    def __init__(self,**args):
+        self.ids = args['ids']
+        self.name = args['name']
+        self.address = args['address']
+xiaoming = Student(ids = 1,name = 'xiaoming',address = '北京')
+xiaohong = Student(ids = 2,name = 'xiaohong',address = '南京')
 ```
 
 导入 json 模块，调用 dump 方法，就会将列表对象 [xiaoming,xiaohong]，序列化到文件 json.txt 中。
 ```python
-    import json
-    
-    with open('json.txt', 'w') as f:
-        json.dump([xiaoming,xiaohong], f, default=lambda obj: obj.__dict__, ensure_ascii=False, indent=2, sort_keys=True)
+import json
+
+with open('json.txt', 'w') as f:
+    json.dump([xiaoming,xiaohong], f, default=lambda obj: obj.__dict__, ensure_ascii=False, indent=2, sort_keys=True)
 ```
 
 生成的文件内容，如下：
 ```json
-    [
-      {
-        "address": "北京",
-        "ids": 1,
-        "name": "xiaoming"
-      },
-      {
-        "address": "南京",
-        "ids": 2,
-        "name": "xiaohong"
-      }
-    ]
+[
+    {
+        "address":"北京",
+        "ids":1,
+        "name":"xiaoming"
+    },
+    {
+        "address":"南京",
+        "ids":2,
+        "name":"xiaohong"
+    }
+]
 ```
 
 ### 二、Python字符串和正则
@@ -1863,7 +1863,7 @@ str_byte_len('字符')  # 6(个字节)
 
 
 
-以下是正则部分
+**以下是正则部分**
 
 ```python
 import re
@@ -1878,7 +1878,7 @@ r = re.search(pat,s)
 print(r.span()) #(7,13)
 ```
 
-#### 96 查找所有1的索引
+#### 96 查找所有 1 的索引
 
 ```python
 s = '山东省潍坊市青州第1中学高三1班'
