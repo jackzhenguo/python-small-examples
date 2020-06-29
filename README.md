@@ -22,7 +22,7 @@
 回复 **mypy** 下载完整案例的 PDF.  
 
 <div align="center">
-<img src="img/Python小例子.jpg" width="28%"/>
+<img src="https://static01.imgkr.com/temp/f379139a2c5d463799c35c1aa68911d7.png" width="28%"/>
 </div>
 
 
