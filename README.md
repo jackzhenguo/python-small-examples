@@ -7,6 +7,10 @@
 </div>
 <br>
 
+<div align="center">
+<img src="https://static01.imgkr.com/temp/9785963f175849d7bbc8a49ea02a54ea.png" width="20%" />
+</div>
+
 ## 📚 介绍
 
 告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 
