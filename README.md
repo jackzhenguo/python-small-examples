@@ -564,7 +564,7 @@ print(f'更长的列表是{r}')
 
 程序完整运行过程，动画演示如下：
 
-![](./img/lambda_show.gif)
+<img src="./img/lambda_show.gif" width="50%"/>
 
 
 结论：
