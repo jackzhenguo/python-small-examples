@@ -9,25 +9,17 @@
 
 <div align="center">
 <img src="https://static01.imgkr.com/temp/9785963f175849d7bbc8a49ea02a54ea.png" width="20%" />
+<img src="https://static01.imgkr.com/temp/f379139a2c5d463799c35c1aa68911d7.png" width="18%"/>
+</div>
+
+<br>
+
+<br>
 </div>
 
 ## 介绍
 
-告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 
-
-<div align="center">
-<img src="https://static01.imgkr.com/temp/f379139a2c5d463799c35c1aa68911d7.png" width="23%"/>
-</div>
-
-<br>
-
-<br>
-
-如果转载本库小例子、小案例，请备注下方链接：
-
-Python小例子 https://github.com/jackzhenguo/python-small-examples
-
-
+告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 如果转载本库小例子、小案例，请备注下方链接：Python小例子 https://github.com/jackzhenguo/python-small-examples
 
 ## 贡献
 
@@ -117,3 +109,40 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 74   | [值最大的字典](md/74.md)     | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
 | 75   | [合并两个字典](md/75.md)     | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
 | 76   | [Topn 字典](md/76.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 77   | [Topn 字典](md/77.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 78   | [Topn 字典](md/78.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 79   | [Topn 字典](md/79.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 80   | [Topn 字典](md/80.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 81   | [Topn 字典](md/81.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 82   | [Topn 字典](md/82.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 83   | [Topn 字典](md/83.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 84   | [Topn 字典](md/84.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 85   | [Topn 字典](md/85.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 86   | [Topn 字典](md/86.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 87   | [Topn 字典](md/87.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 88   | [Topn 字典](md/88.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 89   | [Topn 字典](md/89.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 90   | [Topn 字典](md/90.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 91   | [Topn 字典](md/91.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 92   | [Topn 字典](md/92.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 93   | [Topn 字典](md/93.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 94   | [Topn 字典](md/94.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 95   | [Topn 字典](md/95.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 96   | [Topn 字典](md/96.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 97   | [Topn 字典](md/97.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 98   | [Topn 字典](md/98.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 99   | [Topn 字典](md/99.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 100   | [Topn 字典](md/100.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 101   | [Topn 字典](md/101.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 102   | [Topn 字典](md/102.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 103   | [Topn 字典](md/103.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 104   | [Topn 字典](md/104.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 105   | [Topn 字典](md/105.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 106   | [Topn 字典](md/106.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 107   | [Topn 字典](md/107.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 108   | [Topn 字典](md/108.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 109   | [Topn 字典](md/109.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 110   | [Topn 字典](md/110.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 111   | [Topn 字典](md/111.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 112   | [Topn 字典](md/112.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 113   | [Topn 字典](md/113.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
