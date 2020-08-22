@@ -118,31 +118,32 @@
 | 83   | [10个高斯分布的坐标点](md/83.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
 | 84   | [chain串联小容器为大容器](md/84.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
 | 85   | [product 使用案例](md/85.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
-| 86   | [反转字符串的两个方法](md/86.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 87   | [join 串联字符串](md/87.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 88   | [字符串字节长度](md/88.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 86   | [反转字符串的两个方法](md/86.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
+| 87   | [join 串联字符串](md/87.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
+| 88   | [字符串字节长度](md/88.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
 | 89   | [正则中字符 `r`作用](md/89.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
 | 90   | [正则原子操作](md/90.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 91   | [正则中的转义](md/91.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 92   | [Topn 字典](md/92.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 93   | [Topn 字典](md/93.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 94   | [Topn 字典](md/94.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 95   | [Topn 字典](md/95.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 96   | [Topn 字典](md/96.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 97   | [Topn 字典](md/97.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 98   | [Topn 字典](md/98.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 99   | [Topn 字典](md/99.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 100   | [Topn 字典](md/100.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 101   | [Topn 字典](md/101.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 102   | [Topn 字典](md/102.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 103   | [Topn 字典](md/103.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 104   | [Topn 字典](md/104.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 105   | [Topn 字典](md/105.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 106   | [Topn 字典](md/106.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 107   | [Topn 字典](md/107.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 108   | [Topn 字典](md/108.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 109   | [Topn 字典](md/109.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 110   | [Topn 字典](md/110.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 111   | [Topn 字典](md/111.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 112   | [Topn 字典](md/112.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 113   | [Topn 字典](md/113.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 91   | [正则中的转义](md/91.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 92   | [正则最普通查找](md/92.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 93   | [使用通用字符查找](md/93.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 94   | [使用元字符查找](md/94.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 95   | [捕获子串](md/95.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 96   | [贪心捕获和非贪心捕获](md/96.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 97   | [使用正则做密码安全检查](md/97.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
+| 98   | [爬取百度首页标题](md/98.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 99   | [批量转化为驼峰格式(Camel)](md/99.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
+| 100   | [是否互为排序词](md/100.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 101   | [str1是否由str2旋转而来](md/101.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 102   | [使用正则判断是否为正浮点数](md/102.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
+| 103   | [获取文件后缀名](md/103.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
+| 104   | [获取路径中的文件名](md/104.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
+| 105   | [批量修改文件后缀](md/105.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 106   | [xls批量转换成xlsx](md/106.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 107   | [获取指定后缀名的文件](md/107.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 108   | [批量压缩文件](md/108.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 109   | [32位加密](md/109.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 110   | [年的日历图](md/110.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
+| 111   | [判断是否为闰年](md/111.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 112   | [判断月有几天](md/112.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 113   | [月的第一天](md/113.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
+| 114 | [月的最后一天](md/114.md) | V1.0 | jackzhenguo | ⭐️⭐️ |
