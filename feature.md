@@ -109,21 +109,21 @@
 | 74   | [值最大的字典](md/74.md)     | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
 | 75   | [合并两个字典](md/75.md)     | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
 | 76   | [Topn 字典](md/76.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 77   | [Topn 字典](md/77.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 78   | [Topn 字典](md/78.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 79   | [Topn 字典](md/79.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 80   | [Topn 字典](md/80.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 81   | [Topn 字典](md/81.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 82   | [Topn 字典](md/82.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 83   | [Topn 字典](md/83.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 84   | [Topn 字典](md/84.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 85   | [Topn 字典](md/85.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 86   | [Topn 字典](md/86.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 87   | [Topn 字典](md/87.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 88   | [Topn 字典](md/88.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 89   | [Topn 字典](md/89.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 90   | [Topn 字典](md/90.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
-| 91   | [Topn 字典](md/91.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 77   | [判断是否为异位词](md/77.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 78   | [ChainMap 逻辑上合并字典](md/78.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
+| 79   | [namedtuple 用法举例](md/79.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 80   | [sample 样本抽样](md/80.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 81   | [shuffle 重洗数据集](md/81.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 82   | [10个均匀分布的坐标点](md/82.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 83   | [10个高斯分布的坐标点](md/83.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️ |
+| 84   | [chain串联小容器为大容器](md/84.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
+| 85   | [product 使用案例](md/85.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️⭐️⭐️ |
+| 86   | [反转字符串的两个方法](md/86.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 87   | [join 串联字符串](md/87.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 88   | [字符串字节长度](md/88.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 89   | [正则中字符 `r`作用](md/89.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 90   | [正则原子操作](md/90.md) | V3.0 | jackzhenguo | ⭐️⭐️⭐️ |
+| 91   | [正则中的转义](md/91.md) | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
 | 92   | [Topn 字典](md/92.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
 | 93   | [Topn 字典](md/93.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
 | 94   | [Topn 字典](md/94.md)    | V1.0 | jackzhenguo | ⭐️⭐️⭐️ |
