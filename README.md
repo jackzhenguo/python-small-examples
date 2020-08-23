@@ -167,5 +167,6 @@
 | 130 | [groupby多字段分组](md/130.md) | itemgetter,itertools,groupby | V1.0 | ⭐️⭐️⭐️⭐️ |
 | 131 | [itemgetter和key函数](md/131.md) | operator,itemgetter,itertools | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 | 132 | [sum函数计算和聚合同时做](md/132.md) | sum,generator | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
+|  | [获得某天后的1~n天](md/133.md) | Calendar,itermonthdates | V4.0 | ⭐️⭐️⭐️ |
 
 更多例子正在整理发布中......
