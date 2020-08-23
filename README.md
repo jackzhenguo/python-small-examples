@@ -149,5 +149,22 @@
 | 112   | [判断月有几天](md/112.md) | calendar,datetime | V1.0 | ⭐️⭐️⭐️ |
 | 113   | [月的第一天](md/113.md) | datetime | V1.0 | ⭐️⭐️ |
 | 114 | [月的最后一天](md/114.md) | calendar,datetime | V1.0 | ⭐️⭐️ |
-
+| 115 | [获取当前时间](md/115.md) | time,datetime | V1.0 | ⭐️⭐️ |
+| 116 | [字符时间转时间](md/116.md) | time,datetime | V1.0 | ⭐️⭐️ |
+| 117 | [时间转字符时间](md/117.md) | time,datetime | V1.0 | ⭐️⭐️ |
+| 118 | [默认启动主线程](md/118.md) | threading | V1.0 | ⭐️⭐️ |
+| 119 | [创建线程](md/119.md) | threading | V1.0 | ⭐️⭐️ |
+| 120 | [交替获得CPU时间片](md/120.md) | threading | V1.0 | ⭐️⭐️⭐️ |
+| 121 | [多线程抢夺同一个变量](md/121.md) | threading | V1.0 | ⭐️⭐️⭐️ |
+| 122 | [多线程变量竞争引起的问题](md/122.md) | threading | V1.0 | ⭐️⭐️⭐️ |
+| 123 | [多线程锁](md/123.md) | threading,lock | V1.0 | ⭐️⭐️⭐️ |
+| 124 | [时间转数组及常用格式](md/124.md) | time,datetime,format | V1.0 | ⭐️⭐️⭐️ |
+| 125 | [寻找第n次出现位置](md/125.md) | enumerator | V1.0 | ⭐️⭐️⭐️ |
+| 126 | [斐波那契数列前n项](md/126.md) | yield,range | V1.0 | ⭐️⭐️⭐️ |
+| 127 | [找出所有重复元素](md/127.md) | calendar,datetime | V1.0 | ⭐️⭐️⭐️⭐️ |
+| 128 | [联合统计次数](md/128.md) | Counter | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
+| 129 | [groupby单字段分组](md/129.md) | itertools, groupby,lambda | V1.0 | ⭐️⭐️⭐️ |
+| 130 | [groupby多字段分组](md/130.md) | itemgetter,itertools,groupby | V1.0 | ⭐️⭐️⭐️⭐️ |
+| 131 | [itemgetter和key函数](md/131.md) | operator,itemgetter,itertools | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
+| 132 | [sum函数计算和聚合同时做](md/132.md) | sum,generator | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 更多例子正在整理发布中......
