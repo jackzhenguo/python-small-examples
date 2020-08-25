@@ -191,5 +191,6 @@
 | 134 | [list分组(生成器版)](md/134.md) | yield,generator | V1.0 | ⭐️⭐️⭐️ |
 | 135 | [列表全展开(生成器版)](md/135.md) | list,yield,generator | V1.0 | ⭐️⭐️⭐️ |
 | 136 | [测试函数运行时间的装饰器](md/136.md) | decorator | V1.0 | ⭐️⭐️⭐️⭐️ |
+| 137 | [统计异常次数装饰器](md/137.md) | decorator,nonlocal | V1.5 | ⭐️⭐️⭐️⭐️ |
 
 更多例子正在整理发布中......
