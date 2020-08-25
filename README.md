@@ -32,9 +32,9 @@
 允许按照要求转载，但禁止用于任何商用目的。
 
 ## Python 原创教程
-这是我经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在个人网站。想系统入门Python的欢迎学习：
+这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/?page_id=535)。想系统入门Python的欢迎学习：
 
-[Python小白教程](http://www.zglg.work/?page_id=535)
+[Python教程](http://www.zglg.work/?page_id=535)
 
 - [1 数字专题](http://www.zglg.work/?page_id=530)
 - [2 字符串专题](http://www.zglg.work/?page_id=540)
