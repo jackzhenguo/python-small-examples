@@ -49,6 +49,8 @@
   - [5.2 EAFP 防御编程风格](http://www.zglg.work/?page_id=657)
   - [5.3 LBYL 防御编程风格](http://www.zglg.work/?page_id=659)
 
+后续章节正在整理推送中。
+
 ## Python 小例子
 
 | 编号 | 链接                    | 标签              | 版本          | 难度 |
