@@ -31,7 +31,25 @@
 
 允许按照要求转载，但禁止用于任何商用目的。
 
-## 小例子
+## Python 原创教程
+这是我经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在个人网站。想系统入门Python的欢迎学习：
+
+[Python小白教程](http://www.zglg.work/?page_id=535)
+
+- [1 数字专题](http://www.zglg.work/?page_id=530)
+- [2 字符串专题](http://www.zglg.work/?page_id=540)
+- 3 列表专题
+  - [3.1 列表基础](http://www.zglg.work/?page_id=563)
+  - [3.2 列表进阶](http://www.zglg.work/?page_id=575)
+- 4 流程控制专题
+  - [4.1 流程控制基础](http://www.zglg.work/?page_id=618)
+  - [4.2 流程控制进阶](http://www.zglg.work/?page_id=621)
+- 5 编程风格
+  - [5.1 基本编程习惯](http://www.zglg.work/?page_id=654)
+  - [5.2 EAFP 防御编程风格](http://www.zglg.work/?page_id=657)
+  - [5.3 LBYL 防御编程风格](http://www.zglg.work/?page_id=659)
+
+## Python 小例子
 
 | 编号 | 链接                    | 标签              | 版本          | 难度 |
 | ---- | ---------------------------------- | ---- | ---- | ---- |
