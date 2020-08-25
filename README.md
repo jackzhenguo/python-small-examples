@@ -188,5 +188,7 @@
 | 131 | [itemgetter和key函数](md/131.md) | operator,itemgetter,itertools | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 | 132 | [sum函数计算和聚合同时做](md/132.md) | sum,generator | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 | 133 | [获得某天后的1~n天](md/133.md) | Calendar,monthrange | V4.0 | ⭐️⭐️⭐️ |
-
+| 134 | [list分组(生成器版)](md/134.md) | yield,generator | V1.0 | ⭐️⭐️⭐️ |
+| 135 | [列表全展开(生成器版)](md/135.md) | list,yield,generator | V1.0 | ⭐️⭐️⭐️ |
+| 136 | [测试函数运行时间的装饰器](md/136.md) | decorator | V1.0 | ⭐️⭐️⭐️⭐️ |
 更多例子正在整理发布中......
