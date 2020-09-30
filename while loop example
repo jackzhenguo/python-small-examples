@@ -1,0 +1,5 @@
+x = 0 #we will use this as counter
+
+While x<=10
+  x= x+1
+  print("Hello World")   # will print hello world 10 times
