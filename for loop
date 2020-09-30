@@ -1,0 +1,5 @@
+x = [1,2,3,4] #we will use this as counter
+
+for y in x ;
+  print(y)
+  print("Hello World")   # will print hello world 4 times
