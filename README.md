@@ -36,7 +36,7 @@
 
 [Python技术栈完整教程](http://www.zglg.work/?page_id=535)
 
-![](http://www.zglg.work/wp-content/uploads/2020/10/image-4.png)
+![](./img/大纲.png)
 
 - [1 数字专题](http://www.zglg.work/?page_id=530)
 - [2 字符串专题](http://www.zglg.work/?page_id=540)
