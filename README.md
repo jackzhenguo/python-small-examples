@@ -34,7 +34,9 @@
 ## Python 原创教程
 这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/?page_id=535)。想系统入门Python的欢迎学习：
 
-[Python教程](http://www.zglg.work/?page_id=535)
+[Python技术栈完整教程](http://www.zglg.work/?page_id=535)
+
+()[http://www.zglg.work/wp-content/uploads/2020/09/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200908095713.jpg]
 
 - [1 数字专题](http://www.zglg.work/?page_id=530)
 - [2 字符串专题](http://www.zglg.work/?page_id=540)
@@ -50,6 +52,8 @@
   - [5.3 LBYL 防御编程风格](http://www.zglg.work/?page_id=659)
 
 后续章节正在整理推送中。
+
+
 
 ## Python 小例子
 
