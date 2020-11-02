@@ -200,7 +200,36 @@
 | 139 | [定制递减迭代器](md/139.md) | Iterator | V3.0 | ⭐️⭐️⭐️⭐️ |
 | 140 | [turtle绘制奥运五环图](md/140.md) | turtle | V1.0 | ⭐️⭐️⭐️ |
 | 141 | [turtle绘制漫天雪花](md/141.md) | turtle | V1.0 | ⭐️⭐️⭐️ |
-
+| 142 | [Python词云图](md/142.md) | WordCloud | V1.0 | ⭐️⭐️⭐ |
+| 143 | [Plotly柱状图和折线图](md/143.md) | plotly | V1.0 | ⭐️⭐ |
+| 144 | [seaborn热力图](md/144.md) | seaborn | V1.0 | ⭐️⭐ |
+| 145 | [Pyecharts仪表盘](md/145.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 146 | [Pyecharts漏斗图](md/146.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 147 | [Pyecharts水球图](md/147.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 148 | [Pyecharts饼图](md/148.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 149 | [Pyecharts极坐标图](md/149.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 150 | [Pyecharts词云图](md/150.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 151 | [Pyecharts热力图](md/151.md) | pyecharts | V1.0 | ⭐️⭐ |
+| 152 | [matplotlib绘制动图](md/152.md) | matplotlib | V1.0 | ⭐️⭐ |
+| 153 | [seaborn pairplot图](md/153.md) | seaborn | V1.0 | ⭐️⭐⭐⭐ |
+| 154 | [含单个元素的元组](md/154.md) | tuple | V1.0 | ⭐️⭐ |
+| 155 | [默认参数设为空](md/155.md) | function | V1.0 | ⭐️⭐⭐ |
+| 156 | [共享变量未绑定之坑](md/156.md) | global | V1.0 | ⭐️⭐⭐ |
+| 157 | [lambda自由参数之坑](md/157.md) | lambda | V1.0 | ⭐️⭐⭐ |
+| 158 | [各种参数使用之坑](md/158.md) | function paremeter | V1.0 | ⭐️⭐⭐ |
+| 159 | [列表删除之坑](md/159.md) | list | V1.0 | ⭐️⭐ |
+| 160 | [列表快速复制之坑](md/160.md) | list  | V1.0 | ⭐️⭐⭐ |
+| 161 | [字符串驻留](md/161.md) | str  | V1.0 | ⭐️⭐⭐⭐⭐ |
+| 162 | [相同值的不可变对象](md/162.md) | mutable  | V1.0 | ⭐️⭐⭐ |
+| 163 | [对象销毁顺序](md/163.md) | OOP del   | V1.0 | ⭐️⭐⭐⭐ |
+| 164 | [充分认识for](md/164.md) | for  | V1.0 | ⭐️⭐⭐ |
+| 165 | [认识执行时机](md/165.md) | generator  | V1.0 | ⭐️⭐⭐⭐⭐ |
+| 166 | [创建空集合错误](md/166.md) | set  | V1.0 | ⭐️⭐ |
+| 167 | [pyecharts传入Numpy数据绘图失败](md/167.md) | numpy pyecharts  | V1.0 | ⭐️⭐⭐ |
+| 168 | [优化代码异常输出包](md/168.md) | debugger  | V1.0 | ⭐️⭐⭐ |
+| 169 | [图像处理包pillow](md/169.md) | pillow  | V1.0 | ⭐️⭐⭐ |
+| 170 | [一行代码找到编码](md/170.md) | chardet  | V1.0 | ⭐️⭐⭐ |
+| 171 | [更多案例，更在陆续整理](md/171.md) | for  | V1.0 | ⭐️⭐⭐ |
 
 以下是完整版本：
 
@@ -5473,9 +5502,9 @@ Out[1]: True
 ```
 如果上面例子返回`True`，但是下面例子为什么是`False`:
 ```python
-In [1]: a = '@zglg.com'
+In [1]: a = '@zglg.wrok'
 
-In [2]: b = '@zglg'+'.com'
+In [2]: b = '@zglg'+'.work'
 
 In [3]: id(a)==id(b)
 Out[3]: False
