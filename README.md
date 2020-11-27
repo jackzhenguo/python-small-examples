@@ -53,7 +53,7 @@
 - 6 Python 函数
   - [6.1 函数组成](http://www.zglg.work/?page_id=883)
   - [6.2 引用传参](http://www.zglg.work/?page_id=885)
-  - [6.3 默认参数与关键字参数(http://www.zglg.work/?page_id=887)
+  - [6.3 默认参数与关键字参数](http://www.zglg.work/?page_id=887)
   - [6.4 可变参数](http://www.zglg.work/?page_id=889)
   - [6.6 偏函数](http://www.zglg.work/?page_id=892)
   - [6.7 递归函数](http://www.zglg.work/?page_id=894)
