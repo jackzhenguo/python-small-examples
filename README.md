@@ -50,6 +50,24 @@
   - [5.1 基本编程习惯](http://www.zglg.work/?page_id=654)
   - [5.2 EAFP 防御编程风格](http://www.zglg.work/?page_id=657)
   - [5.3 LBYL 防御编程风格](http://www.zglg.work/?page_id=659)
+- 6 Python 函数
+  - [6.1 函数组成](http://www.zglg.work/?page_id=883)
+  - [6.2 引用传参](http://www.zglg.work/?page_id=885)
+  - [6.3 默认参数与关键字参数(http://www.zglg.work/?page_id=887)
+  - [6.4 可变参数](http://www.zglg.work/?page_id=889)
+  - [6.6 偏函数](http://www.zglg.work/?page_id=892)
+  - [6.7 递归函数](http://www.zglg.work/?page_id=894)
+  - [6.8 匿名函数](http://www.zglg.work/?page_id=896)
+  - [6.9 高阶函数](http://www.zglg.work/?page_id=898)
+  - [6.10 嵌套函数](http://www.zglg.work/?page_id=900)
+- 7 面向对象编程基础
+  - [7.1 类定义](http://www.zglg.work/?page_id=904)
+  - [7.2 对象或实例](http://www.zglg.work/?page_id=906)
+  - [7.3 打印对象](http://www.zglg.work/?page_id=908)
+  - [7.4 属性](http://www.zglg.work/?page_id=910)
+  - [7.5 private,protected,public](http://www.zglg.work/?page_id=913)
+  - [7.6 继承](http://www.zglg.work/?page_id=916)
+  - [7.7 多态](http://www.zglg.work/?page_id=918)
 
 后续章节正在整理推送中。
 
