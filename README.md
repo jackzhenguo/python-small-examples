@@ -38,6 +38,8 @@
 
 ![](./img/大纲.png)
 
+适合小白的 Python 系统入门课程
+
 - [1 数字专题](http://www.zglg.work/?page_id=530)
 - [2 字符串专题](http://www.zglg.work/?page_id=540)
 - 3 列表专题
