@@ -253,7 +253,7 @@
 | 172 | [NumPy 的pad填充方法](md/172.md) | NumPy pad | V1.0 | ⭐️⭐⭐⭐ |
 | 173 | [创建下对角线为1、2、3、4的对角矩阵](md/173.md) | NumPy diag | V1.0 | ⭐️⭐⭐ |
 | 174 | [cut 数据分箱](md/174.md) | Pandas cut | v1.0 | ⭐️⭐⭐ |
-|  | [丢弃空值和填充空值](./md/175.md) | Pandas dropna fillna | v1.0 | ⭐️⭐⭐ |
+| 175 | [丢弃空值和填充空值](./md/175.md) | Pandas dropna fillna | v1.0 | ⭐️⭐⭐ |
 
 ### Python 实战
 
