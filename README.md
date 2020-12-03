@@ -254,7 +254,10 @@
 | 173 | [创建下对角线为1、2、3、4的对角矩阵](md/173.md) | NumPy diag | V1.0 | ⭐️⭐⭐ |
 | 174 | [cut 数据分箱](md/174.md) | Pandas cut | v1.0 | ⭐️⭐⭐ |
 | 175 | [丢弃空值和填充空值](./md/175.md) | Pandas dropna fillna | v1.0 | ⭐️⭐⭐ |
-|  | [一行代码让 pip 安装加速 100 倍](md/176.md) | pip install | v1.0 | ⭐️⭐⭐ |
+| 176 | [一行代码让 pip 安装加速 100 倍](md/176.md) | pip install | v1.0 | ⭐️⭐⭐ |
+| 177 | [数据分析神器：deepnote](./md/177.md) | deepnote | v1.0 | ⭐️⭐⭐ |
+| 178 | [apply 方法去掉特殊字符](./md/178.md) | pandas apply | v1.0 | ⭐️⭐⭐ |
+| 179 | [使用map对列做特征工程](./md/179.md) | pandas map | v1.0 | ⭐️⭐⭐ |
 
 ### Python 实战
 
