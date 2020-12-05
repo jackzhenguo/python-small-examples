@@ -258,6 +258,8 @@
 | 177 | [数据分析神器：deepnote](./md/177.md) | deepnote | v1.0 | ⭐️⭐⭐ |
 | 178 | [apply 方法去掉特殊字符](./md/178.md) | pandas apply | v1.0 | ⭐️⭐⭐ |
 | 179 | [使用map对列做特征工程](./md/179.md) | pandas map | v1.0 | ⭐️⭐⭐ |
+| 180 | [category列转数值](./md/180.md) | pandas category | v1.0 | ⭐️⭐⭐ |
+| 181 | [rank排名](./md/181.md) | pandas rank | v1.0 | ⭐️⭐⭐ |
 
 ### Python 实战
 
