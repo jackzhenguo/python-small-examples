@@ -260,6 +260,7 @@
 | 179 | [使用map对列做特征工程](./md/179.md) | pandas map | v1.0 | ⭐️⭐⭐ |
 | 180 | [category列转数值](./md/180.md) | pandas category | v1.0 | ⭐️⭐⭐ |
 | 181 | [rank排名](./md/181.md) | pandas rank | v1.0 | ⭐️⭐⭐ |
+| 182 | [对数据下采样，调整小时步长为天](./md/182.md) | pandas resample | v1.0 | ⭐️⭐⭐ |
 
 ### Python 实战
 
