@@ -259,7 +259,7 @@
 | 178 | [apply 方法去掉特殊字符](./md/178.md) | pandas apply | v1.0 | ⭐️⭐⭐ |
 | 179 | [使用map对列做特征工程](./md/179.md) | pandas map | v1.0 | ⭐️⭐⭐ |
 | 180 | [category列转数值](./md/180.md) | pandas category | v1.0 | ⭐️⭐⭐ |
-| 181 | [rank排名](./md/181.md) | pandas rank | v1.0 | ⭐️⭐⭐ |
+| 181 | [rank排名](./md/181.md) | pandas rank | v1.0 | ⭐️⭐⭐|
 | 182 | [完成数据下采样，调整步长由小时为天](./md/182.md) | pandas resample | v1.0 | ⭐️⭐⭐ |
 | 183 | [如何用 Pandas 快速生成时间序列数据](/md/183.md) | pandas util | v1.0 | ⭐️⭐⭐ |
 | 184 | [如何快速找出 DataFrame 所有列 null 值个数](/md/184.md) | pandas isnull sum | v1.0 | ⭐️⭐⭐ |
