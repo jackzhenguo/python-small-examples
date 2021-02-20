@@ -268,8 +268,9 @@
 | 187 | [split 求时分(HH:mm)的分钟差](/md/187.md) | pandas split | v1.0 | ⭐️⭐⭐ |
 | 188 | [melt透视数据小技巧](/md/188.md) | pandas melt | v1.0 | ⭐️⭐⭐ |
 | 189 | [pivot 透视小技巧](/md/189.md) | pandas melt | v1.0 | ⭐️⭐⭐ |
-| 190 | [p随机读取文件的K行，生成N个](/md/189.md) | pandas sample | v1.0 | ⭐️⭐⭐ |
-| 191 | [格式化Pandas的时间列](/md/189.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
+| 190 | [p随机读取文件的K行，生成N个](/md/190.md) | pandas sample | v1.0 | ⭐️⭐⭐ |
+| 191 | [格式化Pandas的时间列](/md/191.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
+| 192 | [创建SQLite连接](/md/192.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
 
 
 
