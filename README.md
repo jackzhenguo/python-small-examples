@@ -269,9 +269,9 @@
 | 188 | [melt透视数据小技巧](/md/188.md) | pandas melt | v1.0 | ⭐️⭐⭐ |
 | 189 | [pivot 透视小技巧](/md/189.md) | pandas melt | v1.0 | ⭐️⭐⭐ |
 | 190 | [p随机读取文件的K行，生成N个](/md/190.md) | pandas sample | v1.0 | ⭐️⭐⭐ |
-| 191 | [格式化Pandas的时间列](/md/191.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
-| 192 | [创建SQLite连接](/md/192.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
-
+| 191 | [格式化Pandas的时间列](md/191.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
+| 192 | [创建SQLite连接](md/192.md) | SQLite | v1.0 | ⭐️⭐⭐⭐ |
+| 193 | [json对象转python对象](md/192.md) | python json | v1.0 | ⭐️⭐⭐⭐ |
 
 
 ### Python 实战
