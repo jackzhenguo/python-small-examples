@@ -271,7 +271,7 @@
 | 190 | [p随机读取文件的K行，生成N个](/md/190.md) | pandas sample | v1.0 | ⭐️⭐⭐ |
 | 191 | [格式化Pandas的时间列](md/191.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
 | 192 | [创建SQLite连接](md/192.md) | SQLite | v1.0 | ⭐️⭐⭐⭐ |
-| 193 | [json对象转python对象](md/192.md) | python json | v1.0 | ⭐️⭐⭐⭐ |
+| 193 | [json对象转python对象](md/193.md) | python json | v1.0 | ⭐️⭐⭐⭐ |
 
 
 ### Python 实战
