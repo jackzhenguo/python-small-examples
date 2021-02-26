@@ -32,15 +32,16 @@
 允许按照要求转载，但禁止用于任何商用目的。
 
 ## Python 原创教程
-这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/?page_id=535)。想系统入门Python的欢迎学习：
+这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。想系统入门Python的欢迎学习：
 
-[Python技术栈完整教程](http://www.zglg.work/?page_id=535)
+[Python进阶完整教程](http://www.zglg.work/python-level/)
 
 ![](./img/大纲.png)
 
 适合小白的 Python 系统入门课程
 
-- [1 数字专题](http://www.zglg.work/?page_id=530)
+- [0 Python引言](http://www.zglg.work/Python-20-topics/intro-python/)
+- [1 数字专题](http://www.zglg.work/Python-20-topics/python-number/)
 - [2 字符串专题](http://www.zglg.work/?page_id=540)
 - 3 列表专题
   - [3.1 列表基础](http://www.zglg.work/?page_id=563)
