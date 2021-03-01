@@ -273,8 +273,9 @@
 | 191 | [格式化Pandas的时间列](md/191.md) | pandas apply | v1.0 | ⭐️⭐⭐⭐ |
 | 192 | [创建SQLite连接](md/192.md) | SQLite | v1.0 | ⭐️⭐⭐⭐ |
 | 193 | [json对象转python对象](md/193.md) | python json | v1.0 | ⭐️⭐⭐⭐ |
-
-
+| 194 | [python对象转json对象](md/194.md) | python json | v1.0 | ⭐️⭐⭐⭐ |
+| 195 | [发现列表前3个最大或最小数](md/195.md) | list heapq | v1.0 | ⭐️⭐⭐⭐ |
+| 196 | [使用堆排序列表为升序](md/196.md) | sort heapq | v1.0 | ⭐️⭐⭐⭐ |
 ### Python 实战
 
 
