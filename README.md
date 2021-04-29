@@ -31,6 +31,45 @@
 
 允许按照要求转载，但禁止用于任何商用目的。
 
+## 进行中Python小项目
+
+上下文关键字（KWIC, Key Word In Context）是最常见的多行协调显示格式。
+
+此小项目描述：输入一系列句子，给定一个给定单词，每个句子中至少会出现一次给定单词。目标输出，给定单词按照KWIC显示，KWIC显示的基本要求：待查询单词居中，前面`pre`序列右对齐，后面`post`序列左对齐，待查询单词前和后长度相等，若输入句子无法满足要求，用空格填充。
+
+输入参数：输入句子sentences, 待查询单词selword, 滑动窗口长度`window_len`
+
+举例，输入如下六个句子，给定单词`secure`，输出如下字符串：
+
+```python
+               pre keyword    post 
+
+     welfare , and secure  the blessings of
+     nations , and secured immortal glory with 
+       , and shall secure  to you the 
+    cherished . To secure  us against these 
+     defense as to secure  our cities and 
+          I can to secure  economy and fidelity 
+```
+
+请补充实现下面函数：
+
+```python
+def kwic(sentences: List[str], selword: str, window_len: int) -> str:
+    """
+    :type: sentences: input sentences
+    :type: selword: selected word
+    :type: window_len: window length
+    """
+```
+
+更多KWIC显示参考如下：
+
+http://dep.chs.nihon-u.ac.jp/english_lang/tukamoto/kwic_e.html
+
+
+
+
 ## Python 原创教程
 这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。想系统入门Python的欢迎学习：
 
