@@ -21,6 +21,8 @@
 
 告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 如果转载本库小例子、小案例，请备注下方链接：Python小例子 https://github.com/jackzhenguo/python-small-examples
 
+并托管在[Python中文网](http://zglg.work/python-small-examples/)
+
 查看完整的旧版本：[改版前V3.0](V3.md)
 
 ## 贡献
