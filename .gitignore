@@ -2,3 +2,4 @@
 .github
 img/*.html
 notebook
+venv
