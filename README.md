@@ -286,10 +286,6 @@ https://www.python.org/dev/peps/pep-0008/
 
 ![img](http://zglg.work/assets/ch20-1.png)
 
-后续章节正在整理推送中。
-
-
-
 ## Python 小例子
 
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
