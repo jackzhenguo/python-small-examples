@@ -286,6 +286,40 @@ https://www.python.org/dev/peps/pep-0008/
 
 ![img](http://zglg.work/assets/ch20-1.png)
 
+## NumPy入门系列教程
+
+1 [NumPy介绍](http://www.zglg.work/numpy-intro/)
+
+2 [安装和导入NumPy](http://www.zglg.work/numpy/numpy-install/)
+
+3 [Python列表和NumPy数组有什么区别？](http://www.zglg.work/numpy/numpy-array-different-python-list/)
+
+4 [什么是array?](http://www.zglg.work/numpy/what-is-numpy/)
+
+5 [有关Array的详细信息](http://www.zglg.work/numpy/numpy-array-more/)
+
+6 [如何创建array](http://www.zglg.work/numpy/numpy-create-array/)
+
+7 [添加、删除和排序元素](http://www.zglg.work/numpy/numpy-add-remove-sort/)
+
+8 [数组形状和大小](http://www.zglg.work/numpy/numpy-shape/)
+
+9 [重塑array](http://www.zglg.work/numpy/numpy-reshape/)
+
+10 [如何将一维array转换为二维array(如何向数组添加新轴)](http://www.zglg.work/numpy/numpy-1d-2d-more/)
+
+11 [NumPy索引和切片](http://www.zglg.work/numpy/numpy-indexing-slicing/)
+
+12 [如何从现有数据创建数组](http://www.zglg.work/numpy/numpy-create-an-array-from-existing-data/)
+
+13 [数组基本操作](http://www.zglg.work/numpy/numpy-basic-array-operations/)
+
+14 [广播](http://www.zglg.work/numpy/numpy-broadcasting/)
+
+15 [更有用的数组操作](http://www.zglg.work/numpy/numpy-more-array-operations/)
+
+16 [生成随机数](http://www.zglg.work/numpy/numpy-generate-random-number/)
+
 ## Python 小例子
 
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
