@@ -9,7 +9,6 @@
 <br>
 
 <div align="center">
-<img src="https://static01.imgkr.com/temp/9785963f175849d7bbc8a49ea02a54ea.png" width="20%" />
 <img src="https://static01.imgkr.com/temp/f379139a2c5d463799c35c1aa68911d7.png" width="18%"/>
 </div>
 
