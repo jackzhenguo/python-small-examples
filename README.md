@@ -8,9 +8,9 @@
 </div>
 <br>
 
-<div align="center">
+<!-- <div align="center">
 <img src="https://static01.imgkr.com/temp/f379139a2c5d463799c35c1aa68911d7.png" width="18%"/>
-</div>
+</div> -->
 </div>
 
 ## 介绍
