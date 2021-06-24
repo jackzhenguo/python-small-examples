@@ -22,7 +22,7 @@
 
 告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 
 
-并托管在[Python中文网](http://www.zglg.work/python-small-examples/)
+同时托管在[Python中文网](http://www.zglg.work/python-small-examples/)
 
 ## License
 
