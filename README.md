@@ -26,25 +26,17 @@
 
 查看完整的旧版本：[改版前V3.0](V3.md)
 
-## 贡献
-
-欢迎贡献小例子到此库
-
 ## License
 
 允许按照要求转载，但禁止用于任何商用目的。
 
 
-
-
 ## Python 原创教程
-这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。想系统入门Python的欢迎学习：
+这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。
+
+想系统入门Python的欢迎学习：
 
 [Python进阶完整教程](http://www.zglg.work/python-level/)
-
-![](./img/大纲.png)
-
-个人原创并开源的 Python 20个专题教程，欢迎学习和收藏。
 
 ### 1 前言
 
