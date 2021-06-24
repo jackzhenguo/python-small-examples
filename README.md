@@ -31,38 +31,22 @@
 允许按照要求转载，但禁止用于任何商用目的。
 
 
-## Python 原创教程
+## Python原创教程
 这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。
 
 想系统入门Python的欢迎学习：
 
 [Python进阶完整教程](http://www.zglg.work/python-level/)
 
-### 1 前言
-
-Python可以应用在众多的领域中，数据分析、组件集成、网络服务、图像处理、数值计算和科学计算等领域......
-
-点解下面链接学习：
-
 [Python前言](http://www.zglg.work/Python-20-topics/intro-python/)
 
 [Google Python代码风格指南](http://www.zglg.work/Python-20-topics/google-python-coding-style/)
-
-------
-
-### 2 Python数字
 
 Python关于数字的20个操作
 
 [Python数字](http://www.zglg.work/Python-20-topics/python-number/)
 
 [Python正则之提取正整数和大于0浮点数](http://www.zglg.work/python-level/python-re-integer-float.md)
-
-------
-
-### 3 Python字符串
-
-Python字符串专题总结
 
 [Python字符串](http://www.zglg.work/Python-20-topics/python-string/)
 
@@ -78,208 +62,44 @@ Python字符串专题总结
 
 [Python小项目1：文本句子关键词的KWIC显示](http://www.zglg.work/Python-20-topics/python-project1-kwic/)
 
-------
-
-### 4 Python列表专题
-
 [Python列表](http://www.zglg.work/Python-20-topics/python-list/)
-
-列表是一个容器，使用一对中括号`[]`创建一个列表。
-
-一般数组内的元素要求同一类型，但是列表内可含有各种不同类型，包括再嵌套列表。
-
-------
-
-### 5 Python流程控制专题
 
 [Python流程控制](http://www.zglg.work/Python-20-topics/python-control/)
 
-流程控制与代码的执行顺序息息相关，流程控制相关的关键字，如：`if`,`elif`,`for`,`while`,`break`,`continue`, `else`,`return`,`yield`,`pass`等。
-
-本专题详细总结与流程控制相关的基础和进阶用法，大纲如下：
-
-- 1 if 用法
-- 2 for 用法
-- 3 while,break,continue
-- 4 for 使用注意
-- 5 range 序列
-- 6 Python特色：循环与else
-- 7 pass 与接口
-- 8 return 和 yield
-- 9 短路原则
-
-专题的开始，先总结与流程控制相关的基础用法。
-
-------
-
-### 6 Python编程习惯专题
-
 [Python编程习惯专题](http://www.zglg.work/Python-20-topics/python-program-habit/)
 
-今天讨论 Python 编程风格，如何写出更加Pythonic的代码是本篇讨论的话题。
-
-Python代码的编程习惯主要参考`PEP8`:
-
-https://www.python.org/dev/peps/pep-0008/
-
-里面主要包括如每行代码长度不超过79，函数间空一行等。
-
-其实这些格式化的东西，现有的工具能够辅助我们很快满足编程风格，如`flake8`等小插件。
-
-所以，这篇专题总结不会过多去讲语法相关的格式化，更多精力放在对比分析上，告诉大家常用的代码书写习惯，哪些写法不够符合习惯等。
-
-------
-
-### 7 Python函数专题
-
 [Python函数专题](http://www.zglg.work/Python-20-topics/python-functions/)
-
-可以看到函数主要组成部分：
-
-- 函数名：`foo`
-- 函数形参：`nums`
-- `:`: 函数体的控制字符，作用类似`Java`或`C++`的一对`{}`
-- 缩进：一般为4个字符
-- `"""`：为函数添加注释
-- `return`: 函数返回值
-
-以上函数求出列表`nums`中的所有偶数并返回，通过此函数了解Python函数的主要组成部分。
-
-------
-
-### 8 Python面向对象编程
 
 [Python面向对象编程-上篇](http://www.zglg.work/Python-20-topics/python-oop-1/)
 
 [Python面向对象编程-下篇](http://www.zglg.work/Python-20-topics/python-oop-2/)
 
-面向对象程序设计思想，首先思考的不是程序执行流程，它的核心是抽象出一个对象，然后构思此对象包括的数据，以及操作数据的行为方法。
-
-动物是自然界一个庞大的群体，以建模动物类为主要案例论述OOP编程。
-
-------
-
-### 9 Python十大数据结构使用专题
-
 [Python十大数据结构使用专题](http://www.zglg.work/Python-20-topics/python-data-structure/)
-
-这个专题，尽量使用最精简的文字，借助典型案例盘点Python常用的数据结构。
-
-如果你还处于Python入门阶段，通常只需掌握`list`、`tuple`、`set`、`dict`这类数据结构，做到灵活使用即可。
-
-然而，随着学习的深入，平时遇到实际场景变复杂，很有必要去了解Python内置的更加强大的数据结构`deque`、`heapq`、`Counter`、`OrderedDict`、`defaultDict`、`ChainMap`，掌握它们，往往能让你少写一些代码且能更加高效的实现功能。
-
-学习数据结构第一阶段：掌握它们的基本用法，使用它们解决一些基本问题；
-
-学习第二阶段：知道何种场景选用哪种最恰当的数据结构，去解决题问题；
-
-学习第三阶段：了解内置数据结构的背后源码实现，与《算法和数据结构》这门学问里的知识联系起来，打通任督二脉。
-
-------
-
-### 10 Python包和模块使用注意事项专题
 
 [Python包和模块使用注意事项专题](http://www.zglg.work/Python-20-topics/python-package-module-apply-items/)
 
-今天这个专题讨论Python代码工程化、结构化的方法。我们都会遇到这种情景：所有代码都堆积到一个模块里，导致代码越来越长，最后变得难以维护，很明显代码只写到一个py模块文件是不可取的。如何按照逻辑功能，将代码划分到不同模块，组织为一个更易读、更易维护的代码结构呢？ 欢迎学习这个专题。
-
-------
-
-### 11 Python正则使用专题
-
 [Python正则使用专题](http://www.zglg.work/Python-20-topics/python-re-apply/)
-
-今天这个专题讨论Python代码工程化、结构化的方法。我们都会遇到这种情景：所有代码都堆积到一个模块里，导致代码越来越长，最后变得难以维护，很明显代码只写到一个py模块文件是不可取的。如何按照逻辑功能，将代码划分到不同模块，组织为一个更易读、更易维护的代码结构呢？ 欢迎学习这个专题。
-
-------
-
-### 12 Python时间专题
 
 [Python时间专题](http://www.zglg.work/Python-20-topics/python-time/)
 
-`datetime`模块提供日期和时间各自分类的对象，日期处理相关的对象`date`，时间处理相关的`time`，日期和时间的完整结合对象`datetime`.
-
-日期和时间的加减操作得到`timedelta`对象.
-
-此时此刻 2020-8-28 21:45，这个时间是本地时间，很明显纽约时间肯定不是此值，柏林时间也肯定不是这个值。Python为支持不同地区的时间表达，特意抽象出`tzinfo`对象，并有一个默认实现对象.
-
-以上就是datetime模块的几个核心对象以及对应的现实意义。
-
-------
-
-### 13 Python装饰器专题
-
 [Python装饰器专题](http://www.zglg.work/Python-20-topics/python-decorator-apply/)
-
-装饰器，几乎各大Python框架中都能看到它的身影，足以表明它的价值！它有动态改变函数或类功能的魔力！
-
-------
-
-### 14 Python迭代器使用专题
 
 [Python迭代器使用专题](http://www.zglg.work/Python-20-topics/python-iterator-apply/)
 
-迭代器，英文 Iterator，它首先是个对象，其次它是访问可迭代序列(Iterable)的一种方式。通常其从序列的第一个元素开始访问，直到所有的元素都被访问才结束。
-
-迭代器又是一个特殊的对象，特殊在于它必须实现两个方法：`__iter__`和`__next__`.
-
-------
-
-### 15 Python生成器使用专题
-
 [Python生成器使用专题](http://www.zglg.work/Python-20-topics/python-generator-apply/)
-
-可迭代对象，英文`Iterable`，是一个形容词，这类对象和`Java`语言类似，都可看作是一类接口，抽象地描述事物具备怎样的能力。所以，`Iterable`自然具备可迭代能力。
-
-------
-
-### 16 Python 绘图入门专题
 
 [Python 绘图入门专题](http://www.zglg.work/Python-20-topics/python-graph-intro/)
 
-作为绘图模块的第一篇，与大家一起过过最基本的Python绘图原理。
-
-掌握基本的绘图原理很有必要，各个常用绘图库的原理基本都是相通的。所以了解它们后，使用库里的API函数将会更加得心应手，并且熟练其中一个库后，便能迅速上手其他的绘图库。
-
-------
-
-### 17 Matplotlib绘图基础专题
-
 [Matplotlib绘图基础专题](http://www.zglg.work/Python-20-topics/python-matplotlib-1/)
-
-本文使用的 matplotlib 版本: 3.1.3
-
-使用的 NumPy 版本: 1.18.1
-
-顺便说一句，matplotlib 的近亲是 NumPy，对其的亲缘性最好，无缝支持。官档中说对Pandas数据结构某些情况支持可能有问题，这点需要注意，可能出现非预期的结果。
-
-------
-
-### 18 Matplotlib绘图进阶专题
 
 [Matplotlib绘图进阶专题](http://www.zglg.work/Python-20-topics/python-matplotlib-2/)
 
-我们拿到一堆数据，首先面临的问题是该选用哪类图，去可视化它们，然后才是如何绘制它们。今天这篇文章，解决该选用哪类图去可视化的问题。
-
-根据使用场景不同，参考前人总结，一般划分为6类图。
-
-------
-
-### 19 Matplotlib绘图案例
-
 [Matplotlib绘图案例](http://www.zglg.work/Python-20-topics/python-matplotlib-examples/)
-
-------
-
-### 20 NumPy图解入门
 
 [NumPy图解入门](http://www.zglg.work/Python-20-topics/numpy-graph-intro/)
 
-结合图形可视化，加速理解NumPy中的这些基本运算，如两个一维数组相加的可视化：
 
-![img](http://www.zglg.work/assets/ch20-1.png)
-
-## NumPy入门系列教程
+## NumPy入门教程
 
 1 [NumPy介绍](http://www.zglg.work/numpy-intro/)
 
