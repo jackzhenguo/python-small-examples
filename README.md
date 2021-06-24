@@ -1,3 +1,4 @@
+
 <div align="center">
 <img src="https://img.shields.io/badge/-Python-brightgreen">
 <img src="https://img.shields.io/badge/-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90-yellowgreen">
@@ -21,7 +22,7 @@
 
 告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 如果转载本库小例子、小案例，请备注下方链接：Python小例子 https://github.com/jackzhenguo/python-small-examples
 
-并托管在[Python中文网](http://zglg.work/python-small-examples/)
+并托管在[Python中文网](http://www.www.zglg.work/python-small-examples/)
 
 查看完整的旧版本：[改版前V3.0](V3.md)
 
@@ -37,9 +38,9 @@
 
 
 ## Python 原创教程
-这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。想系统入门Python的欢迎学习：
+这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.www.zglg.work/python-level/)。想系统入门Python的欢迎学习：
 
-[Python进阶完整教程](http://www.zglg.work/python-level/)
+[Python进阶完整教程](http://www.www.zglg.work/python-level/)
 
 ![](./img/大纲.png)
 
@@ -51,9 +52,9 @@ Python可以应用在众多的领域中，数据分析、组件集成、网络�
 
 点解下面链接学习：
 
-[Python前言](http://zglg.work/Python-20-topics/intro-python/)
+[Python前言](http://www.www.zglg.work/Python-20-topics/intro-python/)
 
-[Google Python代码风格指南](http://zglg.work/Python-20-topics/google-python-coding-style/)
+[Google Python代码风格指南](http://www.www.zglg.work/Python-20-topics/google-python-coding-style/)
 
 ------
 
@@ -61,9 +62,9 @@ Python可以应用在众多的领域中，数据分析、组件集成、网络�
 
 Python关于数字的20个操作
 
-[Python数字](http://zglg.work/Python-20-topics/python-number/)
+[Python数字](http://www.www.zglg.work/Python-20-topics/python-number/)
 
-[Python正则之提取正整数和大于0浮点数](http://zglg.work/python-level/python-re-integer-float.md)
+[Python正则之提取正整数和大于0浮点数](http://www.www.zglg.work/python-level/python-re-integer-float.md)
 
 ------
 
@@ -71,25 +72,25 @@ Python关于数字的20个操作
 
 Python字符串专题总结
 
-[Python字符串](http://zglg.work/Python-20-topics/python-string/)
+[Python字符串](http://www.www.zglg.work/Python-20-topics/python-string/)
 
-[CSV读写乱码问题](http://zglg.work/Python-20-topics/csv-rw-coding-issue/)
+[CSV读写乱码问题](http://www.www.zglg.work/Python-20-topics/csv-rw-coding-issue/)
 
-[Unicode标准化](http://zglg.work/Python-20-topics/unicode-standard/)
+[Unicode标准化](http://www.www.zglg.work/Python-20-topics/unicode-standard/)
 
-[Unicode, UTF-8, ASCII](http://zglg.work/Python-20-topics/unicode-utf-8/)
+[Unicode, UTF-8, ASCII](http://www.www.zglg.work/Python-20-topics/unicode-utf-8/)
 
-[Python动态生成变量](http://zglg.work/Python-20-topics/dynamic_variable/)
+[Python动态生成变量](http://www.www.zglg.work/Python-20-topics/dynamic_variable/)
 
-[Python字符串对齐](http://zglg.work/Python-20-topics/python-string-align/)
+[Python字符串对齐](http://www.www.zglg.work/Python-20-topics/python-string-align/)
 
-[Python小项目1：文本句子关键词的KWIC显示](http://zglg.work/Python-20-topics/python-project1-kwic/)
+[Python小项目1：文本句子关键词的KWIC显示](http://www.zglg.work/Python-20-topics/python-project1-kwic/)
 
 ------
 
 ### 4 Python列表专题
 
-[Python列表](http://zglg.work/Python-20-topics/python-list/)
+[Python列表](http://www.www.zglg.work/Python-20-topics/python-list/)
 
 列表是一个容器，使用一对中括号`[]`创建一个列表。
 
@@ -99,7 +100,7 @@ Python字符串专题总结
 
 ### 5 Python流程控制专题
 
-[Python流程控制](http://zglg.work/Python-20-topics/python-control/)
+[Python流程控制](http://www.www.zglg.work/Python-20-topics/python-control/)
 
 流程控制与代码的执行顺序息息相关，流程控制相关的关键字，如：`if`,`elif`,`for`,`while`,`break`,`continue`, `else`,`return`,`yield`,`pass`等。
 
@@ -121,7 +122,7 @@ Python字符串专题总结
 
 ### 6 Python编程习惯专题
 
-[Python编程习惯专题](http://zglg.work/Python-20-topics/python-program-habit/)
+[Python编程习惯专题](http://www.www.zglg.work/Python-20-topics/python-program-habit/)
 
 今天讨论 Python 编程风格，如何写出更加Pythonic的代码是本篇讨论的话题。
 
@@ -139,7 +140,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 7 Python函数专题
 
-[Python函数专题](http://zglg.work/Python-20-topics/python-functions/)
+[Python函数专题](http://www.www.zglg.work/Python-20-topics/python-functions/)
 
 可以看到函数主要组成部分：
 
@@ -156,9 +157,9 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 8 Python面向对象编程
 
-[Python面向对象编程-上篇](http://zglg.work/Python-20-topics/python-oop-1/)
+[Python面向对象编程-上篇](http://www.www.zglg.work/Python-20-topics/python-oop-1/)
 
-[Python面向对象编程-下篇](http://zglg.work/Python-20-topics/python-oop-2/)
+[Python面向对象编程-下篇](http://www.www.zglg.work/Python-20-topics/python-oop-2/)
 
 面向对象程序设计思想，首先思考的不是程序执行流程，它的核心是抽象出一个对象，然后构思此对象包括的数据，以及操作数据的行为方法。
 
@@ -168,7 +169,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 9 Python十大数据结构使用专题
 
-[Python十大数据结构使用专题](http://zglg.work/Python-20-topics/python-data-structure/)
+[Python十大数据结构使用专题](http://www.www.zglg.work/Python-20-topics/python-data-structure/)
 
 这个专题，尽量使用最精简的文字，借助典型案例盘点Python常用的数据结构。
 
@@ -186,7 +187,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 10 Python包和模块使用注意事项专题
 
-[Python包和模块使用注意事项专题](http://zglg.work/Python-20-topics/python-package-module-apply-items/)
+[Python包和模块使用注意事项专题](http://www.zglg.work/Python-20-topics/python-package-module-apply-items/)
 
 今天这个专题讨论Python代码工程化、结构化的方法。我们都会遇到这种情景：所有代码都堆积到一个模块里，导致代码越来越长，最后变得难以维护，很明显代码只写到一个py模块文件是不可取的。如何按照逻辑功能，将代码划分到不同模块，组织为一个更易读、更易维护的代码结构呢？ 欢迎学习这个专题。
 
@@ -194,7 +195,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 11 Python正则使用专题
 
-[Python正则使用专题](http://zglg.work/Python-20-topics/python-re-apply/)
+[Python正则使用专题](http://www.zglg.work/Python-20-topics/python-re-apply/)
 
 今天这个专题讨论Python代码工程化、结构化的方法。我们都会遇到这种情景：所有代码都堆积到一个模块里，导致代码越来越长，最后变得难以维护，很明显代码只写到一个py模块文件是不可取的。如何按照逻辑功能，将代码划分到不同模块，组织为一个更易读、更易维护的代码结构呢？ 欢迎学习这个专题。
 
@@ -202,7 +203,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 12 Python时间专题
 
-[Python时间专题](http://zglg.work/Python-20-topics/python-time/)
+[Python时间专题](http://www.zglg.work/Python-20-topics/python-time/)
 
 `datetime`模块提供日期和时间各自分类的对象，日期处理相关的对象`date`，时间处理相关的`time`，日期和时间的完整结合对象`datetime`.
 
@@ -216,7 +217,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 13 Python装饰器专题
 
-[Python装饰器专题](http://zglg.work/Python-20-topics/python-decorator-apply/)
+[Python装饰器专题](http://www.zglg.work/Python-20-topics/python-decorator-apply/)
 
 装饰器，几乎各大Python框架中都能看到它的身影，足以表明它的价值！它有动态改变函数或类功能的魔力！
 
@@ -224,7 +225,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 14 Python迭代器使用专题
 
-[Python迭代器使用专题](http://zglg.work/Python-20-topics/python-iterator-apply/)
+[Python迭代器使用专题](http://www.zglg.work/Python-20-topics/python-iterator-apply/)
 
 迭代器，英文 Iterator，它首先是个对象，其次它是访问可迭代序列(Iterable)的一种方式。通常其从序列的第一个元素开始访问，直到所有的元素都被访问才结束。
 
@@ -234,7 +235,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 15 Python生成器使用专题
 
-[Python生成器使用专题](http://zglg.work/Python-20-topics/python-generator-apply/)
+[Python生成器使用专题](http://www.zglg.work/Python-20-topics/python-generator-apply/)
 
 可迭代对象，英文`Iterable`，是一个形容词，这类对象和`Java`语言类似，都可看作是一类接口，抽象地描述事物具备怎样的能力。所以，`Iterable`自然具备可迭代能力。
 
@@ -242,7 +243,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 16 Python 绘图入门专题
 
-[Python 绘图入门专题](http://zglg.work/Python-20-topics/python-graph-intro/)
+[Python 绘图入门专题](http://www.zglg.work/Python-20-topics/python-graph-intro/)
 
 作为绘图模块的第一篇，与大家一起过过最基本的Python绘图原理。
 
@@ -252,7 +253,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 17 Matplotlib绘图基础专题
 
-[Matplotlib绘图基础专题](http://zglg.work/Python-20-topics/python-matplotlib-1/)
+[Matplotlib绘图基础专题](http://www.zglg.work/Python-20-topics/python-matplotlib-1/)
 
 本文使用的 matplotlib 版本: 3.1.3
 
@@ -264,7 +265,7 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 18 Matplotlib绘图进阶专题
 
-[Matplotlib绘图进阶专题](http://zglg.work/Python-20-topics/python-matplotlib-2/)
+[Matplotlib绘图进阶专题](http://www.zglg.work/Python-20-topics/python-matplotlib-2/)
 
 我们拿到一堆数据，首先面临的问题是该选用哪类图，去可视化它们，然后才是如何绘制它们。今天这篇文章，解决该选用哪类图去可视化的问题。
 
@@ -274,51 +275,51 @@ https://www.python.org/dev/peps/pep-0008/
 
 ### 19 Matplotlib绘图案例
 
-[Matplotlib绘图案例](http://zglg.work/Python-20-topics/python-matplotlib-examples/)
+[Matplotlib绘图案例](http://www.zglg.work/Python-20-topics/python-matplotlib-examples/)
 
 ------
 
 ### 20 NumPy图解入门
 
-[NumPy图解入门](http://zglg.work/Python-20-topics/numpy-graph-intro/)
+[NumPy图解入门](http://www.zglg.work/Python-20-topics/numpy-graph-intro/)
 
 结合图形可视化，加速理解NumPy中的这些基本运算，如两个一维数组相加的可视化：
 
-![img](http://zglg.work/assets/ch20-1.png)
+![img](http://www.zglg.work/assets/ch20-1.png)
 
 ## NumPy入门系列教程
 
-1 [NumPy介绍](http://www.zglg.work/numpy-intro/)
+1 [NumPy介绍](http://www.www.zglg.work/numpy-intro/)
 
-2 [安装和导入NumPy](http://www.zglg.work/numpy/numpy-install/)
+2 [安装和导入NumPy](http://www.www.zglg.work/numpy/numpy-install/)
 
-3 [Python列表和NumPy数组有什么区别？](http://www.zglg.work/numpy/numpy-array-different-python-list/)
+3 [Python列表和NumPy数组有什么区别？](http://www.www.zglg.work/numpy/numpy-array-different-python-list/)
 
-4 [什么是array?](http://www.zglg.work/numpy/what-is-numpy/)
+4 [什么是array?](http://www.www.zglg.work/numpy/what-is-numpy/)
 
-5 [有关Array的详细信息](http://www.zglg.work/numpy/numpy-array-more/)
+5 [有关Array的详细信息](http://www.www.zglg.work/numpy/numpy-array-more/)
 
-6 [如何创建array](http://www.zglg.work/numpy/numpy-create-array/)
+6 [如何创建array](http://www.www.zglg.work/numpy/numpy-create-array/)
 
-7 [添加、删除和排序元素](http://www.zglg.work/numpy/numpy-add-remove-sort/)
+7 [添加、删除和排序元素](http://www.www.zglg.work/numpy/numpy-add-remove-sort/)
 
-8 [数组形状和大小](http://www.zglg.work/numpy/numpy-shape/)
+8 [数组形状和大小](http://www.www.zglg.work/numpy/numpy-shape/)
 
-9 [重塑array](http://www.zglg.work/numpy/numpy-reshape/)
+9 [重塑array](http://www.www.zglg.work/numpy/numpy-reshape/)
 
-10 [如何将一维array转换为二维array(如何向数组添加新轴)](http://www.zglg.work/numpy/numpy-1d-2d-more/)
+10 [如何将一维array转换为二维array(如何向数组添加新轴)](http://www.www.zglg.work/numpy/numpy-1d-2d-more/)
 
-11 [NumPy索引和切片](http://www.zglg.work/numpy/numpy-indexing-slicing/)
+11 [NumPy索引和切片](http://www.www.zglg.work/numpy/numpy-indexing-slicing/)
 
-12 [如何从现有数据创建数组](http://www.zglg.work/numpy/numpy-create-an-array-from-existing-data/)
+12 [如何从现有数据创建数组](http://www.www.zglg.work/numpy/numpy-create-an-array-from-existing-data/)
 
-13 [数组基本操作](http://www.zglg.work/numpy/numpy-basic-array-operations/)
+13 [数组基本操作](http://www.www.zglg.work/numpy/numpy-basic-array-operations/)
 
-14 [广播](http://www.zglg.work/numpy/numpy-broadcasting/)
+14 [广播](http://www.www.zglg.work/numpy/numpy-broadcasting/)
 
-15 [更有用的数组操作](http://www.zglg.work/numpy/numpy-more-array-operations/)
+15 [更有用的数组操作](http://www.www.zglg.work/numpy/numpy-more-array-operations/)
 
-16 [生成随机数](http://www.zglg.work/numpy/numpy-generate-random-number/)
+16 [生成随机数](http://www.www.zglg.work/numpy/numpy-generate-random-number/)
 
 ## Python 小例子
 
@@ -1926,7 +1927,7 @@ def index():
 import qrcode
 
 # 二维码内容
-data = "http://www.zglg.work/wp-content/uploads/2020/10/image-3.png"
+data = "http://www.www.zglg.work/wp-content/uploads/2020/10/image-3.png"
 # 生成二维码
 img = qrcode.make(data=data)
 # 直接显示二维码
@@ -1950,7 +1951,7 @@ import qrcode
 # 实例化二维码生成类
 qr = qrcode.QRCode(border=2)
 # 设置二维码数据
-data = "http://www.zglg.work/wp-content/uploads/2020/10/image-3.png"
+data = "http://www.www.zglg.work/wp-content/uploads/2020/10/image-3.png"
 qr.add_data(data=data)
 # 启用二维码颜色设置
 qr.make(fit=True)
@@ -2002,4 +2003,5 @@ def kwic(sentences: List[str], selword: str, window_len: int) -> str:
 
 http://dep.chs.nihon-u.ac.jp/english_lang/tukamoto/kwic_e.html
 
-完整代码已经公布在：http://zglg.work/Python-20-topics/python-project1-kwic/
+完整代码已经公布在：http://www.zglg.work/Python-20-topics/python-project1-kwic/
+![image](https://user-images.githubusercontent.com/20391209/123213609-c494dc00-d4f8-11eb-84d6-4d8caabb44f7.png)
