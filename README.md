@@ -25,109 +25,6 @@
 
 Python小例子 https://github.com/jackzhenguo/python-small-examples
 
-
-## Python原创教程
-这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。
-
-想系统入门Python的欢迎学习：
-
-[Python进阶完整教程](http://www.zglg.work/python-level/)
-
-[Python前言](http://www.zglg.work/Python-20-topics/intro-python/)
-
-[Google Python代码风格指南](http://www.zglg.work/Python-20-topics/google-python-coding-style/)
-
-Python关于数字的20个操作
-
-[Python数字](http://www.zglg.work/Python-20-topics/python-number/)
-
-[Python正则之提取正整数和大于0浮点数](http://www.zglg.work/python-level/python-re-integer-float.md)
-
-[Python字符串](http://www.zglg.work/Python-20-topics/python-string/)
-
-[CSV读写乱码问题](http://www.zglg.work/Python-20-topics/csv-rw-coding-issue/)
-
-[Unicode标准化](http://www.zglg.work/Python-20-topics/unicode-standard/)
-
-[Unicode, UTF-8, ASCII](http://www.zglg.work/Python-20-topics/unicode-utf-8/)
-
-[Python动态生成变量](http://www.zglg.work/Python-20-topics/dynamic_variable/)
-
-[Python字符串对齐](http://www.zglg.work/Python-20-topics/python-string-align/)
-
-[Python小项目1：文本句子关键词的KWIC显示](http://www.zglg.work/Python-20-topics/python-project1-kwic/)
-
-[Python列表](http://www.zglg.work/Python-20-topics/python-list/)
-
-[Python流程控制](http://www.zglg.work/Python-20-topics/python-control/)
-
-[Python编程习惯专题](http://www.zglg.work/Python-20-topics/python-program-habit/)
-
-[Python函数专题](http://www.zglg.work/Python-20-topics/python-functions/)
-
-[Python面向对象编程-上篇](http://www.zglg.work/Python-20-topics/python-oop-1/)
-
-[Python面向对象编程-下篇](http://www.zglg.work/Python-20-topics/python-oop-2/)
-
-[Python十大数据结构使用专题](http://www.zglg.work/Python-20-topics/python-data-structure/)
-
-[Python包和模块使用注意事项专题](http://www.zglg.work/Python-20-topics/python-package-module-apply-items/)
-
-[Python正则使用专题](http://www.zglg.work/Python-20-topics/python-re-apply/)
-
-[Python时间专题](http://www.zglg.work/Python-20-topics/python-time/)
-
-[Python装饰器专题](http://www.zglg.work/Python-20-topics/python-decorator-apply/)
-
-[Python迭代器使用专题](http://www.zglg.work/Python-20-topics/python-iterator-apply/)
-
-[Python生成器使用专题](http://www.zglg.work/Python-20-topics/python-generator-apply/)
-
-[Python 绘图入门专题](http://www.zglg.work/Python-20-topics/python-graph-intro/)
-
-[Matplotlib绘图基础专题](http://www.zglg.work/Python-20-topics/python-matplotlib-1/)
-
-[Matplotlib绘图进阶专题](http://www.zglg.work/Python-20-topics/python-matplotlib-2/)
-
-[Matplotlib绘图案例](http://www.zglg.work/Python-20-topics/python-matplotlib-examples/)
-
-[NumPy图解入门](http://www.zglg.work/Python-20-topics/numpy-graph-intro/)
-
-
-## NumPy入门教程
-
-1 [NumPy介绍](http://www.zglg.work/numpy-intro/)
-
-2 [安装和导入NumPy](http://www.zglg.work/numpy/numpy-install/)
-
-3 [Python列表和NumPy数组有什么区别？](http://www.zglg.work/numpy/numpy-array-different-python-list/)
-
-4 [什么是array?](http://www.zglg.work/numpy/what-is-numpy/)
-
-5 [有关Array的详细信息](http://www.zglg.work/numpy/numpy-array-more/)
-
-6 [如何创建array](http://www.zglg.work/numpy/numpy-create-array/)
-
-7 [添加、删除和排序元素](http://www.zglg.work/numpy/numpy-add-remove-sort/)
-
-8 [数组形状和大小](http://www.zglg.work/numpy/numpy-shape/)
-
-9 [重塑array](http://www.zglg.work/numpy/numpy-reshape/)
-
-10 [如何将一维array转换为二维array(如何向数组添加新轴)](http://www.zglg.work/numpy/numpy-1d-2d-more/)
-
-11 [NumPy索引和切片](http://www.zglg.work/numpy/numpy-indexing-slicing/)
-
-12 [如何从现有数据创建数组](http://www.zglg.work/numpy/numpy-create-an-array-from-existing-data/)
-
-13 [数组基本操作](http://www.zglg.work/numpy/numpy-basic-array-operations/)
-
-14 [广播](http://www.zglg.work/numpy/numpy-broadcasting/)
-
-15 [更有用的数组操作](http://www.zglg.work/numpy/numpy-more-array-operations/)
-
-16 [生成随机数](http://www.zglg.work/numpy/numpy-generate-random-number/)
-
 ## Python 小例子
 
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
@@ -331,7 +228,107 @@ Python关于数字的20个操作
 | 197 | [使用正则提取正整数和大于0的浮点数](md/197.md) | re findall | v2 | ⭐️⭐⭐⭐ |
 
 
+## Python原创教程
+这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。
 
+想系统入门Python的欢迎学习：
+
+[Python进阶完整教程](http://www.zglg.work/python-level/)
+
+[Python前言](http://www.zglg.work/Python-20-topics/intro-python/)
+
+[Google Python代码风格指南](http://www.zglg.work/Python-20-topics/google-python-coding-style/)
+
+Python关于数字的20个操作
+
+[Python数字](http://www.zglg.work/Python-20-topics/python-number/)
+
+[Python正则之提取正整数和大于0浮点数](http://www.zglg.work/python-level/python-re-integer-float.md)
+
+[Python字符串](http://www.zglg.work/Python-20-topics/python-string/)
+
+[CSV读写乱码问题](http://www.zglg.work/Python-20-topics/csv-rw-coding-issue/)
+
+[Unicode标准化](http://www.zglg.work/Python-20-topics/unicode-standard/)
+
+[Unicode, UTF-8, ASCII](http://www.zglg.work/Python-20-topics/unicode-utf-8/)
+
+[Python动态生成变量](http://www.zglg.work/Python-20-topics/dynamic_variable/)
+
+[Python字符串对齐](http://www.zglg.work/Python-20-topics/python-string-align/)
+
+[Python小项目1：文本句子关键词的KWIC显示](http://www.zglg.work/Python-20-topics/python-project1-kwic/)
+
+[Python列表](http://www.zglg.work/Python-20-topics/python-list/)
+
+[Python流程控制](http://www.zglg.work/Python-20-topics/python-control/)
+
+[Python编程习惯专题](http://www.zglg.work/Python-20-topics/python-program-habit/)
+
+[Python函数专题](http://www.zglg.work/Python-20-topics/python-functions/)
+
+[Python面向对象编程-上篇](http://www.zglg.work/Python-20-topics/python-oop-1/)
+
+[Python面向对象编程-下篇](http://www.zglg.work/Python-20-topics/python-oop-2/)
+
+[Python十大数据结构使用专题](http://www.zglg.work/Python-20-topics/python-data-structure/)
+
+[Python包和模块使用注意事项专题](http://www.zglg.work/Python-20-topics/python-package-module-apply-items/)
+
+[Python正则使用专题](http://www.zglg.work/Python-20-topics/python-re-apply/)
+
+[Python时间专题](http://www.zglg.work/Python-20-topics/python-time/)
+
+[Python装饰器专题](http://www.zglg.work/Python-20-topics/python-decorator-apply/)
+
+[Python迭代器使用专题](http://www.zglg.work/Python-20-topics/python-iterator-apply/)
+
+[Python生成器使用专题](http://www.zglg.work/Python-20-topics/python-generator-apply/)
+
+[Python 绘图入门专题](http://www.zglg.work/Python-20-topics/python-graph-intro/)
+
+[Matplotlib绘图基础专题](http://www.zglg.work/Python-20-topics/python-matplotlib-1/)
+
+[Matplotlib绘图进阶专题](http://www.zglg.work/Python-20-topics/python-matplotlib-2/)
+
+[Matplotlib绘图案例](http://www.zglg.work/Python-20-topics/python-matplotlib-examples/)
+
+[NumPy图解入门](http://www.zglg.work/Python-20-topics/numpy-graph-intro/)
+
+
+## NumPy入门教程
+
+1 [NumPy介绍](http://www.zglg.work/numpy-intro/)
+
+2 [安装和导入NumPy](http://www.zglg.work/numpy/numpy-install/)
+
+3 [Python列表和NumPy数组有什么区别？](http://www.zglg.work/numpy/numpy-array-different-python-list/)
+
+4 [什么是array?](http://www.zglg.work/numpy/what-is-numpy/)
+
+5 [有关Array的详细信息](http://www.zglg.work/numpy/numpy-array-more/)
+
+6 [如何创建array](http://www.zglg.work/numpy/numpy-create-array/)
+
+7 [添加、删除和排序元素](http://www.zglg.work/numpy/numpy-add-remove-sort/)
+
+8 [数组形状和大小](http://www.zglg.work/numpy/numpy-shape/)
+
+9 [重塑array](http://www.zglg.work/numpy/numpy-reshape/)
+
+10 [如何将一维array转换为二维array(如何向数组添加新轴)](http://www.zglg.work/numpy/numpy-1d-2d-more/)
+
+11 [NumPy索引和切片](http://www.zglg.work/numpy/numpy-indexing-slicing/)
+
+12 [如何从现有数据创建数组](http://www.zglg.work/numpy/numpy-create-an-array-from-existing-data/)
+
+13 [数组基本操作](http://www.zglg.work/numpy/numpy-basic-array-operations/)
+
+14 [广播](http://www.zglg.work/numpy/numpy-broadcasting/)
+
+15 [更有用的数组操作](http://www.zglg.work/numpy/numpy-more-array-operations/)
+
+16 [生成随机数](http://www.zglg.work/numpy/numpy-generate-random-number/)
 
 ### Python 实战
 
