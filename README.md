@@ -226,7 +226,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 195 | [发现列表前3个最大或最小数](md/195.md) | list heapq | v1.0 | ⭐️⭐⭐⭐ |
 | 196 | [使用堆排序列表为升序](md/196.md) | sort heapq | v1.0 | ⭐️⭐⭐⭐ |
 | 197 | [使用正则提取正整数和大于0的浮点数](md/197.md) | re findall | v2 | ⭐️⭐⭐⭐ |
-
+| 198 | [常见算术运算](md/198.md) | 算法运算| v1 |⭐⭐|
 
 ## Python原创教程
 这是经过很久打磨的一个Python教程，全部是个人原创，已首发在公众号，并且托管在我的[个人网站](http://www.zglg.work/python-level/)。
