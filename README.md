@@ -31,7 +31,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
 | ---- | ---------------------------------- | ---- | ---- | ---- |
-|1   | [常见算术运算](md/198.md)|	算法运算  |	v1|	⭐⭐ |
+|1   | [常见算术运算](md/198.md)|	运算  |	v1|	⭐⭐ |
 | 2    | [实现 relu](md/1.md) | max   | V4.0        | ⭐️⭐️ |
 | 3    | [进制转化](md/2.md)                | bin,oct,hex | V4.0            |  ⭐️⭐️|
 | 4    | [整数和ASCII互转](md/3.md)         | chr,ord | V1.0     | ⭐️⭐️ |
