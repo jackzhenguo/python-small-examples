@@ -173,7 +173,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 15 | [pyecharts传入Numpy数据绘图失败](md/167.md) | numpy pyecharts  | V1.0 | ⭐️⭐⭐ |
 | 16 | [图像处理包pillow](md/169.md) | pillow  | V1.0 | ⭐️⭐⭐ |
 
-### 数值计算或数据分析
+### 数据分析
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
 | ---- | ---------------------------------- | ---- | ---- | ---- |
 | 1 | [数据分析神器：deepnote](./md/177.md) | deepnote | v1.0 | ⭐️⭐⭐ |
