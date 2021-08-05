@@ -238,7 +238,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 37 | [一行代码让 pip 安装加速 100 倍](md/176.md) | pip install | v1.0 | ⭐️⭐⭐ |
 
 
-### 综合小案例
+### 案例
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
 | ---- | ---------------------------------- | ---- | ---- | ---- |
 | 1   | [不用else和if实现计算器](md/60.md) | operator | V1.0 | ⭐️⭐️⭐️ |
@@ -268,9 +268,9 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 25 | [寻找第n次出现位置](md/125.md) | enumerator | V1.0 | ⭐️⭐️⭐️ |
 | 26 | [找出所有重复元素](md/127.md) | calendar,datetime | V1.0 | ⭐️⭐️⭐️⭐️ |
 | 27 | [联合统计次数](md/128.md) | Counter | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
-
-
-
+| 28 | [求两点球面距离](md/199.md) | math asin | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
+| 29 | [获取文件编码](md/200.md) | chardet | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
+| 30 | [格式化json串](md/201.md) | json | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 
 
 
