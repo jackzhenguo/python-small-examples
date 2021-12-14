@@ -98,7 +98,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 24 | [使用堆升序列表](md/196.md) | sort heapq | v1.0 | ⭐️⭐⭐⭐ |
 
 
-### 面向对象OOP
+### 面向对象
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
 | ---- | ---------------------------------- | ---- | ---- | ---- |
 | 1   | [所有对象之根](md/43.md)           | object     | V1.0       | ⭐️ |
@@ -240,7 +240,7 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 37 | [一行代码让 pip 安装加速 100 倍](md/176.md) | pip install | v1.0 | ⭐️⭐⭐ |
 
 
-### 案例
+### 工作常用案例
 | 小例子 | 链接                    | 标签              | 版本          | 难度 |
 | ---- | ---------------------------------- | ---- | ---- | ---- |
 | 1   | [不用else和if实现计算器](md/60.md) | operator | V1.0 | ⭐️⭐️⭐️ |
