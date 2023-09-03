@@ -17,10 +17,6 @@
 
 告别枯燥，告别枯燥，致力于打造 Python 经典小例子、小案例。 
 
-同时托管在[Python中文网](http://www.zglg.work/python-small-examples/)
-
-使用Python制作的各种小工具：[Python实用小工具](http://www.zglg.work:5000/pytools)
-
 ## License
 
 允许按照要求转载，但禁止用于任何商用目的。如果转载本库小例子、小案例，请备注下方链接：
