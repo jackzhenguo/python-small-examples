@@ -21,7 +21,7 @@
 
 允许按照要求转载，但禁止用于任何商用目的。如果转载本库小例子、小案例，请备注下方链接：
 
-Python小例子 https://github.com/jackzhenguo/python-small-examples
+[Python小例子](https://ai-jupyter.com/python-small-examples/)
 
 ## Python 小例子
 
@@ -269,3 +269,32 @@ Python小例子 https://github.com/jackzhenguo/python-small-examples
 | 28 | [求两点球面距离](md/199.md) | math asin | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 | 29 | [获取文件编码](md/200.md) | chardet | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
 | 30 | [格式化json串](md/201.md) | json | V1.0 | ⭐️⭐️⭐️⭐️⭐️ |
+
+### 更多教程
+
+[AI消息](https://ai-jupyter.com/)
+
+[AI新闻报道](https://ai-jupyter.com/ai-news-all/)
+
+[AI大模型](https://ai-jupyter.com/ai-llm/)
+
+[AI工具集](https://ai-jupyter.com/ai-chatgpt/)
+
+[ChatGPT4o免费使用六种方法](https://ai-jupyter.com/ai-chatgpt/)
+
+[Python教程](https://ai-jupyter.com/python-packages/)
+
+[数据分析教程](https://ai-jupyter.com/numpy-intro/)
+
+[算法教程](https://ai-jupyter.com/algorithm-basic/)
+
+[AI教程](https://ai-jupyter.com/statistics/)
+
+[Git教程](https://ai-jupyter.com/git/)
+
+[程序员](https://ai-jupyter.com/others/)
+
+[资料下载](https://ai-jupyter.com/python-20/)
+
+
+
