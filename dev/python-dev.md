@@ -290,27 +290,27 @@ movies = pd.read_csv('./data/movietweetings/movies.dat', delimiter='::', engine=
 
 ```python
    Movie ID                                        Movie Title  \
-0         8      Edison Kinetoscopic Record of a Sneeze (1894)   
-1        10                La sortie des usines Lumi猫re (1895)   
-2        12                      The Arrival of a Train (1896)   
-3        25  The Oxford and Cambridge University Boat Race ...   
-4        91                         Le manoir du diable (1896)   
-5       131                           Une nuit terrible (1896)   
-6       417                      Le voyage dans la lune (1902)   
-7       439                     The Great Train Robbery (1903)   
-8       443        Hiawatha, the Messiah of the Ojibway (1903)   
-9       628                    The Adventures of Dollie (1908)  
-                                          Genre  
-0                             Documentary|Short  
-1                             Documentary|Short  
-2                             Documentary|Short  
-3                                           NaN  
-4                                  Short|Horror  
-5                           Short|Comedy|Horror  
-6  Short|Action|Adventure|Comedy|Fantasy|Sci-Fi  
-7                    Short|Action|Crime|Western  
-8                                           NaN  
-9                                  Action|Short  
+0         8      Edison Kinetoscopic Record of a Sneeze (1894)
+1        10                La sortie des usines Lumi猫re (1895)
+2        12                      The Arrival of a Train (1896)
+3        25  The Oxford and Cambridge University Boat Race ...
+4        91                         Le manoir du diable (1896)
+5       131                           Une nuit terrible (1896)
+6       417                      Le voyage dans la lune (1902)
+7       439                     The Great Train Robbery (1903)
+8       443        Hiawatha, the Messiah of the Ojibway (1903)
+9       628                    The Adventures of Dollie (1908)
+                                          Genre
+0                             Documentary|Short
+1                             Documentary|Short
+2                             Documentary|Short
+3                                           NaN
+4                                  Short|Horror
+5                           Short|Comedy|Horror
+6  Short|Action|Adventure|Comedy|Fantasy|Sci-Fi
+7                    Short|Action|Crime|Western
+8                                           NaN
+9                                  Action|Short
 ```
 
 
@@ -511,7 +511,7 @@ combine = ratings.join(comedy, on='Movie ID', rsuffix='2')
 
 大家可验证这种写法，仔细一看，会发现结果非常诡异。
 
-究其原因，这是pandas join函数使用的一个算是坑点，它在官档中介绍，连接右表时，此处右表是`comedy`，它的`index`要求是连接字段，也就是 `Movie ID`. 
+究其原因，这是pandas join函数使用的一个算是坑点，它在官档中介绍，连接右表时，此处右表是`comedy`，它的`index`要求是连接字段，也就是 `Movie ID`.
 
 左表的index不要求，但是要在参数 `on`中给定。
 
@@ -571,18 +571,18 @@ print(result.head())
 
 ```python
     User ID  Movie ID  Rating  Rating Timestamp             Movie Title  \
-12        1   1588173       9        1372821281      Warm Bodies (2013)   
-13        1   1711425       3        1372604878        21 & Over (2013)   
-14        1   2024432       8        1372703553   Identity Thief (2013)   
-17        1   2101441       1        1372633473  Spring Breakers (2012)   
-28        2   1431045       7        1457733508         Deadpool (2016)   
+12        1   1588173       9        1372821281      Warm Bodies (2013)
+13        1   1711425       3        1372604878        21 & Over (2013)
+14        1   2024432       8        1372703553   Identity Thief (2013)
+17        1   2101441       1        1372633473  Spring Breakers (2012)
+28        2   1431045       7        1457733508         Deadpool (2016)
 
-                             Genre  
-12           Comedy|Horror|Romance  
-13                          Comedy  
-14    Adventure|Comedy|Crime|Drama  
-17              Comedy|Crime|Drama  
-28  Action|Adventure|Comedy|Sci-Fi  
+                             Genre
+12           Comedy|Horror|Romance
+13                          Comedy
+14    Adventure|Comedy|Crime|Drama
+17              Comedy|Crime|Drama
+28  Action|Adventure|Comedy|Sci-Fi
 
 
 ```
@@ -592,18 +592,18 @@ print(result.head())
 截止目前已经求出所有喜剧电影`result`，前5行如下，Genre中都含有`Comedy`字符串：
 ```python
     User ID  Movie ID  Rating  Rating Timestamp             Movie Title  \
-12        1   1588173       9        1372821281      Warm Bodies (2013)   
-13        1   1711425       3        1372604878        21 & Over (2013)   
-14        1   2024432       8        1372703553   Identity Thief (2013)   
-17        1   2101441       1        1372633473  Spring Breakers (2012)   
-28        2   1431045       7        1457733508         Deadpool (2016)   
+12        1   1588173       9        1372821281      Warm Bodies (2013)
+13        1   1711425       3        1372604878        21 & Over (2013)
+14        1   2024432       8        1372703553   Identity Thief (2013)
+17        1   2101441       1        1372633473  Spring Breakers (2012)
+28        2   1431045       7        1457733508         Deadpool (2016)
 
-                             Genre  
-12           Comedy|Horror|Romance  
-13                          Comedy  
-14    Adventure|Comedy|Crime|Drama  
-17              Comedy|Crime|Drama  
-28  Action|Adventure|Comedy|Sci-Fi  
+                             Genre
+12           Comedy|Horror|Romance
+13                          Comedy
+14    Adventure|Comedy|Crime|Drama
+17              Comedy|Crime|Drama
+28  Action|Adventure|Comedy|Sci-Fi
 ```
 
 
@@ -618,7 +618,7 @@ score_as_movie = result.groupby('Movie ID').mean()
 前5行显示如下：
 ```python
                User ID  Rating  Rating Timestamp
-Movie ID                                        
+Movie ID
 131       34861.000000     7.0      1.540639e+09
 417       34121.409091     8.5      1.458680e+09
 2354       6264.000000     8.0      1.456343e+09
@@ -635,7 +635,7 @@ score_as_movie
 前5行显示如下：
 ```python
 	User ID	Rating	Rating Timestamp
-Movie ID			
+Movie ID
 7134690	30110.0	10.0	1.524974e+09
 416889	1319.0	10.0	1.543320e+09
 57840	23589.0	10.0	1.396802e+09
@@ -750,7 +750,7 @@ n3r = n3[n3['Rating']['count']>=20]['Rating']
 只计算影评超过20次，且满足最小样本量的电影。计算得到的`n3r`前5行：
 ```python
 	count	mean	std
-Movie ID			
+Movie ID
 417	22	8.500000	1.263027
 12349	68	8.485294	1.227698
 15324	20	8.350000	1.039990
@@ -781,7 +781,7 @@ n3s = n3r[ n3r['count'] >= nmin ]
 ```python
 
 count	mean	std
-Movie ID			
+Movie ID
 53604	129	8.635659	1.230714
 57012	207	8.449275	1.537899
 70735	224	8.839286	1.190799
@@ -805,7 +805,7 @@ n3s_sort = n3s.sort_values(by='mean',ascending=False)
 结果：
 ```python
 	count	mean	std
-Movie ID			
+Movie ID
 6662050	22	10.000000	0.000000
 4921860	48	10.000000	0.000000
 5262972	28	10.000000	0.000000
@@ -981,7 +981,7 @@ d:\source\test\settingwithcopy.py:9: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy 
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 ```
 
 归根结底，是因为代码中出现`链式操作`...
@@ -997,7 +997,7 @@ tmp['c'] = 200
 
 先记住这个最典型的情况，即可！
 
-有的人就问了：出现这个 Warning, 需要理会它吗？ 
+有的人就问了：出现这个 Warning, 需要理会它吗？
 
 如果结果不对，当然要理会；如果结果对，不care.
 
@@ -1030,7 +1030,7 @@ d:\source\test\settingwithcopy.py:9: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy     
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   tmp['c'] = 200
 -----tmp------
    a  b    c
@@ -1078,7 +1078,7 @@ array([3.5, 3. , 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3. ,
        3.8, 2.6, 2.2, 3.2, 2.8, 2.8, 2.7, 3.3, 3.2, 2.8, 3. , 2.8, 3. ,
        2.8, 3.8, 2.8, 2.8, 2.6, 3. , 3.4, 3.1, 3. , 3.1, 3.1, 3.1, 2.7,
        3.2, 3.3, 3. , 2.5, 3. , 3.4, 3. ])
-      
+
 ```
 
 这是单变量(univariate)长度为 150 的一维 NumPy 数组。
@@ -1099,7 +1099,7 @@ s = (wid - smin) / (smax - smin)
 ```
 只打印小数点后三位设置：
 ```python
-np.set_printoptions(precision=3)  
+np.set_printoptions(precision=3)
 ```
 
 归一化结果：
@@ -1177,7 +1177,7 @@ sns.distplot(s, kde=False, fit = stats.dgamma)
 
 1) 使用 skiprows 参数，
 
-2) x > 0 确保首行读入， 
+2) x > 0 确保首行读入，
 
 3) np.random.rand() > 0.01 表示 99% 的数据都会被随机过滤掉
 
@@ -1187,11 +1187,11 @@ sns.distplot(s, kde=False, fit = stats.dgamma)
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("big_data.csv", 
-skiprows = 
+df = pd.read_csv("big_data.csv",
+skiprows =
 lambda x: x>0 and np.random.rand() > 0.01)
 
-print("The shape of the df is {}. 
+print("The shape of the df is {}.
 It has been reduced 100 times!".format(df.shape))
 ```
 
@@ -1297,8 +1297,8 @@ c.execute('''CREATE TABLE IF NOT EXISTS books
 
 ```python
 c.execute('''INSERT INTO books VALUES
-       (1, 
-       1, 
+       (1,
+       1,
        'computer science',
        39.0)''')
 ```
@@ -1340,7 +1340,7 @@ print('Done')
 新建一个`sq`文件：`a.sql`，内容如下：
 
 ```sql
-SELECT * from books 
+SELECT * from books
 ```
 右键`run query`，得到表`books`插入的4行记录可视化图：
 
@@ -1450,14 +1450,14 @@ img.show()
 举例，输入如下六个句子，给定单词`secure`，输出如下字符串：
 
 ```python
-               pre keyword    post 
+               pre keyword    post
 
      welfare , and secure  the blessings of
-     nations , and secured immortal glory with 
-       , and shall secure  to you the 
-    cherished . To secure  us against these 
-     defense as to secure  our cities and 
-          I can to secure  economy and fidelity 
+     nations , and secured immortal glory with
+       , and shall secure  to you the
+    cherished . To secure  us against these
+     defense as to secure  our cities and
+          I can to secure  economy and fidelity
 ```
 
 请补充实现下面函数：
